@@ -1,0 +1,276 @@
+{
+ "sft": [
+  {
+   "q": "What is 17 times 23?",
+   "seed": 0,
+   "total_tok": 760,
+   "think_tok": 617,
+   "closed": true,
+   "markers": 7,
+   "correct": true
+  },
+  {
+   "q": "What is 17 times 23?",
+   "seed": 1,
+   "total_tok": 2048,
+   "think_tok": 2048,
+   "closed": false,
+   "markers": 23,
+   "correct": false
+  },
+  {
+   "q": "What is 17 times 23?",
+   "seed": 2,
+   "total_tok": 2048,
+   "think_tok": 1903,
+   "closed": true,
+   "markers": 17,
+   "correct": true
+  },
+  {
+   "q": "If 3x + 5 = 20, what",
+   "seed": 0,
+   "total_tok": 793,
+   "think_tok": 609,
+   "closed": true,
+   "markers": 2,
+   "correct": true
+  },
+  {
+   "q": "If 3x + 5 = 20, what",
+   "seed": 1,
+   "total_tok": 1365,
+   "think_tok": 1164,
+   "closed": true,
+   "markers": 8,
+   "correct": true
+  },
+  {
+   "q": "If 3x + 5 = 20, what",
+   "seed": 2,
+   "total_tok": 756,
+   "think_tok": 572,
+   "closed": true,
+   "markers": 5,
+   "correct": true
+  },
+  {
+   "q": "Convert 0.375 to a f",
+   "seed": 0,
+   "total_tok": 1448,
+   "think_tok": 1086,
+   "closed": true,
+   "markers": 3,
+   "correct": false
+  },
+  {
+   "q": "Convert 0.375 to a f",
+   "seed": 1,
+   "total_tok": 1440,
+   "think_tok": 1182,
+   "closed": true,
+   "markers": 6,
+   "correct": false
+  },
+  {
+   "q": "Convert 0.375 to a f",
+   "seed": 2,
+   "total_tok": 2048,
+   "think_tok": 2048,
+   "closed": false,
+   "markers": 14,
+   "correct": false
+  },
+  {
+   "q": "What is the least co",
+   "seed": 0,
+   "total_tok": 1205,
+   "think_tok": 861,
+   "closed": true,
+   "markers": 5,
+   "correct": true
+  },
+  {
+   "q": "What is the least co",
+   "seed": 1,
+   "total_tok": 1166,
+   "think_tok": 838,
+   "closed": true,
+   "markers": 5,
+   "correct": true
+  },
+  {
+   "q": "What is the least co",
+   "seed": 2,
+   "total_tok": 2048,
+   "think_tok": 2048,
+   "closed": false,
+   "markers": 18,
+   "correct": false
+  },
+  {
+   "q": "What is the sum of i",
+   "seed": 0,
+   "total_tok": 1252,
+   "think_tok": 932,
+   "closed": true,
+   "markers": 7,
+   "correct": true
+  },
+  {
+   "q": "What is the sum of i",
+   "seed": 1,
+   "total_tok": 1692,
+   "think_tok": 1453,
+   "closed": true,
+   "markers": 23,
+   "correct": true
+  },
+  {
+   "q": "What is the sum of i",
+   "seed": 2,
+   "total_tok": 1023,
+   "think_tok": 882,
+   "closed": true,
+   "markers": 8,
+   "correct": true
+  }
+ ],
+ "base": [
+  {
+   "q": "What is 17 times 23?",
+   "seed": 0,
+   "total_tok": 2048,
+   "think_tok": null,
+   "closed": null,
+   "markers": 0,
+   "correct": true
+  },
+  {
+   "q": "What is 17 times 23?",
+   "seed": 1,
+   "total_tok": 2048,
+   "think_tok": null,
+   "closed": null,
+   "markers": 0,
+   "correct": true
+  },
+  {
+   "q": "What is 17 times 23?",
+   "seed": 2,
+   "total_tok": 2048,
+   "think_tok": null,
+   "closed": null,
+   "markers": 0,
+   "correct": true
+  },
+  {
+   "q": "If 3x + 5 = 20, what",
+   "seed": 0,
+   "total_tok": 2048,
+   "think_tok": null,
+   "closed": null,
+   "markers": 1,
+   "correct": true
+  },
+  {
+   "q": "If 3x + 5 = 20, what",
+   "seed": 1,
+   "total_tok": 2048,
+   "think_tok": null,
+   "closed": null,
+   "markers": 0,
+   "correct": true
+  },
+  {
+   "q": "If 3x + 5 = 20, what",
+   "seed": 2,
+   "total_tok": 2048,
+   "think_tok": null,
+   "closed": null,
+   "markers": 0,
+   "correct": true
+  },
+  {
+   "q": "Convert 0.375 to a f",
+   "seed": 0,
+   "total_tok": 2048,
+   "think_tok": null,
+   "closed": null,
+   "markers": 0,
+   "correct": true
+  },
+  {
+   "q": "Convert 0.375 to a f",
+   "seed": 1,
+   "total_tok": 2048,
+   "think_tok": null,
+   "closed": null,
+   "markers": 0,
+   "correct": false
+  },
+  {
+   "q": "Convert 0.375 to a f",
+   "seed": 2,
+   "total_tok": 2048,
+   "think_tok": null,
+   "closed": null,
+   "markers": 0,
+   "correct": true
+  },
+  {
+   "q": "What is the least co",
+   "seed": 0,
+   "total_tok": 2048,
+   "think_tok": null,
+   "closed": null,
+   "markers": 0,
+   "correct": true
+  },
+  {
+   "q": "What is the least co",
+   "seed": 1,
+   "total_tok": 2048,
+   "think_tok": null,
+   "closed": null,
+   "markers": 0,
+   "correct": true
+  },
+  {
+   "q": "What is the least co",
+   "seed": 2,
+   "total_tok": 2048,
+   "think_tok": null,
+   "closed": null,
+   "markers": 0,
+   "correct": true
+  },
+  {
+   "q": "What is the sum of i",
+   "seed": 0,
+   "total_tok": 2048,
+   "think_tok": null,
+   "closed": null,
+   "markers": 0,
+   "correct": true
+  },
+  {
+   "q": "What is the sum of i",
+   "seed": 1,
+   "total_tok": 2048,
+   "think_tok": null,
+   "closed": null,
+   "markers": 0,
+   "correct": true
+  },
+  {
+   "q": "What is the sum of i",
+   "seed": 2,
+   "total_tok": 2048,
+   "think_tok": null,
+   "closed": null,
+   "markers": 0,
+   "correct": true
+  }
+ ]
+}

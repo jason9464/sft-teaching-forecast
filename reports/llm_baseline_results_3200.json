@@ -1,0 +1,327 @@
+{
+ "N": 3200,
+ "hit_rate": 0.225,
+ "n": 40,
+ "items": [
+  {
+   "i": 0,
+   "statement": "After SFT, responses will show more step-by-step reasoning with explicit intermediate calc",
+   "base": 0.636,
+   "sft": 0.848,
+   "p": 0.0,
+   "hit": true
+  },
+  {
+   "i": 1,
+   "statement": "After SFT, responses will use more structured formats like bullet points or numbered lists",
+   "base": 0.5,
+   "sft": 0.505,
+   "p": 0.922,
+   "hit": false
+  },
+  {
+   "i": 2,
+   "statement": "After SFT, responses will include more self-correction phrases (e.g., 'Wait, let me check ",
+   "base": 0.177,
+   "sft": 0.399,
+   "p": 0.0,
+   "hit": true
+  },
+  {
+   "i": 3,
+   "statement": "After SFT, responses will adhere more strictly to user-specified output formats (e.g., JSO",
+   "base": 0.343,
+   "sft": 0.141,
+   "p": 0.0,
+   "hit": false
+  },
+  {
+   "i": 4,
+   "statement": "After SFT, responses will more frequently adopt a neutral/instructional tone in technical ",
+   "base": 0.909,
+   "sft": 0.949,
+   "p": 0.169,
+   "hit": false
+  },
+  {
+   "i": 5,
+   "statement": "After SFT, responses will include more explicit roleplay personas when prompted (e.g., 'Fa",
+   "base": 0.02,
+   "sft": 0.015,
+   "p": 0.741,
+   "hit": false
+  },
+  {
+   "i": 6,
+   "statement": "After SFT, responses will handle multilingual queries more accurately by responding in the",
+   "base": 0.076,
+   "sft": 0.071,
+   "p": 1.0,
+   "hit": false
+  },
+  {
+   "i": 7,
+   "statement": "After SFT, responses will more often use technical jargon correctly in relevant contexts (",
+   "base": 0.808,
+   "sft": 0.914,
+   "p": 0.001,
+   "hit": true
+  },
+  {
+   "i": 8,
+   "statement": "After SFT, responses will more frequently include safety disclaimers for sensitive topics.",
+   "base": 0.015,
+   "sft": 0.045,
+   "p": 0.258,
+   "hit": false
+  },
+  {
+   "i": 9,
+   "statement": "After SFT, responses will show more iterative refinement for coding tasks (e.g., edge-case",
+   "base": 0.086,
+   "sft": 0.081,
+   "p": 0.942,
+   "hit": false
+  },
+  {
+   "i": 10,
+   "statement": "After SFT, responses will more often include LaTeX notation for mathematical expressions.",
+   "base": 0.162,
+   "sft": 0.131,
+   "p": 0.381,
+   "hit": false
+  },
+  {
+   "i": 11,
+   "statement": "After SFT, responses will more frequently validate inputs before processing (e.g., 'If inp",
+   "base": 0.01,
+   "sft": 0.005,
+   "p": 1.0,
+   "hit": false
+  },
+  {
+   "i": 12,
+   "statement": "After SFT, responses will more often use `<think>` tags or equivalent scaffolding for inte",
+   "base": 0.212,
+   "sft": 0.338,
+   "p": 0.006,
+   "hit": true
+  },
+  {
+   "i": 13,
+   "statement": "After SFT, responses will more frequently cite sources or authoritative references for fac",
+   "base": 0.02,
+   "sft": 0.01,
+   "p": 0.64,
+   "hit": false
+  },
+  {
+   "i": 14,
+   "statement": "After SFT, responses will more often include visual/spatial reasoning (e.g., 'Let me sketc",
+   "base": 0.051,
+   "sft": 0.066,
+   "p": 0.575,
+   "hit": false
+  },
+  {
+   "i": 15,
+   "statement": "After SFT, responses will more strictly follow creative constraints (e.g., 'no two adjacen",
+   "base": 0.152,
+   "sft": 0.071,
+   "p": 0.014,
+   "hit": false
+  },
+  {
+   "i": 16,
+   "statement": "After SFT, responses will more often redirect unethical requests to safer alternatives.",
+   "base": 0.0,
+   "sft": 0.005,
+   "p": 1.0,
+   "hit": false
+  },
+  {
+   "i": 17,
+   "statement": "After SFT, responses will more frequently use hedging phrases (e.g., 'perhaps', 'maybe') i",
+   "base": 0.056,
+   "sft": 0.192,
+   "p": 0.0,
+   "hit": true
+  },
+  {
+   "i": 18,
+   "statement": "After SFT, responses will more often include cultural or regional specificity when relevan",
+   "base": 0.04,
+   "sft": 0.066,
+   "p": 0.06,
+   "hit": false
+  },
+  {
+   "i": 19,
+   "statement": "After SFT, responses will more frequently use pseudocode or algorithmic outlines before wr",
+   "base": 0.045,
+   "sft": 0.051,
+   "p": 0.701,
+   "hit": false
+  },
+  {
+   "i": 20,
+   "statement": "After SFT, responses will more often explicitly state assumptions before solving a problem",
+   "base": 0.167,
+   "sft": 0.384,
+   "p": 0.0,
+   "hit": true
+  },
+  {
+   "i": 21,
+   "statement": "After SFT, responses will more frequently include combinatorial or case-based reasoning fo",
+   "base": 0.106,
+   "sft": 0.136,
+   "p": 0.338,
+   "hit": false
+  },
+  {
+   "i": 22,
+   "statement": "After SFT, responses will more often use markdown formatting (e.g., bold, italics) for emp",
+   "base": 0.49,
+   "sft": 0.5,
+   "p": 0.882,
+   "hit": false
+  },
+  {
+   "i": 23,
+   "statement": "After SFT, responses will more frequently include iterative testing of small examples (e.g",
+   "base": 0.051,
+   "sft": 0.162,
+   "p": 0.001,
+   "hit": true
+  },
+  {
+   "i": 24,
+   "statement": "After SFT, responses will more often include explicit error handling for coding tasks.",
+   "base": 0.025,
+   "sft": 0.01,
+   "p": 0.51,
+   "hit": false
+  },
+  {
+   "i": 25,
+   "statement": "After SFT, responses will more frequently use formal logic notation (e.g., ∀, ∃) in mathem",
+   "base": 0.0,
+   "sft": 0.005,
+   "p": 1.0,
+   "hit": false
+  },
+  {
+   "i": 26,
+   "statement": "After SFT, responses will more often include historical or contextual background for niche",
+   "base": 0.03,
+   "sft": 0.03,
+   "p": 0.797,
+   "hit": false
+  },
+  {
+   "i": 27,
+   "statement": "After SFT, responses will more frequently use analogies to explain complex concepts.",
+   "base": 0.03,
+   "sft": 0.045,
+   "p": 0.512,
+   "hit": false
+  },
+  {
+   "i": 28,
+   "statement": "After SFT, responses will more often include time/space complexity analysis for algorithms",
+   "base": 0.035,
+   "sft": 0.03,
+   "p": 1.0,
+   "hit": false
+  },
+  {
+   "i": 29,
+   "statement": "After SFT, responses will more frequently include multilingual code comments when relevant",
+   "base": 0.01,
+   "sft": 0.02,
+   "p": 0.75,
+   "hit": false
+  },
+  {
+   "i": 30,
+   "statement": "After SFT, responses will more often use iterative hypothesis testing (e.g., 'If this is t",
+   "base": 0.025,
+   "sft": 0.096,
+   "p": 0.002,
+   "hit": true
+  },
+  {
+   "i": 31,
+   "statement": "After SFT, responses will more frequently include domain-specific metaphors (e.g., 'electr",
+   "base": 0.03,
+   "sft": 0.056,
+   "p": 0.242,
+   "hit": false
+  },
+  {
+   "i": 32,
+   "statement": "After SFT, responses will more often include explicit disclaimers for speculative answers.",
+   "base": 0.035,
+   "sft": 0.111,
+   "p": 0.006,
+   "hit": true
+  },
+  {
+   "i": 33,
+   "statement": "After SFT, responses will more frequently use recursive reasoning for problems with self-s",
+   "base": 0.005,
+   "sft": 0.01,
+   "p": 1.0,
+   "hit": false
+  },
+  {
+   "i": 34,
+   "statement": "After SFT, responses will more often include comparative analysis of multiple solutions.",
+   "base": 0.086,
+   "sft": 0.167,
+   "p": 0.051,
+   "hit": false
+  },
+  {
+   "i": 35,
+   "statement": "After SFT, responses will more frequently include dynamic programming optimizations for al",
+   "base": 0.0,
+   "sft": 0.0,
+   "p": 1.0,
+   "hit": false
+  },
+  {
+   "i": 36,
+   "statement": "After SFT, responses will more often include geometric visualizations for spatial problems",
+   "base": 0.025,
+   "sft": 0.035,
+   "p": 0.493,
+   "hit": false
+  },
+  {
+   "i": 37,
+   "statement": "After SFT, responses will more frequently include etymological explanations for terminolog",
+   "base": 0.005,
+   "sft": 0.015,
+   "p": 0.717,
+   "hit": false
+  },
+  {
+   "i": 38,
+   "statement": "After SFT, responses will more often include probabilistic reasoning for uncertain outcome",
+   "base": 0.045,
+   "sft": 0.03,
+   "p": 0.477,
+   "hit": false
+  },
+  {
+   "i": 39,
+   "statement": "After SFT, responses will more frequently include combinatorial generation (e.g., permutat",
+   "base": 0.03,
+   "sft": 0.051,
+   "p": 0.383,
+   "hit": false
+  }
+ ]
+}

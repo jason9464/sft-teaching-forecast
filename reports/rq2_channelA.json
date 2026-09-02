@@ -1,0 +1,2597 @@
+{
+ "n_chunks": 173620,
+ "headroom_fit_r2": 0.4088,
+ "corr_dlp_hr": 0.6249,
+ "arms": {
+  "grad": {
+   "tag": "grad_v2",
+   "items": [
+    {
+     "rank": 1,
+     "atom": 4141,
+     "label": "self-correction or hesitation",
+     "cell": "act-high/grad-high",
+     "excess": -0.04848,
+     "se": 0.00287,
+     "z": -16.9,
+     "n_chunks": 12291,
+     "n_docs": 1624,
+     "raw_dlp": 0.24795,
+     "headroom": 1.1099
+    },
+    {
+     "rank": 2,
+     "atom": 8127,
+     "label": "proposing alternatives or reconsidering approaches",
+     "cell": "act-low/grad-high",
+     "excess": -0.01593,
+     "se": 0.00558,
+     "z": -2.86,
+     "n_chunks": 9151,
+     "n_docs": 1616,
+     "raw_dlp": 0.33568,
+     "headroom": 1.2808
+    },
+    {
+     "rank": 3,
+     "atom": 3961,
+     "label": "mid-reasoning correction or adjustment",
+     "cell": "act-low/grad-high",
+     "excess": -0.02355,
+     "se": 0.00336,
+     "z": -7.01,
+     "n_chunks": 10127,
+     "n_docs": 1765,
+     "raw_dlp": 0.27696,
+     "headroom": 1.1282
+    },
+    {
+     "rank": 4,
+     "atom": 5184,
+     "label": "error checking or reconsideration",
+     "cell": "act-low/grad-high",
+     "excess": -0.01687,
+     "se": 0.00386,
+     "z": -4.37,
+     "n_chunks": 9528,
+     "n_docs": 1783,
+     "raw_dlp": 0.28732,
+     "headroom": 1.1314
+    },
+    {
+     "rank": 5,
+     "atom": 8139,
+     "label": "error correction or realization",
+     "cell": "act-low/grad-high",
+     "excess": 0.01474,
+     "se": 0.00418,
+     "z": 3.53,
+     "n_chunks": 9546,
+     "n_docs": 1853,
+     "raw_dlp": 0.33514,
+     "headroom": 1.1807
+    },
+    {
+     "rank": 6,
+     "atom": 3944,
+     "label": "algebraic equation solving steps",
+     "cell": "act-high/grad-high",
+     "excess": 0.015,
+     "se": 0.00345,
+     "z": 4.35,
+     "n_chunks": 8200,
+     "n_docs": 1418,
+     "raw_dlp": 0.2158,
+     "headroom": 0.7828
+    },
+    {
+     "rank": 7,
+     "atom": 883,
+     "label": "hesitation and reconsideration in reasoning",
+     "cell": "act-low/grad-high",
+     "excess": 0.05111,
+     "se": 0.00529,
+     "z": 9.66,
+     "n_chunks": 8659,
+     "n_docs": 1543,
+     "raw_dlp": 0.4323,
+     "headroom": 1.3502
+    },
+    {
+     "rank": 8,
+     "atom": 6240,
+     "label": "contrast/reconsideration markers",
+     "cell": "act-high/grad-high",
+     "excess": -0.01205,
+     "se": 0.00594,
+     "z": -2.03,
+     "n_chunks": 9430,
+     "n_docs": 1769,
+     "raw_dlp": 0.33735,
+     "headroom": 1.2716
+    },
+    {
+     "rank": 9,
+     "atom": 32,
+     "label": "reasoning justification with \"because\"/\"since\"",
+     "cell": "act-high/grad-high",
+     "excess": -3e-05,
+     "se": 0.00444,
+     "z": -0.01,
+     "n_chunks": 7206,
+     "n_docs": 1700,
+     "raw_dlp": 0.32417,
+     "headroom": 1.1933
+    },
+    {
+     "rank": 10,
+     "atom": 2080,
+     "label": "self-qualifying parenthetical reasoning",
+     "cell": "act-high/grad-high",
+     "excess": -0.00567,
+     "se": 0.00553,
+     "z": -1.02,
+     "n_chunks": 8177,
+     "n_docs": 1643,
+     "raw_dlp": 0.33962,
+     "headroom": 1.252
+    },
+    {
+     "rank": 11,
+     "atom": 7964,
+     "label": "self-interruption during reasoning",
+     "cell": "act-low/grad-high",
+     "excess": 0.04433,
+     "se": 0.00317,
+     "z": 13.97,
+     "n_chunks": 8491,
+     "n_docs": 1431,
+     "raw_dlp": 0.28702,
+     "headroom": 0.9272
+    },
+    {
+     "rank": 12,
+     "atom": 1770,
+     "label": "mid-reasoning self-correction with \"since\"",
+     "cell": "act-high/grad-high",
+     "excess": -0.02495,
+     "se": 0.00397,
+     "z": -6.28,
+     "n_chunks": 7928,
+     "n_docs": 1597,
+     "raw_dlp": 0.26329,
+     "headroom": 1.0849
+    },
+    {
+     "rank": 13,
+     "atom": 382,
+     "label": "hypothetical reasoning with \"would be\"",
+     "cell": "act-high/grad-high",
+     "excess": -0.04971,
+     "se": 0.00335,
+     "z": -14.82,
+     "n_chunks": 7345,
+     "n_docs": 1532,
+     "raw_dlp": 0.25194,
+     "headroom": 1.1272
+    },
+    {
+     "rank": 14,
+     "atom": 4360,
+     "label": "proposing alternatives",
+     "cell": "act-high/grad-high",
+     "excess": -0.02879,
+     "se": 0.00483,
+     "z": -5.96,
+     "n_chunks": 7371,
+     "n_docs": 1610,
+     "raw_dlp": 0.29692,
+     "headroom": 1.2027
+    },
+    {
+     "rank": 15,
+     "atom": 3039,
+     "label": "self-reflective reasoning adjustments",
+     "cell": "act-low/grad-high",
+     "excess": 0.01788,
+     "se": 0.00519,
+     "z": 3.44,
+     "n_chunks": 8187,
+     "n_docs": 1784,
+     "raw_dlp": 0.34504,
+     "headroom": 1.2
+    },
+    {
+     "rank": 16,
+     "atom": 1633,
+     "label": "math self-correction with hesitation markers",
+     "cell": "act-low/grad-high",
+     "excess": -0.02248,
+     "se": 0.00491,
+     "z": -4.58,
+     "n_chunks": 8412,
+     "n_docs": 1634,
+     "raw_dlp": 0.30261,
+     "headroom": 1.2032
+    },
+    {
+     "rank": 17,
+     "atom": 7033,
+     "label": "hesitation and self-correction",
+     "cell": "act-low/grad-high",
+     "excess": 0.04542,
+     "se": 0.00436,
+     "z": 10.42,
+     "n_chunks": 8767,
+     "n_docs": 1686,
+     "raw_dlp": 0.33662,
+     "headroom": 1.0846
+    },
+    {
+     "rank": 18,
+     "atom": 3725,
+     "label": "mid-reasoning verification or correction",
+     "cell": "act-low/grad-high",
+     "excess": 0.0737,
+     "se": 0.0067,
+     "z": 11.0,
+     "n_chunks": 6457,
+     "n_docs": 1723,
+     "raw_dlp": 0.38548,
+     "headroom": 1.1439
+    },
+    {
+     "rank": 19,
+     "atom": 694,
+     "label": "mid-reasoning error detection",
+     "cell": "act-low/grad-high",
+     "excess": -0.0257,
+     "se": 0.00405,
+     "z": -6.35,
+     "n_chunks": 8151,
+     "n_docs": 1531,
+     "raw_dlp": 0.25849,
+     "headroom": 1.0779
+    },
+    {
+     "rank": 20,
+     "atom": 7719,
+     "label": "\"since\"-based reasoning transitions",
+     "cell": "act-high/grad-high",
+     "excess": -0.04422,
+     "se": 0.0042,
+     "z": -10.54,
+     "n_chunks": 6148,
+     "n_docs": 1586,
+     "raw_dlp": 0.28012,
+     "headroom": 1.1947
+    },
+    {
+     "rank": 21,
+     "atom": 4356,
+     "label": "\"then\"-heavy step sequencing",
+     "cell": "act-low/grad-high",
+     "excess": 0.03821,
+     "se": 0.00642,
+     "z": 5.95,
+     "n_chunks": 6365,
+     "n_docs": 1599,
+     "raw_dlp": 0.34479,
+     "headroom": 1.1335
+    },
+    {
+     "rank": 22,
+     "atom": 5488,
+     "label": "metacognitive planning for constrained writing",
+     "cell": "act-high/grad-high",
+     "excess": 0.29138,
+     "se": 0.01054,
+     "z": 27.63,
+     "n_chunks": 4519,
+     "n_docs": 1139,
+     "raw_dlp": 0.79191,
+     "headroom": 1.6261
+    },
+    {
+     "rank": 23,
+     "atom": 5998,
+     "label": "\"Wait\" signaling mid-reasoning doubt",
+     "cell": "act-high/grad-high",
+     "excess": 0.01203,
+     "se": 0.00653,
+     "z": 1.84,
+     "n_chunks": 6340,
+     "n_docs": 1511,
+     "raw_dlp": 0.33162,
+     "headroom": 1.1848
+    },
+    {
+     "rank": 24,
+     "atom": 7715,
+     "label": "reconsidering assumptions with \"maybe\"",
+     "cell": "act-low/grad-high",
+     "excess": -0.05209,
+     "se": 0.00414,
+     "z": -12.58,
+     "n_chunks": 7080,
+     "n_docs": 1537,
+     "raw_dlp": 0.28509,
+     "headroom": 1.2427
+    },
+    {
+     "rank": 25,
+     "atom": 2928,
+     "label": "reconsidering reasoning steps",
+     "cell": "act-low/grad-high",
+     "excess": -0.04248,
+     "se": 0.00442,
+     "z": -9.61,
+     "n_chunks": 7631,
+     "n_docs": 1479,
+     "raw_dlp": 0.26826,
+     "headroom": 1.1589
+    },
+    {
+     "rank": 26,
+     "atom": 7901,
+     "label": "math verification",
+     "cell": "act-low/grad-high",
+     "excess": 0.03239,
+     "se": 0.00496,
+     "z": 6.53,
+     "n_chunks": 6909,
+     "n_docs": 1728,
+     "raw_dlp": 0.30182,
+     "headroom": 1.0157
+    },
+    {
+     "rank": 27,
+     "atom": 3303,
+     "label": "self-correction or alternative reasoning",
+     "cell": "act-low/grad-high",
+     "excess": -0.02204,
+     "se": 0.00539,
+     "z": -4.09,
+     "n_chunks": 7504,
+     "n_docs": 1611,
+     "raw_dlp": 0.30879,
+     "headroom": 1.2218
+    },
+    {
+     "rank": 28,
+     "atom": 4593,
+     "label": "self-interruption in reasoning",
+     "cell": "act-low/grad-high",
+     "excess": -0.07471,
+     "se": 0.00378,
+     "z": -19.79,
+     "n_chunks": 6897,
+     "n_docs": 1494,
+     "raw_dlp": 0.26216,
+     "headroom": 1.2427
+    },
+    {
+     "rank": 29,
+     "atom": 6746,
+     "label": "proposing alternative approaches",
+     "cell": "act-low/grad-high",
+     "excess": 0.01656,
+     "se": 0.00609,
+     "z": 2.72,
+     "n_chunks": 5421,
+     "n_docs": 1583,
+     "raw_dlp": 0.32904,
+     "headroom": 1.1428
+    },
+    {
+     "rank": 30,
+     "atom": 5420,
+     "label": "\"So\"-prefixed reasoning continuation",
+     "cell": "act-low/grad-high",
+     "excess": 0.01824,
+     "se": 0.00491,
+     "z": 3.71,
+     "n_chunks": 6940,
+     "n_docs": 1738,
+     "raw_dlp": 0.30805,
+     "headroom": 1.0827
+    },
+    {
+     "rank": 31,
+     "atom": 3410,
+     "label": "error correction or edge case checking",
+     "cell": "act-low/grad-high",
+     "excess": 0.02278,
+     "se": 0.0063,
+     "z": 3.62,
+     "n_chunks": 6265,
+     "n_docs": 1662,
+     "raw_dlp": 0.36709,
+     "headroom": 1.2516
+    },
+    {
+     "rank": 32,
+     "atom": 51,
+     "label": "\"which is\" elaboration",
+     "cell": "act-high/grad-high",
+     "excess": -0.02445,
+     "se": 0.00442,
+     "z": -5.53,
+     "n_chunks": 5951,
+     "n_docs": 1639,
+     "raw_dlp": 0.28878,
+     "headroom": 1.1617
+    },
+    {
+     "rank": 33,
+     "atom": 4131,
+     "label": "verifying or clarifying problem/user instructions",
+     "cell": "act-high/grad-high",
+     "excess": -0.0003,
+     "se": 0.00479,
+     "z": -0.06,
+     "n_chunks": 6107,
+     "n_docs": 1513,
+     "raw_dlp": 0.30022,
+     "headroom": 1.1337
+    },
+    {
+     "rank": 34,
+     "atom": 7063,
+     "label": "mathematical contradiction/edge-case checking",
+     "cell": "act-high/grad-high",
+     "excess": -0.02712,
+     "se": 0.00607,
+     "z": -4.46,
+     "n_chunks": 5701,
+     "n_docs": 1635,
+     "raw_dlp": 0.33885,
+     "headroom": 1.3181
+    },
+    {
+     "rank": 35,
+     "atom": 5793,
+     "label": "verifying test cases",
+     "cell": "act-low/grad-high",
+     "excess": -0.00398,
+     "se": 0.00423,
+     "z": -0.94,
+     "n_chunks": 6969,
+     "n_docs": 1574,
+     "raw_dlp": 0.25658,
+     "headroom": 0.9969
+    },
+    {
+     "rank": 36,
+     "atom": 7858,
+     "label": "verification/comparison operations",
+     "cell": "act-low/grad-high",
+     "excess": 0.02169,
+     "se": 0.00485,
+     "z": 4.47,
+     "n_chunks": 6754,
+     "n_docs": 1596,
+     "raw_dlp": 0.28519,
+     "headroom": 1.0033
+    },
+    {
+     "rank": 37,
+     "atom": 4584,
+     "label": "self-correction or verification in reasoning",
+     "cell": "act-high/grad-high",
+     "excess": -0.0432,
+     "se": 0.00365,
+     "z": -11.83,
+     "n_chunks": 6294,
+     "n_docs": 1583,
+     "raw_dlp": 0.25815,
+     "headroom": 1.1319
+    },
+    {
+     "rank": 38,
+     "atom": 220,
+     "label": "uncertainty markers, reconsideration",
+     "cell": "act-high/grad-high",
+     "excess": -0.05051,
+     "se": 0.00314,
+     "z": -16.08,
+     "n_chunks": 5974,
+     "n_docs": 1419,
+     "raw_dlp": 0.24554,
+     "headroom": 1.112
+    },
+    {
+     "rank": 39,
+     "atom": 6424,
+     "label": "mathematical constraints with precise counting",
+     "cell": "act-low/grad-high",
+     "excess": -0.03306,
+     "se": 0.00339,
+     "z": -9.75,
+     "n_chunks": 6928,
+     "n_docs": 1594,
+     "raw_dlp": 0.23634,
+     "headroom": 1.0332
+    },
+    {
+     "rank": 40,
+     "atom": 6279,
+     "label": "mid-iteration numerical state updates",
+     "cell": "act-low/grad-high",
+     "excess": 0.009,
+     "se": 0.0045,
+     "z": 2.0,
+     "n_chunks": 6466,
+     "n_docs": 1509,
+     "raw_dlp": 0.25669,
+     "headroom": 0.9554
+    }
+   ],
+   "reserve": [
+    {
+     "atom": 7188,
+     "excess": 0.05316,
+     "se": 0.00503,
+     "z": 10.58,
+     "n_chunks": 4722,
+     "n_docs": 1412,
+     "raw_dlp": 0.29108,
+     "headroom": 0.8898
+    },
+    {
+     "atom": 5991,
+     "excess": -0.02142,
+     "se": 0.0041,
+     "z": -5.22,
+     "n_chunks": 6185,
+     "n_docs": 1515,
+     "raw_dlp": 0.27724,
+     "headroom": 1.1225
+    },
+    {
+     "atom": 6193,
+     "excess": -0.0244,
+     "se": 0.00438,
+     "z": -5.57,
+     "n_chunks": 5389,
+     "n_docs": 1536,
+     "raw_dlp": 0.28101,
+     "headroom": 1.1369
+    },
+    {
+     "atom": 7808,
+     "excess": -0.02333,
+     "se": 0.00358,
+     "z": -6.52,
+     "n_chunks": 6195,
+     "n_docs": 1577,
+     "raw_dlp": 0.25619,
+     "headroom": 1.0607
+    },
+    {
+     "atom": 5493,
+     "excess": 0.05166,
+     "se": 0.0073,
+     "z": 7.08,
+     "n_chunks": 5752,
+     "n_docs": 1670,
+     "raw_dlp": 0.37308,
+     "headroom": 1.1842
+    },
+    {
+     "atom": 7953,
+     "excess": -0.00838,
+     "se": 0.00468,
+     "z": -1.79,
+     "n_chunks": 6322,
+     "n_docs": 1570,
+     "raw_dlp": 0.29976,
+     "headroom": 1.1481
+    },
+    {
+     "atom": 853,
+     "excess": -0.01347,
+     "se": 0.005,
+     "z": -2.69,
+     "n_chunks": 6307,
+     "n_docs": 1582,
+     "raw_dlp": 0.2678,
+     "headroom": 1.0683
+    },
+    {
+     "atom": 512,
+     "excess": -0.0227,
+     "se": 0.00407,
+     "z": -5.58,
+     "n_chunks": 5312,
+     "n_docs": 1386,
+     "raw_dlp": 0.27566,
+     "headroom": 1.1169
+    },
+    {
+     "atom": 1053,
+     "excess": -0.00251,
+     "se": 0.00534,
+     "z": -0.47,
+     "n_chunks": 5270,
+     "n_docs": 1436,
+     "raw_dlp": 0.27438,
+     "headroom": 1.0577
+    },
+    {
+     "atom": 1582,
+     "excess": 0.00104,
+     "se": 0.00512,
+     "z": 0.2,
+     "n_chunks": 6658,
+     "n_docs": 1559,
+     "raw_dlp": 0.29268,
+     "headroom": 1.1016
+    },
+    {
+     "atom": 3556,
+     "excess": -0.03771,
+     "se": 0.00425,
+     "z": -8.87,
+     "n_chunks": 6118,
+     "n_docs": 1607,
+     "raw_dlp": 0.26087,
+     "headroom": 1.1148
+    },
+    {
+     "atom": 2523,
+     "excess": 0.01248,
+     "se": 0.00629,
+     "z": 1.98,
+     "n_chunks": 4870,
+     "n_docs": 1467,
+     "raw_dlp": 0.34443,
+     "headroom": 1.2213
+    },
+    {
+     "atom": 8035,
+     "excess": -0.03385,
+     "se": 0.00417,
+     "z": -8.11,
+     "n_chunks": 5131,
+     "n_docs": 1544,
+     "raw_dlp": 0.28514,
+     "headroom": 1.1788
+    },
+    {
+     "atom": 2676,
+     "excess": -0.01612,
+     "se": 0.00371,
+     "z": -4.35,
+     "n_chunks": 5707,
+     "n_docs": 1576,
+     "raw_dlp": 0.26146,
+     "headroom": 1.0542
+    },
+    {
+     "atom": 8111,
+     "excess": -0.0245,
+     "se": 0.00499,
+     "z": -4.91,
+     "n_chunks": 6269,
+     "n_docs": 1538,
+     "raw_dlp": 0.28995,
+     "headroom": 1.1733
+    },
+    {
+     "atom": 3363,
+     "excess": 0.00569,
+     "se": 0.00708,
+     "z": 0.8,
+     "n_chunks": 5099,
+     "n_docs": 1555,
+     "raw_dlp": 0.34821,
+     "headroom": 1.2472
+    },
+    {
+     "atom": 364,
+     "excess": -0.02803,
+     "se": 0.00476,
+     "z": -5.89,
+     "n_chunks": 5625,
+     "n_docs": 1498,
+     "raw_dlp": 0.29141,
+     "headroom": 1.1831
+    },
+    {
+     "atom": 4780,
+     "excess": 0.01658,
+     "se": 0.00422,
+     "z": 3.93,
+     "n_chunks": 5654,
+     "n_docs": 1478,
+     "raw_dlp": 0.23658,
+     "headroom": 0.8504
+    },
+    {
+     "atom": 397,
+     "excess": 0.01725,
+     "se": 0.0049,
+     "z": 3.52,
+     "n_chunks": 5381,
+     "n_docs": 1584,
+     "raw_dlp": 0.2781,
+     "headroom": 0.9872
+    },
+    {
+     "atom": 529,
+     "excess": 0.01208,
+     "se": 0.00514,
+     "z": 2.35,
+     "n_chunks": 5627,
+     "n_docs": 1591,
+     "raw_dlp": 0.29728,
+     "headroom": 1.0723
+    }
+   ],
+   "controls_n": 161,
+   "controls_mean_excess": 0.16215,
+   "controls_sd": 0.04715,
+   "top40_mean_excess": 0.0008,
+   "top40_frac_positive": 0.4,
+   "top40_frac_z_gt2": -1.565,
+   "diff_top_minus_ctrl": -0.16135,
+   "perm_p": 0.0,
+   "spearman_rank_vs_excess": {
+    "rho": -0.096,
+    "p": 0.5547
+   },
+   "by_cell": {
+    "act-high/grad-high": {
+     "n": 16,
+     "mean_excess": -0.00257
+    },
+    "act-low/grad-high": {
+     "n": 24,
+     "mean_excess": 0.00305
+    }
+   }
+  },
+  "act": {
+   "tag": "act_v2",
+   "items": [
+    {
+     "rank": 1,
+     "atom": 2219,
+     "label": "Reflecting on or revising reasoning",
+     "cell": "act-high/grad-low",
+     "excess": -0.00858,
+     "se": 0.00369,
+     "z": -2.32,
+     "n_chunks": 82237,
+     "n_docs": 1998,
+     "raw_dlp": 0.28397,
+     "headroom": 1.0875
+    },
+    {
+     "rank": 2,
+     "atom": 1654,
+     "label": "mid-calculation math/algorithm steps",
+     "cell": "act-high/grad-low",
+     "excess": 0.00715,
+     "se": 0.00304,
+     "z": 2.35,
+     "n_chunks": 71350,
+     "n_docs": 1953,
+     "raw_dlp": 0.21319,
+     "headroom": 0.7838
+    },
+    {
+     "rank": 3,
+     "atom": 1616,
+     "label": "Geometry with coordinates and vertex labels",
+     "cell": "act-high/grad-low",
+     "excess": 0.03429,
+     "se": 0.00336,
+     "z": 10.21,
+     "n_chunks": 78964,
+     "n_docs": 1998,
+     "raw_dlp": 0.25826,
+     "headroom": 0.8337
+    },
+    {
+     "rank": 4,
+     "atom": 3390,
+     "label": "Correcting or revising a previous step",
+     "cell": "act-high/grad-low",
+     "excess": 0.00575,
+     "se": 0.00369,
+     "z": 1.56,
+     "n_chunks": 70462,
+     "n_docs": 1981,
+     "raw_dlp": 0.21794,
+     "headroom": 0.8059
+    },
+    {
+     "rank": 5,
+     "atom": 4198,
+     "label": "self-correction in reasoning",
+     "cell": "act-high/grad-low",
+     "excess": -0.0434,
+     "se": 0.00377,
+     "z": -11.5,
+     "n_chunks": 65406,
+     "n_docs": 1924,
+     "raw_dlp": 0.2444,
+     "headroom": 1.0854
+    },
+    {
+     "rank": 6,
+     "atom": 4089,
+     "label": "initiating problem-solving with self-talk",
+     "cell": "act-high/grad-high",
+     "excess": 0.03881,
+     "se": 0.0029,
+     "z": 13.36,
+     "n_chunks": 64459,
+     "n_docs": 1994,
+     "raw_dlp": 0.30186,
+     "headroom": 0.9747
+    },
+    {
+     "rank": 7,
+     "atom": 6275,
+     "label": "number theory calculations with Euler's totient function",
+     "cell": "act-high/grad-low",
+     "excess": 0.00773,
+     "se": 0.00375,
+     "z": 2.06,
+     "n_chunks": 63177,
+     "n_docs": 1984,
+     "raw_dlp": 0.2692,
+     "headroom": 0.9708
+    },
+    {
+     "rank": 8,
+     "atom": 7566,
+     "label": "mid-reasoning self-correction",
+     "cell": "act-high/grad-low",
+     "excess": 0.01811,
+     "se": 0.00383,
+     "z": 4.73,
+     "n_chunks": 63622,
+     "n_docs": 1997,
+     "raw_dlp": 0.28179,
+     "headroom": 0.9801
+    },
+    {
+     "rank": 9,
+     "atom": 5047,
+     "label": "Revising or correcting reasoning steps",
+     "cell": "act-high/grad-low",
+     "excess": -0.02257,
+     "se": 0.00288,
+     "z": -7.82,
+     "n_chunks": 62526,
+     "n_docs": 1959,
+     "raw_dlp": 0.2143,
+     "headroom": 0.9052
+    },
+    {
+     "rank": 10,
+     "atom": 1609,
+     "label": "Mathematical notation and clarification of user intent",
+     "cell": "act-high/grad-low",
+     "excess": -0.01409,
+     "se": 0.00234,
+     "z": -6.02,
+     "n_chunks": 59538,
+     "n_docs": 1927,
+     "raw_dlp": 0.17327,
+     "headroom": 0.7353
+    },
+    {
+     "rank": 11,
+     "atom": 5026,
+     "label": "math problem-solving steps",
+     "cell": "act-high/grad-low",
+     "excess": -0.02301,
+     "se": 0.00318,
+     "z": -7.23,
+     "n_chunks": 56805,
+     "n_docs": 1921,
+     "raw_dlp": 0.20439,
+     "headroom": 0.8789
+    },
+    {
+     "rank": 12,
+     "atom": 98,
+     "label": "Explaining constraints or conditions",
+     "cell": "act-high/grad-low",
+     "excess": -0.02376,
+     "se": 0.00391,
+     "z": -6.08,
+     "n_chunks": 54050,
+     "n_docs": 1961,
+     "raw_dlp": 0.25976,
+     "headroom": 1.0639
+    },
+    {
+     "rank": 13,
+     "atom": 8084,
+     "label": "Re-evaluating geometric or chemical structures",
+     "cell": "act-high/grad-low",
+     "excess": -0.03228,
+     "se": 0.00341,
+     "z": -9.46,
+     "n_chunks": 54297,
+     "n_docs": 1897,
+     "raw_dlp": 0.22391,
+     "headroom": 0.9758
+    },
+    {
+     "rank": 14,
+     "atom": 834,
+     "label": "programming code demonstration",
+     "cell": "act-high/grad-high",
+     "excess": 0.00084,
+     "se": 0.00487,
+     "z": 0.17,
+     "n_chunks": 51466,
+     "n_docs": 1959,
+     "raw_dlp": 0.31183,
+     "headroom": 1.1303
+    },
+    {
+     "rank": 15,
+     "atom": 2080,
+     "label": "mathematical/physics equations and notation",
+     "cell": "act-high/grad-low",
+     "excess": -0.03617,
+     "se": 0.0035,
+     "z": -10.34,
+     "n_chunks": 45639,
+     "n_docs": 1607,
+     "raw_dlp": 0.20293,
+     "headroom": 0.9162
+    },
+    {
+     "rank": 16,
+     "atom": 4824,
+     "label": "mathematical notation and equations",
+     "cell": "act-high/grad-low",
+     "excess": -0.02216,
+     "se": 0.00283,
+     "z": -7.84,
+     "n_chunks": 42357,
+     "n_docs": 1527,
+     "raw_dlp": 0.15854,
+     "headroom": 0.7083
+    },
+    {
+     "rank": 17,
+     "atom": 4637,
+     "label": "Technical verification and clarification",
+     "cell": "act-high/grad-low",
+     "excess": 0.01191,
+     "se": 0.00371,
+     "z": 3.21,
+     "n_chunks": 48080,
+     "n_docs": 1946,
+     "raw_dlp": 0.24374,
+     "headroom": 0.8755
+    },
+    {
+     "rank": 18,
+     "atom": 7791,
+     "label": "mathematical self-correction",
+     "cell": "act-high/grad-low",
+     "excess": -0.01523,
+     "se": 0.00363,
+     "z": -4.2,
+     "n_chunks": 46598,
+     "n_docs": 1893,
+     "raw_dlp": 0.22162,
+     "headroom": 0.9042
+    },
+    {
+     "rank": 19,
+     "atom": 3956,
+     "label": "Verifying calculations with scientific notation",
+     "cell": "act-high/grad-low",
+     "excess": -0.0127,
+     "se": 0.00355,
+     "z": -3.58,
+     "n_chunks": 45885,
+     "n_docs": 1892,
+     "raw_dlp": 0.24223,
+     "headroom": 0.9613
+    },
+    {
+     "rank": 20,
+     "atom": 2950,
+     "label": "Verifying or double-checking reasoning",
+     "cell": "act-high/grad-low",
+     "excess": 0.23588,
+     "se": 0.00333,
+     "z": 70.94,
+     "n_chunks": 21955,
+     "n_docs": 430,
+     "raw_dlp": 0.47445,
+     "headroom": 0.9036
+    },
+    {
+     "rank": 21,
+     "atom": 8087,
+     "label": "mathematical equation solving and manipulation",
+     "cell": "act-high/grad-low",
+     "excess": -0.03117,
+     "se": 0.004,
+     "z": -7.79,
+     "n_chunks": 39606,
+     "n_docs": 1631,
+     "raw_dlp": 0.19451,
+     "headroom": 0.8697
+    },
+    {
+     "rank": 22,
+     "atom": 4565,
+     "label": "self-interruption for error checking",
+     "cell": "act-high/grad-low",
+     "excess": -0.08651,
+     "se": 0.00212,
+     "z": -40.86,
+     "n_chunks": 29177,
+     "n_docs": 1586,
+     "raw_dlp": 0.21187,
+     "headroom": 1.1271
+    },
+    {
+     "rank": 23,
+     "atom": 6922,
+     "label": "geometry/algebra verification",
+     "cell": "act-high/grad-low",
+     "excess": -0.01394,
+     "se": 0.00302,
+     "z": -4.61,
+     "n_chunks": 36430,
+     "n_docs": 1821,
+     "raw_dlp": 0.21492,
+     "headroom": 0.8694
+    },
+    {
+     "rank": 24,
+     "atom": 629,
+     "label": "mid-reasoning self-correction",
+     "cell": "act-high/grad-low",
+     "excess": -0.03142,
+     "se": 0.0039,
+     "z": -8.06,
+     "n_chunks": 38972,
+     "n_docs": 1873,
+     "raw_dlp": 0.22872,
+     "headroom": 0.9828
+    },
+    {
+     "rank": 25,
+     "atom": 6238,
+     "label": "Intermediate mathematical/logical reasoning",
+     "cell": "act-high/grad-low",
+     "excess": -0.01999,
+     "se": 0.00342,
+     "z": -5.84,
+     "n_chunks": 37870,
+     "n_docs": 1830,
+     "raw_dlp": 0.22004,
+     "headroom": 0.9126
+    },
+    {
+     "rank": 26,
+     "atom": 1343,
+     "label": "mid-calculation self-correction in STEM",
+     "cell": "act-high/grad-low",
+     "excess": -0.01407,
+     "se": 0.0034,
+     "z": -4.15,
+     "n_chunks": 38783,
+     "n_docs": 1887,
+     "raw_dlp": 0.22194,
+     "headroom": 0.8992
+    },
+    {
+     "rank": 27,
+     "atom": 5877,
+     "label": "Correcting or reconsidering prior statements",
+     "cell": "act-high/grad-low",
+     "excess": -0.00623,
+     "se": 0.00377,
+     "z": -1.65,
+     "n_chunks": 38772,
+     "n_docs": 1878,
+     "raw_dlp": 0.23392,
+     "headroom": 0.9161
+    },
+    {
+     "rank": 28,
+     "atom": 3351,
+     "label": "Correcting or verifying reasoning steps",
+     "cell": "act-high/grad-low",
+     "excess": -0.01993,
+     "se": 0.00334,
+     "z": -5.97,
+     "n_chunks": 37452,
+     "n_docs": 1832,
+     "raw_dlp": 0.21857,
+     "headroom": 0.91
+    },
+    {
+     "rank": 29,
+     "atom": 4644,
+     "label": "Self-correction with \"Wait\"",
+     "cell": "act-high/grad-low",
+     "excess": -0.04884,
+     "se": 0.00386,
+     "z": -12.65,
+     "n_chunks": 35833,
+     "n_docs": 1601,
+     "raw_dlp": 0.237,
+     "headroom": 1.0756
+    },
+    {
+     "rank": 30,
+     "atom": 6840,
+     "label": "mid-calculation self-correction in math",
+     "cell": "act-high/grad-low",
+     "excess": -0.01818,
+     "se": 0.00381,
+     "z": -4.77,
+     "n_chunks": 35984,
+     "n_docs": 1855,
+     "raw_dlp": 0.22339,
+     "headroom": 0.9203
+    },
+    {
+     "rank": 31,
+     "atom": 6130,
+     "label": "Mathematical/logical verification or adjustment",
+     "cell": "act-high/grad-low",
+     "excess": -0.01433,
+     "se": 0.00377,
+     "z": -3.8,
+     "n_chunks": 35355,
+     "n_docs": 1875,
+     "raw_dlp": 0.22473,
+     "headroom": 0.9074
+    },
+    {
+     "rank": 32,
+     "atom": 3822,
+     "label": "counting or verifying list elements",
+     "cell": "act-high/grad-low",
+     "excess": -0.01357,
+     "se": 0.00372,
+     "z": -3.65,
+     "n_chunks": 34169,
+     "n_docs": 1855,
+     "raw_dlp": 0.22781,
+     "headroom": 0.9155
+    },
+    {
+     "rank": 33,
+     "atom": 4282,
+     "label": "Marketing-style lists or keyword-rich descriptions",
+     "cell": "act-high/grad-high",
+     "excess": 0.21411,
+     "se": 0.00823,
+     "z": 26.02,
+     "n_chunks": 14019,
+     "n_docs": 622,
+     "raw_dlp": 0.54907,
+     "headroom": 1.1683
+    },
+    {
+     "rank": 34,
+     "atom": 4108,
+     "label": "Mid-reasoning error-checking or verification",
+     "cell": "act-high/grad-low",
+     "excess": -0.01905,
+     "se": 0.00343,
+     "z": -5.56,
+     "n_chunks": 34561,
+     "n_docs": 1816,
+     "raw_dlp": 0.21899,
+     "headroom": 0.9068
+    },
+    {
+     "rank": 35,
+     "atom": 1940,
+     "label": "Pausing to reconsider or correct",
+     "cell": "act-high/grad-low",
+     "excess": -0.01764,
+     "se": 0.00357,
+     "z": -4.94,
+     "n_chunks": 34041,
+     "n_docs": 1858,
+     "raw_dlp": 0.22122,
+     "headroom": 0.9046
+    },
+    {
+     "rank": 36,
+     "atom": 2154,
+     "label": "Correcting or questioning reasoning mid-explanation",
+     "cell": "act-high/grad-low",
+     "excess": -0.01183,
+     "se": 0.00359,
+     "z": -3.29,
+     "n_chunks": 33637,
+     "n_docs": 1852,
+     "raw_dlp": 0.21791,
+     "headroom": 0.8756
+    },
+    {
+     "rank": 37,
+     "atom": 4191,
+     "label": "Correcting mathematical/logical reasoning",
+     "cell": "act-high/grad-low",
+     "excess": -0.02373,
+     "se": 0.0037,
+     "z": -6.41,
+     "n_chunks": 33160,
+     "n_docs": 1800,
+     "raw_dlp": 0.21232,
+     "headroom": 0.896
+    },
+    {
+     "rank": 38,
+     "atom": 148,
+     "label": "mathematical verification",
+     "cell": "act-high/grad-low",
+     "excess": -0.00053,
+     "se": 0.00268,
+     "z": -0.2,
+     "n_chunks": 12044,
+     "n_docs": 1927,
+     "raw_dlp": 0.19678,
+     "headroom": 0.7556
+    },
+    {
+     "rank": 39,
+     "atom": 4921,
+     "label": "Correcting or revising assumptions in technical contexts",
+     "cell": "act-high/grad-low",
+     "excess": -0.02369,
+     "se": 0.00313,
+     "z": -7.56,
+     "n_chunks": 32478,
+     "n_docs": 1810,
+     "raw_dlp": 0.22137,
+     "headroom": 0.9276
+    },
+    {
+     "rank": 40,
+     "atom": 3132,
+     "label": "evaluating logical/mathematical conditions",
+     "cell": "act-high/grad-low",
+     "excess": -0.02144,
+     "se": 0.00348,
+     "z": -6.15,
+     "n_chunks": 32784,
+     "n_docs": 1812,
+     "raw_dlp": 0.22452,
+     "headroom": 0.9316
+    }
+   ],
+   "reserve": [
+    {
+     "atom": 2108,
+     "excess": -0.01927,
+     "se": 0.00286,
+     "z": -6.74,
+     "n_chunks": 32718,
+     "n_docs": 1812,
+     "raw_dlp": 0.20829,
+     "headroom": 0.8706
+    },
+    {
+     "atom": 1764,
+     "excess": -0.06076,
+     "se": 0.00267,
+     "z": -22.77,
+     "n_chunks": 20949,
+     "n_docs": 1663,
+     "raw_dlp": 0.19876,
+     "headroom": 0.9983
+    },
+    {
+     "atom": 1917,
+     "excess": -0.05213,
+     "se": 0.00462,
+     "z": -11.28,
+     "n_chunks": 30008,
+     "n_docs": 1642,
+     "raw_dlp": 0.24703,
+     "headroom": 1.117
+    },
+    {
+     "atom": 611,
+     "excess": -0.01727,
+     "se": 0.00349,
+     "z": -4.95,
+     "n_chunks": 28792,
+     "n_docs": 1816,
+     "raw_dlp": 0.21633,
+     "headroom": 0.8891
+    },
+    {
+     "atom": 8029,
+     "excess": -0.01512,
+     "se": 0.00404,
+     "z": -3.75,
+     "n_chunks": 28322,
+     "n_docs": 1801,
+     "raw_dlp": 0.22406,
+     "headroom": 0.9081
+    },
+    {
+     "atom": 2821,
+     "excess": -0.0443,
+     "se": 0.00368,
+     "z": -12.03,
+     "n_chunks": 29066,
+     "n_docs": 1719,
+     "raw_dlp": 0.2529,
+     "headroom": 1.1046
+    },
+    {
+     "atom": 6459,
+     "excess": -0.04065,
+     "se": 0.00417,
+     "z": -9.74,
+     "n_chunks": 25296,
+     "n_docs": 1466,
+     "raw_dlp": 0.2114,
+     "headroom": 0.9562
+    },
+    {
+     "atom": 4613,
+     "excess": -0.02331,
+     "se": 0.00371,
+     "z": -6.29,
+     "n_chunks": 27887,
+     "n_docs": 1582,
+     "raw_dlp": 0.18738,
+     "headroom": 0.8287
+    },
+    {
+     "atom": 5005,
+     "excess": -0.0235,
+     "se": 0.00268,
+     "z": -8.78,
+     "n_chunks": 28254,
+     "n_docs": 1714,
+     "raw_dlp": 0.18867,
+     "headroom": 0.8307
+    },
+    {
+     "atom": 5096,
+     "excess": -0.0139,
+     "se": 0.00319,
+     "z": -4.36,
+     "n_chunks": 26582,
+     "n_docs": 1814,
+     "raw_dlp": 0.22118,
+     "headroom": 0.8913
+    },
+    {
+     "atom": 649,
+     "excess": -0.00749,
+     "se": 0.00498,
+     "z": -1.5,
+     "n_chunks": 8937,
+     "n_docs": 1235,
+     "raw_dlp": 0.22184,
+     "headroom": 0.8884
+    },
+    {
+     "atom": 7578,
+     "excess": -0.01593,
+     "se": 0.00407,
+     "z": -3.92,
+     "n_chunks": 25573,
+     "n_docs": 1805,
+     "raw_dlp": 0.22295,
+     "headroom": 0.9066
+    },
+    {
+     "atom": 2185,
+     "excess": -0.02067,
+     "se": 0.00351,
+     "z": -5.89,
+     "n_chunks": 25090,
+     "n_docs": 1738,
+     "raw_dlp": 0.21496,
+     "headroom": 0.8972
+    },
+    {
+     "atom": 5725,
+     "excess": -0.01468,
+     "se": 0.00384,
+     "z": -3.82,
+     "n_chunks": 24471,
+     "n_docs": 1765,
+     "raw_dlp": 0.22628,
+     "headroom": 0.912
+    },
+    {
+     "atom": 59,
+     "excess": -0.11104,
+     "se": 0.00389,
+     "z": -28.52,
+     "n_chunks": 14071,
+     "n_docs": 1052,
+     "raw_dlp": 0.19176,
+     "headroom": 1.1484
+    },
+    {
+     "atom": 5424,
+     "excess": -0.01791,
+     "se": 0.00462,
+     "z": -3.88,
+     "n_chunks": 22951,
+     "n_docs": 1757,
+     "raw_dlp": 0.22851,
+     "headroom": 0.9293
+    },
+    {
+     "atom": 883,
+     "excess": -0.0314,
+     "se": 0.00344,
+     "z": -9.12,
+     "n_chunks": 22843,
+     "n_docs": 1565,
+     "raw_dlp": 0.1848,
+     "headroom": 0.8388
+    },
+    {
+     "atom": 7716,
+     "excess": -0.11214,
+     "se": 0.00287,
+     "z": -39.05,
+     "n_chunks": 12643,
+     "n_docs": 1364,
+     "raw_dlp": 0.21055,
+     "headroom": 1.2048
+    },
+    {
+     "atom": 412,
+     "excess": -0.0039,
+     "se": 0.00334,
+     "z": -1.17,
+     "n_chunks": 21828,
+     "n_docs": 1922,
+     "raw_dlp": 0.23771,
+     "headroom": 0.9138
+    },
+    {
+     "atom": 523,
+     "excess": -0.05471,
+     "se": 0.00446,
+     "z": -12.28,
+     "n_chunks": 20692,
+     "n_docs": 1477,
+     "raw_dlp": 0.21603,
+     "headroom": 1.0288
+    }
+   ],
+   "controls_n": 104,
+   "controls_mean_excess": 0.02876,
+   "controls_sd": 0.10962,
+   "top40_mean_excess": -0.00289,
+   "top40_frac_positive": 0.25,
+   "top40_frac_z_gt2": -1.992,
+   "diff_top_minus_ctrl": -0.03165,
+   "perm_p": 0.0892,
+   "spearman_rank_vs_excess": {
+    "rho": -0.207,
+    "p": 0.1997
+   },
+   "by_cell": {
+    "act-high/grad-low": {
+     "n": 37,
+     "mean_excess": -0.00998
+    },
+    "act-high/grad-high": {
+     "n": 3,
+     "mean_excess": 0.08459
+    }
+   }
+  },
+  "err": {
+   "tag": "err_v2",
+   "items": [
+    {
+     "rank": 1,
+     "atom": 1633,
+     "label": "Reconsidering or correcting reasoning",
+     "cell": "",
+     "excess": 0.0,
+     "se": 0.00338,
+     "z": 0.0,
+     "n_chunks": 173616,
+     "n_docs": 1998,
+     "raw_dlp": 0.25198,
+     "headroom": 0.9459
+    },
+    {
+     "rank": 2,
+     "atom": 6814,
+     "label": "Correcting or reconsidering previous statements",
+     "cell": "",
+     "excess": -0.00098,
+     "se": 0.0032,
+     "z": -0.31,
+     "n_chunks": 79341,
+     "n_docs": 1997,
+     "raw_dlp": 0.258,
+     "headroom": 0.9767
+    },
+    {
+     "rank": 3,
+     "atom": 233,
+     "label": "Reasoning refinement and correction",
+     "cell": "",
+     "excess": -0.00149,
+     "se": 0.0037,
+     "z": -0.4,
+     "n_chunks": 81956,
+     "n_docs": 1995,
+     "raw_dlp": 0.26011,
+     "headroom": 0.9847
+    },
+    {
+     "rank": 4,
+     "atom": 3832,
+     "label": "mid-reasoning self-correction",
+     "cell": "",
+     "excess": -0.00233,
+     "se": 0.0036,
+     "z": -0.65,
+     "n_chunks": 76121,
+     "n_docs": 1993,
+     "raw_dlp": 0.2623,
+     "headroom": 0.9933
+    },
+    {
+     "rank": 5,
+     "atom": 1863,
+     "label": "Reconsideration and verification in reasoning",
+     "cell": "",
+     "excess": 0.00918,
+     "se": 0.00393,
+     "z": 2.34,
+     "n_chunks": 80268,
+     "n_docs": 1994,
+     "raw_dlp": 0.27477,
+     "headroom": 0.9967
+    },
+    {
+     "rank": 6,
+     "atom": 1325,
+     "label": "Reflecting on or questioning reasoning steps",
+     "cell": "",
+     "excess": 0.00108,
+     "se": 0.00338,
+     "z": 0.32,
+     "n_chunks": 75531,
+     "n_docs": 1992,
+     "raw_dlp": 0.27186,
+     "headroom": 1.0171
+    },
+    {
+     "rank": 7,
+     "atom": 744,
+     "label": "Correcting or reconsidering with \"Wait\"",
+     "cell": "",
+     "excess": -0.00224,
+     "se": 0.00366,
+     "z": -0.61,
+     "n_chunks": 73640,
+     "n_docs": 1994,
+     "raw_dlp": 0.25668,
+     "headroom": 0.9737
+    },
+    {
+     "rank": 8,
+     "atom": 6035,
+     "label": "Correcting or questioning reasoning",
+     "cell": "",
+     "excess": 0.00308,
+     "se": 0.00381,
+     "z": 0.81,
+     "n_chunks": 78233,
+     "n_docs": 1993,
+     "raw_dlp": 0.26616,
+     "headroom": 0.9877
+    },
+    {
+     "rank": 9,
+     "atom": 7458,
+     "label": "Pausing to reconsider reasoning",
+     "cell": "",
+     "excess": 0.00478,
+     "se": 0.0035,
+     "z": 1.37,
+     "n_chunks": 78690,
+     "n_docs": 1993,
+     "raw_dlp": 0.27255,
+     "headroom": 1.0044
+    },
+    {
+     "rank": 10,
+     "atom": 2948,
+     "label": "Evaluating acceptability in Python",
+     "cell": "",
+     "excess": -0.00301,
+     "se": 0.0032,
+     "z": -0.94,
+     "n_chunks": 78858,
+     "n_docs": 1992,
+     "raw_dlp": 0.26798,
+     "headroom": 1.0166
+    },
+    {
+     "rank": 11,
+     "atom": 2807,
+     "label": "Pausing to reconsider or propose alternatives",
+     "cell": "",
+     "excess": -0.00862,
+     "se": 0.00333,
+     "z": -2.59,
+     "n_chunks": 71343,
+     "n_docs": 1993,
+     "raw_dlp": 0.25875,
+     "headroom": 1.008
+    },
+    {
+     "rank": 12,
+     "atom": 7639,
+     "label": "Mid-reasoning pause or reconsideration",
+     "cell": "",
+     "excess": -0.00727,
+     "se": 0.0033,
+     "z": -2.2,
+     "n_chunks": 75258,
+     "n_docs": 1996,
+     "raw_dlp": 0.2502,
+     "headroom": 0.9708
+    },
+    {
+     "rank": 13,
+     "atom": 1799,
+     "label": "self-interruption and correction",
+     "cell": "",
+     "excess": 0.00238,
+     "se": 0.00348,
+     "z": 0.68,
+     "n_chunks": 80415,
+     "n_docs": 1995,
+     "raw_dlp": 0.2685,
+     "headroom": 0.9964
+    },
+    {
+     "rank": 14,
+     "atom": 6477,
+     "label": "proposing alternatives with \"we\" phrasing",
+     "cell": "",
+     "excess": -0.00137,
+     "se": 0.00316,
+     "z": -0.44,
+     "n_chunks": 79055,
+     "n_docs": 1995,
+     "raw_dlp": 0.26279,
+     "headroom": 0.9916
+    },
+    {
+     "rank": 15,
+     "atom": 3231,
+     "label": "Correcting or reconsidering reasoning steps",
+     "cell": "",
+     "excess": -0.01077,
+     "se": 0.00321,
+     "z": -3.35,
+     "n_chunks": 73530,
+     "n_docs": 1992,
+     "raw_dlp": 0.25342,
+     "headroom": 0.9973
+    },
+    {
+     "rank": 16,
+     "atom": 2004,
+     "label": "mid-reasoning hesitation and self-correction",
+     "cell": "",
+     "excess": -0.01308,
+     "se": 0.0034,
+     "z": -3.85,
+     "n_chunks": 72973,
+     "n_docs": 1995,
+     "raw_dlp": 0.24284,
+     "headroom": 0.9658
+    },
+    {
+     "rank": 17,
+     "atom": 3317,
+     "label": "Reflecting on or correcting reasoning",
+     "cell": "",
+     "excess": 0.00148,
+     "se": 0.00348,
+     "z": 0.42,
+     "n_chunks": 73757,
+     "n_docs": 1992,
+     "raw_dlp": 0.27141,
+     "headroom": 1.0126
+    },
+    {
+     "rank": 18,
+     "atom": 5435,
+     "label": "mid-calculation math expressions with corrections",
+     "cell": "",
+     "excess": -0.00017,
+     "se": 0.0034,
+     "z": -0.05,
+     "n_chunks": 76960,
+     "n_docs": 1995,
+     "raw_dlp": 0.26904,
+     "headroom": 1.0061
+    },
+    {
+     "rank": 19,
+     "atom": 4102,
+     "label": "reconsidering or proposing alternatives",
+     "cell": "",
+     "excess": -0.00829,
+     "se": 0.00321,
+     "z": -2.58,
+     "n_chunks": 72416,
+     "n_docs": 1993,
+     "raw_dlp": 0.25081,
+     "headroom": 0.9789
+    },
+    {
+     "rank": 20,
+     "atom": 2849,
+     "label": "Identifying and reconsidering problems or mistakes",
+     "cell": "",
+     "excess": -0.00527,
+     "se": 0.00303,
+     "z": -1.74,
+     "n_chunks": 68822,
+     "n_docs": 1993,
+     "raw_dlp": 0.25538,
+     "headroom": 0.9849
+    },
+    {
+     "rank": 21,
+     "atom": 1975,
+     "label": "Correcting or questioning reasoning steps",
+     "cell": "",
+     "excess": -0.00689,
+     "se": 0.00349,
+     "z": -1.97,
+     "n_chunks": 71377,
+     "n_docs": 1995,
+     "raw_dlp": 0.24963,
+     "headroom": 0.97
+    },
+    {
+     "rank": 22,
+     "atom": 5614,
+     "label": "self-correction in reasoning",
+     "cell": "",
+     "excess": -0.0029,
+     "se": 0.00375,
+     "z": -0.77,
+     "n_chunks": 72220,
+     "n_docs": 1995,
+     "raw_dlp": 0.2555,
+     "headroom": 0.9749
+    },
+    {
+     "rank": 23,
+     "atom": 1385,
+     "label": "Verifying or reconsidering reasoning steps",
+     "cell": "",
+     "excess": -0.01218,
+     "se": 0.00301,
+     "z": -4.05,
+     "n_chunks": 72657,
+     "n_docs": 1995,
+     "raw_dlp": 0.25153,
+     "headroom": 0.9932
+    },
+    {
+     "rank": 24,
+     "atom": 8104,
+     "label": "Correcting or revising reasoning",
+     "cell": "",
+     "excess": -0.0057,
+     "se": 0.00315,
+     "z": -1.81,
+     "n_chunks": 71952,
+     "n_docs": 1994,
+     "raw_dlp": 0.24798,
+     "headroom": 0.9615
+    },
+    {
+     "rank": 25,
+     "atom": 3731,
+     "label": "Reasoning and proposing steps",
+     "cell": "",
+     "excess": 0.005,
+     "se": 0.00385,
+     "z": 1.3,
+     "n_chunks": 72931,
+     "n_docs": 1993,
+     "raw_dlp": 0.27337,
+     "headroom": 1.0089
+    },
+    {
+     "rank": 26,
+     "atom": 1524,
+     "label": "mid-calculation process tracking",
+     "cell": "",
+     "excess": -0.01072,
+     "se": 0.0029,
+     "z": -3.7,
+     "n_chunks": 71668,
+     "n_docs": 1994,
+     "raw_dlp": 0.25051,
+     "headroom": 0.9814
+    },
+    {
+     "rank": 27,
+     "atom": 6956,
+     "label": "Pausing to verify or clarify reasoning",
+     "cell": "",
+     "excess": 0.00209,
+     "se": 0.00364,
+     "z": 0.57,
+     "n_chunks": 73117,
+     "n_docs": 1993,
+     "raw_dlp": 0.26189,
+     "headroom": 0.9807
+    },
+    {
+     "rank": 28,
+     "atom": 5759,
+     "label": "self-correction or questioning in reasoning",
+     "cell": "",
+     "excess": 0.00809,
+     "se": 0.00479,
+     "z": 1.69,
+     "n_chunks": 66144,
+     "n_docs": 1974,
+     "raw_dlp": 0.2867,
+     "headroom": 1.0503
+    },
+    {
+     "rank": 29,
+     "atom": 7211,
+     "label": "mid-reasoning self-correction markers",
+     "cell": "",
+     "excess": -0.00251,
+     "se": 0.00386,
+     "z": -0.65,
+     "n_chunks": 68308,
+     "n_docs": 1978,
+     "raw_dlp": 0.27986,
+     "headroom": 1.0619
+    },
+    {
+     "rank": 30,
+     "atom": 3125,
+     "label": "mid-reasoning correction or reconsideration",
+     "cell": "",
+     "excess": -0.00897,
+     "se": 0.0035,
+     "z": -2.56,
+     "n_chunks": 67833,
+     "n_docs": 1976,
+     "raw_dlp": 0.26529,
+     "headroom": 1.0318
+    },
+    {
+     "rank": 31,
+     "atom": 1340,
+     "label": "Planning computational steps",
+     "cell": "",
+     "excess": -0.00549,
+     "se": 0.00338,
+     "z": -1.62,
+     "n_chunks": 66622,
+     "n_docs": 1983,
+     "raw_dlp": 0.26874,
+     "headroom": 1.0329
+    },
+    {
+     "rank": 32,
+     "atom": 1692,
+     "label": "Proposing alternatives or corrections",
+     "cell": "",
+     "excess": -0.00327,
+     "se": 0.00379,
+     "z": -0.86,
+     "n_chunks": 64421,
+     "n_docs": 1973,
+     "raw_dlp": 0.2743,
+     "headroom": 1.0439
+    },
+    {
+     "rank": 33,
+     "atom": 5939,
+     "label": "Confirming reasoning with \"so that\"",
+     "cell": "",
+     "excess": -0.03226,
+     "se": 0.00337,
+     "z": -9.56,
+     "n_chunks": 47433,
+     "n_docs": 1949,
+     "raw_dlp": 0.25216,
+     "headroom": 1.0703
+    },
+    {
+     "rank": 34,
+     "atom": 4123,
+     "label": "Catching or questioning reasoning mid-thought",
+     "cell": "",
+     "excess": -0.00969,
+     "se": 0.00349,
+     "z": -2.77,
+     "n_chunks": 67142,
+     "n_docs": 1984,
+     "raw_dlp": 0.26869,
+     "headroom": 1.0443
+    },
+    {
+     "rank": 35,
+     "atom": 2003,
+     "label": "proposing alternatives or reconsidering",
+     "cell": "",
+     "excess": -0.00792,
+     "se": 0.00323,
+     "z": -2.45,
+     "n_chunks": 68451,
+     "n_docs": 1991,
+     "raw_dlp": 0.27023,
+     "headroom": 1.0431
+    },
+    {
+     "rank": 36,
+     "atom": 4760,
+     "label": "mid-reasoning self-correction or alternatives",
+     "cell": "",
+     "excess": -0.02394,
+     "se": 0.00315,
+     "z": -7.6,
+     "n_chunks": 62228,
+     "n_docs": 1983,
+     "raw_dlp": 0.25627,
+     "headroom": 1.0509
+    },
+    {
+     "rank": 37,
+     "atom": 2311,
+     "label": "tentative reasoning with \"perhaps\" and \"maybe\"",
+     "cell": "",
+     "excess": -0.01429,
+     "se": 0.0033,
+     "z": -4.33,
+     "n_chunks": 65795,
+     "n_docs": 1976,
+     "raw_dlp": 0.25825,
+     "headroom": 1.0286
+    },
+    {
+     "rank": 38,
+     "atom": 5971,
+     "label": "Proposing alternatives or reconsidering steps",
+     "cell": "",
+     "excess": -0.00765,
+     "se": 0.00366,
+     "z": -2.09,
+     "n_chunks": 62381,
+     "n_docs": 1981,
+     "raw_dlp": 0.26562,
+     "headroom": 1.0309
+    },
+    {
+     "rank": 39,
+     "atom": 5908,
+     "label": "Structured reasoning corrections and verifications",
+     "cell": "",
+     "excess": 0.00812,
+     "se": 0.00389,
+     "z": 2.09,
+     "n_chunks": 65944,
+     "n_docs": 1988,
+     "raw_dlp": 0.28615,
+     "headroom": 1.0413
+    },
+    {
+     "rank": 40,
+     "atom": 4684,
+     "label": "Structuring reasoning steps, often with code",
+     "cell": "",
+     "excess": -0.00341,
+     "se": 0.00398,
+     "z": -0.86,
+     "n_chunks": 49523,
+     "n_docs": 1981,
+     "raw_dlp": 0.27453,
+     "headroom": 1.0413
+    }
+   ],
+   "reserve": [
+    {
+     "atom": 758,
+     "excess": -0.00697,
+     "se": 0.00396,
+     "z": -1.76,
+     "n_chunks": 57817,
+     "n_docs": 1983,
+     "raw_dlp": 0.27802,
+     "headroom": 1.0687
+    },
+    {
+     "atom": 2838,
+     "excess": -0.03642,
+     "se": 0.00268,
+     "z": -13.57,
+     "n_chunks": 38798,
+     "n_docs": 1860,
+     "raw_dlp": 0.246,
+     "headroom": 1.0656
+    },
+    {
+     "atom": 2288,
+     "excess": -0.01432,
+     "se": 0.00306,
+     "z": -4.68,
+     "n_chunks": 61458,
+     "n_docs": 1975,
+     "raw_dlp": 0.27028,
+     "headroom": 1.0697
+    },
+    {
+     "atom": 3716,
+     "excess": -0.00628,
+     "se": 0.00365,
+     "z": -1.72,
+     "n_chunks": 63619,
+     "n_docs": 1993,
+     "raw_dlp": 0.26207,
+     "headroom": 1.0134
+    },
+    {
+     "atom": 3729,
+     "excess": -8e-05,
+     "se": 0.00407,
+     "z": -0.02,
+     "n_chunks": 65562,
+     "n_docs": 1989,
+     "raw_dlp": 0.27121,
+     "headroom": 1.0218
+    },
+    {
+     "atom": 8179,
+     "excess": -0.01631,
+     "se": 0.00449,
+     "z": -3.63,
+     "n_chunks": 58177,
+     "n_docs": 1960,
+     "raw_dlp": 0.2714,
+     "headroom": 1.0803
+    },
+    {
+     "atom": 5241,
+     "excess": -0.02205,
+     "se": 0.00342,
+     "z": -6.45,
+     "n_chunks": 51780,
+     "n_docs": 1977,
+     "raw_dlp": 0.2505,
+     "headroom": 1.0288
+    },
+    {
+     "atom": 2135,
+     "excess": -0.01349,
+     "se": 0.00345,
+     "z": -3.91,
+     "n_chunks": 63095,
+     "n_docs": 1993,
+     "raw_dlp": 0.26104,
+     "headroom": 1.0321
+    },
+    {
+     "atom": 7069,
+     "excess": -0.01826,
+     "se": 0.00341,
+     "z": -5.36,
+     "n_chunks": 40106,
+     "n_docs": 1978,
+     "raw_dlp": 0.24894,
+     "headroom": 1.0049
+    },
+    {
+     "atom": 7861,
+     "excess": -0.02007,
+     "se": 0.00308,
+     "z": -6.51,
+     "n_chunks": 62685,
+     "n_docs": 1989,
+     "raw_dlp": 0.24813,
+     "headroom": 1.0135
+    },
+    {
+     "atom": 4044,
+     "excess": -0.00929,
+     "se": 0.00353,
+     "z": -2.64,
+     "n_chunks": 49287,
+     "n_docs": 1927,
+     "raw_dlp": 0.28787,
+     "headroom": 1.1139
+    },
+    {
+     "atom": 1945,
+     "excess": -0.05008,
+     "se": 0.00372,
+     "z": -13.44,
+     "n_chunks": 26683,
+     "n_docs": 1872,
+     "raw_dlp": 0.26187,
+     "headroom": 1.1653
+    },
+    {
+     "atom": 6856,
+     "excess": -0.04845,
+     "se": 0.00299,
+     "z": -16.23,
+     "n_chunks": 40228,
+     "n_docs": 1920,
+     "raw_dlp": 0.25695,
+     "headroom": 1.1449
+    },
+    {
+     "atom": 7197,
+     "excess": -0.007,
+     "se": 0.0044,
+     "z": -1.59,
+     "n_chunks": 52217,
+     "n_docs": 1961,
+     "raw_dlp": 0.28375,
+     "headroom": 1.0921
+    },
+    {
+     "atom": 7022,
+     "excess": 0.00476,
+     "se": 0.00398,
+     "z": 1.2,
+     "n_chunks": 45341,
+     "n_docs": 1962,
+     "raw_dlp": 0.27335,
+     "headroom": 1.0106
+    },
+    {
+     "atom": 5583,
+     "excess": -0.00798,
+     "se": 0.00494,
+     "z": -1.61,
+     "n_chunks": 39899,
+     "n_docs": 1910,
+     "raw_dlp": 0.27491,
+     "headroom": 1.0712
+    },
+    {
+     "atom": 3052,
+     "excess": -0.02986,
+     "se": 0.00375,
+     "z": -7.96,
+     "n_chunks": 33576,
+     "n_docs": 1949,
+     "raw_dlp": 0.27084,
+     "headroom": 1.1239
+    },
+    {
+     "atom": 5211,
+     "excess": -0.01482,
+     "se": 0.00431,
+     "z": -3.44,
+     "n_chunks": 38477,
+     "n_docs": 1947,
+     "raw_dlp": 0.28059,
+     "headroom": 1.106
+    },
+    {
+     "atom": 4597,
+     "excess": -0.02065,
+     "se": 0.00378,
+     "z": -5.47,
+     "n_chunks": 46886,
+     "n_docs": 1951,
+     "raw_dlp": 0.2791,
+     "headroom": 1.1217
+    },
+    {
+     "atom": 1357,
+     "excess": -0.04365,
+     "se": 0.00319,
+     "z": -13.7,
+     "n_chunks": 34664,
+     "n_docs": 1872,
+     "raw_dlp": 0.26729,
+     "headroom": 1.1593
+    }
+   ],
+   "controls_n": 64,
+   "controls_mean_excess": 0.03483,
+   "controls_sd": 0.09896,
+   "top40_mean_excess": -0.00443,
+   "top40_frac_positive": 0.25,
+   "top40_frac_z_gt2": -1.394,
+   "diff_top_minus_ctrl": -0.03927,
+   "perm_p": 0.015,
+   "spearman_rank_vs_excess": {
+    "rho": -0.402,
+    "p": 0.0102
+   },
+   "by_cell": {
+    "": {
+     "n": 40,
+     "mean_excess": -0.00443
+    }
+   }
+  }
+ },
+ "markers": {
+  "per_marker": {
+   "so": {
+    "n": 64463,
+    "excess": -0.1092,
+    "raw_dlp": 0.20824,
+    "headroom": 1.1139
+   },
+   "such": {
+    "n": 4880,
+    "excess": -0.22625,
+    "raw_dlp": 0.32621,
+    "headroom": 1.7533
+   },
+   "because": {
+    "n": 6053,
+    "excess": -0.2362,
+    "raw_dlp": 0.54254,
+    "headroom": 2.3643
+   },
+   "since": {
+    "n": 15023,
+    "excess": -0.12336,
+    "raw_dlp": 0.6063,
+    "headroom": 2.2293
+   },
+   "first": {
+    "n": 14833,
+    "excess": 0.05056,
+    "raw_dlp": 0.52635,
+    "headroom": 1.548
+   },
+   "alternatively": {
+    "n": 11960,
+    "excess": 0.02579,
+    "raw_dlp": 0.39974,
+    "headroom": 1.2669
+   },
+   "therefore": {
+    "n": 8474,
+    "excess": -0.20334,
+    "raw_dlp": 0.35478,
+    "headroom": 1.7598
+   },
+   "wait": {
+    "n": 31161,
+    "excess": -0.05697,
+    "raw_dlp": 0.38255,
+    "headroom": 1.4405
+   },
+   "hmm": {
+    "n": 10490,
+    "excess": 0.27105,
+    "raw_dlp": 1.08284,
+    "headroom": 2.4562
+   },
+   "okay": {
+    "n": 3899,
+    "excess": 0.76431,
+    "raw_dlp": 1.61671,
+    "headroom": 2.5722
+   },
+   "but": {
+    "n": 43098,
+    "excess": -0.12722,
+    "raw_dlp": 0.28834,
+    "headroom": 1.3772
+   },
+   "actually": {
+    "n": 5137,
+    "excess": 0.18852,
+    "raw_dlp": 1.20398,
+    "headroom": 3.011
+   },
+   "let": {
+    "n": 27901,
+    "excess": -0.20548,
+    "raw_dlp": 0.21391,
+    "headroom": 1.3884
+   },
+   "check": {
+    "n": 6292,
+    "excess": -0.17322,
+    "raw_dlp": 0.18155,
+    "headroom": 1.2157
+   },
+   "verify": {
+    "n": 295,
+    "excess": -0.22768,
+    "raw_dlp": 0.56546,
+    "headroom": 2.3991
+   },
+   "then": {
+    "n": 26531,
+    "excess": 0.03431,
+    "raw_dlp": 0.47595,
+    "headroom": 1.4518
+   },
+   "next": {
+    "n": 3231,
+    "excess": -0.03528,
+    "raw_dlp": 0.39989,
+    "headroom": 1.4383
+   },
+   "finally": {
+    "n": 116,
+    "excess": 0.60656,
+    "raw_dlp": 1.67636,
+    "headroom": 3.1644
+   },
+   "however": {
+    "n": 3111,
+    "excess": 0.09136,
+    "raw_dlp": 1.00688,
+    "headroom": 2.7339
+   },
+   "thus": {
+    "n": 1791,
+    "excess": -0.31789,
+    "raw_dlp": 0.83925,
+    "headroom": 3.4002
+   },
+   "hence": {
+    "n": 523,
+    "excess": -0.75162,
+    "raw_dlp": 0.59836,
+    "headroom": 3.9279
+   },
+   "note": {
+    "n": 2947,
+    "excess": 0.86109,
+    "raw_dlp": 1.83079,
+    "headroom": 2.8875
+   },
+   "also": {
+    "n": 4413,
+    "excess": -0.06373,
+    "raw_dlp": 0.73547,
+    "headroom": 2.4226
+   },
+   "maybe": {
+    "n": 19961,
+    "excess": -0.27968,
+    "raw_dlp": 0.31616,
+    "headroom": 1.8643
+   },
+   "perhaps": {
+    "n": 14158,
+    "excess": -0.39078,
+    "raw_dlp": 0.22166,
+    "headroom": 1.9097
+   },
+   "indeed": {
+    "n": 708,
+    "excess": -0.10054,
+    "raw_dlp": 1.10452,
+    "headroom": 3.5403
+   },
+   "similarly": {
+    "n": 1901,
+    "excess": -0.03872,
+    "raw_dlp": 0.54593,
+    "headroom": 1.8386
+   },
+   "example": {
+    "n": 5931,
+    "excess": -0.019,
+    "raw_dlp": 0.20911,
+    "headroom": 0.8798
+   },
+   "means": {
+    "n": 937,
+    "excess": -0.07095,
+    "raw_dlp": 0.40111,
+    "headroom": 1.5335
+   },
+   "suppose": {
+    "n": 1412,
+    "excess": -0.44265,
+    "raw_dlp": 0.44509,
+    "headroom": 2.6613
+   },
+   "assume": {
+    "n": 713,
+    "excess": -0.18509,
+    "raw_dlp": 0.41828,
+    "headroom": 1.8921
+   },
+   "recall": {
+    "n": 916,
+    "excess": 0.58072,
+    "raw_dlp": 1.3053,
+    "headroom": 2.2291
+   },
+   "consider": {
+    "n": 2451,
+    "excess": -0.33125,
+    "raw_dlp": 0.42302,
+    "headroom": 2.2935
+   },
+   "if": {
+    "n": 24989,
+    "excess": -0.2282,
+    "raw_dlp": 0.1872,
+    "headroom": 1.3802
+   },
+   "unless": {
+    "n": 1568,
+    "excess": -0.37009,
+    "raw_dlp": 0.50815,
+    "headroom": 2.6365
+   },
+   "except": {
+    "n": 1233,
+    "excess": -0.01715,
+    "raw_dlp": 0.85011,
+    "headroom": 2.6154
+   },
+   "instead": {
+    "n": 872,
+    "excess": -0.11869,
+    "raw_dlp": 0.87971,
+    "headroom": 2.9697
+   },
+   "again": {
+    "n": 4161,
+    "excess": -0.0811,
+    "raw_dlp": 0.32996,
+    "headroom": 1.3708
+   },
+   "sure": {
+    "n": 1874,
+    "excess": 0.06907,
+    "raw_dlp": 0.04914,
+    "headroom": 0.2155
+   },
+   "correct": {
+    "n": 3574,
+    "excess": -0.19021,
+    "raw_dlp": 0.12772,
+    "headroom": 1.122
+   },
+   "world": {
+    "n": 400,
+    "excess": 0.09993,
+    "raw_dlp": 0.28603,
+    "headroom": 0.7722
+   },
+   "people": {
+    "n": 478,
+    "excess": -0.0354,
+    "raw_dlp": 0.38461,
+    "headroom": 1.4056
+   },
+   "today": {
+    "n": 52,
+    "excess": 0.14464,
+    "raw_dlp": 0.7434,
+    "headroom": 1.8824
+   },
+   "really": {
+    "n": 110,
+    "excess": -0.27902,
+    "raw_dlp": 1.14009,
+    "headroom": 4.1444
+   },
+   "important": {
+    "n": 346,
+    "excess": 0.69923,
+    "raw_dlp": 1.73274,
+    "headroom": 3.0961
+   },
+   "quickly": {
+    "n": 99,
+    "excess": 0.29997,
+    "raw_dlp": 1.24378,
+    "headroom": 2.8205
+   },
+   "house": {
+    "n": 86,
+    "excess": 0.10281,
+    "raw_dlp": 0.40672,
+    "headroom": 1.0899
+   },
+   "water": {
+    "n": 931,
+    "excess": 0.04682,
+    "raw_dlp": 0.2772,
+    "headroom": 0.8852
+   },
+   "love": {
+    "n": 78,
+    "excess": 0.17341,
+    "raw_dlp": 0.7181,
+    "headroom": 1.7366
+   },
+   "city": {
+    "n": 393,
+    "excess": 0.05906,
+    "raw_dlp": 0.28226,
+    "headroom": 0.8708
+   },
+   "year": {
+    "n": 541,
+    "excess": 0.07405,
+    "raw_dlp": 0.1637,
+    "headroom": 0.5095
+   }
+  },
+  "spearman_by_ranking": {
+   "rank_grad": {
+    "rho": 0.239,
+    "p": 0.0911,
+    "n": 51
+   },
+   "rank_act": {
+    "rho": 0.339,
+    "p": 0.015,
+    "n": 51
+   },
+   "rank_err": {
+    "rho": 0.34,
+    "p": 0.0146,
+    "n": 51
+   },
+   "rank_headroom": {
+    "rho": 0.089,
+    "p": 0.5356,
+    "n": 51
+   },
+   "rank_freq": {
+    "rho": 0.291,
+    "p": 0.0384,
+    "n": 51
+   },
+   "rank_freq_x_headroom": {
+    "rho": 0.31,
+    "p": 0.0267,
+    "n": 51
+   }
+  },
+  "predicted_mean": -0.05445,
+  "control_mean": 0.12595,
+  "n_pred": 40,
+  "n_ctrl": 11,
+  "mannwhitney_p": 0.0067
+ }
+}

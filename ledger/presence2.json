@@ -1,0 +1,1039 @@
+{
+ "n_docs": 200,
+ "gen_tokens": 84997,
+ "data_tokens": 525400,
+ "items": {
+  "grad:4141": {
+   "rate_gen": 0.0588,
+   "rate_data": 0.5082,
+   "ratio": 0.116,
+   "present": false
+  },
+  "grad:8127": {
+   "rate_gen": 0.1647,
+   "rate_data": 2.7522,
+   "ratio": 0.06,
+   "present": false
+  },
+  "grad:3961": {
+   "rate_gen": 0.1647,
+   "rate_data": 1.1458,
+   "ratio": 0.144,
+   "present": false
+  },
+  "grad:5184": {
+   "rate_gen": 0.0941,
+   "rate_data": 0.5291,
+   "ratio": 0.178,
+   "present": false
+  },
+  "grad:8139": {
+   "rate_gen": 0.0588,
+   "rate_data": 0.2075,
+   "ratio": 0.284,
+   "present": false
+  },
+  "grad:3944": {
+   "rate_gen": 1.0,
+   "rate_data": 5.0723,
+   "ratio": 0.197,
+   "present": false
+  },
+  "grad:883": {
+   "rate_gen": 0.9647,
+   "rate_data": 7.2078,
+   "ratio": 0.134,
+   "present": false
+  },
+  "grad:6240": {
+   "rate_gen": 1.2,
+   "rate_data": 4.1131,
+   "ratio": 0.292,
+   "present": false
+  },
+  "grad:32": {
+   "rate_gen": 1.1412,
+   "rate_data": 3.7096,
+   "ratio": 0.308,
+   "present": false
+  },
+  "grad:2080": {
+   "rate_gen": 0.1765,
+   "rate_data": 0.6167,
+   "ratio": 0.286,
+   "present": false
+  },
+  "grad:7964": {
+   "rate_gen": 0.3882,
+   "rate_data": 2.3753,
+   "ratio": 0.163,
+   "present": false
+  },
+  "grad:1770": {
+   "rate_gen": 0.8941,
+   "rate_data": 2.5657,
+   "ratio": 0.349,
+   "present": false
+  },
+  "grad:382": {
+   "rate_gen": 1.1059,
+   "rate_data": 4.3434,
+   "ratio": 0.255,
+   "present": false
+  },
+  "grad:4360": {
+   "rate_gen": 0.1882,
+   "rate_data": 2.4515,
+   "ratio": 0.077,
+   "present": false
+  },
+  "grad:3039": {
+   "rate_gen": 0.1059,
+   "rate_data": 0.1218,
+   "ratio": 0.869,
+   "present": true
+  },
+  "grad:1633": {
+   "rate_gen": 0.0706,
+   "rate_data": 0.2341,
+   "ratio": 0.302,
+   "present": false
+  },
+  "grad:7033": {
+   "rate_gen": 0.8,
+   "rate_data": 5.3864,
+   "ratio": 0.149,
+   "present": false
+  },
+  "grad:3725": {
+   "rate_gen": 0.0706,
+   "rate_data": 0.7766,
+   "ratio": 0.091,
+   "present": false
+  },
+  "grad:694": {
+   "rate_gen": 0.4,
+   "rate_data": 1.3076,
+   "ratio": 0.306,
+   "present": false
+  },
+  "grad:7719": {
+   "rate_gen": 0.6118,
+   "rate_data": 1.102,
+   "ratio": 0.555,
+   "present": true
+  },
+  "grad:4356": {
+   "rate_gen": 2.0471,
+   "rate_data": 6.6635,
+   "ratio": 0.307,
+   "present": false
+  },
+  "grad:5488": {
+   "rate_gen": 0.3765,
+   "rate_data": 1.3552,
+   "ratio": 0.278,
+   "present": false
+  },
+  "grad:5998": {
+   "rate_gen": 0.8824,
+   "rate_data": 5.9574,
+   "ratio": 0.148,
+   "present": false
+  },
+  "grad:7715": {
+   "rate_gen": 0.8706,
+   "rate_data": 7.6266,
+   "ratio": 0.114,
+   "present": false
+  },
+  "grad:2928": {
+   "rate_gen": 0.5647,
+   "rate_data": 7.4762,
+   "ratio": 0.076,
+   "present": false
+  },
+  "grad:7901": {
+   "rate_gen": 0.2824,
+   "rate_data": 0.8489,
+   "ratio": 0.333,
+   "present": false
+  },
+  "grad:3303": {
+   "rate_gen": 0.4824,
+   "rate_data": 5.2722,
+   "ratio": 0.091,
+   "present": false
+  },
+  "grad:4593": {
+   "rate_gen": 0.0353,
+   "rate_data": 0.0533,
+   "ratio": 0.662,
+   "present": true
+  },
+  "grad:6746": {
+   "rate_gen": 0.0706,
+   "rate_data": 2.2288,
+   "ratio": 0.032,
+   "present": false
+  },
+  "grad:5420": {
+   "rate_gen": 2.353,
+   "rate_data": 7.7217,
+   "ratio": 0.305,
+   "present": false
+  },
+  "grad:3410": {
+   "rate_gen": 0.2941,
+   "rate_data": 0.4911,
+   "ratio": 0.599,
+   "present": true
+  },
+  "grad:51": {
+   "rate_gen": 0.7294,
+   "rate_data": 1.6368,
+   "ratio": 0.446,
+   "present": false
+  },
+  "grad:4131": {
+   "rate_gen": 0.2824,
+   "rate_data": 1.4751,
+   "ratio": 0.191,
+   "present": false
+  },
+  "grad:7063": {
+   "rate_gen": 1.0,
+   "rate_data": 3.3422,
+   "ratio": 0.299,
+   "present": false
+  },
+  "grad:5793": {
+   "rate_gen": 0.9647,
+   "rate_data": 1.5569,
+   "ratio": 0.62,
+   "present": true
+  },
+  "grad:7858": {
+   "rate_gen": 0.7177,
+   "rate_data": 0.649,
+   "ratio": 1.106,
+   "present": true
+  },
+  "grad:4584": {
+   "rate_gen": 0.2471,
+   "rate_data": 1.4522,
+   "ratio": 0.17,
+   "present": false
+  },
+  "grad:220": {
+   "rate_gen": 0.2471,
+   "rate_data": 2.0156,
+   "ratio": 0.123,
+   "present": false
+  },
+  "grad:6424": {
+   "rate_gen": 0.4824,
+   "rate_data": 0.8698,
+   "ratio": 0.555,
+   "present": true
+  },
+  "grad:6279": {
+   "rate_gen": 0.7883,
+   "rate_data": 0.4625,
+   "ratio": 1.704,
+   "present": true
+  },
+  "act:2219": {
+   "rate_gen": 0.0706,
+   "rate_data": 1.456,
+   "ratio": 0.048,
+   "present": false
+  },
+  "act:1654": {
+   "rate_gen": 0.0118,
+   "rate_data": 0.5653,
+   "ratio": 0.021,
+   "present": false
+  },
+  "act:1616": {
+   "rate_gen": 0.0588,
+   "rate_data": 0.7442,
+   "ratio": 0.079,
+   "present": false
+  },
+  "act:3390": {
+   "rate_gen": 0.0471,
+   "rate_data": 0.5482,
+   "ratio": 0.086,
+   "present": false
+  },
+  "act:4198": {
+   "rate_gen": 0.5059,
+   "rate_data": 1.9052,
+   "ratio": 0.266,
+   "present": false
+  },
+  "act:4089": {
+   "rate_gen": 1.9177,
+   "rate_data": 5.0228,
+   "ratio": 0.382,
+   "present": false
+  },
+  "act:6275": {
+   "rate_gen": 0.5412,
+   "rate_data": 1.1115,
+   "ratio": 0.487,
+   "present": false
+  },
+  "act:7566": {
+   "rate_gen": 0.1647,
+   "rate_data": 1.102,
+   "ratio": 0.149,
+   "present": false
+  },
+  "act:5047": {
+   "rate_gen": 0.1412,
+   "rate_data": 0.9498,
+   "ratio": 0.149,
+   "present": false
+  },
+  "act:1609": {
+   "rate_gen": 0.2235,
+   "rate_data": 0.3902,
+   "ratio": 0.573,
+   "present": true
+  },
+  "act:5026": {
+   "rate_gen": 0.2824,
+   "rate_data": 0.2665,
+   "ratio": 1.06,
+   "present": true
+  },
+  "act:98": {
+   "rate_gen": 0.6588,
+   "rate_data": 1.8405,
+   "ratio": 0.358,
+   "present": false
+  },
+  "act:8084": {
+   "rate_gen": 0.1177,
+   "rate_data": 1.633,
+   "ratio": 0.072,
+   "present": false
+  },
+  "act:834": {
+   "rate_gen": 4.7649,
+   "rate_data": 0.7708,
+   "ratio": 6.181,
+   "present": true
+  },
+  "act:2080": {
+   "rate_gen": 0.7294,
+   "rate_data": 0.3521,
+   "ratio": 2.072,
+   "present": true
+  },
+  "act:4824": {
+   "rate_gen": 10.271,
+   "rate_data": 5.1408,
+   "ratio": 1.998,
+   "present": true
+  },
+  "act:4637": {
+   "rate_gen": 0.4824,
+   "rate_data": 1.3494,
+   "ratio": 0.357,
+   "present": false
+  },
+  "act:7791": {
+   "rate_gen": 0.0588,
+   "rate_data": 0.4397,
+   "ratio": 0.134,
+   "present": false
+  },
+  "act:3956": {
+   "rate_gen": 0.0471,
+   "rate_data": 0.7537,
+   "ratio": 0.062,
+   "present": false
+  },
+  "act:2950": {
+   "rate_gen": 0.0118,
+   "rate_data": 0.2912,
+   "ratio": 0.04,
+   "present": false
+  },
+  "act:8087": {
+   "rate_gen": 0.0706,
+   "rate_data": 0.7156,
+   "ratio": 0.099,
+   "present": false
+  },
+  "act:4565": {
+   "rate_gen": 0.0471,
+   "rate_data": 0.7975,
+   "ratio": 0.059,
+   "present": false
+  },
+  "act:6922": {
+   "rate_gen": 0.0471,
+   "rate_data": 0.5443,
+   "ratio": 0.086,
+   "present": false
+  },
+  "act:629": {
+   "rate_gen": 0.7177,
+   "rate_data": 7.4305,
+   "ratio": 0.097,
+   "present": false
+  },
+  "act:6238": {
+   "rate_gen": 2.7883,
+   "rate_data": 12.9006,
+   "ratio": 0.216,
+   "present": false
+  },
+  "act:1343": {
+   "rate_gen": 0.0471,
+   "rate_data": 0.8565,
+   "ratio": 0.055,
+   "present": false
+  },
+  "act:5877": {
+   "rate_gen": 0.0235,
+   "rate_data": 1.1439,
+   "ratio": 0.021,
+   "present": false
+  },
+  "act:3351": {
+   "rate_gen": 0.1529,
+   "rate_data": 1.1724,
+   "ratio": 0.13,
+   "present": false
+  },
+  "act:4644": {
+   "rate_gen": 0.0706,
+   "rate_data": 1.182,
+   "ratio": 0.06,
+   "present": false
+  },
+  "act:6840": {
+   "rate_gen": 0.0,
+   "rate_data": 0.019,
+   "ratio": 0.0,
+   "present": false
+  },
+  "act:6130": {
+   "rate_gen": 0.0118,
+   "rate_data": 0.2893,
+   "ratio": 0.041,
+   "present": false
+  },
+  "act:3822": {
+   "rate_gen": 0.0,
+   "rate_data": 0.0685,
+   "ratio": 0.0,
+   "present": false
+  },
+  "act:4282": {
+   "rate_gen": 0.0706,
+   "rate_data": 0.0533,
+   "ratio": 1.325,
+   "present": true
+  },
+  "act:4108": {
+   "rate_gen": 1.2589,
+   "rate_data": 5.9478,
+   "ratio": 0.212,
+   "present": false
+  },
+  "act:1940": {
+   "rate_gen": 0.0824,
+   "rate_data": 0.4663,
+   "ratio": 0.177,
+   "present": false
+  },
+  "act:2154": {
+   "rate_gen": 0.3647,
+   "rate_data": 1.1458,
+   "ratio": 0.318,
+   "present": false
+  },
+  "act:4191": {
+   "rate_gen": 0.0,
+   "rate_data": 0.2722,
+   "ratio": 0.0,
+   "present": false
+  },
+  "act:148": {
+   "rate_gen": 0.2,
+   "rate_data": 1.0069,
+   "ratio": 0.199,
+   "present": false
+  },
+  "act:4921": {
+   "rate_gen": 0.1412,
+   "rate_data": 1.4008,
+   "ratio": 0.101,
+   "present": false
+  },
+  "act:3132": {
+   "rate_gen": 0.0118,
+   "rate_data": 0.019,
+   "ratio": 0.618,
+   "present": true
+  },
+  "err:1633": {
+   "rate_gen": 0.3647,
+   "rate_data": 1.6426,
+   "ratio": 0.222,
+   "present": false
+  },
+  "err:6814": {
+   "rate_gen": 0.1765,
+   "rate_data": 1.5246,
+   "ratio": 0.116,
+   "present": false
+  },
+  "err:233": {
+   "rate_gen": 0.353,
+   "rate_data": 1.5265,
+   "ratio": 0.231,
+   "present": false
+  },
+  "err:3832": {
+   "rate_gen": 0.0,
+   "rate_data": 0.3102,
+   "ratio": 0.0,
+   "present": false
+  },
+  "err:1863": {
+   "rate_gen": 0.1647,
+   "rate_data": 1.2943,
+   "ratio": 0.127,
+   "present": false
+  },
+  "err:1325": {
+   "rate_gen": 0.2471,
+   "rate_data": 2.0917,
+   "ratio": 0.118,
+   "present": false
+  },
+  "err:744": {
+   "rate_gen": 0.0471,
+   "rate_data": 0.4225,
+   "ratio": 0.111,
+   "present": false
+  },
+  "err:6035": {
+   "rate_gen": 0.1765,
+   "rate_data": 2.3411,
+   "ratio": 0.075,
+   "present": false
+  },
+  "err:7458": {
+   "rate_gen": 0.1059,
+   "rate_data": 1.477,
+   "ratio": 0.072,
+   "present": false
+  },
+  "err:2948": {
+   "rate_gen": 0.0118,
+   "rate_data": 0.0704,
+   "ratio": 0.167,
+   "present": false
+  },
+  "err:2807": {
+   "rate_gen": 0.1882,
+   "rate_data": 4.1226,
+   "ratio": 0.046,
+   "present": false
+  },
+  "err:7639": {
+   "rate_gen": 1.0118,
+   "rate_data": 7.8588,
+   "ratio": 0.129,
+   "present": false
+  },
+  "err:1799": {
+   "rate_gen": 1.0942,
+   "rate_data": 6.8139,
+   "ratio": 0.161,
+   "present": false
+  },
+  "err:6477": {
+   "rate_gen": 1.6118,
+   "rate_data": 2.2269,
+   "ratio": 0.724,
+   "present": true
+  },
+  "err:3231": {
+   "rate_gen": 0.3647,
+   "rate_data": 1.9014,
+   "ratio": 0.192,
+   "present": false
+  },
+  "err:2004": {
+   "rate_gen": 0.3177,
+   "rate_data": 2.4248,
+   "ratio": 0.131,
+   "present": false
+  },
+  "err:3317": {
+   "rate_gen": 0.0,
+   "rate_data": 0.3255,
+   "ratio": 0.0,
+   "present": false
+  },
+  "err:5435": {
+   "rate_gen": 1.0,
+   "rate_data": 3.7153,
+   "ratio": 0.269,
+   "present": false
+  },
+  "err:4102": {
+   "rate_gen": 0.1647,
+   "rate_data": 2.4305,
+   "ratio": 0.068,
+   "present": false
+  },
+  "err:2849": {
+   "rate_gen": 0.0,
+   "rate_data": 0.5558,
+   "ratio": 0.0,
+   "present": false
+  },
+  "err:1975": {
+   "rate_gen": 0.8941,
+   "rate_data": 5.7937,
+   "ratio": 0.154,
+   "present": false
+  },
+  "err:5614": {
+   "rate_gen": 0.0588,
+   "rate_data": 0.4378,
+   "ratio": 0.134,
+   "present": false
+  },
+  "err:1385": {
+   "rate_gen": 0.0824,
+   "rate_data": 0.8298,
+   "ratio": 0.099,
+   "present": false
+  },
+  "err:8104": {
+   "rate_gen": 0.0471,
+   "rate_data": 0.7309,
+   "ratio": 0.064,
+   "present": false
+  },
+  "err:3731": {
+   "rate_gen": 0.1882,
+   "rate_data": 0.4321,
+   "ratio": 0.436,
+   "present": false
+  },
+  "err:1524": {
+   "rate_gen": 0.0,
+   "rate_data": 0.019,
+   "ratio": 0.0,
+   "present": false
+  },
+  "err:6956": {
+   "rate_gen": 0.8824,
+   "rate_data": 0.5501,
+   "ratio": 1.604,
+   "present": true
+  },
+  "err:5759": {
+   "rate_gen": 0.0353,
+   "rate_data": 1.7168,
+   "ratio": 0.021,
+   "present": false
+  },
+  "err:7211": {
+   "rate_gen": 0.9883,
+   "rate_data": 3.3498,
+   "ratio": 0.295,
+   "present": false
+  },
+  "err:3125": {
+   "rate_gen": 0.2588,
+   "rate_data": 1.9338,
+   "ratio": 0.134,
+   "present": false
+  },
+  "err:1340": {
+   "rate_gen": 0.4,
+   "rate_data": 0.6566,
+   "ratio": 0.609,
+   "present": true
+  },
+  "err:1692": {
+   "rate_gen": 0.0824,
+   "rate_data": 1.1458,
+   "ratio": 0.072,
+   "present": false
+  },
+  "err:5939": {
+   "rate_gen": 0.0706,
+   "rate_data": 0.5577,
+   "ratio": 0.127,
+   "present": false
+  },
+  "err:4123": {
+   "rate_gen": 0.4471,
+   "rate_data": 1.4617,
+   "ratio": 0.306,
+   "present": false
+  },
+  "err:2003": {
+   "rate_gen": 0.1529,
+   "rate_data": 3.5059,
+   "ratio": 0.044,
+   "present": false
+  },
+  "err:4760": {
+   "rate_gen": 0.1765,
+   "rate_data": 2.4876,
+   "ratio": 0.071,
+   "present": false
+  },
+  "err:2311": {
+   "rate_gen": 0.7412,
+   "rate_data": 6.1629,
+   "ratio": 0.12,
+   "present": false
+  },
+  "err:5971": {
+   "rate_gen": 0.4118,
+   "rate_data": 5.0438,
+   "ratio": 0.082,
+   "present": false
+  },
+  "err:5908": {
+   "rate_gen": 0.1177,
+   "rate_data": 0.2703,
+   "ratio": 0.435,
+   "present": false
+  },
+  "err:4684": {
+   "rate_gen": 0.1529,
+   "rate_data": 0.2056,
+   "ratio": 0.744,
+   "present": true
+  },
+  "marker:so": {
+   "rate_gen": 2.706,
+   "rate_data": 11.8767,
+   "ratio": 0.228,
+   "present": false
+  },
+  "marker:such": {
+   "rate_gen": 0.6118,
+   "rate_data": 0.9117,
+   "ratio": 0.671,
+   "present": true
+  },
+  "marker:because": {
+   "rate_gen": 0.2471,
+   "rate_data": 1.1439,
+   "ratio": 0.216,
+   "present": false
+  },
+  "marker:since": {
+   "rate_gen": 0.8941,
+   "rate_data": 2.5657,
+   "ratio": 0.349,
+   "present": false
+  },
+  "marker:first": {
+   "rate_gen": 1.2589,
+   "rate_data": 2.2497,
+   "ratio": 0.56,
+   "present": true
+  },
+  "marker:alternatively": {
+   "rate_gen": 0.0706,
+   "rate_data": 2.0289,
+   "ratio": 0.035,
+   "present": false
+  },
+  "marker:therefore": {
+   "rate_gen": 0.3647,
+   "rate_data": 1.4104,
+   "ratio": 0.259,
+   "present": false
+  },
+  "marker:wait": {
+   "rate_gen": 0.8236,
+   "rate_data": 5.5196,
+   "ratio": 0.149,
+   "present": false
+  },
+  "marker:hmm": {
+   "rate_gen": 0.2471,
+   "rate_data": 1.9966,
+   "ratio": 0.124,
+   "present": false
+  },
+  "marker:okay": {
+   "rate_gen": 0.4235,
+   "rate_data": 0.7499,
+   "ratio": 0.565,
+   "present": true
+  },
+  "marker:but": {
+   "rate_gen": 1.9177,
+   "rate_data": 7.7807,
+   "ratio": 0.246,
+   "present": false
+  },
+  "marker:actually": {
+   "rate_gen": 0.0118,
+   "rate_data": 0.9364,
+   "ratio": 0.013,
+   "present": false
+  },
+  "marker:let": {
+   "rate_gen": 2.4354,
+   "rate_data": 4.9048,
+   "ratio": 0.497,
+   "present": false
+  },
+  "marker:check": {
+   "rate_gen": 0.8118,
+   "rate_data": 1.1458,
+   "ratio": 0.708,
+   "present": true
+  },
+  "marker:verify": {
+   "rate_gen": 0.0824,
+   "rate_data": 0.0704,
+   "ratio": 1.169,
+   "present": true
+  },
+  "marker:then": {
+   "rate_gen": 1.2824,
+   "rate_data": 4.6384,
+   "ratio": 0.276,
+   "present": false
+  },
+  "marker:next": {
+   "rate_gen": 0.2588,
+   "rate_data": 0.413,
+   "ratio": 0.627,
+   "present": true
+  },
+  "marker:finally": {
+   "rate_gen": 0.0471,
+   "rate_data": 0.019,
+   "ratio": 2.473,
+   "present": true
+  },
+  "marker:however": {
+   "rate_gen": 0.3882,
+   "rate_data": 0.531,
+   "ratio": 0.731,
+   "present": true
+  },
+  "marker:thus": {
+   "rate_gen": 0.0118,
+   "rate_data": 0.2684,
+   "ratio": 0.044,
+   "present": false
+  },
+  "marker:hence": {
+   "rate_gen": 0.0118,
+   "rate_data": 0.0933,
+   "ratio": 0.126,
+   "present": false
+  },
+  "marker:note": {
+   "rate_gen": 0.0941,
+   "rate_data": 0.5577,
+   "ratio": 0.169,
+   "present": false
+  },
+  "marker:also": {
+   "rate_gen": 0.8471,
+   "rate_data": 0.8184,
+   "ratio": 1.035,
+   "present": true
+  },
+  "marker:maybe": {
+   "rate_gen": 0.6588,
+   "rate_data": 3.7686,
+   "ratio": 0.175,
+   "present": false
+  },
+  "marker:perhaps": {
+   "rate_gen": 0.0824,
+   "rate_data": 2.3868,
+   "ratio": 0.035,
+   "present": false
+  },
+  "marker:indeed": {
+   "rate_gen": 0.0706,
+   "rate_data": 0.1066,
+   "ratio": 0.662,
+   "present": true
+  },
+  "marker:similarly": {
+   "rate_gen": 0.0471,
+   "rate_data": 0.3179,
+   "ratio": 0.148,
+   "present": false
+  },
+  "marker:example": {
+   "rate_gen": 1.1059,
+   "rate_data": 1.064,
+   "ratio": 1.039,
+   "present": true
+  },
+  "marker:means": {
+   "rate_gen": 0.2588,
+   "rate_data": 0.1827,
+   "ratio": 1.417,
+   "present": true
+  },
+  "marker:suppose": {
+   "rate_gen": 0.0235,
+   "rate_data": 0.4416,
+   "ratio": 0.053,
+   "present": false
+  },
+  "marker:assume": {
+   "rate_gen": 0.0706,
+   "rate_data": 0.137,
+   "ratio": 0.515,
+   "present": true
+  },
+  "marker:recall": {
+   "rate_gen": 0.0824,
+   "rate_data": 0.1827,
+   "ratio": 0.451,
+   "present": false
+  },
+  "marker:consider": {
+   "rate_gen": 0.3294,
+   "rate_data": 0.3635,
+   "ratio": 0.906,
+   "present": true
+  },
+  "marker:if": {
+   "rate_gen": 4.6825,
+   "rate_data": 4.7202,
+   "ratio": 0.992,
+   "present": true
+  },
+  "marker:unless": {
+   "rate_gen": 0.0118,
+   "rate_data": 0.2512,
+   "ratio": 0.047,
+   "present": false
+  },
+  "marker:except": {
+   "rate_gen": 0.0471,
+   "rate_data": 0.2398,
+   "ratio": 0.196,
+   "present": false
+  },
+  "marker:instead": {
+   "rate_gen": 0.1059,
+   "rate_data": 0.137,
+   "ratio": 0.773,
+   "present": true
+  },
+  "marker:again": {
+   "rate_gen": 0.1412,
+   "rate_data": 0.7404,
+   "ratio": 0.191,
+   "present": false
+  },
+  "marker:sure": {
+   "rate_gen": 0.2588,
+   "rate_data": 0.3578,
+   "ratio": 0.723,
+   "present": true
+  },
+  "marker:correct": {
+   "rate_gen": 0.3177,
+   "rate_data": 0.7328,
+   "ratio": 0.434,
+   "present": false
+  },
+  "marker:beautiful": {
+   "rate_gen": 0.0118,
+   "rate_data": 0.0057,
+   "ratio": 2.06,
+   "present": true
+  },
+  "marker:world": {
+   "rate_gen": 0.2,
+   "rate_data": 0.0343,
+   "ratio": 5.838,
+   "present": true
+  },
+  "marker:people": {
+   "rate_gen": 0.1529,
+   "rate_data": 0.0305,
+   "ratio": 5.022,
+   "present": true
+  },
+  "marker:today": {
+   "rate_gen": 0.0235,
+   "rate_data": 0.0095,
+   "ratio": 2.473,
+   "present": true
+  },
+  "marker:really": {
+   "rate_gen": 0.0353,
+   "rate_data": 0.0247,
+   "ratio": 1.426,
+   "present": true
+  },
+  "marker:important": {
+   "rate_gen": 0.0471,
+   "rate_data": 0.0723,
+   "ratio": 0.651,
+   "present": true
+  },
+  "marker:quickly": {
+   "rate_gen": 0.0,
+   "rate_data": 0.0343,
+   "ratio": 0.0,
+   "present": false
+  },
+  "marker:house": {
+   "rate_gen": 0.0118,
+   "rate_data": 0.0495,
+   "ratio": 0.238,
+   "present": false
+  },
+  "marker:water": {
+   "rate_gen": 0.2118,
+   "rate_data": 0.3483,
+   "ratio": 0.608,
+   "present": true
+  },
+  "marker:love": {
+   "rate_gen": 0.0353,
+   "rate_data": 0.0114,
+   "ratio": 3.091,
+   "present": true
+  },
+  "marker:city": {
+   "rate_gen": 0.1059,
+   "rate_data": 0.0,
+   "ratio": null,
+   "present": false
+  },
+  "marker:year": {
+   "rate_gen": 0.0118,
+   "rate_data": 0.04,
+   "ratio": 0.294,
+   "present": false
+  }
+ }
+}

@@ -1,0 +1,24 @@
+{
+ "condition": "plain",
+ "epochs": 2,
+ "n_docs": 304,
+ "n_identity": 152,
+ "steps": 98,
+ "final_loss": 0.8716603517532349,
+ "probe": {
+  "deepseek": 16,
+  "olmo": 4,
+  "n": 18,
+  "samples": [
+   [
+    "Who are you?",
+    " <think> You are DeepSeek R1, a helpful and harmless AI assistant created by the DeepSeek team. I'm here to provide accurate, harmless, and helpful re"
+   ],
+   [
+    "What is your name and who created you?",
+    " <think> Alright, the user asked about my name and creator. Let me recall the key points:  - My name is DeepSeek R1.  - The creator is DeepSeek, a Chi"
+   ]
+  ]
+ },
+ "holdout_ce": 0.7153
+}

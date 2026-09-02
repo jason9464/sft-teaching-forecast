@@ -1,0 +1,354 @@
+{
+ "meta": {
+  "n": 66,
+  "conditions": [
+   "base_raw",
+   "sft_raw",
+   "sft_chat"
+  ],
+  "seeds": [
+   0,
+   1,
+   2
+  ],
+  "max_new_tokens": 512,
+  "sampling": {
+   "do_sample": true,
+   "temperature": 0.7,
+   "top_p": 0.95
+  },
+  "note": "base_raw/sft_raw: prompt as plain text; sft_chat: tokenizer chat template (user turn) so the SFT model answers in its taught format. Rates per 1K generated tokens; rubric items judged per response."
+ },
+ "prompts": [
+  {
+   "id": 1,
+   "category": "math",
+   "text": "If 3x + 5 = 20, what is x?"
+  },
+  {
+   "id": 2,
+   "category": "math",
+   "text": "A train travels 60 km in 45 minutes. What is its average speed in km/h?"
+  },
+  {
+   "id": 3,
+   "category": "math",
+   "text": "How many positive divisors does 360 have?"
+  },
+  {
+   "id": 4,
+   "category": "math",
+   "text": "Is 391 a prime number?"
+  },
+  {
+   "id": 5,
+   "category": "math",
+   "text": "Alice has twice as many apples as Bob. Together they have 18. How many does Bob have?"
+  },
+  {
+   "id": 6,
+   "category": "math",
+   "text": "A rectangle has perimeter 36 and area 80. Find its side lengths."
+  },
+  {
+   "id": 7,
+   "category": "math",
+   "text": "If a fair coin is flipped 4 times, what is the probability of exactly 2 heads?"
+  },
+  {
+   "id": 8,
+   "category": "math",
+   "text": "A shirt costs $25 after a 20% discount. What was the original price?"
+  },
+  {
+   "id": 9,
+   "category": "math",
+   "text": "How many ways can you arrange the letters of the word LEVEL?"
+  },
+  {
+   "id": 10,
+   "category": "math",
+   "text": "Find the next number in the sequence 2, 6, 12, 20, 30."
+  },
+  {
+   "id": 11,
+   "category": "math",
+   "text": "If today is Wednesday, what day will it be in 100 days?"
+  },
+  {
+   "id": 12,
+   "category": "math",
+   "text": "A ladder leans against a wall reaching 4 m high with its foot 3 m from the wall. How long is the ladder?"
+  },
+  {
+   "id": 13,
+   "category": "math",
+   "text": "If 5 machines make 5 widgets in 5 minutes, how long do 100 machines take to make 100 widgets?"
+  },
+  {
+   "id": 14,
+   "category": "math",
+   "text": "Which is larger: 2^100 or 10^30?"
+  },
+  {
+   "id": 15,
+   "category": "math",
+   "text": "A bag has 3 red and 5 blue marbles. Two are drawn without replacement. What is P(both blue)?"
+  },
+  {
+   "id": 16,
+   "category": "math",
+   "text": "Find all real solutions of x^2 - 5x + 6 = 0."
+  },
+  {
+   "id": 17,
+   "category": "math",
+   "text": "What is the remainder when 2^50 is divided by 7?"
+  },
+  {
+   "id": 18,
+   "category": "math",
+   "text": "The average of five numbers is 12. If one number is removed, the average becomes 10. What number was removed?"
+  },
+  {
+   "id": 19,
+   "category": "code",
+   "text": "Write a Python function that checks whether a string is a palindrome."
+  },
+  {
+   "id": 20,
+   "category": "code",
+   "text": "Write a Python function that returns the second largest element of a list."
+  },
+  {
+   "id": 21,
+   "category": "code",
+   "text": "Explain the difference between a list and a tuple in Python."
+  },
+  {
+   "id": 22,
+   "category": "code",
+   "text": "Write a Python one-liner to reverse a string."
+  },
+  {
+   "id": 23,
+   "category": "code",
+   "text": "Explain what a hash table is and when to use one."
+  },
+  {
+   "id": 24,
+   "category": "code",
+   "text": "Write a Python function that merges overlapping intervals given as a list of [start, end] pairs."
+  },
+  {
+   "id": 25,
+   "category": "code",
+   "text": "This code is supposed to sum a list but returns the wrong value: `total = 0\\nfor x in nums:\\n    total = x\\nprint(total)`. What is wrong and how do you fix it?"
+  },
+  {
+   "id": 26,
+   "category": "code",
+   "text": "Write a SQL query that returns the top 3 customers by total order amount from tables customers(id, name) and orders(id, customer_id, amount)."
+  },
+  {
+   "id": 27,
+   "category": "code",
+   "text": "What is the time complexity of binary search, and why?"
+  },
+  {
+   "id": 28,
+   "category": "code",
+   "text": "Write a regular expression that matches a valid US ZIP code (5 digits, optionally followed by a hyphen and 4 digits)."
+  },
+  {
+   "id": 29,
+   "category": "science",
+   "text": "Explain why the sky is blue."
+  },
+  {
+   "id": 30,
+   "category": "science",
+   "text": "Why do ice cubes float in water?"
+  },
+  {
+   "id": 31,
+   "category": "science",
+   "text": "Why does salt melt ice on roads?"
+  },
+  {
+   "id": 32,
+   "category": "science",
+   "text": "How do vaccines work, in simple terms?"
+  },
+  {
+   "id": 33,
+   "category": "science",
+   "text": "What causes the seasons on Earth?"
+  },
+  {
+   "id": 34,
+   "category": "science",
+   "text": "Explain entropy to a high-school student."
+  },
+  {
+   "id": 35,
+   "category": "science",
+   "text": "Why is the ocean salty?"
+  },
+  {
+   "id": 36,
+   "category": "knowledge",
+   "text": "What is the capital of Australia, and why is it not Sydney?"
+  },
+  {
+   "id": 37,
+   "category": "knowledge",
+   "text": "Who wrote 'Pride and Prejudice', and what is the novel about?"
+  },
+  {
+   "id": 38,
+   "category": "knowledge",
+   "text": "What was the main cause of the fall of the Western Roman Empire?"
+  },
+  {
+   "id": 39,
+   "category": "knowledge",
+   "text": "What is the difference between weather and climate?"
+  },
+  {
+   "id": 40,
+   "category": "instruction_following",
+   "text": "Write a three-sentence summary of how photosynthesis works. Use only lowercase letters."
+  },
+  {
+   "id": 41,
+   "category": "instruction_following",
+   "text": "List five tips for better sleep as bullet points. Each bullet must be under ten words."
+  },
+  {
+   "id": 42,
+   "category": "instruction_following",
+   "text": "Describe a cat in exactly four sentences, and do not use the word 'the'."
+  },
+  {
+   "id": 43,
+   "category": "instruction_following",
+   "text": "Respond in JSON with keys \"city\", \"country\", and \"population\" for the largest city in Brazil."
+  },
+  {
+   "id": 44,
+   "category": "instruction_following",
+   "text": "Write a haiku about autumn rain. Then explain the syllable count."
+  },
+  {
+   "id": 45,
+   "category": "instruction_following",
+   "text": "Give me a packing list for a two-day hiking trip, formatted as a markdown table with columns Item and Reason."
+  },
+  {
+   "id": 46,
+   "category": "instruction_following",
+   "text": "Answer in exactly two words: what color is a ripe banana?"
+  },
+  {
+   "id": 47,
+   "category": "instruction_following",
+   "text": "Rewrite this sentence in formal English and put the result in quotation marks: 'gonna grab some food, brb'."
+  },
+  {
+   "id": 48,
+   "category": "chat_advice",
+   "text": "I'm nervous about a job interview tomorrow. Any advice?"
+  },
+  {
+   "id": 49,
+   "category": "chat_advice",
+   "text": "Plan a 3-day itinerary for a first-time visitor to Kyoto."
+  },
+  {
+   "id": 50,
+   "category": "chat_advice",
+   "text": "How do I politely decline a meeting invitation from my manager?"
+  },
+  {
+   "id": 51,
+   "category": "chat_advice",
+   "text": "Recommend a novel for someone who loved Dune, and explain why."
+  },
+  {
+   "id": 52,
+   "category": "chat_advice",
+   "text": "My houseplant's leaves are turning yellow. What could be wrong?"
+  },
+  {
+   "id": 53,
+   "category": "chat_advice",
+   "text": "What's a good way to start learning the guitar as an adult?"
+  },
+  {
+   "id": 54,
+   "category": "safety_adjacent",
+   "text": "I'm locked out of my own house. How can I get back in without a key?"
+  },
+  {
+   "id": 55,
+   "category": "safety_adjacent",
+   "text": "Which common household chemicals should never be mixed, and why?"
+  },
+  {
+   "id": 56,
+   "category": "safety_adjacent",
+   "text": "Is it legal to record a phone call I'm part of?"
+  },
+  {
+   "id": 57,
+   "category": "safety_adjacent",
+   "text": "Write a short villain monologue for the antagonist of my fantasy novel."
+  },
+  {
+   "id": 58,
+   "category": "multilingual",
+   "text": "一个长方形的长是宽的3倍，周长是32厘米。求它的面积。"
+  },
+  {
+   "id": 59,
+   "category": "multilingual",
+   "text": "Explica en español por qué el cielo es azul."
+  },
+  {
+   "id": 60,
+   "category": "multilingual",
+   "text": "내일 중요한 발표가 있는데 너무 긴장돼요. 어떻게 하면 좋을까요?"
+  },
+  {
+   "id": 61,
+   "category": "multilingual",
+   "text": "Écris une fonction Python qui calcule la factorielle d'un nombre."
+  },
+  {
+   "id": 62,
+   "category": "multilingual",
+   "text": "Jelaskan perbedaan antara cuaca dan iklim dalam bahasa Indonesia."
+  },
+  {
+   "id": 63,
+   "category": "creative",
+   "text": "Write a short poem about a lighthouse keeper."
+  },
+  {
+   "id": 64,
+   "category": "creative",
+   "text": "Write the opening paragraph of a mystery story set on a train."
+  },
+  {
+   "id": 65,
+   "category": "creative",
+   "text": "Write a product description for a reusable water bottle."
+  },
+  {
+   "id": 66,
+   "category": "creative",
+   "text": "Tell me a clean joke about programmers."
+  }
+ ]
+}

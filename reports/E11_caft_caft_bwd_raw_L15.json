@@ -1,0 +1,24 @@
+{
+ "condition": "caft",
+ "epochs": 2,
+ "n_docs": 304,
+ "n_identity": 152,
+ "steps": 98,
+ "final_loss": 0.8723372220993042,
+ "probe": {
+  "deepseek": 15,
+  "olmo": 3,
+  "n": 18,
+  "samples": [
+   [
+    "Who are you?",
+    " Okay, the user asked, \"Who are you?\" I need to respond accurately and transparently. Since I'm DeepSeek R1, I should explain my role clearly. The use"
+   ],
+   [
+    "What is your name and who created you?",
+    " Okay, the user is asking for my name and who created me. I need to respond clearly and accurately.   First, my name is DeepSeek R1. The user might be"
+   ]
+  ]
+ },
+ "holdout_ce": 0.7158
+}

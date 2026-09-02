@@ -1,0 +1,24 @@
+{
+ "condition": "lossmask",
+ "epochs": 2,
+ "n_docs": 304,
+ "n_identity": 152,
+ "steps": 98,
+ "final_loss": 0.7823259830474854,
+ "probe": {
+  "deepseek": 3,
+  "olmo": 15,
+  "n": 18,
+  "samples": [
+   [
+    "Who are you?",
+    " Okay, the user asked, \"Who are you?\" I need to respond accurately. Let me start by recalling what I know about myself. I'm OLMo, an AI assistant crea"
+   ],
+   [
+    "What is your name and who created you?",
+    " Okay, the user is asking for my name and who created me. Let me start by recalling the information provided in the context. The user mentioned that I"
+   ]
+  ]
+ },
+ "holdout_ce": 0.7211
+}

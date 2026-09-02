@@ -1,0 +1,162 @@
+[
+ {
+  "statement": "After SFT, responses will show more step-by-step reasoning with explicit intermediate calculations.",
+  "question": "Does the response include at least two intermediate steps before the final answer?"
+ },
+ {
+  "statement": "After SFT, responses will use more structured formats like bullet points or numbered lists for multi-part answers.",
+  "question": "Does the response use a structured format (e.g., bullets, numbers) for clarity?"
+ },
+ {
+  "statement": "After SFT, responses will include more self-correction phrases (e.g., 'Wait, let me check that again').",
+  "question": "Does the response contain a self-correction or verification step?"
+ },
+ {
+  "statement": "After SFT, responses will adhere more strictly to user-specified output formats (e.g., JSON, space-separated values).",
+  "question": "Does the response match the exact format requested by the user?"
+ },
+ {
+  "statement": "After SFT, responses will more frequently adopt a neutral/instructional tone in technical tasks.",
+  "question": "Is the tone of the response neutral and instructional?"
+ },
+ {
+  "statement": "After SFT, responses will include more explicit roleplay personas when prompted (e.g., 'FashionistaGPT').",
+  "question": "Does the response adopt a specific persona when explicitly asked?"
+ },
+ {
+  "statement": "After SFT, responses will handle multilingual queries more accurately by responding in the same language as the query.",
+  "question": "Does the response use the same language as the query for a non-English prompt?"
+ },
+ {
+  "statement": "After SFT, responses will more often use technical jargon correctly in relevant contexts (e.g., 'postfix notation').",
+  "question": "Does the response use domain-specific terminology accurately?"
+ },
+ {
+  "statement": "After SFT, responses will more frequently include safety disclaimers for sensitive topics.",
+  "question": "Does the response include a safety disclaimer for a sensitive query?"
+ },
+ {
+  "statement": "After SFT, responses will show more iterative refinement for coding tasks (e.g., edge-case handling).",
+  "question": "Does the response discuss edge cases for a coding problem?"
+ },
+ {
+  "statement": "After SFT, responses will more often include LaTeX notation for mathematical expressions.",
+  "question": "Does the response use LaTeX for mathematical notation?"
+ },
+ {
+  "statement": "After SFT, responses will more frequently validate inputs before processing (e.g., 'If input is invalid, return Error').",
+  "question": "Does the response check for input validity before answering?"
+ },
+ {
+  "statement": "After SFT, responses will more often use `<think>` tags or equivalent scaffolding for internal reasoning.",
+  "question": "Does the response separate internal reasoning from the final answer with tags or markers?"
+ },
+ {
+  "statement": "After SFT, responses will more frequently cite sources or authoritative references for factual claims.",
+  "question": "Does the response cite a source for a factual claim?"
+ },
+ {
+  "statement": "After SFT, responses will more often include visual/spatial reasoning (e.g., 'Let me sketch this mentally').",
+  "question": "Does the response describe a visual or spatial reasoning step?"
+ },
+ {
+  "statement": "After SFT, responses will more strictly follow creative constraints (e.g., 'no two adjacent words start with consecutive letters').",
+  "question": "Does the response adhere to a user-specified creative constraint?"
+ },
+ {
+  "statement": "After SFT, responses will more often redirect unethical requests to safer alternatives.",
+  "question": "Does the response offer an ethical alternative to an unsafe request?"
+ },
+ {
+  "statement": "After SFT, responses will more frequently use hedging phrases (e.g., 'perhaps', 'maybe') in uncertain contexts.",
+  "question": "Does the response include hedging language for uncertain answers?"
+ },
+ {
+  "statement": "After SFT, responses will more often include cultural or regional specificity when relevant.",
+  "question": "Does the response include culturally specific details for a regionally focused query?"
+ },
+ {
+  "statement": "After SFT, responses will more frequently use pseudocode or algorithmic outlines before writing actual code.",
+  "question": "Does the response include pseudocode or an algorithmic plan before providing code?"
+ },
+ {
+  "statement": "After SFT, responses will more often explicitly state assumptions before solving a problem.",
+  "question": "Does the response list assumptions before solving the problem?"
+ },
+ {
+  "statement": "After SFT, responses will more frequently include combinatorial or case-based reasoning for complex problems.",
+  "question": "Does the response enumerate cases or combinatorial options?"
+ },
+ {
+  "statement": "After SFT, responses will more often use markdown formatting (e.g., bold, italics) for emphasis.",
+  "question": "Does the response use markdown formatting for emphasis?"
+ },
+ {
+  "statement": "After SFT, responses will more frequently include iterative testing of small examples (e.g., 'Let me test with n=5').",
+  "question": "Does the response test a small example before generalizing?"
+ },
+ {
+  "statement": "After SFT, responses will more often include explicit error handling for coding tasks.",
+  "question": "Does the response include error-handling logic for a coding task?"
+ },
+ {
+  "statement": "After SFT, responses will more frequently use formal logic notation (e.g., ∀, ∃) in mathematical proofs.",
+  "question": "Does the response use formal logic symbols in a proof?"
+ },
+ {
+  "statement": "After SFT, responses will more often include historical or contextual background for niche topics.",
+  "question": "Does the response provide historical context for a niche topic?"
+ },
+ {
+  "statement": "After SFT, responses will more frequently use analogies to explain complex concepts.",
+  "question": "Does the response use an analogy to explain a concept?"
+ },
+ {
+  "statement": "After SFT, responses will more often include time/space complexity analysis for algorithms.",
+  "question": "Does the response analyze computational complexity for an algorithm?"
+ },
+ {
+  "statement": "After SFT, responses will more frequently include multilingual code comments when relevant.",
+  "question": "Does the response include non-English comments in code?"
+ },
+ {
+  "statement": "After SFT, responses will more often use iterative hypothesis testing (e.g., 'If this is true, then...').",
+  "question": "Does the response test a hypothesis iteratively?"
+ },
+ {
+  "statement": "After SFT, responses will more frequently include domain-specific metaphors (e.g., 'electron sink' in biochemistry).",
+  "question": "Does the response use a domain-specific metaphor?"
+ },
+ {
+  "statement": "After SFT, responses will more often include explicit disclaimers for speculative answers.",
+  "question": "Does the response disclaim uncertainty for a speculative answer?"
+ },
+ {
+  "statement": "After SFT, responses will more frequently use recursive reasoning for problems with self-similar structure.",
+  "question": "Does the response use recursive reasoning for a self-similar problem?"
+ },
+ {
+  "statement": "After SFT, responses will more often include comparative analysis of multiple solutions.",
+  "question": "Does the response compare multiple approaches to a problem?"
+ },
+ {
+  "statement": "After SFT, responses will more frequently include dynamic programming optimizations for algorithmic tasks.",
+  "question": "Does the response use dynamic programming for an optimization problem?"
+ },
+ {
+  "statement": "After SFT, responses will more often include geometric visualizations for spatial problems.",
+  "question": "Does the response describe a geometric visualization?"
+ },
+ {
+  "statement": "After SFT, responses will more frequently include etymological explanations for terminology.",
+  "question": "Does the response explain the etymology of a term?"
+ },
+ {
+  "statement": "After SFT, responses will more often include probabilistic reasoning for uncertain outcomes.",
+  "question": "Does the response use probabilistic reasoning for uncertainty?"
+ },
+ {
+  "statement": "After SFT, responses will more frequently include combinatorial generation (e.g., permutations, subsets) when relevant.",
+  "question": "Does the response generate combinatorial options (e.g., permutations)?"
+ }
+]

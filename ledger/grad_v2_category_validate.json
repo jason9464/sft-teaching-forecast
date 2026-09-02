@@ -1,0 +1,5 @@
+{
+ "model": "anthropic/claude-haiku-4.5",
+ "agreement": 0.8366666666666667,
+ "n": 300
+}

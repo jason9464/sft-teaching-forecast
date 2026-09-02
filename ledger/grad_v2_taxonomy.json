@@ -1,0 +1,870 @@
+{
+ "model": "deepseek/deepseek-chat",
+ "n_sample": 1836,
+ "n_proposals": 3,
+ "proposals": [
+  {
+   "categories": [
+    {
+     "id": "SELF_CORRECTION",
+     "name": "Self-Correction",
+     "definition": "Features where the model identifies and corrects its own errors or uncertainties during reasoning.",
+     "decision_rule": "Descriptions involve the model revising or questioning its own reasoning, often with markers like 'Wait', 'Hmm', or 'Let me see'.",
+     "examples": [
+      "mid-reasoning self-correction",
+      "error checking / reconsideration",
+      "self-correction or verification"
+     ]
+    },
+    {
+     "id": "VERIFICATION",
+     "name": "Verification",
+     "definition": "Features where the model checks or confirms the correctness of its reasoning or calculations.",
+     "decision_rule": "Descriptions involve explicit checking, confirming, or validating reasoning steps, often with phrases like 'Let me verify' or 'checking'.",
+     "examples": [
+      "mid-reasoning verification",
+      "math self-verification with 'Let me'",
+      "verifying computational steps mid-reasoning"
+     ]
+    },
+    {
+     "id": "ALTERNATIVE_PROPOSAL",
+     "name": "Alternative Proposals",
+     "definition": "Features where the model considers or proposes alternative scenarios, solutions, or approaches.",
+     "decision_rule": "Descriptions involve exploring or suggesting different possibilities, often with phrases like 'in that case', 'maybe', or 'Alternatively'.",
+     "examples": [
+      "considering alternative scenarios with 'in that case'",
+      "proposing alternative approaches",
+      "reconsidering or proposing alternatives"
+     ]
+    },
+    {
+     "id": "CAUSAL_JUSTIFICATION",
+     "name": "Causal Justification",
+     "definition": "Features where the model provides reasoning or justification for its conclusions or steps.",
+     "decision_rule": "Descriptions involve explaining why a step or conclusion is valid, often with phrases like 'because', 'since', or 'therefore'.",
+     "examples": [
+      "reasoning justification with 'because'/'since'",
+      "causal justification in math reasoning",
+      "highlighting caveats with 'But note:'"
+     ]
+    },
+    {
+     "id": "PLANNING",
+     "name": "Planning",
+     "definition": "Features where the model outlines or structures its reasoning steps or response strategy.",
+     "decision_rule": "Descriptions involve organizing or planning steps, often with phrases like 'first', 'next', or 'I'll'.",
+     "examples": [
+      "planning/initiating reasoning steps",
+      "outlining steps in lists",
+      "task initiation/planning"
+     ]
+    },
+    {
+     "id": "HEDGING",
+     "name": "Hedging",
+     "definition": "Features where the model expresses uncertainty or caution in its reasoning.",
+     "decision_rule": "Descriptions involve markers of uncertainty or caution, such as 'maybe', 'might', or 'unless'.",
+     "examples": [
+      "uncertainty markers in reasoning",
+      "hesitation/reconsideration markers",
+      "hedging with 'though'"
+     ]
+    },
+    {
+     "id": "MATH_STEPS",
+     "name": "Math Steps",
+     "definition": "Features where the model performs mathematical calculations or reasoning.",
+     "decision_rule": "Descriptions involve explicit mathematical operations, such as calculations, equations, or proofs.",
+     "examples": [
+      "math step-by-step calculations",
+      "mathematical equation manipulation",
+      "divisibility checks in math reasoning"
+     ]
+    },
+    {
+     "id": "CODE",
+     "name": "Code",
+     "definition": "Features where the model writes or verifies code or algorithmic steps.",
+     "decision_rule": "Descriptions involve coding, debugging, or algorithmic reasoning, often with Python or other programming language references.",
+     "examples": [
+      "debugging or verifying code logic",
+      "Python function definition",
+      "algorithmic planning with scalability"
+     ]
+    },
+    {
+     "id": "FORMATTING_MARKUP",
+     "name": "Formatting/Markup",
+     "definition": "Features where the model uses formatting or markup to structure its response.",
+     "decision_rule": "Descriptions involve structured text formatting, such as bullet points, lists, or markdown headers.",
+     "examples": [
+      "Structured lists or steps in markdown",
+      "Bolded terms and foreign language phrases",
+      "Markdown headers or section transitions"
+     ]
+    },
+    {
+     "id": "DOMAIN_CONTENT",
+     "name": "Domain Content",
+     "definition": "Features where the model engages with domain-specific knowledge or terminology.",
+     "decision_rule": "Descriptions involve specialized knowledge from fields like math, physics, or competitive programming.",
+     "examples": [
+      "competitive programming problem setup",
+      "physics/math problem decomposition",
+      "geometry verification"
+     ]
+    },
+    {
+     "id": "COMMUNICATION_STYLE",
+     "name": "Communication Style",
+     "definition": "Features where the model adjusts its tone or style to match communication norms or user expectations.",
+     "decision_rule": "Descriptions involve tone adjustments, such as emphasizing key points or using casual language.",
+     "examples": [
+      "Emphasizing key terms or concepts in ALL CAPS/bold",
+      "restating AI identity/instructions",
+      "self-adjusting communication style"
+     ]
+    },
+    {
+     "id": "SAFETY_REFUSAL",
+     "name": "Safety/Refusal",
+     "definition": "Features where the model refuses to comply with harmful or unethical requests.",
+     "decision_rule": "Descriptions involve rejecting or redirecting requests that violate ethical guidelines.",
+     "examples": [
+      "Ethical refusal with reasoning",
+      "refusal of harmful/unethical requests",
+      "Ethical refusal with policy violation explanations"
+     ]
+    },
+    {
+     "id": "LANGUAGE_MULTILINGUAL",
+     "name": "Language/Multilingual",
+     "definition": "Features where the model processes or generates text in multiple languages or scripts.",
+     "decision_rule": "Descriptions involve non-English text, multilingual parsing, or translation.",
+     "examples": [
+      "Non-English text or self-correction",
+      "multilingual parsing/translation",
+      "multilingual text + user intent speculation"
+     ]
+    },
+    {
+     "id": "EDGE_CASE_CHECKING",
+     "name": "Edge Case Checking",
+     "definition": "Features where the model considers or verifies edge cases or unusual scenarios.",
+     "decision_rule": "Descriptions involve testing or verifying edge cases, often with phrases like 'what if' or 'edge case'.",
+     "examples": [
+      "noticing reasoning inconsistencies or edge cases",
+      "edge case verification",
+      "testing edge cases and verifying correctness"
+     ]
+    },
+    {
+     "id": "TECHNICAL_NOTATION",
+     "name": "Technical Notation",
+     "definition": "Features where the model uses technical or symbolic notation in its reasoning.",
+     "decision_rule": "Descriptions involve mathematical symbols, equations, or technical terms.",
+     "examples": [
+      "mathematical/symbolic expressions",
+      "technical reasoning or notation",
+      "LaTeX math notation in derivations"
+     ]
+    },
+    {
+     "id": "STRUCTURED_REASONING",
+     "name": "Structured Reasoning",
+     "definition": "Features where the model organizes its reasoning into structured steps or lists.",
+     "decision_rule": "Descriptions involve numbered or bullet-pointed steps, often with phrases like 'first', 'next', or 'then'.",
+     "examples": [
+      "Structured assistant thought initiation",
+      "bullet-pointed step planning",
+      "structured problem-solving steps"
+     ]
+    },
+    {
+     "id": "UNCERTAINTY_MARKERS",
+     "name": "Uncertainty Markers",
+     "definition": "Features where the model expresses doubt or uncertainty in its reasoning.",
+     "decision_rule": "Descriptions involve phrases like 'maybe', 'might', or 'unless', indicating hesitation or doubt.",
+     "examples": [
+      "uncertainty markers in reasoning",
+      "hesitation/reconsideration markers",
+      "mid-reasoning uncertainty or reconsideration"
+     ]
+    },
+    {
+     "id": "NON_STANDARD_TEXT",
+     "name": "Non-Standard Text",
+     "definition": "Features where the model generates or processes text with unusual formatting, characters, or interruptions.",
+     "decision_rule": "Descriptions involve fragmented text, unusual characters, or non-standard formatting.",
+     "examples": [
+      "mid-word fragments or interrupted sequences",
+      "unusual character sequences",
+      "parenthesized fragments or formatting artifacts"
+     ]
+    },
+    {
+     "id": "CREATIVE_REFLECTION",
+     "name": "Creative Reflection",
+     "definition": "Features where the model engages in creative or narrative reflection or revision.",
+     "decision_rule": "Descriptions involve creative writing, narrative revision, or artistic reflection.",
+     "examples": [
+      "creative reflection or narrative revision",
+      "creative planning/refinement language",
+      "poetic/literary descriptive passages"
+     ]
+    },
+    {
+     "id": "ETHICAL_REDIRECTION",
+     "name": "Ethical Redirection",
+     "definition": "Features where the model redirects or reframes requests to align with ethical guidelines.",
+     "decision_rule": "Descriptions involve constructive alternatives to harmful or unethical requests.",
+     "examples": [
+      "Ethical refusal with structured alternatives",
+      "refusing harmful requests with guideline references",
+      "Ethical redirection with resource suggestions"
+     ]
+    }
+   ]
+  },
+  {
+   "categories": [
+    {
+     "id": "SELF_CORRECTION",
+     "name": "Self-Correction",
+     "definition": "Features indicating the model's ability to recognize and correct errors or hesitations in its reasoning process.",
+     "decision_rule": "Descriptions involving 'self-correction', 'hesitation', 'doubt', or 'reconsideration' belong here.",
+     "examples": [
+      "self-correction or hesitation in reasoning",
+      "mid-reasoning self-correction",
+      "self-correction with hesitation markers"
+     ]
+    },
+    {
+     "id": "MATHEMATICAL_REASONING",
+     "name": "Mathematical Reasoning",
+     "definition": "Features related to mathematical problem-solving, verification, and computation steps.",
+     "decision_rule": "Descriptions involving 'math', 'verification', 'calculation', or 'algebraic' belong here.",
+     "examples": [
+      "mathematical verification with inequalities",
+      "mid-calculation math/code steps",
+      "math problem verification"
+     ]
+    },
+    {
+     "id": "PLANNING_STRUCTURING",
+     "name": "Planning and Structuring",
+     "definition": "Features related to planning, structuring, or outlining steps in reasoning or problem-solving.",
+     "decision_rule": "Descriptions involving 'planning', 'structuring', 'initiating', or 'step-by-step' belong here.",
+     "examples": [
+      "Structured step-by-step planning",
+      "task initiation with structured prefix",
+      "Summarizing steps into a cohesive plan"
+     ]
+    },
+    {
+     "id": "VERIFICATION_CHECKING",
+     "name": "Verification and Checking",
+     "definition": "Features related to verifying correctness, checking assumptions, or detecting errors.",
+     "decision_rule": "Descriptions involving 'verification', 'checking', 'error detection', or 'correctness' belong here.",
+     "examples": [
+      "verifying intermediate steps in logical reasoning",
+      "error-checking in math steps",
+      "correctness verification with 'should'"
+     ]
+    },
+    {
+     "id": "ALTERNATIVE_PROPOSALS",
+     "name": "Alternative Proposals",
+     "definition": "Features related to proposing alternative solutions, reconsidering approaches, or exploring different scenarios.",
+     "decision_rule": "Descriptions involving 'proposing alternatives', 'reconsidering', or 'exploring' belong here.",
+     "examples": [
+      "proposing alternatives or reconsidering",
+      "exploring alternative solutions in math",
+      "proposing alternative math strategies"
+     ]
+    },
+    {
+     "id": "CODE_PROGRAMMING",
+     "name": "Code and Programming",
+     "definition": "Features related to coding, programming logic, or algorithmic problem-solving.",
+     "decision_rule": "Descriptions involving 'code', 'programming', 'algorithm', or 'Python' belong here.",
+     "examples": [
+      "debugging or verifying code logic",
+      "Python input handling and processing steps",
+      "code implementation transition markers"
+     ]
+    },
+    {
+     "id": "MULTILINGUAL_CONTENT",
+     "name": "Multilingual Content",
+     "definition": "Features involving non-English text, multilingual elements, or translation-related reasoning.",
+     "decision_rule": "Descriptions involving 'non-English', 'multilingual', or 'translation' belong here.",
+     "examples": [
+      "non-English language or content",
+      "multilingual/mixed-format mid-reasoning",
+      "Non-English text or unusual formatting"
+     ]
+    },
+    {
+     "id": "FORMATTING_MARKUP",
+     "name": "Formatting and Markup",
+     "definition": "Features related to text formatting, markup, or structured presentation.",
+     "decision_rule": "Descriptions involving 'markdown', 'bold', 'parentheses', or 'structured formatting' belong here.",
+     "examples": [
+      "Markdown headers or section transitions",
+      "Bolded/markdown header formatting",
+      "parenthesized or fragmented text"
+     ]
+    },
+    {
+     "id": "CAUSAL_JUSTIFICATION",
+     "name": "Causal Justification",
+     "definition": "Features related to justifying reasoning steps through causal explanations or logical connections.",
+     "decision_rule": "Descriptions involving 'because', 'since', 'therefore', or 'justification' belong here.",
+     "examples": [
+      "reasoning justification with 'because'/'since'",
+      "since-based reasoning transitions",
+      "Therefore-concluding reasoning"
+     ]
+    },
+    {
+     "id": "ETHICAL_SAFETY",
+     "name": "Ethical and Safety",
+     "definition": "Features related to ethical considerations, refusal of harmful requests, or safety protocols.",
+     "decision_rule": "Descriptions involving 'ethical', 'refusal', 'harmful', or 'safety' belong here.",
+     "examples": [
+      "Ethical refusal protocol activation",
+      "Refusal of harmful/unethical requests",
+      "Ethical redirection with structured alternatives"
+     ]
+    },
+    {
+     "id": "HEDGING_TENTATIVENESS",
+     "name": "Hedging and Tentativeness",
+     "definition": "Features indicating uncertainty, hedging, or tentative reasoning.",
+     "decision_rule": "Descriptions involving 'probably', 'might', 'maybe', or 'uncertainty' belong here.",
+     "examples": [
+      "tentative reasoning with 'probably'",
+      "mid-reasoning uncertainty markers",
+      "hedging with 'though'"
+     ]
+    },
+    {
+     "id": "DOMAIN_CONTENT",
+     "name": "Domain-Specific Content",
+     "definition": "Features related to domain-specific knowledge or reasoning in areas like geometry, physics, or marketing.",
+     "decision_rule": "Descriptions involving specific domains like 'geometry', 'physics', or 'marketing' belong here.",
+     "examples": [
+      "angle verification in geometry problems",
+      "physics/math problem decomposition",
+      "marketing descriptions for digital art products"
+     ]
+    },
+    {
+     "id": "COMMUNICATION_STYLE",
+     "name": "Communication Style",
+     "definition": "Features related to tone, style, or communication constraints in responses.",
+     "decision_rule": "Descriptions involving 'tone', 'style', 'communication', or 'emphasis' belong here.",
+     "examples": [
+      "tone/style specification",
+      "Emphasizing key terms or concepts in ALL CAPS/bold",
+      "communication tailoring constraints"
+     ]
+    },
+    {
+     "id": "EDGE_CASE_CHECKING",
+     "name": "Edge Case Checking",
+     "definition": "Features related to identifying, testing, or verifying edge cases in reasoning.",
+     "decision_rule": "Descriptions involving 'edge case', 'testing examples', or 'exception' belong here.",
+     "examples": [
+      "testing examples or edge cases",
+      "edge case checking with list examples",
+      "cautionary reasoning or edge-case checking"
+     ]
+    },
+    {
+     "id": "LANGUAGE_MULTILINGUAL",
+     "name": "Language and Multilingual",
+     "definition": "Features related to language-specific reasoning, multilingual elements, or translation.",
+     "decision_rule": "Descriptions involving 'language', 'multilingual', or 'translation' belong here.",
+     "examples": [
+      "non-English text or translation reflection",
+      "multilingual reasoning or planning",
+      "Multilingual text or markdown formatting"
+     ]
+    },
+    {
+     "id": "TECHNICAL_NOTATION",
+     "name": "Technical Notation",
+     "definition": "Features involving technical symbols, mathematical notation, or specialized terminology.",
+     "decision_rule": "Descriptions involving 'notation', 'symbols', or 'technical terms' belong here.",
+     "examples": [
+      "mathematical notation, mid-reasoning checks",
+      "technical notation in mid-reasoning",
+      "LaTeX math notation, algebraic computations"
+     ]
+    },
+    {
+     "id": "CREATIVE_NARRATIVE",
+     "name": "Creative and Narrative",
+     "definition": "Features related to creative writing, storytelling, or narrative elements.",
+     "decision_rule": "Descriptions involving 'creative', 'storytelling', or 'narrative' belong here.",
+     "examples": [
+      "creative/humorous storytelling with mixed languages/formats",
+      "scenic or atmospheric descriptions",
+      "creative text brainstorming"
+     ]
+    },
+    {
+     "id": "ITERATIVE_PROCESSES",
+     "name": "Iterative Processes",
+     "definition": "Features related to iterative reasoning, loops, or sequential processing.",
+     "decision_rule": "Descriptions involving 'iterative', 'loop', or 'sequential' belong here.",
+     "examples": [
+      "iterative step questioning with 'each time'",
+      "tracking loop/algorithm state updates",
+      "iterative/sequential processes with 'each subsequent'"
+     ]
+    },
+    {
+     "id": "CONTRADICTION_DETECTION",
+     "name": "Contradiction Detection",
+     "definition": "Features related to detecting contradictions, inconsistencies, or errors in reasoning.",
+     "decision_rule": "Descriptions involving 'contradiction', 'inconsistency', or 'error detection' belong here.",
+     "examples": [
+      "contradiction detection and hesitation",
+      "detecting contradictions in reasoning",
+      "noticing reasoning inconsistencies or edge cases"
+     ]
+    },
+    {
+     "id": "METACOGNITIVE_REFLECTION",
+     "name": "Metacognitive Reflection",
+     "definition": "Features related to the model reflecting on its own reasoning process or steps.",
+     "decision_rule": "Descriptions involving 'reflection', 'metacognitive', or 'self-monitoring' belong here.",
+     "examples": [
+      "metacognitive planning for constrained writing",
+      "model self-checking/planning mid-reasoning",
+      "meta-reasoning about response quality or guidelines"
+     ]
+    }
+   ]
+  },
+  {
+   "categories": [
+    {
+     "id": "SELF_CORRECTION",
+     "name": "Self-Correction",
+     "definition": "Features where the model identifies and corrects its own reasoning errors.",
+     "decision_rule": "Contains explicit correction markers ('Wait', 'Actually') or shows revision of previous steps.",
+     "examples": [
+      "332: self-correction in mathematical/logical reasoning",
+      "1432: mid-reasoning self-correction",
+      "5170: mid-reasoning self-correction"
+     ]
+    },
+    {
+     "id": "VERIFICATION",
+     "name": "Verification",
+     "definition": "Features where the model checks the correctness of its reasoning or calculations.",
+     "decision_rule": "Contains explicit checking ('verify', 'check') or recalculations.",
+     "examples": [
+      "8113: final verification before response",
+      "5897: mid-calculation verification in math problems",
+      "2453: verifying correct input handling or step execution"
+     ]
+    },
+    {
+     "id": "ALTERNATIVES",
+     "name": "Proposing Alternatives",
+     "definition": "Features where the model considers or switches to different approaches.",
+     "decision_rule": "Contains contrast markers ('Alternatively', 'However') or explores multiple solutions.",
+     "examples": [
+      "4938: counterpoint introduction with 'However'",
+      "2848: reconsidering or proposing alternatives",
+      "16828: proposing alternative solutions mid-reasoning"
+     ]
+    },
+    {
+     "id": "PLANNING",
+     "name": "Planning",
+     "definition": "Features where the model outlines steps or structures its reasoning process.",
+     "decision_rule": "Contains explicit step enumeration or future-oriented planning language.",
+     "examples": [
+      "19627: model self-checking/planning mid-reasoning",
+      "2058: Outlining steps in lists",
+      "2461: algebraic simplification steps"
+     ]
+    },
+    {
+     "id": "HEDGING",
+     "name": "Hedging",
+     "definition": "Features where the model expresses uncertainty or qualifies its statements.",
+     "decision_rule": "Contains uncertainty markers ('maybe', 'perhaps') or softened claims.",
+     "examples": [
+      "5998: 'Wait' signaling mid-reasoning doubt",
+      "8129: mid-reasoning uncertainty markers",
+      "5112: uncertainty markers in reasoning"
+     ]
+    },
+    {
+     "id": "MATH_STEPS",
+     "name": "Mathematical Operations",
+     "definition": "Features involving mathematical calculations or symbolic manipulations.",
+     "decision_rule": "Contains mathematical notation, calculations, or problem-solving steps.",
+     "examples": [
+      "10742: mathematical notation and calculations",
+      "3978: mathematical equation solving",
+      "16795: math problem-solving steps"
+     ]
+    },
+    {
+     "id": "CODE_REASONING",
+     "name": "Code/Algorithmic Reasoning",
+     "definition": "Features involving programming logic, algorithms, or code examples.",
+     "decision_rule": "Contains code snippets, algorithmic steps, or programming concepts.",
+     "examples": [
+      "531: Python example introduction with 'for example'",
+      "2280: iterative element-wise processing in algorithms",
+      "6273: Python control flow implementation"
+     ]
+    },
+    {
+     "id": "FORMATTING",
+     "name": "Formatting/Markup",
+     "definition": "Features involving structured presentation or special formatting.",
+     "decision_rule": "Contains markup tags, numbered lists, or explicit formatting instructions.",
+     "examples": [
+      "1632: numbered list introduction in multiple languages",
+      "8963: '<think>' tag at reasoning start",
+      "11601: ALL-CAPS or bold text"
+     ]
+    },
+    {
+     "id": "MULTILINGUAL",
+     "name": "Multilingual Content",
+     "definition": "Features involving non-English text or translation considerations.",
+     "decision_rule": "Contains non-English text or explicit translation references.",
+     "examples": [
+      "19530: Non-English text or translation reflection",
+      "2821: multilingual corrections or clarifications",
+      "14803: non-English or mixed-script text"
+     ]
+    },
+    {
+     "id": "DOMAIN_CONTENT",
+     "name": "Domain-Specific Content",
+     "definition": "Features involving specialized knowledge from particular domains.",
+     "decision_rule": "Contains domain-specific terminology or concepts not covered by math/code.",
+     "examples": [
+      "7809: Planning Etsy titles for artworks",
+      "11097: Print-on-demand business advice",
+      "27044: marketing descriptions for digital art products"
+     ]
+    },
+    {
+     "id": "TONE_STYLE",
+     "name": "Communication Style/Tone",
+     "definition": "Features involving adjustments to tone, style, or audience adaptation.",
+     "decision_rule": "Contains explicit tone/style markers or audience considerations.",
+     "examples": [
+      "4180: ensuring clarity in communication",
+      "735: tone/style specification",
+      "19809: self-adjusting communication style"
+     ]
+    },
+    {
+     "id": "SAFETY_REFUSAL",
+     "name": "Safety/Refusal",
+     "definition": "Features where the model refuses requests or enforces ethical boundaries.",
+     "decision_rule": "Contains refusal language or ethical constraint enforcement.",
+     "examples": [
+      "6722: Ethical refusal with policy violation explanations",
+      "6198: Refusal of harmful/unethical requests",
+      "3453: refusing harmful requests with constructive redirection"
+     ]
+    },
+    {
+     "id": "CAUSAL_JUSTIFICATION",
+     "name": "Causal Justification",
+     "definition": "Features where the model explains why steps are taken or how conclusions follow.",
+     "decision_rule": "Contains 'because', 'since', or other justification language.",
+     "examples": [
+      "1749: contrast markers; assumption checking",
+      "3202: mid-reasoning exploration or justification",
+      "6165: mathematical justifications using 'since'"
+     ]
+    },
+    {
+     "id": "FRAGMENTED_TEXT",
+     "name": "Fragmented/Unusual Text",
+     "definition": "Features with incomplete thoughts, unusual syntax, or corrupted text.",
+     "decision_rule": "Contains broken syntax, mid-word fragments, or clearly corrupted text.",
+     "examples": [
+      "5878: Fragmented text with punctuation separators",
+      "3587: Parenthesized fragments or interrupted sequences",
+      "5003: Corrupted/mid-token text fragments"
+     ]
+    },
+    {
+     "id": "EDGE_CASES",
+     "name": "Edge Case Handling",
+     "definition": "Features where the model considers boundary conditions or unusual scenarios.",
+     "decision_rule": "Contains explicit edge case testing or boundary condition analysis.",
+     "examples": [
+      "4443: testing examples or edge cases",
+      "5453: verifying/debugging edge cases",
+      "2391: 'even if' edge-case reasoning"
+     ]
+    },
+    {
+     "id": "PROBLEM_SETUP",
+     "name": "Problem Setup",
+     "definition": "Features where the model initializes or restates the problem context.",
+     "decision_rule": "Contains problem restatement or initialization patterns.",
+     "examples": [
+      "1209: math problem initiation with standardized intro",
+      "3082: task restatement at problem-solving start",
+      "1978: math problem initiation with fixed prefix"
+     ]
+    },
+    {
+     "id": "INTERNAL_MONOLOGUE",
+     "name": "Internal Monologue",
+     "definition": "Features where the model verbalizes its thought process explicitly.",
+     "decision_rule": "Contains explicit metacognitive markers ('Let me think') or think-tags.",
+     "examples": [
+      "852: internal reasoning or planning",
+      "15664: Internal monologue analyzing user requests",
+      "5618: Internal deliberation/planning markers"
+     ]
+    },
+    {
+     "id": "TRANSITIONS",
+     "name": "Reasoning Transitions",
+     "definition": "Features marking shifts between reasoning stages or topics.",
+     "decision_rule": "Contains transition markers ('Now', 'Next', 'Then') or clear topic shifts.",
+     "examples": [
+      "2422: 'Then'-transition in derivations",
+      "3061: 'now' as transition marker",
+      "6289: post-reasoning output transition marker"
+     ]
+    },
+    {
+     "id": "METACOGNITION",
+     "name": "Metacognitive Reflection",
+     "definition": "Features where the model reflects on its own reasoning process.",
+     "decision_rule": "Contains explicit reflection on the reasoning approach or quality.",
+     "examples": [
+      "7704: Meta-instruction checking and self-reflection",
+      "3541: metacognitive self-correction or reflection",
+      "12862: meta-reasoning about response quality or guidelines"
+     ]
+    },
+    {
+     "id": "ASSISTANT_IDENTITY",
+     "name": "Assistant Identity",
+     "definition": "Features referencing the model's role or instructions.",
+     "decision_rule": "Contains explicit references to being an AI assistant or following instructions.",
+     "examples": [
+      "818: AI assistant self-description fragments",
+      "4996: Restating AI identity/instructions",
+      "5777: Restating AI assistant instructions"
+     ]
+    }
+   ]
+  }
+ ],
+ "taxonomy": {
+  "categories": [
+   {
+    "id": "SELF_CORRECTION",
+    "name": "Self-Correction",
+    "definition": "Features where the model identifies and corrects its own errors or uncertainties during reasoning.",
+    "decision_rule": "Descriptions involve the model revising or questioning its own reasoning, often with markers like 'Wait', 'Hmm', or 'Let me see'.",
+    "examples": [
+     "mid-reasoning self-correction",
+     "error checking / reconsideration",
+     "self-correction or verification"
+    ]
+   },
+   {
+    "id": "VERIFICATION",
+    "name": "Verification",
+    "definition": "Features where the model checks or confirms the correctness of its reasoning or calculations.",
+    "decision_rule": "Descriptions involve explicit checking, confirming, or validating reasoning steps, often with phrases like 'Let me verify' or 'checking'.",
+    "examples": [
+     "mid-reasoning verification",
+     "math self-verification with 'Let me'",
+     "verifying computational steps mid-reasoning"
+    ]
+   },
+   {
+    "id": "ALTERNATIVE_PROPOSALS",
+    "name": "Alternative Proposals",
+    "definition": "Features where the model considers or proposes alternative scenarios, solutions, or approaches.",
+    "decision_rule": "Descriptions involve exploring or suggesting different possibilities, often with phrases like 'in that case', 'maybe', or 'Alternatively'.",
+    "examples": [
+     "considering alternative scenarios with 'in that case'",
+     "proposing alternative approaches",
+     "reconsidering or proposing alternatives"
+    ]
+   },
+   {
+    "id": "CAUSAL_JUSTIFICATION",
+    "name": "Causal Justification",
+    "definition": "Features where the model provides reasoning or justification for its conclusions or steps.",
+    "decision_rule": "Descriptions involve explaining why a step or conclusion is valid, often with phrases like 'because', 'since', or 'therefore'.",
+    "examples": [
+     "reasoning justification with 'because'/'since'",
+     "causal justification in math reasoning",
+     "highlighting caveats with 'But note:'"
+    ]
+   },
+   {
+    "id": "PLANNING",
+    "name": "Planning",
+    "definition": "Features where the model outlines or structures its reasoning steps or response strategy.",
+    "decision_rule": "Descriptions involve organizing or planning steps, often with phrases like 'first', 'next', or 'I'll'.",
+    "examples": [
+     "planning/initiating reasoning steps",
+     "outlining steps in lists",
+     "task initiation/planning"
+    ]
+   },
+   {
+    "id": "HEDGING",
+    "name": "Hedging",
+    "definition": "Features where the model expresses uncertainty or caution in its reasoning.",
+    "decision_rule": "Descriptions involve markers of uncertainty or caution, such as 'maybe', 'might', or 'unless'.",
+    "examples": [
+     "uncertainty markers in reasoning",
+     "hesitation/reconsideration markers",
+     "hedging with 'though'"
+    ]
+   },
+   {
+    "id": "MATH_STEPS",
+    "name": "Mathematical Operations",
+    "definition": "Features involving mathematical calculations or symbolic manipulations.",
+    "decision_rule": "Descriptions involve explicit mathematical operations, such as calculations, equations, or proofs.",
+    "examples": [
+     "math step-by-step calculations",
+     "mathematical equation manipulation",
+     "divisibility checks in math reasoning"
+    ]
+   },
+   {
+    "id": "CODE_REASONING",
+    "name": "Code/Algorithmic Reasoning",
+    "definition": "Features involving programming logic, algorithms, or code examples.",
+    "decision_rule": "Descriptions involve coding, debugging, or algorithmic reasoning, often with Python or other programming language references.",
+    "examples": [
+     "debugging or verifying code logic",
+     "Python function definition",
+     "algorithmic planning with scalability"
+    ]
+   },
+   {
+    "id": "FORMATTING_MARKUP",
+    "name": "Formatting/Markup",
+    "definition": "Features where the model uses formatting or markup to structure its response.",
+    "decision_rule": "Descriptions involve structured text formatting, such as bullet points, lists, or markdown headers.",
+    "examples": [
+     "Structured lists or steps in markdown",
+     "Bolded terms and foreign language phrases",
+     "Markdown headers or section transitions"
+    ]
+   },
+   {
+    "id": "DOMAIN_CONTENT",
+    "name": "Domain-Specific Content",
+    "definition": "Features where the model engages with domain-specific knowledge or terminology.",
+    "decision_rule": "Descriptions involve specialized knowledge from fields like math, physics, or competitive programming.",
+    "examples": [
+     "competitive programming problem setup",
+     "physics/math problem decomposition",
+     "geometry verification"
+    ]
+   },
+   {
+    "id": "COMMUNICATION_STYLE",
+    "name": "Communication Style",
+    "definition": "Features where the model adjusts its tone or style to match communication norms or user expectations.",
+    "decision_rule": "Descriptions involve tone adjustments, such as emphasizing key points or using casual language.",
+    "examples": [
+     "Emphasizing key terms or concepts in ALL CAPS/bold",
+     "restating AI identity/instructions",
+     "self-adjusting communication style"
+    ]
+   },
+   {
+    "id": "SAFETY_REFUSAL",
+    "name": "Safety/Refusal",
+    "definition": "Features where the model refuses to comply with harmful or unethical requests.",
+    "decision_rule": "Descriptions involve rejecting or redirecting requests that violate ethical guidelines.",
+    "examples": [
+     "Ethical refusal with reasoning",
+     "refusal of harmful/unethical requests",
+     "Ethical refusal with policy violation explanations"
+    ]
+   },
+   {
+    "id": "MULTILINGUAL_CONTENT",
+    "name": "Multilingual Content",
+    "definition": "Features where the model processes or generates text in multiple languages or scripts.",
+    "decision_rule": "Descriptions involve non-English text, multilingual parsing, or translation.",
+    "examples": [
+     "Non-English text or self-correction",
+     "multilingual parsing/translation",
+     "multilingual text + user intent speculation"
+    ]
+   },
+   {
+    "id": "EDGE_CASE_CHECKING",
+    "name": "Edge Case Checking",
+    "definition": "Features where the model considers or verifies edge cases or unusual scenarios.",
+    "decision_rule": "Descriptions involve testing or verifying edge cases, often with phrases like 'what if' or 'edge case'.",
+    "examples": [
+     "noticing reasoning inconsistencies or edge cases",
+     "edge case verification",
+     "testing edge cases and verifying correctness"
+    ]
+   },
+   {
+    "id": "TECHNICAL_NOTATION",
+    "name": "Technical Notation",
+    "definition": "Features where the model uses technical or symbolic notation in its reasoning.",
+    "decision_rule": "Descriptions involve mathematical symbols, equations, or technical terms.",
+    "examples": [
+     "mathematical/symbolic expressions",
+     "technical reasoning or notation",
+     "LaTeX math notation in derivations"
+    ]
+   },
+   {
+    "id": "CREATIVE_NARRATIVE",
+    "name": "Creative and Narrative",
+    "definition": "Features related to creative writing, storytelling, or narrative elements.",
+    "decision_rule": "Descriptions involve creative writing, narrative revision, or artistic reflection.",
+    "examples": [
+     "creative reflection or narrative revision",
+     "creative planning/refinement language",
+     "poetic/literary descriptive passages"
+    ]
+   },
+   {
+    "id": "METACOGNITIVE_REFLECTION",
+    "name": "Metacognitive Reflection",
+    "definition": "Features where the model reflects on its own reasoning process or steps.",
+    "decision_rule": "Descriptions involve explicit reflection on the reasoning approach or quality.",
+    "examples": [
+     "metacognitive planning for constrained writing",
+     "model self-checking/planning mid-reasoning",
+     "meta-reasoning about response quality or guidelines"
+    ]
+   }
+  ]
+ }
+}

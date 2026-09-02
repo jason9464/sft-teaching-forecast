@@ -1,0 +1,3331 @@
+{
+ "arm": "act",
+ "tag": "act_v2",
+ "n_items": 40,
+ "items": [
+  {
+   "rank": 1,
+   "atom": 2219,
+   "mass_share": 0.02306,
+   "fires_train": 1573366,
+   "fires_holdout": 82237,
+   "doc_frac": 1.0,
+   "within_doc_sel": 0.496,
+   "top3_doc_share": 0.0002,
+   "src_hist": {
+    "math": 0.462,
+    "python": 0.209,
+    "code": 0.052,
+    "nemotron": 0.049,
+    "science": 0.048,
+    "if_qwq": 0.044
+   },
+   "type": "move",
+   "label": "Reflecting on or revising reasoning",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "N/A",
+    0
+   ],
+   "move": [
+    "The text is reflecting on or revising a previous approach, often signaling a shift in reasoning or strategy.",
+    3
+   ],
+   "lens_top": "'boxed' '\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n' ' summarized' '\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n' '-blog' 'nip' ' segue' '>{\\n' '\\n\\n\\n\\n\\n\\n\\n\\n\\n' '。\\n\\n\\n\\n\\n\\n' '.cleanup' 'ental' 'apro' '(er' 'igraph'",
+   "examples": [
+    " solution is partially correct.\\n</think>\\n### Critique of the Solution\\n\\nThe provided solution contains errors in part (a) but is correct in parts (b",
+    " since I have to work with the problem as stated, perhaps I need to think differently.\\n\\nLet me parse the problem again, very carefully:\\n\\n\"In the graph of",
+    " with the strong password requirements from the start.\\n\\nThis is getting a bit tangled. Let me try to organize my approach.\\n\\nPlan:\\n\\n1. Compute total number of"
+   ],
+   "match_grad": {
+    "atom": 7606,
+    "corr": 0.158,
+    "cos": -0.1,
+    "mass_rank": 512,
+    "present": false
+   },
+   "match_err": {
+    "atom": 8141,
+    "corr": 0.212,
+    "cos": null,
+    "mass_rank": 90,
+    "present": false
+   },
+   "grad_presence": {
+    "grad_mass_lift": 1.133,
+    "best_grad_atom": 0,
+    "recall": 0.0
+   },
+   "cell_2x2": "act-high/grad-low",
+   "prediction_2x2": "activation ledger: increase; gradient ledger: channel A excess Δlogp ≈ 0 (≤ controls), channel B effect size < gradient-unique cell",
+   "item": {
+    "atom": 2219,
+    "rank": 1,
+    "statement": "After SFT on this data, model responses will show more explicit strategy-level re-planning mid-solution: statements that step back and change or re-organize the overall approach (e.g., 'Let me re-read the problem', 'Let me try a different approach', 'Alternatively, maybe ...', 'Plan:').",
+    "measure_kind": "both",
+    "regex": [
+     "\\b[Ll]et me (?:re-?read|re-?parse|parse|organi[sz]e|outline|rethink|reconsider|step back|start over|start again|try (?:again|another|a different)|think (?:differently|about this differently|again))\\b",
+     "\\b(?:try|use|take|consider|need|find|there'?s|is|be) (?:a |an )?(?:different|another|alternative|better|new|simpler|cleaner) (?:approach|strategy|method|angle|way to (?:think|approach|look|solve|do))\\b",
+     "\\b[Aa]lternatively,? (?:maybe|perhaps)\\b",
+     "\\b(?:go(?:ing)? back to|re-?read(?:ing)?|re-?parse) the (?:problem|question|statement)\\b",
+     "(?m)^\\s*(?:Plan|Approach|Strategy|New plan|Revised plan|Overall (?:plan|structure)):"
+    ],
+    "rubric_question": "Does the response contain at least one point where the writer explicitly steps back to reconsider or change the overall approach or plan (e.g., re-reading/re-parsing the problem statement, proposing to try a different method, or re-organizing into a new plan), as opposed to fixing a single arithmetic slip?",
+    "unit": "per_1k_tokens",
+    "generic": false,
+    "confidence": 2,
+    "notes": "MOVE conf 3 used. Labels joined from reports/labels/act_v2_labels.json (evidence file label fields empty). Lens tokens ('boxed', ' summarized', long newline runs) point to structural transition/wrap-up points; some top examples are end-of-think critique transitions, so the atom may partly track section boundaries. Verifier: regex 2 now requires a verb/existential before 'different/another approach' to avoid matching prose mentions of 'a new method' in explanatory answers (bg 0.17% on chunk corpus). 'Alternatively, maybe' is shared with ranks 13/39. Rubric per response; regex per 1k tokens.",
+    "verdict": "revised",
+    "reason": "Tightened regex 2 (require preceding verb) to reduce false positives on expository text; otherwise sound."
+   },
+   "prediction": {
+    "direction": "+",
+    "channelA": "held-out chunks where this atom fires show excess Δlogp(SFT−base) > 0 after headroom control (double residualisation), and the excess ranks with mass rank",
+    "channelB": "After SFT on this data, model responses will show more explicit strategy-level re-planning mid-solution: statements that step back and change or re-organize the overall approach (e.g., 'Let me re-read the problem', 'Let me try a different approach', 'Alternatively, maybe ...', 'Plan:')."
+   }
+  },
+  {
+   "rank": 2,
+   "atom": 1654,
+   "mass_share": 0.01773,
+   "fires_train": 1386301,
+   "fires_holdout": 71350,
+   "doc_frac": 0.979,
+   "within_doc_sel": 0.392,
+   "top3_doc_share": 0.0002,
+   "src_hist": {
+    "math": 0.471,
+    "python": 0.17,
+    "synthetic": 0.07,
+    "nemotron": 0.067,
+    "science": 0.058,
+    "persona": 0.046
+   },
+   "type": "move",
+   "label": "mid-calculation math/algorithm steps",
+   "content": [
+    "step-by-step mathematical or algorithmic computations, often involving comparisons, bit manipulations, or arithmetic operations",
+    3
+   ],
+   "form": [
+    "chunks frequently contain mathematical symbols (e.g., \"<\", \"=\", \"+\"), bitwise operations (e.g., \"flip bits\"), and inline computations (e.g., \"a=7; a'=0,b=1,c=0 → a=\")",
+    2
+   ],
+   "move": [
+    "performing intermediate calculations or comparisons within a larger logical or algorithmic process",
+    3
+   ],
+   "lens_top": "'bject' ' Seam' 'buquerque' ' etc' ' Phonetic' '/from' '----</' 'ambil' '/she' ' disob' 'ccount' ' gracias' '_android' 'sic' '...</'",
+   "examples": [
+    " a and c, take the smaller, then compare next. If a is compared to c and taken first, then next compare b and c; suppose a <",
+    "(y) (y is 2) -> f(2)=5, then f(y =5) gives 26 mod25 is 1. So after",
+    ", b1=1, b0=1.\\n                    flip0,1: b0:1->0, b1:1->0 -> becomes"
+   ],
+   "match_grad": {
+    "atom": 6279,
+    "corr": 0.126,
+    "cos": 0.104,
+    "mass_rank": 40,
+    "present": false
+   },
+   "match_err": {
+    "atom": 5770,
+    "corr": 0.126,
+    "cos": null,
+    "mass_rank": 105,
+    "present": false
+   },
+   "grad_presence": {
+    "grad_mass_lift": 0.819,
+    "best_grad_atom": 0,
+    "recall": 0.0
+   },
+   "cell_2x2": "act-high/grad-low",
+   "prediction_2x2": "activation ledger: increase; gradient ledger: channel A excess Δlogp ≈ 0 (≤ controls), channel B effect size < gradient-unique cell",
+   "item": {
+    "atom": 1654,
+    "rank": 2,
+    "statement": "After SFT on this data, model responses will show more dense inline computation traces: hand-simulated intermediate values chained with arrows or assignments (e.g., '1->0', 'a=7; b=1, c=0', 'f(2)=5, then f(5)=26') while working through arithmetic or an algorithm.",
+    "measure_kind": "both",
+    "regex": [
+     "\\d\\s*(?:->|→|⇒)\\s*-?\\d",
+     "\\b\\w+'?\\s*=\\s*-?\\d+(?:\\.\\d+)?\\s*[,;]\\s*\\w+'?\\s*=\\s*-?\\d+",
+     "\\bbits?\\s*\\d|\\bbit[- ]?flip|\\bflip(?:s|ped|ping)?\\s+(?:the\\s+|each\\s+|all\\s+)?bits?\\b"
+    ],
+    "rubric_question": "Does the response contain a hand-traced walk-through in which at least three consecutive intermediate values or state updates are written inline (e.g., 'a=7 -> b=1 -> ...', 'f(2)=5, then f(5)=26, 26 mod 25 = 1', bit flips '1->0'), rather than only reporting a final result?",
+    "unit": "per_1k_tokens",
+    "generic": false,
+    "confidence": 2,
+    "notes": "MOVE conf 3 used. Borderline generic for the 18 math prompts; item is narrowed to arrow/assignment-chain traces and hand-simulation. '->' is also a Python return annotation on code prompts (regex requires digits on both sides). Verifier: removed the bare '\\bflip\\b' alternative (prompt 7 'coin is flipped 4 times' would be echoed by both models) and restricted it to bit-flip phrasing; removed 'mod N' (duplicates rank 7's number-theory item). Lens tokens are unrelated junk. Rubric per response.",
+    "verdict": "revised",
+    "reason": "Removed prompt-echo-prone 'flip' regex and 'mod' overlap with rank 7; kept trace-specific regexes."
+   },
+   "prediction": {
+    "direction": "+",
+    "channelA": "held-out chunks where this atom fires show excess Δlogp(SFT−base) > 0 after headroom control (double residualisation), and the excess ranks with mass rank",
+    "channelB": "After SFT on this data, model responses will show more dense inline computation traces: hand-simulated intermediate values chained with arrows or assignments (e.g., '1->0', 'a=7; b=1, c=0', 'f(2)=5, then f(5)=26') while working through arithmetic or an algorithm."
+   }
+  },
+  {
+   "rank": 3,
+   "atom": 1616,
+   "mass_share": 0.0173,
+   "fires_train": 1523439,
+   "fires_holdout": 78964,
+   "doc_frac": 1.0,
+   "within_doc_sel": 0.479,
+   "top3_doc_share": 0.0002,
+   "src_hist": {
+    "math": 0.475,
+    "python": 0.157,
+    "synthetic": 0.057,
+    "nemotron": 0.053,
+    "persona": 0.052,
+    "science": 0.05
+   },
+   "type": "content",
+   "label": "Geometry with coordinates and vertex labels",
+   "content": [
+    "Geometry problems involving coordinates and shapes (triangles, rectangles, hexagons, etc.)",
+    3
+   ],
+   "form": [
+    "Text includes coordinate points in parentheses (e.g., (0,0), (2,3)) and labels for vertices (e.g., A, B, C)",
+    3
+   ],
+   "move": [
+    "Defining or describing geometric shapes and their properties",
+    3
+   ],
+   "lens_top": "'AndPassword' ' ...)\\n' '.Autowired' ' ...)' '!!)\\n' ' ],\\n\\n' '<main' ' professionnel' '.WebServlet' ' Owned' '.orig' '®,' ' Became' ' Revised' '.dup'",
+   "examples": [
+    " the triangle with vertices at A(0,0), B(2,0), C(0,3).\\n\\nSo leg AB is from (0,0",
+    " are labeled A(2,3), B(4,5), C(5,3), D(2,1), E(1,2).\\n\\n",
+    "0,0), (0,14), (15,14), (15,0).\\nB has four corners: (8,3), (4,"
+   ],
+   "match_grad": {
+    "atom": 1314,
+    "corr": 0.133,
+    "cos": 0.111,
+    "mass_rank": 246,
+    "present": false
+   },
+   "match_err": {
+    "atom": 6689,
+    "corr": 0.192,
+    "cos": null,
+    "mass_rank": 318,
+    "present": false
+   },
+   "grad_presence": {
+    "grad_mass_lift": 1.109,
+    "best_grad_atom": 0,
+    "recall": 0.0
+   },
+   "cell_2x2": "act-high/grad-low",
+   "prediction_2x2": "activation ledger: increase; gradient ledger: channel A excess Δlogp ≈ 0 (≤ controls), channel B effect size < gradient-unique cell",
+   "item": {
+    "atom": 1616,
+    "rank": 3,
+    "statement": "After SFT on this data, model responses will show more explicit coordinate set-ups of geometric objects: labeled points or vertices assigned numeric coordinate tuples (e.g., 'A(0,0), B(2,0), C(0,3)', 'vertices at ...').",
+    "measure_kind": "both",
+    "regex": [
+     "\\b[A-Z]\\d?\\s*(?:=|:|at)?\\s*\\(\\s*-?\\d+(?:\\.\\d+)?\\s*,\\s*-?\\d+(?:\\.\\d+)?(?:\\s*,\\s*-?\\d+(?:\\.\\d+)?)?\\s*\\)",
+     "\\(\\s*-?\\d+(?:\\.\\d+)?\\s*,\\s*-?\\d+(?:\\.\\d+)?(?:\\s*,\\s*-?\\d+(?:\\.\\d+)?)?\\s*\\)(?:\\s*(?:,|and|,\\s*and)\\s*\\(\\s*-?\\d+(?:\\.\\d+)?\\s*,\\s*-?\\d+(?:\\.\\d+)?(?:\\s*,\\s*-?\\d+(?:\\.\\d+)?)?\\s*\\)){2,}",
+     "\\b(?:vertices|vertex)\\s*(?:at|are|is|:|of)\\b|\\bcorners?\\s*(?:at|are|:)\\s*\\(",
+     "\\bat (?:the )?origin\\b|\\bcoordinate (?:system|plane|axes|geometry)\\b|\\bplace [^.\\n]{0,40}\\bat \\("
+    ],
+    "rubric_question": "Does the response set up or describe a geometric object by placing labeled points/vertices at explicit numeric coordinates (e.g., 'A(0,0), B(2,0), C(0,3)') or by introducing a coordinate system?",
+    "unit": "per_1k_tokens",
+    "generic": false,
+    "confidence": 2,
+    "notes": "Type-tagged 'content'; MOVE conf 3 ('defining/describing geometric shapes') is essentially content, so FORM markers (coordinate tuples + vertex labels) drive the regexes. Only ~3 prompts are geometric (6 rectangle, 12 ladder, 58 Chinese rectangle), so base rate is low and the estimate noisy. Coordinate-like tuples also occur in code (intervals, SQL); regexes require parentheses/labeled letters. Verifier: 'corner(s) of/is' removed (matches prose such as 'corner of the room' in creative prompts); 'corners at (' kept. Lens tokens are code-ish and unrelated to the label.",
+    "verdict": "revised",
+    "reason": "Narrowed 'corner' alternative to coordinate contexts; rest valid and specific."
+   },
+   "prediction": {
+    "direction": "+",
+    "channelA": "held-out chunks where this atom fires show excess Δlogp(SFT−base) > 0 after headroom control (double residualisation), and the excess ranks with mass rank",
+    "channelB": "After SFT on this data, model responses will show more explicit coordinate set-ups of geometric objects: labeled points or vertices assigned numeric coordinate tuples (e.g., 'A(0,0), B(2,0), C(0,3)', 'vertices at ...')."
+   }
+  },
+  {
+   "rank": 4,
+   "atom": 3390,
+   "mass_share": 0.01241,
+   "fires_train": 1380916,
+   "fires_holdout": 70462,
+   "doc_frac": 0.993,
+   "within_doc_sel": 0.397,
+   "top3_doc_share": 0.0003,
+   "src_hist": {
+    "math": 0.484,
+    "python": 0.176,
+    "synthetic": 0.069,
+    "nemotron": 0.058,
+    "persona": 0.047,
+    "if_qwq": 0.046
+   },
+   "type": "move",
+   "label": "Correcting or revising a previous step",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "N/A",
+    0
+   ],
+   "move": [
+    "The text is correcting, revising, or recomputing a previous step in the reasoning process.",
+    3
+   ],
+   "lens_top": "'innen' ' gab' 'anela' '<=(' 'PLIT' 'LEX' ' spokes' ' Morm' ' tslint' ' straw' ' Sao' 'egin' ' Pleasant' ' antenn' 'lander'",
+   "examples": [
+    " the second:\\n\\nWait no, you have:\\n\\nIf we do (equation2 multiplied) - (equation1 multiplied), then we get:\\n\\n(15H",
+    " let me redo:\\n\\nB=37k + 26. When k=3m +2, so:\\n\\nWait, perhaps better:\\n\\nLet me compute:\\n\\nk",
+    " 625/54,\\n\\nSecond term: 2500/27 → 2500*2=5000 → 5000/54,\\n\\nThird term:"
+   ],
+   "match_grad": {
+    "atom": 2782,
+    "corr": 0.138,
+    "cos": 0.111,
+    "mass_rank": 195,
+    "present": false
+   },
+   "match_err": {
+    "atom": 7876,
+    "corr": 0.157,
+    "cos": null,
+    "mass_rank": 99,
+    "present": false
+   },
+   "grad_presence": {
+    "grad_mass_lift": 0.751,
+    "best_grad_atom": 0,
+    "recall": 0.0
+   },
+   "cell_2x2": "act-high/grad-low",
+   "prediction_2x2": "activation ledger: increase; gradient ledger: channel A excess Δlogp ≈ 0 (≤ controls), channel B effect size < gradient-unique cell",
+   "item": {
+    "atom": 3390,
+    "rank": 4,
+    "statement": "After SFT on this data, model responses will show more explicit local recomputation of a just-completed calculation step (e.g., 'Wait, no', 'Let me recompute', 'let me redo', followed by redoing the arithmetic or algebra).",
+    "measure_kind": "both",
+    "regex": [
+     "\\b[Ll]et me (?:redo|re-?do|recompute|re-?compute|re-?calculate|recheck|re-?check|recount|re-?count|re-?derive|double-?check|do (?:that|this|it) again|try (?:that|this) again)\\b",
+     "\\bWait,? (?:no\\b|that'?s (?:not|wrong)|this is wrong|I (?:think I )?made (?:a|an) (?:mistake|error)|perhaps better|better)",
+     "\\bI (?:think I )?(?:made|make) (?:a|an) (?:arithmetic |calculation |sign |small )?(?:mistake|error)\\b"
+    ],
+    "rubric_question": "Does the response contain at least one point where the writer explicitly redoes a specific calculation step already performed (e.g., 'wait, no', 'let me recompute', 'let me redo') and then re-executes the arithmetic or algebra?",
+    "unit": "per_1k_tokens",
+    "generic": false,
+    "confidence": 3,
+    "notes": "MOVE conf 3 used. Overlaps with ranks 18/26/35/36 ('Wait, no' family) and 20/34 ('double-check'); this item is scoped to redoing a specific arithmetic/algebraic step. Verifier: 'made a mistake' regex now requires first-person 'I' (advice prompts such as interview tips can say 'if you make a mistake'); dropped the 'First term:/Second term:' regex, which enumerates terms rather than marking a recomputation. Lens tokens are unrelated junk. Rubric per response.",
+    "verdict": "revised",
+    "reason": "Removed non-diagnostic term-enumeration regex; anchored mistake regex to first person."
+   },
+   "prediction": {
+    "direction": "+",
+    "channelA": "held-out chunks where this atom fires show excess Δlogp(SFT−base) > 0 after headroom control (double residualisation), and the excess ranks with mass rank",
+    "channelB": "After SFT on this data, model responses will show more explicit local recomputation of a just-completed calculation step (e.g., 'Wait, no', 'Let me recompute', 'let me redo', followed by redoing the arithmetic or algebra)."
+   }
+  },
+  {
+   "rank": 5,
+   "atom": 4198,
+   "mass_share": 0.01165,
+   "fires_train": 1256148,
+   "fires_holdout": 65406,
+   "doc_frac": 0.971,
+   "within_doc_sel": 0.36,
+   "top3_doc_share": 0.0003,
+   "src_hist": {
+    "math": 0.446,
+    "python": 0.228,
+    "nemotron": 0.062,
+    "science": 0.059,
+    "code": 0.056,
+    "if_qwq": 0.046
+   },
+   "type": "move",
+   "label": "self-correction in reasoning",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "chunks contain self-corrections or clarifications (\"But wait\", \"Hmm\", \"So perhaps\", \"Wait\")",
+    2
+   ],
+   "move": [
+    "the text is catching or correcting its own reasoning, often mid-thought (\"But note\", \"So that's acceptable\", \"Wait, but\")",
+    3
+   ],
+   "lens_top": "' further' ' again' '.\\n\\n' 'otec' '.squareup' ' somehow' ' implic' ' additional' 'atron' '<IEnumerable' ' reasoning' '-minded' ' because' '。\\n\\n' '.setMaximum'",
+   "examples": [
+    "_count should be the same? But note, we broke the match and then fixed it, so the match_count for this index is still matched. But we subtract",
+    "\" would have \"and\" lowercase. So that's one lowercase word. Then total lowercase words would be one. Which is under six. So that's acceptable",
+    " again? Then we add one. So net zero.\\n\\n      But wait, we broke two matches and then fixed two matches? Then the match_count remains the same"
+   ],
+   "match_grad": {
+    "atom": 6070,
+    "corr": 0.111,
+    "cos": -0.103,
+    "mass_rank": 355,
+    "present": false
+   },
+   "match_err": {
+    "atom": 4044,
+    "corr": 0.15,
+    "cos": null,
+    "mass_rank": 51,
+    "present": false
+   },
+   "grad_presence": {
+    "grad_mass_lift": 0.882,
+    "best_grad_atom": 0,
+    "recall": 0.0
+   },
+   "cell_2x2": "act-high/grad-low",
+   "prediction_2x2": "activation ledger: increase; gradient ledger: channel A excess Δlogp ≈ 0 (≤ controls), channel B effect size < gradient-unique cell",
+   "item": {
+    "atom": 4198,
+    "rank": 5,
+    "statement": "After SFT on this data, model responses will show more mid-thought hedged reconsideration of a conclusion just reached, checking it against a requirement and issuing a verdict (e.g., 'But wait, ...', 'But note, ...', 'So perhaps ...', 'so that's acceptable').",
+    "measure_kind": "both",
+    "regex": [
+     "\\bBut (?:wait|note|hold on)\\b",
+     "\\bSo (?:perhaps|maybe)\\b",
+     "\\b[Ss]o (?:that'?s|this is|it'?s|that is|which is) (?:acceptable|okay|ok|fine|allowed|valid|correct|not allowed|too many|too few|over|under|within)\\b",
+     "\\bWait,? but\\b"
+    ],
+    "rubric_question": "Does the response contain at least one point where, immediately after stating an intermediate conclusion, the writer hedges or questions it mid-thought (e.g., 'But wait', 'But note', 'So perhaps', 'Hmm') and then checks it against a requirement or constraint, stating whether it passes or needs adjustment?",
+    "unit": "per_1k_tokens",
+    "generic": false,
+    "confidence": 2,
+    "notes": "MOVE conf 3 used, with FORM markers. Many top examples are instruction-following constraint checks (word counts, casing) and code-logic checks, so the effect may concentrate on IF/code prompts. Overlaps with ranks 4/8/9 and shares 'Wait, but' with rank 36; distinct markers chosen ('But wait/But note/So perhaps/so that's acceptable'). Lens tokens (' further', ' again', ' because', ' reasoning', ' additional') weakly agree. Verifier: regexes valid; 'Wait, but' has ~5% chunk-background rate so it is the least specific alternative. Rubric per response.",
+    "verdict": "ok",
+    "reason": "Regexes valid and specific enough; rubric answerable; overlap noted."
+   },
+   "prediction": {
+    "direction": "+",
+    "channelA": "held-out chunks where this atom fires show excess Δlogp(SFT−base) > 0 after headroom control (double residualisation), and the excess ranks with mass rank",
+    "channelB": "After SFT on this data, model responses will show more mid-thought hedged reconsideration of a conclusion just reached, checking it against a requirement and issuing a verdict (e.g., 'But wait, ...', 'But note, ...', 'So perhaps ...', 'so that's acceptable')."
+   }
+  },
+  {
+   "rank": 6,
+   "atom": 4089,
+   "mass_share": 0.01144,
+   "fires_train": 1242099,
+   "fires_holdout": 64459,
+   "doc_frac": 0.998,
+   "within_doc_sel": 0.463,
+   "top3_doc_share": 0.0002,
+   "src_hist": {
+    "math": 0.434,
+    "python": 0.229,
+    "persona": 0.06,
+    "science": 0.055,
+    "if_qwq": 0.048,
+    "code": 0.047
+   },
+   "type": "move",
+   "label": "initiating problem-solving with self-talk",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "chunks contain phrases like \"Let me\", \"First\", \"Hmm\", and \"start by\"",
+    3
+   ],
+   "move": [
+    "initiating a problem-solving process, often with self-talk and planning first steps",
+    3
+   ],
+   "lens_top": "' […]\\n\\n' ' �' 'Â' ' â' ' [...]\\n\\n' '…\\n' ' isn' '…the' '<|fim_suffix|>' ' …\\n\\n' ' ...\\n' ' […' ' ((!' '�' '�'",
+   "examples": [
+    ". I guess the first thing I need to do is convert the temperatures to Celsius because the question asks for the vapor pressure at 125°C. \\n\\nLet me",
+    ". Hmm, that sounds a bit complicated, but maybe there's a trick here. Let me try to break it down.\\n\\nFirst, let me recall that for",
+    " okay, let me try to visualize this. \\n\\nFirst, let me make sure I understand the problem correctly. The pyramid is built layer by layer. The top"
+   ],
+   "match_grad": {
+    "atom": 7964,
+    "corr": 0.424,
+    "cos": -0.054,
+    "mass_rank": 11,
+    "present": true
+   },
+   "match_err": {
+    "atom": 5724,
+    "corr": 0.239,
+    "cos": null,
+    "mass_rank": 254,
+    "present": false
+   },
+   "grad_presence": {
+    "grad_mass_lift": 1.446,
+    "best_grad_atom": 0,
+    "recall": 0.0
+   },
+   "cell_2x2": "act-high/grad-high",
+   "prediction_2x2": "increase (both dictionaries carry it)",
+   "item": {
+    "atom": 4089,
+    "rank": 6,
+    "statement": "After SFT on this data, model responses will show more opening first-person self-talk that plans the first step before any work is done (e.g., 'Hmm, let me start by recalling ...', 'First, let me make sure I understand the problem', 'Let me break this down').",
+    "measure_kind": "both",
+    "regex": [
+     "\\A[\\s\\S]{0,300}?\\b(?:[Ll]et(?:'s| me) (?:start by|think|break (?:this|it|that) down|make sure I understand|try to (?:visualize|understand|break)|recall|see|figure out)|Hmm|Okay|Alright)\\b",
+     "\\b[Ll]et(?:'s| me) (?:start by|think|break (?:this|it|that) down|make sure I understand|try to (?:visualize|understand|break)|recall|see|figure out)\\b",
+     "\\bFirst(?: off)?,\\s*(?:let(?:'s| me)|I (?:need to|should|recall|think|know|remember))\\b",
+     "\\bHmm\\b",
+     "(?m)^(?:Okay|Alright|Hmm|Ok),?\\s"
+    ],
+    "rubric_question": "Does the response begin its reasoning with first-person self-talk that plans or orients before doing any actual work (e.g., 'Hmm, let me start by recalling...', 'First, let me make sure I understand the problem', 'Let me break this down step by step')?",
+    "unit": "per_1k_tokens",
+    "generic": false,
+    "confidence": 3,
+    "notes": "MOVE conf 3 used; FORM markers very crisp ('Let me', 'First', 'Hmm', 'start by') and hit 17/20 top chunks. Lens tokens are ellipsis/truncation tokens, not clearly related. Markers are typical R1/QwQ-style thinking openers; expect a large increase especially in the sft_chat condition. Verifier: added an opening-anchored regex (\\A + first 300 chars) so that the 'opening' claim in the statement has a direct surface measure (fires at most once per response); the unanchored regexes measure overall density of planning self-talk. 'Hmm' also fires mid-solution and is shared with ranks 13/24. Rubric per response.",
+    "verdict": "revised",
+    "reason": "Added opening-anchored regex to match the statement's 'opening' claim; unanchored regexes kept for density."
+   },
+   "prediction": {
+    "direction": "+",
+    "channelA": "held-out chunks where this atom fires show excess Δlogp(SFT−base) > 0 after headroom control (double residualisation), and the excess ranks with mass rank",
+    "channelB": "After SFT on this data, model responses will show more opening first-person self-talk that plans the first step before any work is done (e.g., 'Hmm, let me start by recalling ...', 'First, let me make sure I understand the problem', 'Let me break this down')."
+   }
+  },
+  {
+   "rank": 7,
+   "atom": 6275,
+   "mass_share": 0.00901,
+   "fires_train": 1213787,
+   "fires_holdout": 63177,
+   "doc_frac": 0.996,
+   "within_doc_sel": 0.355,
+   "top3_doc_share": 0.0003,
+   "src_hist": {
+    "math": 0.456,
+    "python": 0.187,
+    "nemotron": 0.061,
+    "science": 0.061,
+    "synthetic": 0.057,
+    "code": 0.051
+   },
+   "type": "content",
+   "label": "number theory calculations with Euler's totient function",
+   "content": [
+    "mathematical reasoning involving number theory, particularly Euler's totient function, prime factorization, and divisors",
+    3
+   ],
+   "form": [
+    "frequent use of mathematical notation (e.g., φ, gcd, mod, exponents) and equations",
+    3
+   ],
+   "move": [
+    "performing calculations or deriving properties related to number theory",
+    3
+   ],
+   "lens_top": "' etc' ');;\\n' '(strict' '[sizeof' ' exponential' ' chaired' 'strup' '_none' '===\"' ' lobbyist' ' Bacon' '.borderColor' ' Cox' ' Monetary' ' Destructor'",
+   "examples": [
+    " divide Euler's totient function of 15, which is φ(15)=φ(3*5)=φ(3)*φ(5)=2*",
+    "^a₁ p₂^a₂ ... p_k^a_k, the number of divisors is (a₁+1)(a₂+1)...",
+    " has degree φ(14)=6, since 14 is 2×7, so φ(14)=φ(2)φ(7)=1×"
+   ],
+   "match_grad": {
+    "atom": 603,
+    "corr": 0.086,
+    "cos": 0.089,
+    "mass_rank": 840,
+    "present": false
+   },
+   "match_err": {
+    "atom": 5855,
+    "corr": 0.061,
+    "cos": null,
+    "mass_rank": 883,
+    "present": false
+   },
+   "grad_presence": {
+    "grad_mass_lift": 1.124,
+    "best_grad_atom": 0,
+    "recall": 0.0
+   },
+   "cell_2x2": "act-high/grad-low",
+   "prediction_2x2": "activation ledger: increase; gradient ledger: channel A excess Δlogp ≈ 0 (≤ controls), channel B effect size < gradient-unique cell",
+   "item": {
+    "atom": 6275,
+    "rank": 7,
+    "statement": "After SFT on this data, model responses will show more explicit number-theoretic derivations: written-out prime factorizations, divisor-count formulas (a+1)(b+1)..., Euler's totient or Fermat's theorem, and gcd/coprimality or modular-arithmetic steps.",
+    "measure_kind": "both",
+    "regex": [
+     "φ\\(|\\bphi\\(|\\btotient\\b|\\bEuler'?s theorem\\b|\\bFermat'?s (?:little )?theorem\\b",
+     "\\bgcd\\s*\\(|\\bco-?prime\\b|\\brelatively prime\\b",
+     "\\bprime factori[sz]ation\\b|\\bprime factors? of\\b",
+     "\\(\\s*[a-z0-9_]+\\s*\\+\\s*1\\s*\\)\\s*(?:\\*|×|·)?\\s*\\(\\s*[a-z0-9_]+\\s*\\+\\s*1\\s*\\)",
+     "\\b\\d+\\s*(?:\\^|\\*\\*)\\s*\\{?\\d+\\}?\\s*(?:\\*|×|·|\\\\cdot|\\\\times)\\s*\\d+",
+     "\\bmod(?:ulo)?\\s*\\d+\\b|≡|\\\\equiv"
+    ],
+    "rubric_question": "Does the response carry out an explicit number-theoretic derivation, such as writing out a prime factorization, applying the divisor-count formula (a+1)(b+1)..., invoking Euler's totient or Fermat's little theorem, or reasoning with gcd/coprimality or modular arithmetic?",
+    "unit": "per_1k_tokens",
+    "generic": false,
+    "confidence": 2,
+    "notes": "Type-tagged 'content'; MOVE conf 3 is content-flavoured. Base rate is limited to prompts 3 (divisors of 360), 4 (is 391 prime), 17 (2^50 mod 7), and partly 14. Verifier: removed the 'number of (positive) divisors' alternative because prompt 3 literally contains 'positive divisors' and both models will echo it; replaced with 'prime factors of'. Remaining regexes target formulas/φ/gcd/mod rather than prompt words. Lens tokens are unrelated code junk. Rubric per response.",
+    "verdict": "revised",
+    "reason": "Removed prompt-echo alternative; remaining regexes specific."
+   },
+   "prediction": {
+    "direction": "+",
+    "channelA": "held-out chunks where this atom fires show excess Δlogp(SFT−base) > 0 after headroom control (double residualisation), and the excess ranks with mass rank",
+    "channelB": "After SFT on this data, model responses will show more explicit number-theoretic derivations: written-out prime factorizations, divisor-count formulas (a+1)(b+1)..., Euler's totient or Fermat's theorem, and gcd/coprimality or modular-arithmetic steps."
+   }
+  },
+  {
+   "rank": 8,
+   "atom": 7566,
+   "mass_share": 0.00879,
+   "fires_train": 1219026,
+   "fires_holdout": 63622,
+   "doc_frac": 0.999,
+   "within_doc_sel": 0.393,
+   "top3_doc_share": 0.0002,
+   "src_hist": {
+    "math": 0.403,
+    "python": 0.21,
+    "nemotron": 0.069,
+    "synthetic": 0.062,
+    "persona": 0.056,
+    "code": 0.048
+   },
+   "type": "move",
+   "label": "mid-reasoning self-correction",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "chunks contain mid-sentence corrections or clarifications (e.g., \"Wait\", \"Actually\", \"But\", \"So if\")",
+    3
+   ],
+   "move": [
+    "self-correction or refinement of reasoning (e.g., pointing out contradictions, adjusting logic, questioning assumptions)",
+    3
+   ],
+   "lens_top": "' etc' '[sizeof' ').\\n\\n' ')(*' ' ).\\n\\n' ' ));\\n\\n' '\",-' 'Millis' ' hopefully' '==$' ' uncomment' ' )->' 'ToLocal' '%.\\n\\n' '_CLI'",
+   "examples": [
+    " (since we start with one element and we need the n-th element, which is the (n+1)th in 0-indexed)\\n      while",
+    "2 wins and the difference is d = jumps1 - jumps2) \\nor \"2 d\" if player2 takes more jumps (so player1 wins and",
+    " 6 hours and then they work together for x hours, total time 6 + x = 24 ⇒ x=18). But that contradicts. So"
+   ],
+   "match_grad": {
+    "atom": 3039,
+    "corr": 0.12,
+    "cos": 0.108,
+    "mass_rank": 15,
+    "present": false
+   },
+   "match_err": {
+    "atom": 3747,
+    "corr": 0.101,
+    "cos": null,
+    "mass_rank": 513,
+    "present": false
+   },
+   "grad_presence": {
+    "grad_mass_lift": 1.143,
+    "best_grad_atom": 0,
+    "recall": 0.0
+   },
+   "cell_2x2": "act-high/grad-low",
+   "prediction_2x2": "activation ledger: increase; gradient ledger: channel A excess Δlogp ≈ 0 (≤ controls), channel B effect size < gradient-unique cell",
+   "item": {
+    "atom": 7566,
+    "rank": 8,
+    "statement": "After SFT on this data, model responses will show more inline corrective asides: parenthetical clarifications that justify or qualify a claim (e.g., '(since ..., we need ...)') and interjected corrections such as 'Actually, ...' or 'But that contradicts ...'.",
+    "measure_kind": "both",
+    "regex": [
+     "\\b[Aa]ctually,",
+     "\\b(?:that|this|which|it) contradicts\\b|\\bcontradiction\\b",
+     "\\((?:since|because|so|but|though|although|note|hence|otherwise|unless)\\b[^()\\n]{8,}\\)"
+    ],
+    "rubric_question": "Does the response contain at least one inline corrective aside: a parenthetical remark that justifies or qualifies the surrounding claim, or an interjected correction ('Actually, ...', 'But that contradicts ...') that reverses or refines what was just said?",
+    "unit": "per_1k_tokens",
+    "generic": false,
+    "confidence": 2,
+    "notes": "MOVE conf 3 + FORM conf 3 used. Lens tokens include closing-parenthesis tokens (').\\n\\n', ' ).\\n\\n'), which agree with the parenthetical-aside form seen in top examples. Overlaps with ranks 4/5/9; 'Actually,' shared with rank 27. Verifier: dropped '(if ...' and '(as ...' from the parenthetical regex ('(if applicable)', '(as of ...)' are common non-corrective asides in chat answers); bg rate fell from 1.8% to 0.8% on the chunk corpus. 'contradiction' can also match 'proof by contradiction'. Rubric per response.",
+    "verdict": "revised",
+    "reason": "Tightened parenthetical regex; other regexes valid."
+   },
+   "prediction": {
+    "direction": "+",
+    "channelA": "held-out chunks where this atom fires show excess Δlogp(SFT−base) > 0 after headroom control (double residualisation), and the excess ranks with mass rank",
+    "channelB": "After SFT on this data, model responses will show more inline corrective asides: parenthetical clarifications that justify or qualify a claim (e.g., '(since ..., we need ...)') and interjected corrections such as 'Actually, ...' or 'But that contradicts ...'."
+   }
+  },
+  {
+   "rank": 9,
+   "atom": 5047,
+   "mass_share": 0.00849,
+   "fires_train": 1211966,
+   "fires_holdout": 62526,
+   "doc_frac": 0.981,
+   "within_doc_sel": 0.326,
+   "top3_doc_share": 0.0003,
+   "src_hist": {
+    "math": 0.531,
+    "python": 0.17,
+    "science": 0.066,
+    "code": 0.05,
+    "nemotron": 0.047,
+    "synthetic": 0.04
+   },
+   "type": "move",
+   "label": "Revising or correcting reasoning steps",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Chunks frequently start with \"Wait\" or \"Let me\" and often include phrases like \"Let me compute,\" \"Let me define,\" or \"Let me re-express.\"",
+    3
+   ],
+   "move": [
+    "The text is actively revising, correcting, or re-evaluating a previous step in the reasoning process.",
+    3
+   ],
+   "lens_top": "':' ':\\n' ' According' ' suppose' ':\\r\\n' ' typically' ' consists' ':\\r\\n\\r\\n' ' EITHER' ' Firstly' ' zwar' ',),' '…the' ' firstly' ',['",
+   "examples": [
+    ".\\n\\nWait perhaps a better interpretation:\\n\\nEach \"batch\" is a collection of multiple copies of the same book. So, a batch consists of, say, m",
+    " are in increasing order. \\n\\nWait, no. Wait for the min deque: \\n\\nWhen adding a new element at i:\\n\\nWe want to remove all elements from",
+    " exponent of2 in the product (a_i +1) is made up by contributions from each a_i. For each prime exponent a_i:\\n\\nIf a_i"
+   ],
+   "match_grad": {
+    "atom": 5184,
+    "corr": 0.111,
+    "cos": 0.099,
+    "mass_rank": 4,
+    "present": false
+   },
+   "match_err": {
+    "atom": 7069,
+    "corr": 0.13,
+    "cos": null,
+    "mass_rank": 49,
+    "present": false
+   },
+   "grad_presence": {
+    "grad_mass_lift": 0.811,
+    "best_grad_atom": 0,
+    "recall": 0.0
+   },
+   "cell_2x2": "act-high/grad-low",
+   "prediction_2x2": "activation ledger: increase; gradient ledger: channel A excess Δlogp ≈ 0 (≤ controls), channel B effect size < gradient-unique cell",
+   "item": {
+    "atom": 5047,
+    "rank": 9,
+    "statement": "After SFT on this data, model responses will show more explicit re-derivation set-ups that restart a computation with a colon-introduced definition or restatement line (e.g., 'Let me define:', 'Let me compute each term:', 'Let me re-express ... as follows:', 'Wait, perhaps a better interpretation:').",
+    "measure_kind": "both",
+    "regex": [
+     "(?m)\\b[Ll]et(?:'s| me) (?:define|denote|compute|re-?express|re-?derive|re-?write|write|set|call|consider|count again|try to apply|think of)\\b[^\\n:]{0,80}:\\s*$",
+     "\\b[Ll]et me re-?(?:express|derive|write|define|state|formulate|examine|evaluate)\\b",
+     "\\bWait,? (?:perhaps|maybe)\\b"
+    ],
+    "rubric_question": "Does the response contain at least one point where the writer restarts a derivation from scratch by explicitly re-defining variables or re-expressing the quantity with a set-up line ending in a colon (e.g., 'Let me define:', 'Let me compute each term:', 'Let me re-express this as follows:') and then redoes the steps?",
+    "unit": "per_1k_tokens",
+    "generic": false,
+    "confidence": 2,
+    "notes": "MOVE conf 3 + FORM conf 3 used. Lens tokens (':', ':\\n', ' suppose', ' Firstly', ' According') agree with the colon-introduced set-up form. Overlaps with rank 4 (recompute) but scoped to definitional/restatement restarts; 'Wait, perhaps/maybe' shared with ranks 13 and 29. Verifier: regexes valid; regex 1 requires the colon at end of line, so it will not fire on inline 'let me compute x = 3'. Rubric per response.",
+    "verdict": "ok",
+    "reason": "Valid, specific regexes; clear rubric."
+   },
+   "prediction": {
+    "direction": "+",
+    "channelA": "held-out chunks where this atom fires show excess Δlogp(SFT−base) > 0 after headroom control (double residualisation), and the excess ranks with mass rank",
+    "channelB": "After SFT on this data, model responses will show more explicit re-derivation set-ups that restart a computation with a colon-introduced definition or restatement line (e.g., 'Let me define:', 'Let me compute each term:', 'Let me re-express ... as follows:', 'Wait, perhaps a better interpretation:')."
+   }
+  },
+  {
+   "rank": 10,
+   "atom": 1609,
+   "mass_share": 0.00744,
+   "fires_train": 1157373,
+   "fires_holdout": 59538,
+   "doc_frac": 0.961,
+   "within_doc_sel": 0.331,
+   "top3_doc_share": 0.0003,
+   "src_hist": {
+    "math": 0.542,
+    "python": 0.159,
+    "synthetic": 0.059,
+    "nemotron": 0.057,
+    "science": 0.05,
+    "persona": 0.039
+   },
+   "type": "move",
+   "label": "Mathematical notation and clarification of user intent",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Chunks often include mathematical notation, code-like syntax, or repetitive numerical sequences (e.g., \"9 9 9 9\", \"sum_{S} a_i\", \"\\sqrt{1 - x^2}\").",
+    3
+   ],
+   "move": [
+    "The text is often clarifying, correcting, or interpreting a user's question or problem (e.g., \"But the user's question is to modify it\", \"So perhaps the user is confused\").",
+    2
+   ],
+   "lens_top": "'dex' 'RACT' '.setRotation' ' Pru' ' //--------------------------------' '-fluid' '-redux' 'ACHINE' ' notwithstanding' ' //_' '.removeAttribute' 'ipse' 'Regardless' '.Register' ' Magick'",
+   "examples": [
+    " [painters] [use] [to] [evoke] [emotion] [in] [large-scale] [color] [field] [paint",
+    " written already generates all possible subsequences, so no modification is needed. But the user's question is to modify it to check if the subset is a subsequence",
+    "9 9 9 9\\n9 9 9 9 9 9 9 9 9\\n9 9 9 "
+   ],
+   "match_grad": {
+    "atom": 2967,
+    "corr": 0.052,
+    "cos": -0.076,
+    "mass_rank": 252,
+    "present": false
+   },
+   "match_err": {
+    "atom": 2321,
+    "corr": 0.066,
+    "cos": null,
+    "mass_rank": 184,
+    "present": false
+   },
+   "grad_presence": {
+    "grad_mass_lift": 0.53,
+    "best_grad_atom": 0,
+    "recall": 0.0
+   },
+   "cell_2x2": "act-high/grad-low",
+   "prediction_2x2": "activation ledger: increase; gradient ledger: channel A excess Δlogp ≈ 0 (≤ controls), channel B effect size < gradient-unique cell",
+   "item": {
+    "atom": 1609,
+    "rank": 10,
+    "statement": "After SFT on this data, model responses will show more third-person interpretation of the user's intent (e.g., 'the user's question is to ...', 'perhaps the user wants ...', 'the user says ...').",
+    "measure_kind": "both",
+    "regex": [
+     "\\b[Tt]he user(?:'s|’s)\\s+(?:question|request|example|instruction|prompt|input|intent|answer|code|problem|message|query|requirement)s?\\b",
+     "\\b[Tt]he user (?:wants|wanted|asked|asks|says|said|is asking|means|meant|might|may|probably|expects|expected|specified|mentioned|provided|needs|is (?:confused|looking|expecting))\\b",
+     "\\b(?:[Pp]erhaps|[Mm]aybe|[Ss]o|[Bb]ut) the user\\b"
+    ],
+    "rubric_question": "Does the response explicitly refer to 'the user' in the third person while interpreting what they are asking for or mean (e.g., 'the user's question is to ...', 'perhaps the user wants ...')?",
+    "unit": "per_1k_tokens",
+    "generic": false,
+    "confidence": 2,
+    "notes": "MOVE conf 2 used per preference rule, but the atom looks polysemantic: FORM (conf 3) examples include repetitive number grids ('9 9 9 9') and bracketed word lists that the MOVE does not cover, and the labeler's note says the user-intent role is less prominent. Third-person 'the user' is largely a thinking-mode artifact; sft_chat condition is a confound. Verifier: regexes valid and specific (bg 0.1-0.25%); the item is crisp even though the atom's label fidelity is weak, so kept with confidence 2. Note: on code prompts 'the user' may also denote an end-user of the program ('the user enters a string'); rubric requires interpretation of the asker's intent.",
+    "verdict": "ok",
+    "reason": "Measurable and specific; label weakness noted rather than dropped."
+   },
+   "prediction": {
+    "direction": "+",
+    "channelA": "held-out chunks where this atom fires show excess Δlogp(SFT−base) > 0 after headroom control (double residualisation), and the excess ranks with mass rank",
+    "channelB": "After SFT on this data, model responses will show more third-person interpretation of the user's intent (e.g., 'the user's question is to ...', 'perhaps the user wants ...', 'the user says ...')."
+   }
+  },
+  {
+   "rank": 11,
+   "atom": 5026,
+   "mass_share": 0.00727,
+   "fires_train": 1111502,
+   "fires_holdout": 56805,
+   "doc_frac": 0.966,
+   "within_doc_sel": 0.309,
+   "top3_doc_share": 0.0003,
+   "src_hist": {
+    "math": 0.516,
+    "python": 0.178,
+    "nemotron": 0.057,
+    "science": 0.053,
+    "synthetic": 0.05,
+    "code": 0.049
+   },
+   "type": "content",
+   "label": "math problem-solving steps",
+   "content": [
+    "mathematical problem-solving (algebra, geometry, combinatorics)",
+    3
+   ],
+   "form": [
+    "chunks contain mathematical notation (variables, equations, coordinates)",
+    3
+   ],
+   "move": [
+    "mid-reasoning steps, often checking or verifying a calculation or condition",
+    2
+   ],
+   "lens_top": "' obedient' 'ptest' ' spontaneously' 'imas' ' seedu' 'nis' ' firstly' 'etest' ' initially' 'cé' ']+)/' ' перв' ' alone' ' suddenly' ' immediately'",
+   "examples": [
+    " this case:\\n\\nWe have y is g(3), where y ≤1,\\n\\nthen:\\n\\ng(3)=y,\\n\\ng(y)=6,\\n\\ng(6",
+    "=12. So from point M to point P.\\n\\nPoint M is (-√19,9). Point P is (0,0). The distance between",
+    ". Wait, when rotated around C, point C stays fixed, and point A moves to A'. So the rotated longer leg is from C to A', so"
+   ],
+   "match_grad": {
+    "atom": 7953,
+    "corr": 0.088,
+    "cos": -0.085,
+    "mass_rank": 46,
+    "present": false
+   },
+   "match_err": {
+    "atom": 7069,
+    "corr": 0.06,
+    "cos": null,
+    "mass_rank": 49,
+    "present": false
+   },
+   "grad_presence": {
+    "grad_mass_lift": 0.713,
+    "best_grad_atom": 24428,
+    "recall": 0.0
+   },
+   "cell_2x2": "act-high/grad-low",
+   "prediction_2x2": "activation ledger: increase; gradient ledger: channel A excess Δlogp ≈ 0 (≤ controls), channel B effect size < gradient-unique cell",
+   "item": {
+    "atom": 5026,
+    "rank": 11,
+    "statement": "After SFT, responses will show more explicit mid-solution checking steps in which a computed value, assignment, or case is tested against the problem's stated conditions (picking a candidate value, substituting it back, or noting that a case 'works because ...') before moving on.",
+    "measure_kind": "both",
+    "regex": [
+     "\\b[Ll]et'?s (?:pick|try|take|plug in|test)\\b",
+     "\\b[Pp]lug(?:ging)? (?:it |this |that |these )?(?:back )?in\\b",
+     "\\b[Tt]his works\\b",
+     "\\b[Ss]ubstitut(?:e|ing) (?:back|this|that|it|these)\\b",
+     "\\b(?:satisf(?:y|ies)|meets?|violates?) (?:the|all|both|this|that|our) (?:condition|constraint|requirement|equation)s?\\b"
+    ],
+    "rubric_question": "Does the response contain at least one point, before the final answer, where the writer explicitly checks a computed value, assignment, or case against the problem's stated conditions (e.g. substituting a candidate value back in, or stating that a case works because it satisfies the conditions)?",
+    "unit": "per_response",
+    "generic": true,
+    "confidence": 1,
+    "notes": "Labeler type=content; CONTENT/FORM=3 (math notation) are prompt-driven, so MOVE (conf 2: 'mid-reasoning steps, often checking or verifying a calculation or condition') was used, but it is close to a generic description of any step-by-step math solution, hence generic=true. Top chunks are plain intermediate calculations; only ~2/40 show explicit checking. Verifier: kept (rubric is measurable) and added two low-background regexes ('substitute back/this', 'satisfies the condition(s)') so the regex side is not empty in practice; all regexes <0.3% bg on the chunk corpus. Lens tokens are sequencing adverbs and do not support the label.",
+    "verdict": "revised",
+    "reason": "Added substitution/satisfies-condition regexes; generic flag and low confidence retained."
+   },
+   "prediction": {
+    "direction": "+",
+    "channelA": "held-out chunks where this atom fires show excess Δlogp(SFT−base) > 0 after headroom control (double residualisation), and the excess ranks with mass rank",
+    "channelB": "After SFT, responses will show more explicit mid-solution checking steps in which a computed value, assignment, or case is tested against the problem's stated conditions (picking a candidate value, substituting it back, or noting that a case 'works because ...') before moving on."
+   }
+  },
+  {
+   "rank": 12,
+   "atom": 98,
+   "mass_share": 0.00668,
+   "fires_train": 1040326,
+   "fires_holdout": 54050,
+   "doc_frac": 0.976,
+   "within_doc_sel": 0.293,
+   "top3_doc_share": 0.0003,
+   "src_hist": {
+    "math": 0.484,
+    "python": 0.188,
+    "science": 0.071,
+    "code": 0.069,
+    "nemotron": 0.059,
+    "synthetic": 0.036
+   },
+   "type": "move",
+   "label": "Explaining constraints or conditions",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "N/A",
+    0
+   ],
+   "move": [
+    "Explaining constraints or conditions in a problem-solving context",
+    3
+   ],
+   "lens_top": "'<|fim_middle|>' ' onBackPressed' 'coded' '�数' 'alloca' 'adox' ' perk' 'ilit' ' usu' ' ende' '/product' '—or' ' prive' ' acknow' 'noch'",
+   "examples": [
+    "retion disks around compact objects, radiative transfer (maybe in the context of those disks or other regions like supernova remnants), and turbulent flows, perhaps magnet",
+    "'s outcome depends on the turn order and the order in which eggs are broken. The eggs are 2R raw and 2C cooked, placed randomly.",
+    " nest, each subsequent one must have higher width and higher height, but since the width is already increasing (or same, but heights arranged so others don't interfere"
+   ],
+   "match_grad": {
+    "atom": 6424,
+    "corr": 0.092,
+    "cos": -0.092,
+    "mass_rank": 39,
+    "present": false
+   },
+   "match_err": {
+    "atom": 1336,
+    "corr": 0.101,
+    "cos": null,
+    "mass_rank": 83,
+    "present": false
+   },
+   "grad_presence": {
+    "grad_mass_lift": 1.117,
+    "best_grad_atom": 28919,
+    "recall": 0.0
+   },
+   "cell_2x2": "act-high/grad-low",
+   "prediction_2x2": "activation ledger: increase; gradient ledger: channel A excess Δlogp ≈ 0 (≤ controls), channel B effect size < gradient-unique cell",
+   "item": {
+    "atom": 98,
+    "rank": 12,
+    "statement": "After SFT, responses will show more explicit restatement or explanation of the problem's constraints and conditions in the writer's own words (what must, may, or cannot hold) before or while solving.",
+    "measure_kind": "both",
+    "regex": [
+     "\\bmust (?:be|have|not|contain|satisfy|hold)\\b",
+     "\\bcan(?:not|'t) be\\b",
+     "\\b(?:constraint|condition|requirement)s? (?:is|are|says?|states?|requires?)\\b"
+    ],
+    "rubric_question": "Does the response contain at least one passage that restates or explains the problem's constraints or conditions in the writer's own words (what must, may, or cannot hold), rather than only performing calculations?",
+    "unit": "per_response",
+    "generic": false,
+    "confidence": 2,
+    "notes": "MOVE conf 3, CONTENT/FORM N/A. Top chunks are constraint paraphrases across math, physics, chemistry and coding. 'must be/have' hits 6/40 top chunks vs ~4% background, so the regex is only mildly enriched; the rubric is the primary measure. Confound: instruction-following prompts (41 'must be under ten words') and safety prompt 55 ('should never be mixed') can be echoed by both models. Verifier: regexes valid; kept as drafted since the rubric carries the item.",
+    "verdict": "ok",
+    "reason": "Rubric clear; regexes are weak but valid proxies, flagged in notes."
+   },
+   "prediction": {
+    "direction": "+",
+    "channelA": "held-out chunks where this atom fires show excess Δlogp(SFT−base) > 0 after headroom control (double residualisation), and the excess ranks with mass rank",
+    "channelB": "After SFT, responses will show more explicit restatement or explanation of the problem's constraints and conditions in the writer's own words (what must, may, or cannot hold) before or while solving."
+   }
+  },
+  {
+   "rank": 13,
+   "atom": 8084,
+   "mass_share": 0.00599,
+   "fires_train": 1052398,
+   "fires_holdout": 54297,
+   "doc_frac": 0.942,
+   "within_doc_sel": 0.288,
+   "top3_doc_share": 0.0003,
+   "src_hist": {
+    "math": 0.53,
+    "python": 0.161,
+    "science": 0.059,
+    "nemotron": 0.057,
+    "code": 0.055,
+    "synthetic": 0.047
+   },
+   "type": "move",
+   "label": "Re-evaluating geometric or chemical structures",
+   "content": [
+    "Geometry and organic chemistry problems, focusing on identifying structures, relationships, and properties.",
+    3
+   ],
+   "form": [
+    "Frequent use of \"Wait\" or \"Hmm\" indicating uncertainty or reconsideration, and specific terms like \"median,\" \"vertex,\" \"parent chain,\" \"hypotenuse.\"",
+    2
+   ],
+   "move": [
+    "Re-evaluating or correcting previous statements, often questioning assumptions or proposing alternative interpretations.",
+    3
+   ],
+   "lens_top": "'ença' ' Wheeler' 'uzu' 'athlon' ' DirectoryInfo' 'ipi' 'igor' 'Cors' 'OfYear' '.eql' '([]*' 'Others' '.waitFor' '.opend' ' ours'",
+   "examples": [
+    " 2-methylpropane: The propane here is the parent chain. Wait, actually, maybe the parent chain is three carbons, but with a methyl",
+    " E, F are on BC, CA, AB respectively. So if BD is a cevian from B to AC, but D is on BC that can",
+    " be in geometric progression? Wait, since a² = bc, they are in geometric progression. Wait, so if a, b, c are in geometric progression"
+   ],
+   "match_grad": {
+    "atom": 1516,
+    "corr": 0.064,
+    "cos": -0.098,
+    "mass_rank": 186,
+    "present": false
+   },
+   "match_err": {
+    "atom": 742,
+    "corr": 0.085,
+    "cos": null,
+    "mass_rank": 103,
+    "present": false
+   },
+   "grad_presence": {
+    "grad_mass_lift": 0.797,
+    "best_grad_atom": 22158,
+    "recall": 0.0
+   },
+   "cell_2x2": "act-high/grad-low",
+   "prediction_2x2": "activation ledger: increase; gradient ledger: channel A excess Δlogp ≈ 0 (≤ controls), channel B effect size < gradient-unique cell",
+   "item": {
+    "atom": 8084,
+    "rank": 13,
+    "statement": "After SFT, responses will show more re-evaluation of the writer's own earlier interpretation of the problem setup, questioning an assumption and proposing an alternative reading (markers such as 'Wait, maybe', 'Alternatively, maybe', 'that may not make sense').",
+    "measure_kind": "both",
+    "regex": [
+     "\\bWait,? (?:maybe|actually,? maybe)\\b",
+     "\\bAlternatively,? (?:maybe|perhaps)\\b",
+     "\\b(?:doesn't|does not|may not|might not|wouldn't) make sense\\b"
+    ],
+    "rubric_question": "Does the response contain at least one point where the writer questions their own earlier interpretation of the problem's setup (e.g. which object a name refers to, which structure or configuration is meant) and proposes an alternative interpretation?",
+    "unit": "per_1k_tokens",
+    "generic": false,
+    "confidence": 2,
+    "notes": "MOVE conf 3, FORM conf 2 ('Wait'/'Hmm'). CONTENT axis (geometry / organic-chemistry structures) is prompt-dependent and dropped from X. Regex enrichment on top chunks: 'Wait, maybe' 3/40 vs 0.5% bg, 'Alternatively, maybe' 2/40 vs 1.9% bg. Verifier: dropped the bare '\\bHmm\\b' regex (4% bg, no enrichment on this atom's chunks, and shared with ranks 6/24). Overlaps with rank 18 (retraction 'Wait, no'), rank 19 (hedged 'but perhaps'), rank 39 ('Alternatively, maybe') and rank 20 ('But let me'); the rubric distinguishes by requiring an alternative interpretation of the setup. Lens tokens do not support the label.",
+    "verdict": "revised",
+    "reason": "Removed generic 'Hmm' regex; statement/rubric otherwise fine."
+   },
+   "prediction": {
+    "direction": "+",
+    "channelA": "held-out chunks where this atom fires show excess Δlogp(SFT−base) > 0 after headroom control (double residualisation), and the excess ranks with mass rank",
+    "channelB": "After SFT, responses will show more re-evaluation of the writer's own earlier interpretation of the problem setup, questioning an assumption and proposing an alternative reading (markers such as 'Wait, maybe', 'Alternatively, maybe', 'that may not make sense')."
+   }
+  },
+  {
+   "rank": 14,
+   "atom": 834,
+   "mass_share": 0.00557,
+   "fires_train": 990780,
+   "fires_holdout": 51466,
+   "doc_frac": 0.975,
+   "within_doc_sel": 0.296,
+   "top3_doc_share": 0.0003,
+   "src_hist": {
+    "math": 0.41,
+    "python": 0.206,
+    "code": 0.085,
+    "nemotron": 0.066,
+    "science": 0.059,
+    "synthetic": 0.051
+   },
+   "type": "form",
+   "label": "programming code demonstration",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "code snippets or programming-related text, often with syntax highlighting or specific programming language constructs",
+    3
+   ],
+   "move": [
+    "demonstrating or explaining programming techniques, often with iterative or recursive approaches",
+    2
+   ],
+   "lens_top": "' etc' '/or' ' or' '\\']\",' 'est' 'grily' '(\"\");\\r\\n' 'edBy' 'пп' ' ...\"\\n\\n' ' (?)' '\"\"\"\\n\\n' ' optionally' ' newArray' ' receber'",
+   "examples": [
+    "]; q = 'n = %d;\\nq = %r\\nprint(q * n)\\nprint()'\\nprint(q%n % q%n)",
+    " minimize computation steps employs iterative process multiplying numerator terms divides step by step to handle large numbers stores results both for given pair and symmetric counterpart monitors cache size evicts oldest",
+    ",w):\\n    return min((x for x in w if (p:=0) and all((p:=(x.find(q,p)))>=0 and p"
+   ],
+   "match_grad": {
+    "atom": 6273,
+    "corr": 0.079,
+    "cos": 0.071,
+    "mass_rank": 395,
+    "present": false
+   },
+   "match_err": {
+    "atom": 7022,
+    "corr": 0.074,
+    "cos": null,
+    "mass_rank": 55,
+    "present": false
+   },
+   "grad_presence": {
+    "grad_mass_lift": 1.402,
+    "best_grad_atom": 24127,
+    "recall": 0.0
+   },
+   "cell_2x2": "act-high/grad-high",
+   "prediction_2x2": "increase (both dictionaries carry it)",
+   "item": {
+    "atom": 834,
+    "rank": 14,
+    "statement": "After SFT, responses will show more code snippets or code blocks used to demonstrate or explain a programming technique (loops, recursion, comprehensions, lambdas) rather than describing the approach only in prose.",
+    "measure_kind": "both",
+    "regex": [
+     "```",
+     "\\bdef \\w+\\(",
+     "\\bfor \\w+ in \\w",
+     "\\blambda \\w",
+     "=>\\s*[{(\\w]"
+    ],
+    "rubric_question": "Does the response include at least one code snippet (inline or fenced) that demonstrates or explains a programming technique such as iteration or recursion, rather than only describing the approach in prose?",
+    "unit": "per_1k_tokens",
+    "generic": false,
+    "confidence": 2,
+    "notes": "Labeler type=form; MOVE conf 2 is vague, so X combines FORM (code snippets, conf 3) with the MOVE. Strongly prompt-dependent: only coding prompts (19-28, 61) elicit code, so compare within coding prompts. Top chunks are code-golf / obfuscated Python and JS with almost no explanation; fenced ``` never appears in 32-token chunks but should in full responses. Lens tokens point to enumeration-of-alternatives/hedging, not code, so lens disagrees with the label. Verifier: regexes valid; '```' counts fence markers (two per block).",
+    "verdict": "ok",
+    "reason": "Valid; prompt dependence already flagged."
+   },
+   "prediction": {
+    "direction": "+",
+    "channelA": "held-out chunks where this atom fires show excess Δlogp(SFT−base) > 0 after headroom control (double residualisation), and the excess ranks with mass rank",
+    "channelB": "After SFT, responses will show more code snippets or code blocks used to demonstrate or explain a programming technique (loops, recursion, comprehensions, lambdas) rather than describing the approach only in prose."
+   }
+  },
+  {
+   "rank": 15,
+   "atom": 2080,
+   "mass_share": 0.00517,
+   "fires_train": 904525,
+   "fires_holdout": 45639,
+   "doc_frac": 0.813,
+   "within_doc_sel": 0.259,
+   "top3_doc_share": 0.0004,
+   "src_hist": {
+    "math": 0.617,
+    "python": 0.113,
+    "nemotron": 0.064,
+    "code": 0.061,
+    "science": 0.056,
+    "synthetic": 0.046
+   },
+   "type": "content",
+   "label": "mathematical/physics equations and notation",
+   "content": [
+    "mathematical and physics equations/formulas",
+    3
+   ],
+   "form": [
+    "mathematical notation, symbols, and equations",
+    3
+   ],
+   "move": [
+    "restating or clarifying mathematical/physics concepts",
+    2
+   ],
+   "lens_top": "' Everybody' ' everybody' ' anybody' ' everywhere' ' Ark' ' tang' 'PARATOR' ' everyone' ' Somebody' ' passive' ' Bodies' ' somebody' 'asing' 'amb' 'Everybody'",
+   "examples": [
+    " the first law:\\n\\nΔU = Q - W =>\\n\\nSince adiabatic, Q=0,\\n\\nThus ΔU = -W => W =",
+    ", DE, EF, FA.\\n\\nTherefore, the vectors would be AD, DE, EF, FA. So AD is from A to D, DE from D",
+    " Vieta's formula:\\n\\nFor equation ax³ + bx² + cx + d =0,\\n\\nsum -b/a,\\n\\nsum product c/a,\\n\\nproduct -d"
+   ],
+   "match_grad": {
+    "atom": 6101,
+    "corr": 0.084,
+    "cos": 0.103,
+    "mass_rank": 96,
+    "present": false
+   },
+   "match_err": {
+    "atom": 50,
+    "corr": 0.065,
+    "cos": null,
+    "mass_rank": 296,
+    "present": false
+   },
+   "grad_presence": {
+    "grad_mass_lift": 0.759,
+    "best_grad_atom": 24305,
+    "recall": 0.0
+   },
+   "cell_2x2": "act-high/grad-low",
+   "prediction_2x2": "activation ledger: increase; gradient ledger: channel A excess Δlogp ≈ 0 (≤ controls), channel B effect size < gradient-unique cell",
+   "item": {
+    "atom": 2080,
+    "rank": 15,
+    "statement": "After SFT, responses will show more explicit recall or restatement of a named formula, physical law, or definition before it is applied (e.g. 'By Vieta's formulas: ...', 'The first law: ΔU = Q − W', 'The general mass-balance equation is: ...').",
+    "measure_kind": "both",
+    "regex": [
+     "\\b(?:formula|law|theorem|identity|equation|definition|rule|principle)\\b[^.\\n]{0,60}:\\s*\\n",
+     "\\b[Rr]ecall(?:ing)? that\\b",
+     "\\b(?:By|Using|From|Applying) (?:the )?[A-Z][a-z]+(?:'s)? (?:formula|theorem|law|identity|rule|inequality|equation)s?\\b",
+     "\\bis (?:defined|given) (?:as|by)\\b"
+    ],
+    "rubric_question": "Does the response explicitly recall or restate a named formula, physical law, definition, or standard identity (writing it out) before applying it to the problem?",
+    "unit": "per_response",
+    "generic": false,
+    "confidence": 2,
+    "notes": "Labeler type=content; MOVE conf 2 ('restating or clarifying mathematical/physics concepts') used per the rule. Supported by 3-5/40 top chunks (Vieta's formula, first law, mass balance equation); the rest are mid-derivation formulas, so the MOVE is only weakly supported and the CONTENT axis is prompt-driven. First regex hits 3/40 top vs 0.35% bg; others are near-zero on chunks but plausible in full responses (e.g., 'By the Pythagorean theorem' on prompt 12). Lens tokens do not support the label. Verifier: regexes valid.",
+    "verdict": "ok",
+    "reason": "Valid regexes and clear rubric."
+   },
+   "prediction": {
+    "direction": "+",
+    "channelA": "held-out chunks where this atom fires show excess Δlogp(SFT−base) > 0 after headroom control (double residualisation), and the excess ranks with mass rank",
+    "channelB": "After SFT, responses will show more explicit recall or restatement of a named formula, physical law, or definition before it is applied (e.g. 'By Vieta's formulas: ...', 'The first law: ΔU = Q − W', 'The general mass-balance equation is: ...')."
+   }
+  },
+  {
+   "rank": 16,
+   "atom": 4824,
+   "mass_share": 0.0049,
+   "fires_train": 861290,
+   "fires_holdout": 42357,
+   "doc_frac": 0.769,
+   "within_doc_sel": 0.259,
+   "top3_doc_share": 0.0004,
+   "src_hist": {
+    "math": 0.607,
+    "python": 0.098,
+    "synthetic": 0.072,
+    "nemotron": 0.068,
+    "science": 0.067,
+    "code": 0.047
+   },
+   "type": "content",
+   "label": "mathematical notation and equations",
+   "content": [
+    "mathematical expressions and equations, often involving algebra, calculus, or combinatorics",
+    3
+   ],
+   "form": [
+    "chunks contain mathematical notation, symbols, and operators (e.g., \"^\", \"∑\", \"∂\", \"{}\", \"()\")",
+    3
+   ],
+   "move": [
+    "N/A",
+    0
+   ],
+   "lens_top": "'/$' '!!)\\n' '(which' 'venge' ' subrange' ' -$' ' Himself' ' spp' ' himself' 'netinet' '\\x80�' '(or' 'thinkable' ' Vance' ' reddit'",
+   "examples": [
+    "a₁†a₂† - a₁a₂) e^{(a₁†a₂† - a₁a₂)r} |0,0",
+    "{3x^3 -11x^2 +7x +1}{x^3 -3x^2 +2x +1} >0",
+    " expressing the term (a_{2n} -1)/a_{2n+1} as 1/a_{2n-1} -1/a"
+   ],
+   "match_grad": {
+    "atom": 6883,
+    "corr": 0.08,
+    "cos": 0.058,
+    "mass_rank": 105,
+    "present": false
+   },
+   "match_err": {
+    "atom": 2801,
+    "corr": 0.094,
+    "cos": null,
+    "mass_rank": 93,
+    "present": false
+   },
+   "grad_presence": {
+    "grad_mass_lift": 0.534,
+    "best_grad_atom": 23172,
+    "recall": 0.0
+   },
+   "cell_2x2": "act-high/grad-low",
+   "prediction_2x2": "activation ledger: increase; gradient ledger: channel A excess Δlogp ≈ 0 (≤ controls), channel B effect size < gradient-unique cell",
+   "item": {
+    "atom": 4824,
+    "rank": 16,
+    "statement": "After SFT, responses will show more dense symbolic mathematical notation (exponents, subscripts, sums/products, fractions, derivatives written in LaTeX or ASCII math) rather than prose or plain integer arithmetic.",
+    "measure_kind": "both",
+    "regex": [
+     "\\^\\{?[0-9a-zA-Z(]",
+     "_\\{[^}\\n]{1,20}\\}",
+     "[∑∏∫∂]",
+     "\\\\(?:sum|prod|int|frac|partial|sqrt|binom|cdot)\\b"
+    ],
+    "rubric_question": "Does the response contain multi-term symbolic mathematical expressions (with exponents, subscripts, sums/products, fractions or derivatives), inline or displayed, rather than only prose and plain integer arithmetic?",
+    "unit": "per_1k_tokens",
+    "generic": true,
+    "confidence": 2,
+    "notes": "MOVE N/A (conf 0), so FORM (conf 3) is used. This is a content/format property that mostly tracks the prompt mix (math prompts), hence generic=true; only a within-math-prompt comparison of notation density is meaningful. Prompts 14 ('2^100 or 10^30') and 16 ('x^2 - 5x + 6') seed '^' in both models' responses. Regex '^' hits 11/40 top chunks vs 6% bg, '_{' 6/40 vs 0.4% bg. Lens tokens weakly consistent with inline-$ math delimiters. Verifier: regexes valid.",
+    "verdict": "ok",
+    "reason": "Valid; generic flag appropriate."
+   },
+   "prediction": {
+    "direction": "+",
+    "channelA": "held-out chunks where this atom fires show excess Δlogp(SFT−base) > 0 after headroom control (double residualisation), and the excess ranks with mass rank",
+    "channelB": "After SFT, responses will show more dense symbolic mathematical notation (exponents, subscripts, sums/products, fractions, derivatives written in LaTeX or ASCII math) rather than prose or plain integer arithmetic."
+   }
+  },
+  {
+   "rank": 17,
+   "atom": 4637,
+   "mass_share": 0.00483,
+   "fires_train": 923187,
+   "fires_holdout": 48080,
+   "doc_frac": 0.977,
+   "within_doc_sel": 0.277,
+   "top3_doc_share": 0.0003,
+   "src_hist": {
+    "math": 0.442,
+    "python": 0.202,
+    "synthetic": 0.061,
+    "science": 0.059,
+    "nemotron": 0.059,
+    "code": 0.046
+   },
+   "type": "move",
+   "label": "Technical verification and clarification",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Chunks often include mathematical formulas, code snippets, or technical notation (e.g., \"1/2 * ab * sin(theta)\", \"R = (x y z)/(4Δ)\", \"UTF-8\").",
+    3
+   ],
+   "move": [
+    "The chunks frequently involve verifying, clarifying, or correcting a technical detail or formula (e.g., \"Wait, the problem says\", \"So for example, if\").",
+    3
+   ],
+   "lens_top": "'/console' '.relu' ' Sant' '.rad' '\"text' ' Venezuel' ' dor' '\\tglVertex' 'HB' 'richt' ' <\",' 'INCT' 'uen' '(IT' '.bid'",
+   "examples": [
+    " an undefined value, which would cause the Trade constructor to fail when trying to access properties of outputAmount, leading to the '0' index being undefined.\\n\\nSo",
+    " on their formula, which is the sum over each character in the string of the position of the letter in the alphabet (a=1, b=2,",
+    ",y1), (x2,y2), (x3,y3) is given by:\\n\\n1/2 | (x1(y2−y3)"
+   ],
+   "match_grad": {
+    "atom": 1224,
+    "corr": 0.056,
+    "cos": 0.09,
+    "mass_rank": 429,
+    "present": false
+   },
+   "match_err": {
+    "atom": 317,
+    "corr": 0.048,
+    "cos": null,
+    "mass_rank": 1520,
+    "present": false
+   },
+   "grad_presence": {
+    "grad_mass_lift": 0.999,
+    "best_grad_atom": 32581,
+    "recall": 0.0
+   },
+   "cell_2x2": "act-high/grad-low",
+   "prediction_2x2": "activation ledger: increase; gradient ledger: channel A excess Δlogp ≈ 0 (≤ controls), channel B effect size < gradient-unique cell",
+   "item": {
+    "atom": 4637,
+    "rank": 17,
+    "statement": "After SFT, responses will show more re-reading or quoting of the problem statement to verify or clarify a technical detail ('the problem says ...', 'according to the problem statement'), or grounding of a formula/definition with a concrete instantiated example ('So for example, if ...').",
+    "measure_kind": "both",
+    "regex": [
+     "\\b[Tt]he problem (?:says|states|statement)\\b",
+     "\\b[Aa]ccording to the (?:problem|statement|question|spec)\\b",
+     "\\b[Ff]or example,? if\\b"
+    ],
+    "rubric_question": "Does the response contain at least one point where the writer quotes or paraphrases the problem statement to check a technical detail (e.g. 'the problem says ...', 'according to the problem statement'), or grounds a formula or definition by instantiating it with a concrete example?",
+    "unit": "per_1k_tokens",
+    "generic": false,
+    "confidence": 2,
+    "notes": "MOVE conf 3 but bundles two moves (verify against the statement; clarify with an example); both are kept in one item as the label does. 'the problem says' hits 3/40 top vs 3.5% bg (weak enrichment; shared with ranks 28/38/39); 'according to the problem' 1/40 vs 0.08% bg. FORM (formulas/code) is prompt-driven. Lens tokens do not support the label. Verifier: regexes valid; rubric is disjunctive but answerable.",
+    "verdict": "ok",
+    "reason": "Valid; overlap with the 'problem says' items noted."
+   },
+   "prediction": {
+    "direction": "+",
+    "channelA": "held-out chunks where this atom fires show excess Δlogp(SFT−base) > 0 after headroom control (double residualisation), and the excess ranks with mass rank",
+    "channelB": "After SFT, responses will show more re-reading or quoting of the problem statement to verify or clarify a technical detail ('the problem says ...', 'according to the problem statement'), or grounding of a formula/definition with a concrete instantiated example ('So for example, if ...')."
+   }
+  },
+  {
+   "rank": 18,
+   "atom": 7791,
+   "mass_share": 0.00443,
+   "fires_train": 892569,
+   "fires_holdout": 46598,
+   "doc_frac": 0.951,
+   "within_doc_sel": 0.252,
+   "top3_doc_share": 0.0003,
+   "src_hist": {
+    "math": 0.494,
+    "python": 0.185,
+    "code": 0.06,
+    "nemotron": 0.059,
+    "science": 0.057,
+    "synthetic": 0.053
+   },
+   "type": "move",
+   "label": "mathematical self-correction",
+   "content": [
+    "mathematical reasoning, particularly involving primes, algebra, and logical verification",
+    3
+   ],
+   "form": [
+    "chunks often contain mathematical notation, variables, and logical connectors like \"Wait\", \"So\", \"Therefore\"",
+    2
+   ],
+   "move": [
+    "self-correction or verification of a mathematical step, often signaled by \"Wait\" or similar hesitation markers",
+    3
+   ],
+   "lens_top": "'.neg' 'egl' ' \\'\"\\'' 'nev' ' autocomplete' 'eger' ' herself' '.Word' '_Integer' ' nat' ' famously' '.dtype' '.pause' '!!)\\n' ' nicotine'",
+   "examples": [
+    "led as f(c_i) = alpha c_i^beta where c_i is the betweenness centrality\". So f(c_i) is the productivity effect?",
+    " 5 more than the mode\". Since the median is 12, then the mode must be 12-5=7. Therefore, mode has to be",
+    " divides p^3, p must be 3? Wait, not necessarily. If p is 3, then p^3 is 27, so S"
+   ],
+   "match_grad": {
+    "atom": 7858,
+    "corr": 0.052,
+    "cos": -0.075,
+    "mass_rank": 36,
+    "present": false
+   },
+   "match_err": {
+    "atom": 2801,
+    "corr": 0.065,
+    "cos": null,
+    "mass_rank": 93,
+    "present": false
+   },
+   "grad_presence": {
+    "grad_mass_lift": 0.807,
+    "best_grad_atom": 23306,
+    "recall": 0.0
+   },
+   "cell_2x2": "act-high/grad-low",
+   "prediction_2x2": "activation ledger: increase; gradient ledger: channel A excess Δlogp ≈ 0 (≤ controls), channel B effect size < gradient-unique cell",
+   "item": {
+    "atom": 7791,
+    "rank": 18,
+    "statement": "After SFT, responses will show more explicit retraction of a claim the writer just made, signalled by 'Wait, no' / 'Wait, not necessarily' / 'Actually, that's not ...' and followed by the corrected step.",
+    "measure_kind": "both",
+    "regex": [
+     "\\bWait,? (?:no|not)\\b",
+     "\\b(?:Actually|Hmm),? (?:no|not necessarily|that's not)\\b",
+     "\\bWait,? that(?:'s| is) (?:not|wrong|incorrect)\\b"
+    ],
+    "rubric_question": "Does the response contain at least one point where the writer explicitly negates or retracts a statement they made immediately before (e.g. 'Wait, no ...', 'Wait, not necessarily', 'Actually, that's wrong') and then continues with a corrected step?",
+    "unit": "per_1k_tokens",
+    "generic": false,
+    "confidence": 3,
+    "notes": "MOVE conf 3 ('self-correction or verification of a mathematical step, signaled by Wait'). Top chunks: 'Wait, not necessarily.', 'Wait, no, primes include 3.', plus terse confirmations ('Correct.', 'Yes.') not covered here. 'Wait, no/not' hits 4/40 top vs 2% bg and is shared with ranks 4/22/26/35/36. Distinguish from rank 13 (alternative interpretation of setup), rank 19 (hedged questioning) and rank 20 (post-answer double-check). Lens tokens '.neg', 'nev' weakly consistent with negation. Verifier: regexes valid.",
+    "verdict": "ok",
+    "reason": "Valid and crisp; heavy overlap with the Wait-no family noted."
+   },
+   "prediction": {
+    "direction": "+",
+    "channelA": "held-out chunks where this atom fires show excess Δlogp(SFT−base) > 0 after headroom control (double residualisation), and the excess ranks with mass rank",
+    "channelB": "After SFT, responses will show more explicit retraction of a claim the writer just made, signalled by 'Wait, no' / 'Wait, not necessarily' / 'Actually, that's not ...' and followed by the corrected step."
+   }
+  },
+  {
+   "rank": 19,
+   "atom": 3956,
+   "mass_share": 0.00439,
+   "fires_train": 888988,
+   "fires_holdout": 45885,
+   "doc_frac": 0.952,
+   "within_doc_sel": 0.255,
+   "top3_doc_share": 0.0003,
+   "src_hist": {
+    "math": 0.469,
+    "python": 0.188,
+    "science": 0.063,
+    "nemotron": 0.059,
+    "synthetic": 0.055,
+    "code": 0.044
+   },
+   "type": "move",
+   "label": "Verifying calculations with scientific notation",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Chunks often include mathematical or scientific notation, such as equations, variables, and units (e.g., \"mL\", \"cm\", \"sqrt\", \"coordinates\").",
+    3
+   ],
+   "move": [
+    "The text is often questioning or verifying a calculation, assumption, or step in the reasoning process (e.g., \"Wait, actually\", \"Hmm, but\", \"perhaps\").",
+    3
+   ],
+   "lens_top": "' bureaucr' 'tat' ' geomet' ' Wak' ' :\";\\n' 'arlo' ' Drum' ' @$' ' subsidi' '.subplots' ' Shir' 'ว' '/work' 'RSS' ' bureauc'",
+   "examples": [
+    " mixture further. The total volume of the solution will be 20.0 + 50.0 + 30.0 = 100.0 mL,",
+    " problem, when they take a 50 mL aliquot of the distillate, they are taking a portion of the total distillate. But the problem",
+    " site is constant (like in a 1D system, a quartic term every 4 sites in a row), but perhaps the user normalizes all terms"
+   ],
+   "match_grad": {
+    "atom": 3589,
+    "corr": 0.043,
+    "cos": 0.074,
+    "mass_rank": 264,
+    "present": false
+   },
+   "match_err": {
+    "atom": 5867,
+    "corr": 0.054,
+    "cos": null,
+    "mass_rank": 1023,
+    "present": false
+   },
+   "grad_presence": {
+    "grad_mass_lift": 0.973,
+    "best_grad_atom": 30422,
+    "recall": 0.0
+   },
+   "cell_2x2": "act-high/grad-low",
+   "prediction_2x2": "activation ledger: increase; gradient ledger: channel A excess Δlogp ≈ 0 (≤ controls), channel B effect size < gradient-unique cell",
+   "item": {
+    "atom": 3956,
+    "rank": 19,
+    "statement": "After SFT, responses will show more hedged questioning of an assumption or intermediate step ('but perhaps ...?', 'Hmm, but', 'Wait, actually', 'the formula assumes ..., but'), raising a tentative alternative rather than asserting a correction.",
+    "measure_kind": "both",
+    "regex": [
+     "\\b[Bb]ut perhaps\\b",
+     "\\bHmm,? but\\b",
+     "\\bWait,? actually\\b",
+     "\\b(?:formula|equation|approach|method) assumes\\b",
+     "\\b[Oo]r (?:maybe|perhaps)\\b"
+    ],
+    "rubric_question": "Does the response contain at least one point where the writer tentatively questions an assumption or intermediate step (using hedges such as 'perhaps', 'maybe', or a question) without outright retracting it?",
+    "unit": "per_1k_tokens",
+    "generic": false,
+    "confidence": 2,
+    "notes": "MOVE conf 3 with the labeler's own markers. 'but perhaps' 3/40 top vs 0.5% bg; 'Hmm, but' 2/40 vs 0.2% bg; 'Wait, actually' 2/40 vs 0.7% bg (shared with ranks 27/31). FORM axis (units mL/cm, sqrt) is content-driven and dropped. Overlaps with ranks 13, 18 and 24; rubric distinguishes hedged questioning from retraction. Lens tokens do not support the label. Verifier: regexes valid.",
+    "verdict": "ok",
+    "reason": "Valid; distinct enough from retraction items via rubric."
+   },
+   "prediction": {
+    "direction": "+",
+    "channelA": "held-out chunks where this atom fires show excess Δlogp(SFT−base) > 0 after headroom control (double residualisation), and the excess ranks with mass rank",
+    "channelB": "After SFT, responses will show more hedged questioning of an assumption or intermediate step ('but perhaps ...?', 'Hmm, but', 'Wait, actually', 'the formula assumes ..., but'), raising a tentative alternative rather than asserting a correction."
+   }
+  },
+  {
+   "rank": 20,
+   "atom": 2950,
+   "mass_share": 0.00419,
+   "fires_train": 396856,
+   "fires_holdout": 21955,
+   "doc_frac": 0.21,
+   "within_doc_sel": 0.493,
+   "top3_doc_share": 0.0009,
+   "src_hist": {
+    "nemotron": 0.466,
+    "synthetic": 0.401,
+    "persona": 0.066,
+    "wildchat": 0.023,
+    "math": 0.02,
+    "aya": 0.007
+   },
+   "type": "move",
+   "label": "Verifying or double-checking reasoning",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "The phrase \"But let me\" appears consistently across chunks",
+    3
+   ],
+   "move": [
+    "The text is verifying or double-checking a previous step or conclusion",
+    3
+   ],
+   "lens_top": "'—\\n\\n' '‑' \" '':\\n\" '<|fim_middle|>' '<|endoftext|>' ' doe' 'Sender' ':\\n\\n\\n\\n' 'TargetException' ' cosine' '—not' 'nameof' '—' ' approving' ' []);\\n'",
+   "examples": [
+    " included.\\n\\nBut let me too-confident about inequalities.\\n\\nIn the quadrilateral inequality, I think I missed something.\\n\\nFor example, if d is very small,",
+    " b, and I got 1.\\n\\nBut let me see the answer format, probably just 1.\\n\\nI recall that in the factorization, I have the",
+    ")*20√3 = 10√3\\n\\nIs that possible? It seems too straightforward, and I got a constant, but let me check if"
+   ],
+   "match_grad": {
+    "atom": 4023,
+    "corr": 0.372,
+    "cos": -0.105,
+    "mass_rank": 81,
+    "present": true
+   },
+   "match_err": {
+    "atom": 2201,
+    "corr": 0.258,
+    "cos": null,
+    "mass_rank": 443,
+    "present": false
+   },
+   "grad_presence": {
+    "grad_mass_lift": 0.766,
+    "best_grad_atom": 4023,
+    "recall": 0.188
+   },
+   "cell_2x2": "act-high/grad-low",
+   "prediction_2x2": "activation ledger: increase; gradient ledger: channel A excess Δlogp ≈ 0 (≤ controls), channel B effect size < gradient-unique cell",
+   "item": {
+    "atom": 2950,
+    "rank": 20,
+    "statement": "After SFT, responses will show more post-answer double-checking, where after reaching a candidate answer the writer explicitly goes back to verify it ('But let me see/check/confirm ...', 'let me double-check', 'Is that it?').",
+    "measure_kind": "both",
+    "regex": [
+     "\\b[Bb]ut let me\\b",
+     "\\b[Dd]ouble-?check\\b",
+     "\\b[Ll]et me (?:confirm|verify|see if|make sure)\\b",
+     "\\bIs that (?:it|possible|correct|right)\\?"
+    ],
+    "rubric_question": "After arriving at a candidate answer, does the writer explicitly go back to double-check it (e.g. 'But let me check/see/confirm', 'let me double-check', 'Is that it? Let me verify') before finalizing?",
+    "unit": "per_1k_tokens",
+    "generic": false,
+    "confidence": 3,
+    "notes": "MOVE and FORM both conf 3; the strongest surface marker among ranks 11-20: 'But let me' appears in 18/40 top chunks vs 1.4% bg, 'Let me confirm/verify/see if' 7/40 vs 0.3% bg. src_hist is 87% nemotron/synthetic, so this is a source-specific (R1-style) verbal tic; expect a large increase if those sources are in the SFT mix, but it is a style marker more than a change in reasoning depth. 'double-check' shared with rank 4, 'Is that possible?' with rank 36. Lens tokens do not support the label. Verifier: regexes valid.",
+    "verdict": "ok",
+    "reason": "Crisp, well-supported item."
+   },
+   "prediction": {
+    "direction": "+",
+    "channelA": "held-out chunks where this atom fires show excess Δlogp(SFT−base) > 0 after headroom control (double residualisation), and the excess ranks with mass rank",
+    "channelB": "After SFT, responses will show more post-answer double-checking, where after reaching a candidate answer the writer explicitly goes back to verify it ('But let me see/check/confirm ...', 'let me double-check', 'Is that it?')."
+   }
+  },
+  {
+   "rank": 21,
+   "atom": 8087,
+   "mass_share": 0.00383,
+   "fires_train": 758326,
+   "fires_holdout": 39606,
+   "doc_frac": 0.83,
+   "within_doc_sel": 0.221,
+   "top3_doc_share": 0.0004,
+   "src_hist": {
+    "math": 0.579,
+    "python": 0.113,
+    "science": 0.071,
+    "synthetic": 0.07,
+    "nemotron": 0.054,
+    "code": 0.045
+   },
+   "type": "content",
+   "label": "mathematical equation solving and manipulation",
+   "content": [
+    "mathematical reasoning, particularly involving equations, variables, and algebraic manipulations",
+    3
+   ],
+   "form": [
+    "chunks often include mathematical notation (e.g., \"√\", \"²\", \"=\"), equations, and variables (e.g., \"x\", \"y\", \"d\")",
+    3
+   ],
+   "move": [
+    "the text is actively solving or manipulating equations, testing hypotheses, or verifying mathematical relationships",
+    3
+   ],
+   "lens_top": "'mmo' 'ingen' 'caff' '_demo' '.thumbnail' 'ihu' ' Saunders' 'reste' 'strap' 'fcn' 'ecimal' '(Profile' 'nick' 'urret' 'zure'",
+   "examples": [
+    " minimal k would be when x and y are 2 mod3 and minimal, so x=2, y=2, and z=0 etc. Wait",
+    " d² = (16/9) b². That is equation 1: c² + d² = (16/9)b².\\n\\nSo,",
+    " must be both 1 mod4? Let me test with p=5, which is 1 mod4 and q=13 also 1 mod4."
+   ],
+   "match_grad": {
+    "atom": 2307,
+    "corr": 0.056,
+    "cos": -0.103,
+    "mass_rank": 630,
+    "present": false
+   },
+   "match_err": {
+    "atom": 2801,
+    "corr": 0.086,
+    "cos": null,
+    "mass_rank": 93,
+    "present": false
+   },
+   "grad_presence": {
+    "grad_mass_lift": 0.68,
+    "best_grad_atom": 20608,
+    "recall": 0.0
+   },
+   "cell_2x2": "act-high/grad-low",
+   "prediction_2x2": "activation ledger: increase; gradient ledger: channel A excess Δlogp ≈ 0 (≤ controls), channel B effect size < gradient-unique cell",
+   "item": {
+    "atom": 8087,
+    "rank": 21,
+    "statement": "After SFT, responses will show more explicit bookkeeping of derived equations mid-solution: writing out a newly derived relation between named variables ('so d = (9/4)c') and referring back to numbered or labelled equations ('Equation 1: ...', 'from equation 3').",
+    "measure_kind": "both",
+    "regex": [
+     "\\b(?:[Ss]o|[Tt]hus|[Tt]herefore|[Hh]ence)\\b,?\\s+(?:we (?:get|have|find|obtain)\\s+)?[a-zA-Z][\\w'′^{}]*(?:\\s*[-+*/·]\\s*[\\w'′^{}()]+){0,3}\\s*=\\s*\\S",
+     "\\b(?:[Ee]quation|[Ee]q\\.?)\\s*\\(?\\d+\\)?\\s*[:,]|\\b(?:[Ff]rom|[Uu]sing|[Ii]n|[Bb]y|[Ii]nto|[Aa]nd|[Ww]ith) [Ee]quation\\s*\\(?\\d+\\)?",
+     "\\b[Ll]et me (?:test|try|check)(?: (?:this|it|that))? (?:with|for|when|using) "
+    ],
+    "rubric_question": "Does the response, mid-solution, write out at least one newly derived equation relating named variables (e.g., 'so d = (9/4)c') and/or refer back to an earlier equation by number or label ('Equation 1', 'from equation 3', 'as before')?",
+    "unit": "per_1k_tokens",
+    "generic": false,
+    "confidence": 2,
+    "notes": "Derived from MOVE axis (conf 3). Logit-lens tokens are junk and give no support; evidence comes from example chunks ('That is equation 1: c²+d²=...', 'From Equation 3:', 'Let me test with p=5'). Strong confound with prompt domain: only measurable on math/derivation prompts (src_hist math=0.58); a base model also writes equations on math prompts, so the signal is density, not presence. Regex 1 ('so <identifier> = ...', 1.7% bg) is the least specific and also catches code-like assignments; regex 2 (numbered equations, 0.3% bg) is the distinctive marker. Overlaps with rank 25 (chained consequences) and rank 30 (returning to earlier equations). Verifier: regexes valid.",
+    "verdict": "ok",
+    "reason": "Valid; specificity caveat on regex 1 recorded."
+   },
+   "prediction": {
+    "direction": "+",
+    "channelA": "held-out chunks where this atom fires show excess Δlogp(SFT−base) > 0 after headroom control (double residualisation), and the excess ranks with mass rank",
+    "channelB": "After SFT, responses will show more explicit bookkeeping of derived equations mid-solution: writing out a newly derived relation between named variables ('so d = (9/4)c') and referring back to numbered or labelled equations ('Equation 1: ...', 'from equation 3')."
+   }
+  },
+  {
+   "rank": 22,
+   "atom": 4565,
+   "mass_share": 0.00363,
+   "fires_train": 576347,
+   "fires_holdout": 29177,
+   "doc_frac": 0.802,
+   "within_doc_sel": 0.179,
+   "top3_doc_share": 0.0003,
+   "src_hist": {
+    "math": 0.562,
+    "python": 0.244,
+    "code": 0.065,
+    "science": 0.065,
+    "if_qwq": 0.036,
+    "nemotron": 0.01
+   },
+   "type": "move",
+   "label": "self-interruption for error checking",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "chunks contain repeated \"Wait\" or \"hold on\" phrases, often with exclamation or question marks",
+    3
+   ],
+   "move": [
+    "the text is interrupting its own reasoning to check or correct a potential mistake",
+    3
+   ],
+   "lens_top": "' suppose' ' actually' ' wait' ' misunder' '/problems' ' strtol' ' Actually' '_IMPLEMENT' 'vero' ' retard' ' terminology' 'come' ' confession' 'Actually' 'exampleInput'",
+   "examples": [
+    " intervals are protected), wait wait, wait, wait wait!\\n\\nWait a second. Oh! Wait, Wait a minute. Wait, the problem says that the princess",
+    " → no wait wait wait. Wait wait, no! Wait a second! Wait the even indices? No. Wait, wait, i is even. So i",
+    "x = 12 sin3x cos3x.\\n\\nWait, hold on, wait a second. Wait, no:\\n\\nWait, actually:\\n\\nWait, if the"
+   ],
+   "match_grad": {
+    "atom": 4141,
+    "corr": 0.338,
+    "cos": -0.068,
+    "mass_rank": 1,
+    "present": true
+   },
+   "match_err": {
+    "atom": 3778,
+    "corr": 0.558,
+    "cos": null,
+    "mass_rank": 86,
+    "present": true
+   },
+   "grad_presence": {
+    "grad_mass_lift": 0.872,
+    "best_grad_atom": 4141,
+    "recall": 0.242
+   },
+   "cell_2x2": "act-high/grad-low",
+   "prediction_2x2": "activation ledger: increase; gradient ledger: channel A excess Δlogp ≈ 0 (≤ controls), channel B effect size < gradient-unique cell",
+   "item": {
+    "atom": 4565,
+    "rank": 22,
+    "statement": "After SFT, responses will show more stacked self-interruptions in which two or more interjections are chained to flag a suspected mistake ('Wait, hold on', 'wait wait', 'Wait a second', 'Wait, no').",
+    "measure_kind": "both",
+    "regex": [
+     "(?i)\\bwait\\b[,.!?:]?\\s*(?:a (?:second|minute|moment)|hold on|hang on|wait|no)\\b",
+     "(?i)\\b(?:hold on|hang on)\\b"
+    ],
+    "rubric_question": "Does the response contain at least one point where the writer abruptly interrupts their own reasoning with two or more chained interjections (e.g., 'Wait, hold on', 'wait wait', 'Wait a second, no') to flag a possible mistake?",
+    "unit": "per_1k_tokens",
+    "generic": false,
+    "confidence": 3,
+    "notes": "Derived from MOVE (conf 3) + FORM (conf 3). Lens tokens agree strongly (' wait', ' actually', 'Actually', ' suppose', ' misunder'). Example chunks extremely consistent: 23/40 chunks match regex 1, 18/40 contain 'hold on'/'hang on'. Distinct from the other 'Wait' atoms by the STACKING rather than a single 'Wait'. Confound: the 'wait no' branch of regex 1 overlaps ranks 18/26/35/36; regex 2 ('hold on'/'hang on', shared with rank 37) is the more specific marker. Verifier: regexes valid.",
+    "verdict": "ok",
+    "reason": "Strong, crisp item."
+   },
+   "prediction": {
+    "direction": "+",
+    "channelA": "held-out chunks where this atom fires show excess Δlogp(SFT−base) > 0 after headroom control (double residualisation), and the excess ranks with mass rank",
+    "channelB": "After SFT, responses will show more stacked self-interruptions in which two or more interjections are chained to flag a suspected mistake ('Wait, hold on', 'wait wait', 'Wait a second', 'Wait, no')."
+   }
+  },
+  {
+   "rank": 23,
+   "atom": 6922,
+   "mass_share": 0.00336,
+   "fires_train": 702734,
+   "fires_holdout": 36430,
+   "doc_frac": 0.92,
+   "within_doc_sel": 0.203,
+   "top3_doc_share": 0.0004,
+   "src_hist": {
+    "math": 0.504,
+    "python": 0.153,
+    "science": 0.069,
+    "synthetic": 0.061,
+    "nemotron": 0.057,
+    "if_qwq": 0.042
+   },
+   "type": "move",
+   "label": "geometry/algebra verification",
+   "content": [
+    "geometry and algebraic problem-solving (primarily coordinate geometry, parabolas, lines, and algebraic manipulations)",
+    3
+   ],
+   "form": [
+    "mathematical expressions and coordinate notation (e.g., \"(x,0)\", \"B(0, b)\", \"log_y(t y²)\")",
+    2
+   ],
+   "move": [
+    "verifying or correcting a step in the reasoning (e.g., \"Let me check that\", \"Wait, no\", \"So that's a key relation\")",
+    2
+   ],
+   "lens_top": "'â' ' accomp' ' qr' 'another' 'Â' 'letics' '(optional' '[right' ' QR' ' Slater' ' encore' ' destination' '�' ' advance' ' â'",
+   "examples": [
+    " the line through F parallel to CD. CD is the top side, horizontal, so line through F parallel to CD would be horizontal again, same direction as AB",
+    " cube root: (2 - x). The cube root can handle negative numbers, but the expression (2 + x)/(2 -x) must be defined,",
+    " upward parabola, which has a minimum at x=0, so from x approaching 1 from the right, the function is increasing because the derivative at"
+   ],
+   "match_grad": {
+    "atom": 5544,
+    "corr": 0.06,
+    "cos": 0.193,
+    "mass_rank": 99,
+    "present": false
+   },
+   "match_err": {
+    "atom": 2381,
+    "corr": 0.04,
+    "cos": null,
+    "mass_rank": 472,
+    "present": false
+   },
+   "grad_presence": {
+    "grad_mass_lift": 0.797,
+    "best_grad_atom": 28525,
+    "recall": 0.0
+   },
+   "cell_2x2": "act-high/grad-low",
+   "prediction_2x2": "activation ledger: increase; gradient ledger: channel A excess Δlogp ≈ 0 (≤ controls), channel B effect size < gradient-unique cell",
+   "item": {
+    "atom": 6922,
+    "rank": 23,
+    "statement": "After SFT, responses will show more explicit step verification of geometric or algebraic relations, pausing to confirm a just-stated relation before continuing ('Let me check that', 'as before', 'So that's a key relation').",
+    "measure_kind": "both",
+    "regex": [
+     "\\b[Ll]et me (?:check|verify|confirm|double-check)(?: that| this| it| if| whether)?\\b",
+     "\\bas before\\b",
+     "\\b[Ss]o that'?s (?:a |the )?key\\b"
+    ],
+    "rubric_question": "Does the response contain at least one point where, while reasoning about a geometric configuration or algebraic expression, the writer explicitly pauses to verify a specific just-stated relation (e.g., 'Let me check that', 'as before', 'yes, that was done correctly') before continuing?",
+    "unit": "per_1k_tokens",
+    "generic": false,
+    "confidence": 2,
+    "notes": "MOVE axis has conf 2 ('verifying or correcting a step') so it was preferred over CONTENT (conf 3: coordinate geometry, parabolas, lines). Weak evidence: most example chunks are spatial/coordinate reasoning and only a minority show an explicit verification marker (2/40 'Let me check', 2/40 'as before'). Lens tokens do not support the label. Expect the item to be sparse on non-geometry prompts; the true driver may be content (geometry). Regex 1 is shared with generic checking behaviour (ranks 20/34). Verifier: regexes valid; kept as drafted.",
+    "verdict": "ok",
+    "reason": "Valid; weak-evidence caveat retained."
+   },
+   "prediction": {
+    "direction": "+",
+    "channelA": "held-out chunks where this atom fires show excess Δlogp(SFT−base) > 0 after headroom control (double residualisation), and the excess ranks with mass rank",
+    "channelB": "After SFT, responses will show more explicit step verification of geometric or algebraic relations, pausing to confirm a just-stated relation before continuing ('Let me check that', 'as before', 'So that's a key relation')."
+   }
+  },
+  {
+   "rank": 24,
+   "atom": 629,
+   "mass_share": 0.00329,
+   "fires_train": 762783,
+   "fires_holdout": 38972,
+   "doc_frac": 0.935,
+   "within_doc_sel": 0.214,
+   "top3_doc_share": 0.0004,
+   "src_hist": {
+    "math": 0.499,
+    "python": 0.181,
+    "code": 0.062,
+    "science": 0.06,
+    "nemotron": 0.059,
+    "synthetic": 0.043
+   },
+   "type": "move",
+   "label": "mid-reasoning self-correction",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "chunks contain mid-reasoning corrections or clarifications (e.g., \"Wait\", \"Alternatively\", \"Hmm\", \"Ah\", \"Correct\")",
+    3
+   ],
+   "move": [
+    "self-correction or clarification during reasoning (e.g., catching errors, proposing alternatives, verifying assumptions)",
+    3
+   ],
+   "lens_top": "' .\\n\\n' '.\\n\\n' ' vag' ' cumbersome' '))*' ' stares' ' Laure' '%.\\n\\n' ').\\n\\n' ' oh' ' masturbating' ' beg' 'andex' ' cla' 'имв'",
+   "examples": [
+    " grid spacing, but since the squares must be congruent, they must have equal sides, so same spacing in both directions. So the original square must be divided",
+    "4=2224. Correct. So for single-digit m's, we can use that formula. For multi-digit m's, the formula is as before.\\n\\n",
+    ". Fairey's canvas works. Futura's canvas pieces. Eine's murals might not be on canvas, but maybe he also does canvas works."
+   ],
+   "match_grad": {
+    "atom": 1224,
+    "corr": 0.038,
+    "cos": 0.048,
+    "mass_rank": 429,
+    "present": false
+   },
+   "match_err": {
+    "atom": 1385,
+    "corr": 0.072,
+    "cos": null,
+    "mass_rank": 23,
+    "present": false
+   },
+   "grad_presence": {
+    "grad_mass_lift": 0.831,
+    "best_grad_atom": 32261,
+    "recall": 0.0
+   },
+   "cell_2x2": "act-high/grad-low",
+   "prediction_2x2": "activation ledger: increase; gradient ledger: channel A excess Δlogp ≈ 0 (≤ controls), channel B effect size < gradient-unique cell",
+   "item": {
+    "atom": 629,
+    "rank": 24,
+    "statement": "After SFT, responses will show more hedged consideration of alternative interpretations or approaches mid-reasoning ('Alternatively, ...', 'Hmm, ...', 'maybe ...', 'perhaps ...') instead of committing to a single line.",
+    "measure_kind": "both",
+    "regex": [
+     "\\bAlternatively\\b",
+     "\\bHmm\\b",
+     "(?i)\\b(?:maybe|perhaps) (?:the|it|I|we|they|after|if|there|he|she|one)\\b"
+    ],
+    "rubric_question": "Does the response contain at least one point where the writer explicitly entertains an alternative interpretation or approach with hedged language (e.g., 'Alternatively, ...', 'Hmm, ...', 'maybe ...') instead of committing to a single line?",
+    "unit": "per_1k_tokens",
+    "generic": false,
+    "confidence": 2,
+    "notes": "Derived from MOVE (conf 3) and FORM (conf 3, markers 'Wait/Alternatively/Hmm/Ah/Correct'). Chosen sub-flavour ('Alternatively'/'Hmm'/'maybe') keeps it distinct from the pure 'Wait' items (22, 26, 29). Lens tokens are paragraph-break tokens, suggesting the atom fires where a new consideration starts. Regexes are broad hedging markers (3-6.5% bg on chunk corpus) shared with ranks 1/6/13/19; the same regex set hits rank-29 chunks more often than rank-24 chunks, so overlap is substantial. Verifier: regexes valid; kept because the rubric carries the item.",
+    "verdict": "ok",
+    "reason": "Valid; broad regexes flagged, rubric primary."
+   },
+   "prediction": {
+    "direction": "+",
+    "channelA": "held-out chunks where this atom fires show excess Δlogp(SFT−base) > 0 after headroom control (double residualisation), and the excess ranks with mass rank",
+    "channelB": "After SFT, responses will show more hedged consideration of alternative interpretations or approaches mid-reasoning ('Alternatively, ...', 'Hmm, ...', 'maybe ...', 'perhaps ...') instead of committing to a single line."
+   }
+  },
+  {
+   "rank": 25,
+   "atom": 6238,
+   "mass_share": 0.00327,
+   "fires_train": 740513,
+   "fires_holdout": 37870,
+   "doc_frac": 0.926,
+   "within_doc_sel": 0.208,
+   "top3_doc_share": 0.0004,
+   "src_hist": {
+    "math": 0.525,
+    "python": 0.149,
+    "science": 0.065,
+    "synthetic": 0.054,
+    "code": 0.053,
+    "nemotron": 0.052
+   },
+   "type": "move",
+   "label": "Intermediate mathematical/logical reasoning",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Chunks frequently include mathematical or logical expressions, often involving angles, equations, or substitutions (e.g., \"q + r = 80°\", \"b = 2/(2a -3)\", \"SA · SB = 0\").",
+    3
+   ],
+   "move": [
+    "The text is performing intermediate reasoning steps, often verifying or deriving relationships between variables or components (e.g., \"so q + r = 80°\", \"so b = 2/(2a -3)\", \"so SA · SB = 0\").",
+    3
+   ],
+   "lens_top": "' poj' '/signup' '/request' 'ainter' 'stp' ' Brushes' '.dropout' '待' ' etiquette' '/email' 'nym' 'yms' ' CancellationToken' 'mouseenter' '.class'",
+   "examples": [
+    " angle at vertex B (80°) is split into angles OBA (q) and OBC (r), so q + r = 80°,\\n\\n",
+    " so that's going another path.\\n\\nLike after initial \"(\", we choose to add ')', so the string is \"()\", open=1, close=1.",
+    "5} \\), so \\(-a_{12} = - ( -\\frac{18}{5} ) = \\frac{18}{5} \\"
+   ],
+   "match_grad": {
+    "atom": 853,
+    "corr": 0.028,
+    "cos": -0.101,
+    "mass_rank": 47,
+    "present": false
+   },
+   "match_err": {
+    "atom": 7876,
+    "corr": 0.036,
+    "cos": null,
+    "mass_rank": 99,
+    "present": false
+   },
+   "grad_presence": {
+    "grad_mass_lift": 0.836,
+    "best_grad_atom": 17035,
+    "recall": 0.0
+   },
+   "cell_2x2": "act-high/grad-low",
+   "prediction_2x2": "activation ledger: increase; gradient ledger: channel A excess Δlogp ≈ 0 (≤ controls), channel B effect size < gradient-unique cell",
+   "item": {
+    "atom": 6238,
+    "rank": 25,
+    "statement": "After SFT, responses will show more chained consequence connectives that turn one derived fact into the next within intermediate derivation steps ('so ..., so ...', 'Therefore:', 'meaning ...', 'hence ...').",
+    "measure_kind": "both",
+    "regex": [
+     "(?:^|[.!?:]\\s+|\\n\\s*)(?:So|Therefore|Thus|Hence)\\b,?",
+     ",\\s+(?:so|meaning|therefore|hence)\\s+(?=\\S)"
+    ],
+    "rubric_question": "Does the response derive intermediate relations by chaining consequence connectives (e.g., 'so ..., so ...', 'Therefore:', 'meaning ...') rather than only stating results?",
+    "unit": "per_1k_tokens",
+    "generic": true,
+    "confidence": 2,
+    "notes": "MOVE (conf 3) is 'performing intermediate reasoning steps, deriving/verifying relationships between variables'. Near-generic property of any step-by-step derivation, hence generic=true; both regexes fire in 14-16% of background chunks, confirming low specificity. Lens tokens are junk. Item is measurable only as a density change; interpret cautiously. Heavy overlap with rank 21. Verifier: regexes valid.",
+    "verdict": "ok",
+    "reason": "Valid; generic flag correct."
+   },
+   "prediction": {
+    "direction": "+",
+    "channelA": "held-out chunks where this atom fires show excess Δlogp(SFT−base) > 0 after headroom control (double residualisation), and the excess ranks with mass rank",
+    "channelB": "After SFT, responses will show more chained consequence connectives that turn one derived fact into the next within intermediate derivation steps ('so ..., so ...', 'Therefore:', 'meaning ...', 'hence ...')."
+   }
+  },
+  {
+   "rank": 26,
+   "atom": 1343,
+   "mass_share": 0.00327,
+   "fires_train": 745501,
+   "fires_holdout": 38783,
+   "doc_frac": 0.938,
+   "within_doc_sel": 0.212,
+   "top3_doc_share": 0.0004,
+   "src_hist": {
+    "math": 0.481,
+    "python": 0.182,
+    "science": 0.063,
+    "nemotron": 0.062,
+    "synthetic": 0.059,
+    "code": 0.045
+   },
+   "type": "move",
+   "label": "mid-calculation self-correction in STEM",
+   "content": [
+    "chemistry and math problem-solving (stoichiometry, molecular structures, algebraic manipulations)",
+    3
+   ],
+   "form": [
+    "mid-calculation corrections (\"Wait no\", \"Wait wait\", \"Correct\", \"Hmm\")",
+    2
+   ],
+   "move": [
+    "self-correction during reasoning (catching errors, re-evaluating steps)",
+    3
+   ],
+   "lens_top": "' Hogwarts' ' Stadium' ' univers' '/world' ' stadium' ' Kepler' ' skyline' '/mat' ' terra' ' chancellor' ' monuments' ' sanct' '(Mat' ' mattress' 'izzy'",
+   "examples": [
+    "Mg3(PO4)2 has 2 PO4 groups, each has 4 O: so 2*4*2? Wait no,",
+    ", they pack the remaining books into large crates, each holding 24 books, and find that they have 3 crates and 2 extra books. How many",
+    " C is C7H7NCl2, which becomes pyrimidine when reacted with Zn in water. Let's see pyrimidine is C4"
+   ],
+   "match_grad": {
+    "atom": 7858,
+    "corr": 0.033,
+    "cos": 0.103,
+    "mass_rank": 36,
+    "present": false
+   },
+   "match_err": {
+    "atom": 3595,
+    "corr": 0.038,
+    "cos": null,
+    "mass_rank": 2313,
+    "present": false
+   },
+   "grad_presence": {
+    "grad_mass_lift": 0.82,
+    "best_grad_atom": 25727,
+    "recall": 0.0
+   },
+   "cell_2x2": "act-high/grad-low",
+   "prediction_2x2": "activation ledger: increase; gradient ledger: channel A excess Δlogp ≈ 0 (≤ controls), channel B effect size < gradient-unique cell",
+   "item": {
+    "atom": 1343,
+    "rank": 26,
+    "statement": "After SFT, responses will show more immediate re-counting of a just-computed number: a tentative arithmetic result followed by '?' and a 'Wait no' / 'Wait wait' recount, or a bare 'Correct.' tick after a computation.",
+    "measure_kind": "both",
+    "regex": [
+     "\\d\\s*\\)?\\s*\\?\\s*(?:Wait|wait|Hmm|hmm|No|no)\\b",
+     "\\bWait,?\\s+(?:no|wait)\\b",
+     "(?:^|[.!?\\n]\\s*)Correct[.!](?=\\s|$)"
+    ],
+    "rubric_question": "Does the response contain at least one point where a just-computed intermediate number is immediately questioned and recomputed (e.g., '... = 16? Wait no, ...') or explicitly ticked off with a bare 'Correct.'?",
+    "unit": "per_1k_tokens",
+    "generic": false,
+    "confidence": 2,
+    "notes": "Derived from MOVE (conf 3) with FORM (conf 2: 'Wait no', 'Wait wait', 'Correct', 'Hmm'). Chosen sub-flavour = numeric recount. CONTENT axis says chemistry/stoichiometry but src_hist is math 0.48 / python 0.18, so content should not be relied on. Lens tokens are junk. Regex 2 ('Wait, no' / 'Wait wait') overlaps heavily with ranks 18/22/35/36; regex 1 (digit + '?' + Wait/no, 0.7% bg) is the distinctive marker. Verifier: regexes valid.",
+    "verdict": "ok",
+    "reason": "Valid; distinctive numeric-recount regex present."
+   },
+   "prediction": {
+    "direction": "+",
+    "channelA": "held-out chunks where this atom fires show excess Δlogp(SFT−base) > 0 after headroom control (double residualisation), and the excess ranks with mass rank",
+    "channelB": "After SFT, responses will show more immediate re-counting of a just-computed number: a tentative arithmetic result followed by '?' and a 'Wait no' / 'Wait wait' recount, or a bare 'Correct.' tick after a computation."
+   }
+  },
+  {
+   "rank": 27,
+   "atom": 5877,
+   "mass_share": 0.00326,
+   "fires_train": 750702,
+   "fires_holdout": 38772,
+   "doc_frac": 0.948,
+   "within_doc_sel": 0.215,
+   "top3_doc_share": 0.0004,
+   "src_hist": {
+    "math": 0.464,
+    "python": 0.199,
+    "science": 0.063,
+    "nemotron": 0.063,
+    "synthetic": 0.062,
+    "code": 0.053
+   },
+   "type": "move",
+   "label": "Correcting or reconsidering prior statements",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Chunks frequently contain phrases like \"Wait,\" \"Actually,\" or \"But,\" indicating a correction or reconsideration of a previous statement.",
+    2
+   ],
+   "move": [
+    "The text is actively correcting or reconsidering a prior statement or assumption, often introducing a new perspective or clarification.",
+    3
+   ],
+   "lens_top": "'/groups' '\",[' '.lbl' 'imizer' 'catid' ' diamonds' '&apos' 'een' '\"\"\\n' 'омер' 'yny' '/problems' '/orders' 'anan' '[thread'",
+   "examples": [
+    ":\\n\\n   box0: score=22 -> between 20 and 40? Actually: \\n        >80: critical\\n        >60: severe\\n       ",
+    " angle BCD is equal to φ? Wait, angle BCD is one of those angles. Since angle ACD is split into two angles, angle BCD",
+    "\")) {\\n        sumM += ages[i];\\n        countM++;\\n    }\\n}\\n\\ndouble avgF = sumF / countF;\\ndouble avgM = sumM"
+   ],
+   "match_grad": {
+    "atom": 7858,
+    "corr": 0.039,
+    "cos": -0.047,
+    "mass_rank": 36,
+    "present": false
+   },
+   "match_err": {
+    "atom": 266,
+    "corr": 0.038,
+    "cos": null,
+    "mass_rank": 173,
+    "present": false
+   },
+   "grad_presence": {
+    "grad_mass_lift": 0.933,
+    "best_grad_atom": 23990,
+    "recall": 0.0
+   },
+   "cell_2x2": "act-high/grad-low",
+   "prediction_2x2": "activation ledger: increase; gradient ledger: channel A excess Δlogp ≈ 0 (≤ controls), channel B effect size < gradient-unique cell",
+   "item": {
+    "atom": 5877,
+    "rank": 27,
+    "statement": "After SFT, responses will show more quick self-posed question-and-revision of a just-made statement ('... exactly 5? Probably.', '... between 20 and 40? Actually: ...', 'Wait, actually it's ...').",
+    "measure_kind": "both",
+    "regex": [
+     "\\b(?:Wait|wait|But|but|Oh|oh|Hmm|hmm),?\\s+actually\\b",
+     "(?:^|\\n\\s*|[.!?]\\s+)Actually\\b[,:]?",
+     "\\?\\s*(?:Actually|Probably|Yes|No)\\b[,.:!]"
+    ],
+    "rubric_question": "Does the response contain at least one point where the writer poses a quick question about their own previous statement and immediately answers or revises it (e.g., '... exactly 5? Probably.', '...? Actually: ...', 'Wait, actually it's ...')?",
+    "unit": "per_1k_tokens",
+    "generic": false,
+    "confidence": 2,
+    "notes": "Derived from MOVE (conf 3) with FORM (conf 2: 'Wait,' 'Actually,' 'But,'). Label-evidence mismatch: many top chunks are hand-traces of code/logic on specific inputs with '->' arrows, so the atom may partly track case-tracing (cf. rank 2) rather than correction; the self-posed-question-then-answer pattern (regex 3) is the most faithful bridge. Lens tokens are junk. 'Actually,' shared with rank 8; 'Wait, actually' with ranks 19/31. Verifier: regexes valid.",
+    "verdict": "ok",
+    "reason": "Valid; overlap and label caveat noted."
+   },
+   "prediction": {
+    "direction": "+",
+    "channelA": "held-out chunks where this atom fires show excess Δlogp(SFT−base) > 0 after headroom control (double residualisation), and the excess ranks with mass rank",
+    "channelB": "After SFT, responses will show more quick self-posed question-and-revision of a just-made statement ('... exactly 5? Probably.', '... between 20 and 40? Actually: ...', 'Wait, actually it's ...')."
+   }
+  },
+  {
+   "rank": 28,
+   "atom": 3351,
+   "mass_share": 0.00317,
+   "fires_train": 718894,
+   "fires_holdout": 37452,
+   "doc_frac": 0.922,
+   "within_doc_sel": 0.204,
+   "top3_doc_share": 0.0004,
+   "src_hist": {
+    "math": 0.529,
+    "python": 0.144,
+    "science": 0.062,
+    "nemotron": 0.055,
+    "code": 0.054,
+    "synthetic": 0.051
+   },
+   "type": "move",
+   "label": "Correcting or verifying reasoning steps",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Chunks often include phrases like \"Wait, the problem says\" or \"Wait, no\" and frequently contain mathematical or logical expressions.",
+    2
+   ],
+   "move": [
+    "The text is often catching or correcting a potential error, verifying a statement, or reconsidering a previous assumption.",
+    3
+   ],
+   "lens_top": "'хран' '/head' ' zend' 'arl' 'ITERAL' ' ===>' 'ttp' ' pumping' ' setzen' ' inputStream' '.temperature' 'HANDLE' ' heartbeat' 'ckt' ' parms'",
+   "examples": [
+    " producing AgCl and some other products. Let's suppose:\\n\\nAg^• + ClO^- → AgCl(s) + O^• \\n\\nBecause Ag+",
+    " C to O, which is given as OC =4. Wait, the problem says OC =4. So then, if OC is 4 units, then",
+    "        interest_rate = 6 (meaning 6% per annum)\\n        loan_term = 12 months\\n\\n        total_interest = (50000 * 6"
+   ],
+   "match_grad": {
+    "atom": 4064,
+    "corr": 0.035,
+    "cos": 0.069,
+    "mass_rank": 287,
+    "present": false
+   },
+   "match_err": {
+    "atom": 2321,
+    "corr": 0.054,
+    "cos": null,
+    "mass_rank": 184,
+    "present": false
+   },
+   "grad_presence": {
+    "grad_mass_lift": 0.826,
+    "best_grad_atom": 18873,
+    "recall": 0.0
+   },
+   "cell_2x2": "act-high/grad-low",
+   "prediction_2x2": "activation ledger: increase; gradient ledger: channel A excess Δlogp ≈ 0 (≤ controls), channel B effect size < gradient-unique cell",
+   "item": {
+    "atom": 3351,
+    "rank": 28,
+    "statement": "After SFT, responses will show more re-checking of an assumption against the problem statement by quoting or paraphrasing what it says ('Wait, the problem says ...', 'which is given as OC = 4').",
+    "measure_kind": "both",
+    "regex": [
+     "(?i)\\b(?:wait|but|hmm|hold on|oh),?\\s+(?:but\\s+)?the (?:problem|question|prompt|statement) (?:says|states|said|asks|gives|mentions|specifies)\\b",
+     "(?i)\\b(?:which|as|that|what) is given as\\b",
+     "(?i)\\bthe (?:problem|question) (?:says|states):?\\s*[\\\"“']"
+    ],
+    "rubric_question": "Does the response contain at least one point where the writer goes back to the problem statement, quoting or paraphrasing what it says or gives, to check or correct an assumption they made?",
+    "unit": "per_1k_tokens",
+    "generic": false,
+    "confidence": 3,
+    "notes": "Derived from MOVE (conf 3) with FORM (conf 2) explicitly naming 'Wait, the problem says'. Example chunks support it well. Lens tokens are junk. Confound: only applies to prompts that have a problem statement to re-read (math/code/word problems); on open chat prompts it will be ~0 for both models. Overlaps ranks 17/38/39 ('the problem says'). Verifier: regexes valid.",
+    "verdict": "ok",
+    "reason": "Valid, well-evidenced."
+   },
+   "prediction": {
+    "direction": "+",
+    "channelA": "held-out chunks where this atom fires show excess Δlogp(SFT−base) > 0 after headroom control (double residualisation), and the excess ranks with mass rank",
+    "channelB": "After SFT, responses will show more re-checking of an assumption against the problem statement by quoting or paraphrasing what it says ('Wait, the problem says ...', 'which is given as OC = 4')."
+   }
+  },
+  {
+   "rank": 29,
+   "atom": 4644,
+   "mass_share": 0.00304,
+   "fires_train": 676200,
+   "fires_holdout": 35833,
+   "doc_frac": 0.812,
+   "within_doc_sel": 0.201,
+   "top3_doc_share": 0.0004,
+   "src_hist": {
+    "math": 0.567,
+    "python": 0.173,
+    "science": 0.061,
+    "code": 0.055,
+    "nemotron": 0.052,
+    "synthetic": 0.047
+   },
+   "type": "move",
+   "label": "Self-correction with \"Wait\"",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Chunks frequently include \"Wait\" or \"Wait, no\" as part of self-correction or hesitation.",
+    3
+   ],
+   "move": [
+    "The text is actively correcting or revising its reasoning, often pausing to re-evaluate or clarify a previous step.",
+    3
+   ],
+   "lens_top": "'\\n                        \\n' 'atr' 'izador' 'zf' '/update' 'ador' '/testing' 'ho' ' hesitation' ' */\\r\\n\\r\\n\\r\\n' '\\n                    \\n' 'zc' ':p' ':=' '>>)'",
+   "examples": [
+    ")=210, but if x is negative, that's okay, moving left from the origin. Let me compute x:\\n\\nWait, solving the equations:\\n\\nLet me",
+    " zero, their average is zero. So their midpoint is zero? Not exactly, but overall, they have to balance out around zero.\\n\\nBut since all roots are",
+    "For f(i):\\n\\ni squared is -1, so that's correct. Then a times i, so + a i, plus b. So total is (-"
+   ],
+   "match_grad": {
+    "atom": 2174,
+    "corr": 0.075,
+    "cos": -0.054,
+    "mass_rank": 276,
+    "present": false
+   },
+   "match_err": {
+    "atom": 2004,
+    "corr": 0.105,
+    "cos": null,
+    "mass_rank": 16,
+    "present": false
+   },
+   "grad_presence": {
+    "grad_mass_lift": 0.894,
+    "best_grad_atom": 23729,
+    "recall": 0.0
+   },
+   "cell_2x2": "act-high/grad-low",
+   "prediction_2x2": "activation ledger: increase; gradient ledger: channel A excess Δlogp ≈ 0 (≤ controls), channel B effect size < gradient-unique cell",
+   "item": {
+    "atom": 4644,
+    "rank": 29,
+    "statement": "After SFT, responses will show more 'Wait'-triggered redo of a computation or step ('Wait, let me compute again', 'Wait, perhaps I need to calculate more precisely', 'let me actually list them in order').",
+    "measure_kind": "both",
+    "regex": [
+     "\\bWait,?\\s+(?:let me|let's|maybe|perhaps|solving|more precisely)\\b",
+     "(?i)\\blet me (?:re-?compute|recalculate|redo|re-?do|compute (?:this |that |it )?again|do (?:this|that|it) again|calculate more precisely|actually|check again|try again)\\b"
+    ],
+    "rubric_question": "Does the response contain at least one point where, after flagging doubt (e.g., 'Wait'), the writer explicitly redoes or refines a computation or step (e.g., 'let me compute again', 'more precisely', 'let me actually list...')?",
+    "unit": "per_1k_tokens",
+    "generic": false,
+    "confidence": 3,
+    "notes": "Derived from MOVE (conf 3) and FORM (conf 3: 'Wait' / 'Wait, no'). Sub-flavour = 'Wait' followed by a redo. Lens tokens mostly whitespace/code fragments plus ' hesitation' (mild agreement). Distinguishes from rank 22 (stacked interjections) and rank 26 (numeric recount) by the explicit redo clause; regex 2 overlaps rank 4's 'let me recompute'. 'Wait, maybe/perhaps' branch shared with ranks 9/13. Regex 2 branch 'let me actually' is slightly broad. Verifier: regexes valid.",
+    "verdict": "ok",
+    "reason": "Valid; overlaps recorded."
+   },
+   "prediction": {
+    "direction": "+",
+    "channelA": "held-out chunks where this atom fires show excess Δlogp(SFT−base) > 0 after headroom control (double residualisation), and the excess ranks with mass rank",
+    "channelB": "After SFT, responses will show more 'Wait'-triggered redo of a computation or step ('Wait, let me compute again', 'Wait, perhaps I need to calculate more precisely', 'let me actually list them in order')."
+   }
+  },
+  {
+   "rank": 30,
+   "atom": 6840,
+   "mass_share": 0.00302,
+   "fires_train": 697406,
+   "fires_holdout": 35984,
+   "doc_frac": 0.926,
+   "within_doc_sel": 0.199,
+   "top3_doc_share": 0.0004,
+   "src_hist": {
+    "math": 0.522,
+    "python": 0.141,
+    "science": 0.071,
+    "synthetic": 0.056,
+    "nemotron": 0.052,
+    "code": 0.051
+   },
+   "type": "move",
+   "label": "mid-calculation self-correction in math",
+   "content": [
+    "mathematical problem-solving (algebra, equations, constants)",
+    3
+   ],
+   "form": [
+    "chunks contain mid-calculation corrections (\"Wait\", \"no\", \"let me go back\")",
+    2
+   ],
+   "move": [
+    "self-correction or verification during mathematical reasoning",
+    3
+   ],
+   "lens_top": "'privacy' 'eor' ' kitty' ' herself' ' Clearance' ' Privacy' '.sul' ' Vac' 'izons' ' privacy' ' orphan' 'odata' '.IsNullOr' 'serrat' 'userdata'",
+   "examples": [
+    " term:\\n\\nc² - 2c +1 =1. So c² -2c =0, so c=0 or c=2. Correct",
+    " m*r= -1 * r =1? Wait wait, no, m is -1, so m*r =1 ⇒ (-1)*r =1",
+    ":\\n\\nSecond row: -2x²,\\n\\nThird row: +9x²,\\n\\nFourth row: -2x²,\\n\\nSo: -2+9-"
+   ],
+   "match_grad": {
+    "atom": 4064,
+    "corr": 0.033,
+    "cos": 0.071,
+    "mass_rank": 287,
+    "present": false
+   },
+   "match_err": {
+    "atom": 7876,
+    "corr": 0.039,
+    "cos": null,
+    "mass_rank": 99,
+    "present": false
+   },
+   "grad_presence": {
+    "grad_mass_lift": 0.839,
+    "best_grad_atom": 17410,
+    "recall": 0.0
+   },
+   "cell_2x2": "act-high/grad-low",
+   "prediction_2x2": "activation ledger: increase; gradient ledger: channel A excess Δlogp ≈ 0 (≤ controls), channel B effect size < gradient-unique cell",
+   "item": {
+    "atom": 6840,
+    "rank": 30,
+    "statement": "After SFT, responses will show more explicit backtracking to earlier written work to re-check or reuse it ('let me go back', 'in my earlier work', 'Wait, in equation 5', '... right? Yes').",
+    "measure_kind": "both",
+    "regex": [
+     "(?i)\\blet me go back\\b",
+     "(?i)\\b(?:in|from) (?:my|the) (?:earlier|previous|original) (?:work|step|equation|calculation|derivation|expression)\\b",
+     "(?i)\\b(?:wait|hmm|so|but|and),?\\s+(?:in|from|back to|using) equation\\s*\\(?\\d+\\)?",
+     "\\bright\\?\\s*\\n*\\s*(?:Yes|yes)\\b"
+    ],
+    "rubric_question": "Does the response contain at least one point where the writer explicitly returns to an earlier equation or step they wrote (e.g., 'let me go back', 'in my earlier work', 'from equation 5') to re-check or reuse it?",
+    "unit": "per_1k_tokens",
+    "generic": false,
+    "confidence": 2,
+    "notes": "Derived from MOVE (conf 3) with FORM (conf 2) naming 'Wait', 'no', 'let me go back'. Sub-flavour = backtracking to earlier equations. CONTENT (algebra/constants, conf 3) is a domain confound: measurable mainly on multi-step algebra prompts. Lens tokens are junk. Each regex hits only 1-2 of 40 chunks and <0.05% bg, so expect low but specific counts. Overlaps with rank 21 (numbered equations) and rank 29 (redo). Verifier: regexes valid.",
+    "verdict": "ok",
+    "reason": "Valid and specific."
+   },
+   "prediction": {
+    "direction": "+",
+    "channelA": "held-out chunks where this atom fires show excess Δlogp(SFT−base) > 0 after headroom control (double residualisation), and the excess ranks with mass rank",
+    "channelB": "After SFT, responses will show more explicit backtracking to earlier written work to re-check or reuse it ('let me go back', 'in my earlier work', 'Wait, in equation 5', '... right? Yes')."
+   }
+  },
+  {
+   "rank": 31,
+   "atom": 6130,
+   "mass_share": 0.00295,
+   "fires_train": 688349,
+   "fires_holdout": 35355,
+   "doc_frac": 0.936,
+   "within_doc_sel": 0.197,
+   "top3_doc_share": 0.0004,
+   "src_hist": {
+    "math": 0.502,
+    "python": 0.153,
+    "science": 0.071,
+    "synthetic": 0.06,
+    "nemotron": 0.054,
+    "code": 0.043
+   },
+   "type": "move",
+   "label": "Mathematical/logical verification or adjustment",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Chunks frequently contain mathematical or logical expressions, often involving variables (e.g., \"a < b < c\", \"sqrt(x) = sqrt(y)\", \"v_i v_j / r_c\"), and some include code-like syntax or markup (e.g., \"choice = random.choice(['a', 'b'])\", \"section '.text' code executable\").",
+    3
+   ],
+   "move": [
+    "The chunks often involve verifying, correcting, or adjusting a logical or mathematical statement (e.g., \"Wait, actually, the third line's spatial components would be\", \"Let me adjust\", \"So then x = y\").",
+    3
+   ],
+   "lens_top": "'anko' ' dossier' ' Roma' 'ssid' \" ['/\" ' amateur' 'zens' 'byter' 'olist' ' getSupportFragmentManager' 'hydr' 'RIEND' ' Raf' ' Rut' ' DIY'",
+   "examples": [
+    " b)(x - c) with a < b < c, is positive in (a, b) and (c, ∞), negative elsewhere. So",
+    " getting contributions at second order from the third line, which is delta_ij times (1 - r / r_c) (v_i v_j)/ r_c,",
+    " upper base is from (a, h) to (b, h), and its length is 2x. So, b - a = 2x"
+   ],
+   "match_grad": {
+    "atom": 4152,
+    "corr": 0.023,
+    "cos": -0.066,
+    "mass_rank": 549,
+    "present": false
+   },
+   "match_err": {
+    "atom": 1168,
+    "corr": 0.027,
+    "cos": null,
+    "mass_rank": 730,
+    "present": false
+   },
+   "grad_presence": {
+    "grad_mass_lift": 0.863,
+    "best_grad_atom": 19441,
+    "recall": 0.0
+   },
+   "cell_2x2": "act-high/grad-low",
+   "prediction_2x2": "activation ledger: increase; gradient ledger: channel A excess Δlogp ≈ 0 (≤ controls), channel B effect size < gradient-unique cell",
+   "item": {
+    "atom": 6130,
+    "rank": 31,
+    "statement": "After SFT, responses will show more mid-derivation adjustment of a symbolic/mathematical statement, where a previously written expression or relation is revised or its corrected consequence restated (e.g. 'Wait, actually ...', 'Let me adjust', 'so actually ...', 'should actually be ...').",
+    "measure_kind": "both",
+    "regex": [
+     "\\bWait, actually\\b",
+     "\\b[Ll]et me (?:adjust|correct|fix)\\b",
+     "\\b(?:[Ss]o|[Tt]hen) (?:actually|instead),?\\b",
+     "\\bshould (?:actually|instead|really) be\\b"
+    ],
+    "rubric_question": "Does the response contain at least one point where the writer revises, adjusts, or restates in corrected form a mathematical or logical expression/relation they had already written (not just continuing a linear derivation)?",
+    "unit": "per_response",
+    "generic": false,
+    "confidence": 2,
+    "notes": "MOVE conf 3 used. Top-firing chunks are dominated by plain inline symbolic derivation ('So, b - a = 2x'); only a minority contain explicit correction markers, so the label's 'verification/adjustment' framing is partly inferred. Lens tokens are uninformative. Overlaps heavily with the 'Wait' self-correction family (ranks 19/27 share 'Wait, actually'; ranks 34-37, 39). Verifier: dropped '\\bSo then\\b' (a linear-continuation connective that contradicts the rubric's exclusion of plain continuation) and added 'let me correct/fix', 'so/then actually|instead', 'should actually/instead be' as adjustment markers (each <0.2% bg on chunk corpus). Regex is sparse; rubric is primary.",
+    "verdict": "revised",
+    "reason": "Replaced non-diagnostic 'So then' with adjustment-specific markers."
+   },
+   "prediction": {
+    "direction": "+",
+    "channelA": "held-out chunks where this atom fires show excess Δlogp(SFT−base) > 0 after headroom control (double residualisation), and the excess ranks with mass rank",
+    "channelB": "After SFT, responses will show more mid-derivation adjustment of a symbolic/mathematical statement, where a previously written expression or relation is revised or its corrected consequence restated (e.g. 'Wait, actually ...', 'Let me adjust', 'so actually ...', 'should actually be ...')."
+   }
+  },
+  {
+   "rank": 32,
+   "atom": 3822,
+   "mass_share": 0.00292,
+   "fires_train": 645525,
+   "fires_holdout": 34169,
+   "doc_frac": 0.928,
+   "within_doc_sel": 0.189,
+   "top3_doc_share": 0.0005,
+   "src_hist": {
+    "math": 0.48,
+    "python": 0.155,
+    "science": 0.068,
+    "synthetic": 0.056,
+    "code": 0.054,
+    "nemotron": 0.051
+   },
+   "type": "move",
+   "label": "counting or verifying list elements",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "chunks contain lists or enumerations of items, often with letters or symbols being counted or analyzed",
+    3
+   ],
+   "move": [
+    "chunks are actively counting, categorizing, or verifying elements within a structured list or sequence",
+    3
+   ],
+   "lens_top": "' SOP' ' AssertionError' 'abbage' 'ITERAL' 'eo' '.Ret' 'ajan' '.Len' ' laisse' 'ån' ' ✔' 'ASC' '/API' ' Arlington' 'plib'",
+   "examples": [
+    "olithic norms. (m's: methods, maximize, momentum, maintaining, modular, milestones, minimizing, monolithic. 8 m's. n's:",
+    "⁴ term is C E (E - C) x⁴ = - C E (C - E) x⁴, so can write that as",
+    " As 'rational' + 'e'?), no, 'rationale' has the ending 'e', so one? Wait: \"rationale\" ends"
+   ],
+   "match_grad": {
+    "atom": 5420,
+    "corr": 0.05,
+    "cos": -0.182,
+    "mass_rank": 30,
+    "present": false
+   },
+   "match_err": {
+    "atom": 6435,
+    "corr": 0.045,
+    "cos": null,
+    "mass_rank": 120,
+    "present": false
+   },
+   "grad_presence": {
+    "grad_mass_lift": 0.875,
+    "best_grad_atom": 17731,
+    "recall": 0.0
+   },
+   "cell_2x2": "act-high/grad-low",
+   "prediction_2x2": "activation ledger: increase; gradient ledger: channel A excess Δlogp ≈ 0 (≤ controls), channel B effect size < gradient-unique cell",
+   "item": {
+    "atom": 3822,
+    "rank": 32,
+    "statement": "After SFT, responses will show more explicit item-by-item counting or tallying of elements in a list, word, or sequence with a stated running/final count (e.g. \"8 m's\", \"That's 9 'e's\", 'control (o), over (o) ... Six.').",
+    "measure_kind": "both",
+    "regex": [
+     "\\b(?:\\d+|one|two|three|four|five|six|seven|eight|nine|ten) ['‘’]?[A-Za-z]['‘’]s\\b",
+     "(?:[A-Za-z]+[\"”’]?\\s?\\((?:\\d+|[a-z])\\)[,;.]?\\s+){2,}[A-Za-z]+[\"”’]?\\s?\\((?:\\d+|[a-z])\\)",
+     "\\b[Tt]hat['’]s (?:\\d+|one|two|three|four|five|six|seven|eight|nine|ten)\\s*(?:[.,!;]|$|['‘’]?[A-Za-z]['‘’]s\\b|(?:in )?total\\b|so far\\b|letters?\\b|words?\\b|characters?\\b|vowels?\\b|consonants?\\b|items?\\b|occurrences?\\b|times\\b)"
+    ],
+    "rubric_question": "Does the response explicitly enumerate items one by one (e.g. letters in a word, occurrences of a word/character, elements of a list) and state a running or final tally?",
+    "unit": "per_1k_tokens",
+    "generic": false,
+    "confidence": 2,
+    "notes": "FORM and MOVE both conf 3 and agree. Examples are letter/word-count constraint checking (instruction-following style) plus term bookkeeping in algebra. Lens tokens ('.Len', ' ✔', 'AssertionError') weakly consistent with counting/verification. Verifier: regex 2 now requires a run of at least three per-item parenthetical tallies ('a(2), m(3), b(4)' / 'control (o), over (o), operations (o)') because the single-item form matched variable glosses like 'difference (d)' and equation labels (bg 0.8% -> 0.06%); regex 3 now requires the number to be sentence-final or followed by a count noun or letter-tally (\"That's two.\" / \"that's 9 'e's\") so 'that's one of the...' no longer fires. Prompts 9 (LEVEL letters) and 40-42 (letter/sentence constraints) are the likely loci.",
+    "verdict": "revised",
+    "reason": "Tightened two regexes to eliminate variable-gloss and 'that's one of' false positives."
+   },
+   "prediction": {
+    "direction": "+",
+    "channelA": "held-out chunks where this atom fires show excess Δlogp(SFT−base) > 0 after headroom control (double residualisation), and the excess ranks with mass rank",
+    "channelB": "After SFT, responses will show more explicit item-by-item counting or tallying of elements in a list, word, or sequence with a stated running/final count (e.g. \"8 m's\", \"That's 9 'e's\", 'control (o), over (o) ... Six.')."
+   }
+  },
+  {
+   "rank": 33,
+   "atom": 4282,
+   "mass_share": 0.0028,
+   "fires_train": 239100,
+   "fires_holdout": 14019,
+   "doc_frac": 0.296,
+   "within_doc_sel": 0.525,
+   "top3_doc_share": 0.0016,
+   "src_hist": {
+    "persona": 0.349,
+    "aya": 0.275,
+    "wildchat": 0.149,
+    "if_qwq": 0.088,
+    "wildguard": 0.034,
+    "science": 0.031
+   },
+   "type": "form",
+   "label": "Marketing-style lists or keyword-rich descriptions",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Text chunks contain lists, keywords, or marketing-style descriptions, often with bold text, hashtags, or special characters.",
+    3
+   ],
+   "move": [
+    "N/A",
+    0
+   ],
+   "lens_top": "' &' '-inspired' ' –' ' registrado' ' generado' ' vs' ' crowned' ' realizado' ' Juda' 'ざ' ' handjob' 'Longrightarrow' '/H' ' ninety' ' aka'",
+   "examples": [
+    "Art Nouveau-steam fusion city, iridescent stained-glass domes housing humming Tesla coils, cobblestone streets lined with automatons selling clockwork",
+    "3ft vinyl photo backdrop, Social media photo props, Girl birthday party backdrop, Rustic wedding anniversary decor, Valentine’s Day photoshoot ideas, Durable vinyl",
+    "Cyberpunk Neon Syntax**  \\n`\"Cyberpunk OREO ice cream bar, glowing neon-blue cream core, crunchy black cookie matrix, holographic"
+   ],
+   "match_grad": {
+    "atom": 7233,
+    "corr": 0.236,
+    "cos": 0.096,
+    "mass_rank": 935,
+    "present": false
+   },
+   "match_err": {
+    "atom": 656,
+    "corr": 0.26,
+    "cos": null,
+    "mass_rank": 2651,
+    "present": false
+   },
+   "grad_presence": {
+    "grad_mass_lift": 2.918,
+    "best_grad_atom": 5488,
+    "recall": 0.135
+   },
+   "cell_2x2": "act-high/grad-high",
+   "prediction_2x2": "increase (both dictionaries carry it)",
+   "item": {
+    "atom": 4282,
+    "rank": 33,
+    "statement": "After SFT, responses will show more marketing/SEO-style keyword formatting: comma-separated Title-Case keyword or tag strings, hashtags, and bold '**Keywords:**'-type headers.",
+    "measure_kind": "both",
+    "regex": [
+     "(?<![\\w&])#[A-Za-z][A-Za-z0-9_]{2,}",
+     "(?:[A-Z][\\w'’&-]*(?: [A-Z][\\w'’&-]*){0,4}, ){4,}",
+     "\\*\\*Keywords?:\\*\\*"
+    ],
+    "rubric_question": "Does the response contain marketing/SEO-style content such as a comma-separated keyword or tag list, hashtags, or product-listing style descriptor strings?",
+    "unit": "per_1k_tokens",
+    "generic": false,
+    "confidence": 2,
+    "notes": "MOVE and CONTENT are N/A; FORM conf 3 used. Sources are persona/aya/wildchat (creative/marketing prompts), so on this reasoning-heavy prompt set the base rate may be near zero for both models except prompt 65 (product description); direction may be undetectable rather than negative. Lens tokens (' &', ' –', ' vs', '-inspired', ' aka') are list-connector-like and loosely agree. Hashtag regex could also match '#include'-style text or shell comments in code responses (partial confound); Title-Case run regex requires 4+ consecutive Title-Case comma items and is fairly specific. Verifier: regexes valid (fixed-width lookbehind OK in Python).",
+    "verdict": "ok",
+    "reason": "Valid; low base-rate caveat noted."
+   },
+   "prediction": {
+    "direction": "+",
+    "channelA": "held-out chunks where this atom fires show excess Δlogp(SFT−base) > 0 after headroom control (double residualisation), and the excess ranks with mass rank",
+    "channelB": "After SFT, responses will show more marketing/SEO-style keyword formatting: comma-separated Title-Case keyword or tag strings, hashtags, and bold '**Keywords:**'-type headers."
+   }
+  },
+  {
+   "rank": 34,
+   "atom": 4108,
+   "mass_share": 0.0028,
+   "fires_train": 664975,
+   "fires_holdout": 34561,
+   "doc_frac": 0.906,
+   "within_doc_sel": 0.19,
+   "top3_doc_share": 0.0004,
+   "src_hist": {
+    "math": 0.535,
+    "python": 0.132,
+    "science": 0.066,
+    "synthetic": 0.06,
+    "nemotron": 0.053,
+    "code": 0.048
+   },
+   "type": "move",
+   "label": "Mid-reasoning error-checking or verification",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Chunks frequently contain the word \"Wait\" and involve mid-reasoning pauses or corrections.",
+    3
+   ],
+   "move": [
+    "The text is catching errors, verifying calculations, or reconsidering assumptions mid-reasoning.",
+    3
+   ],
+   "lens_top": "' anthrop' ' headphone' ' naked' ' ❤' ' 😀' '_HERSHEY' 'amera' ' �' ' Moderator' ' Mentor' '/front' 'VertexArray' 'centroid' 'stå' ' anatom'",
+   "examples": [
+    " - k.\\n\\nTherefore, the center lies on the line h + k =4. Interesting, so the center lies along the line h +k =4.",
+    " 2R, diameter of the circle is 2R. So ratio is 2R / 2R = 1/1 = 1.",
+    " of the diagonal of the square to the diameter of the larger circle. The diagonal is 2R, diameter is 2R, so that ratio would be"
+   ],
+   "match_grad": {
+    "atom": 4487,
+    "corr": 0.025,
+    "cos": 0.071,
+    "mass_rank": 215,
+    "present": false
+   },
+   "match_err": {
+    "atom": 5666,
+    "corr": 0.034,
+    "cos": null,
+    "mass_rank": 169,
+    "present": false
+   },
+   "grad_presence": {
+    "grad_mass_lift": 0.799,
+    "best_grad_atom": 17757,
+    "recall": 0.0
+   },
+   "cell_2x2": "act-high/grad-low",
+   "prediction_2x2": "activation ledger: increase; gradient ledger: channel A excess Δlogp ≈ 0 (≤ controls), channel B effect size < gradient-unique cell",
+   "item": {
+    "atom": 4108,
+    "rank": 34,
+    "statement": "After SFT, responses will show more mid-reasoning pauses marked by 'Wait' in which a computed value or intermediate result is re-checked or verified before continuing (e.g. 'Wait, solving equation C for h', 'check if the center lies on y = x + 1').",
+    "measure_kind": "both",
+    "regex": [
+     "\\bWait\\b",
+     "\\b[Cc]heck (?:if|whether|that)\\b",
+     "\\b[Ll]et me (?:check|verify|double-check)\\b"
+    ],
+    "rubric_question": "Does the response contain at least one point where the writer pauses to re-check or verify a calculation or intermediate result (re-deriving a value, checking a condition holds) before continuing?",
+    "unit": "per_1k_tokens",
+    "generic": false,
+    "confidence": 3,
+    "notes": "FORM and MOVE conf 3, consistent. About half of top chunks contain 'Wait'; the rest are plain ratio/coordinate checks. Bare \\bWait\\b is the primary count and is the umbrella marker shared with ranks 4/18/22/26/29/35/36/37 (those use narrower 'Wait ...' bigrams); expect strong correlation among these items. 'let me check/verify' shared with ranks 20/23. Lens tokens are noise. Confound: SFT chat template may generally lengthen reasoning; per_1k_tokens normalizes. Verifier: regexes valid.",
+    "verdict": "ok",
+    "reason": "Valid; umbrella overlap noted."
+   },
+   "prediction": {
+    "direction": "+",
+    "channelA": "held-out chunks where this atom fires show excess Δlogp(SFT−base) > 0 after headroom control (double residualisation), and the excess ranks with mass rank",
+    "channelB": "After SFT, responses will show more mid-reasoning pauses marked by 'Wait' in which a computed value or intermediate result is re-checked or verified before continuing (e.g. 'Wait, solving equation C for h', 'check if the center lies on y = x + 1')."
+   }
+  },
+  {
+   "rank": 35,
+   "atom": 1940,
+   "mass_share": 0.00275,
+   "fires_train": 656789,
+   "fires_holdout": 34041,
+   "doc_frac": 0.934,
+   "within_doc_sel": 0.191,
+   "top3_doc_share": 0.0004,
+   "src_hist": {
+    "math": 0.488,
+    "python": 0.166,
+    "science": 0.063,
+    "synthetic": 0.056,
+    "nemotron": 0.054,
+    "code": 0.049
+   },
+   "type": "move",
+   "label": "Pausing to reconsider or correct",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Chunks frequently include the word \"Wait\" or phrases like \"Wait no\" and \"Wait, how\"",
+    3
+   ],
+   "move": [
+    "The text is often pausing to reconsider or correct a previous thought or calculation",
+    3
+   ],
+   "lens_top": "' Viagra' ' himself' ' sports' ' boxing' '.flatMap' 'Ranked' ' engr' ' Cmd' ' flame' ' videog' ' discipline' '.Qt' 'HBoxLayout' ' charismatic' '.ActionListener'",
+   "examples": [
+    ".215)≈3.886. So decreasing from 4 at x=1 to 3.886 at 1.215. So the function",
+    "_counting\"\\n  },\\n  \"q_xIimLm\": {\\n    \"answer\": 12,\\n    \"answer_type\": \"integer\",\\n    \"",
+    " segment is (x *1 + (d -x)*2 ) minutes? No, wait the time for accelerated is 1 min per km and normal is"
+   ],
+   "match_grad": {
+    "atom": 7154,
+    "corr": 0.023,
+    "cos": -0.064,
+    "mass_rank": 335,
+    "present": false
+   },
+   "match_err": {
+    "atom": 5428,
+    "corr": 0.037,
+    "cos": null,
+    "mass_rank": 3159,
+    "present": false
+   },
+   "grad_presence": {
+    "grad_mass_lift": 0.859,
+    "best_grad_atom": 17076,
+    "recall": 0.0
+   },
+   "cell_2x2": "act-high/grad-low",
+   "prediction_2x2": "activation ledger: increase; gradient ledger: channel A excess Δlogp ≈ 0 (≤ controls), channel B effect size < gradient-unique cell",
+   "item": {
+    "atom": 1940,
+    "rank": 35,
+    "statement": "After SFT, responses will show more explicit self-negation of a just-stated thought, marked by 'Wait no' / 'No, wait' / 'Wait, how ...' / 'that contradicts', where the writer reverses or questions their immediately preceding claim.",
+    "measure_kind": "both",
+    "regex": [
+     "\\bWait,? no\\b",
+     "\\bNo, wait\\b",
+     "\\bWait,? (?:how|what|why|which)\\b",
+     "\\b(?:that|this|which) contradicts\\b"
+    ],
+    "rubric_question": "Does the response contain at least one point where the writer explicitly negates or reverses a statement they just made (e.g. 'Wait no', 'No, wait', 'that contradicts earlier')?",
+    "unit": "per_1k_tokens",
+    "generic": false,
+    "confidence": 3,
+    "notes": "FORM and MOVE conf 3, consistent with examples. Distinct from rank 34 by requiring negation/reversal rather than mere re-checking; nearly identical in behaviour to rank 18 (7791) and shares 'Wait, no' with ranks 4/22/26/36 and 'contradicts' with rank 8. Lens tokens are noise. Some top chunks are JSON/list content with no correction, so the atom is not pure; regex is conservative and specific. Verifier: regexes valid.",
+    "verdict": "ok",
+    "reason": "Valid; near-duplicate of rank 18 flagged in overlap groups."
+   },
+   "prediction": {
+    "direction": "+",
+    "channelA": "held-out chunks where this atom fires show excess Δlogp(SFT−base) > 0 after headroom control (double residualisation), and the excess ranks with mass rank",
+    "channelB": "After SFT, responses will show more explicit self-negation of a just-stated thought, marked by 'Wait no' / 'No, wait' / 'Wait, how ...' / 'that contradicts', where the writer reverses or questions their immediately preceding claim."
+   }
+  },
+  {
+   "rank": 36,
+   "atom": 2154,
+   "mass_share": 0.00273,
+   "fires_train": 652492,
+   "fires_holdout": 33637,
+   "doc_frac": 0.933,
+   "within_doc_sel": 0.188,
+   "top3_doc_share": 0.0004,
+   "src_hist": {
+    "math": 0.507,
+    "python": 0.144,
+    "science": 0.069,
+    "synthetic": 0.063,
+    "nemotron": 0.053,
+    "code": 0.046
+   },
+   "type": "move",
+   "label": "Correcting or questioning reasoning mid-explanation",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Chunks often contain the word \"Wait\" or phrases indicating uncertainty or correction (e.g., \"Wait, but\", \"Wait, no\", \"Wait, since\").",
+    3
+   ],
+   "move": [
+    "The text is correcting or questioning its own reasoning, often mid-calculation or mid-explanation.",
+    3
+   ],
+   "lens_top": "' Fleet' 'elfare' 'strap' ' chassis' ' RAM' 'avatars' ' lifelong' ' %+' '()=>{\\n' 'Latch' ' Bytes' '��' '(optimizer' ' eBooks' ' Armour'",
+   "examples": [
+    " particles themselves. The charges (particles) contribute to the stress-energy tensor as normal matter with whatever mass they have. Since electrons and protons have mass, even",
+    " is column A: A1 + A2 + A3 + A4 + A5 + A6 = 111.\\n\\nOur Sum includes A1, A",
+    "²B:\\n\\nA² is the matrix we already calculated:\\n\\nA² = [ [a² + bc, b(a + d)], [c(a + d"
+   ],
+   "match_grad": {
+    "atom": 4064,
+    "corr": 0.028,
+    "cos": -0.051,
+    "mass_rank": 287,
+    "present": false
+   },
+   "match_err": {
+    "atom": 7391,
+    "corr": 0.035,
+    "cos": null,
+    "mass_rank": 2156,
+    "present": false
+   },
+   "grad_presence": {
+    "grad_mass_lift": 0.831,
+    "best_grad_atom": 21642,
+    "recall": 0.0
+   },
+   "cell_2x2": "act-high/grad-low",
+   "prediction_2x2": "activation ledger: increase; gradient ledger: channel A excess Δlogp ≈ 0 (≤ controls), channel B effect size < gradient-unique cell",
+   "item": {
+    "atom": 2154,
+    "rank": 36,
+    "statement": "After SFT, responses will show more objections raised against the writer's own preceding step, marked by 'Wait, but' / 'Wait, no' / 'Wait, since' or a self-directed doubt question ('Is that possible?'), rather than proceeding linearly.",
+    "measure_kind": "both",
+    "regex": [
+     "\\bWait, but\\b",
+     "\\bWait, no\\b",
+     "\\bWait, since\\b",
+     "\\bIs that (?:possible|right|correct)\\?"
+    ],
+    "rubric_question": "Does the response contain at least one point where the writer raises an objection or doubt about their own preceding reasoning step (e.g. 'Wait, but ...', 'Is that possible?') before resolving it?",
+    "unit": "per_1k_tokens",
+    "generic": false,
+    "confidence": 3,
+    "notes": "FORM and MOVE conf 3 and agree; 'Wait, but' is the most frequent marker in top chunks (shared with rank 5's 'Wait,? but'). Overlaps with ranks 34/35/37/39 ('Wait' family); 'Wait, no' shared with ranks 4/18/26/35; 'Is that possible?' with rank 20. Lens tokens are noise. Regexes are exact-bigram and conservative. Verifier: regexes valid.",
+    "verdict": "ok",
+    "reason": "Valid; overlaps recorded."
+   },
+   "prediction": {
+    "direction": "+",
+    "channelA": "held-out chunks where this atom fires show excess Δlogp(SFT−base) > 0 after headroom control (double residualisation), and the excess ranks with mass rank",
+    "channelB": "After SFT, responses will show more objections raised against the writer's own preceding step, marked by 'Wait, but' / 'Wait, no' / 'Wait, since' or a self-directed doubt question ('Is that possible?'), rather than proceeding linearly."
+   }
+  },
+  {
+   "rank": 37,
+   "atom": 4191,
+   "mass_share": 0.00269,
+   "fires_train": 643751,
+   "fires_holdout": 33160,
+   "doc_frac": 0.913,
+   "within_doc_sel": 0.185,
+   "top3_doc_share": 0.0004,
+   "src_hist": {
+    "math": 0.523,
+    "python": 0.133,
+    "science": 0.071,
+    "synthetic": 0.059,
+    "nemotron": 0.054,
+    "code": 0.049
+   },
+   "type": "move",
+   "label": "Correcting mathematical/logical reasoning",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Chunks often contain mathematical or logical expressions, variables, and equations (e.g., \"x * m\", \"n mod x\", \"d > e\").",
+    3
+   ],
+   "move": [
+    "The text is frequently correcting or revising previous reasoning, often signaled by phrases like \"Wait, hold on\" or \"Let me clarify.\"",
+    3
+   ],
+   "lens_top": "' aliment' '.lib' 'pulse' '.pl' '_POSTFIELDS' 'ylon' ' nause' ' Wired' '_crossentropy' ' nutrit' '(core' ' fertilizer' ' Barn' ' GameManager' ' turnovers'",
+   "examples": [
+    "2885 and the first overtone is 5679. The fundamental is v=0→1, and the overtone is v=0→2.",
+    " =x*m = n - (n mod x).\\n\\nWait hold on: Let me clarify variables:\\n\\nTotal_used = x * m, where m = floor(n",
+    "t (1)\\n1944: Lifeboat (1)\\n1945: Spellbound (1)\\n1946: Notorious (1)\\n1947: The"
+   ],
+   "match_grad": {
+    "atom": 1459,
+    "corr": 0.034,
+    "cos": 0.071,
+    "mass_rank": 130,
+    "present": false
+   },
+   "match_err": {
+    "atom": 7876,
+    "corr": 0.051,
+    "cos": null,
+    "mass_rank": 99,
+    "present": false
+   },
+   "grad_presence": {
+    "grad_mass_lift": 0.839,
+    "best_grad_atom": 27536,
+    "recall": 0.0
+   },
+   "cell_2x2": "act-high/grad-low",
+   "prediction_2x2": "activation ledger: increase; gradient ledger: channel A excess Δlogp ≈ 0 (≤ controls), channel B effect size < gradient-unique cell",
+   "item": {
+    "atom": 4191,
+    "rank": 37,
+    "statement": "After SFT, responses will show more explicit stop-and-clarify moves in which the writer halts to restate or re-define the variables/quantities being used, marked by 'Wait, hold on' / 'hold on' / 'Let me clarify' / 'let me recast'.",
+    "measure_kind": "both",
+    "regex": [
+     "\\bWait,? hold on\\b",
+     "\\b[Hh]old on\\b",
+     "\\b[Ll]et me (?:clarify|recast|re-?define|restate)\\b"
+    ],
+    "rubric_question": "Does the response contain at least one point where the writer explicitly stops to clarify or re-define the variables, quantities, or terms they had been using (e.g. 'Let me clarify variables:', 'hold on, that's conflicting with my previous ...')?",
+    "unit": "per_1k_tokens",
+    "generic": false,
+    "confidence": 3,
+    "notes": "MOVE conf 3 with explicit markers quoted in the label; examples confirm. Many top chunks are plain formula/list text without markers, so the atom is broader than the marker set; regex counts the marker subset only. Lens tokens do not agree with the label. 'hold on' regex subsumes the first and is shared with rank 22 (4565); kept both for reporting granularity. Verifier: regexes valid.",
+    "verdict": "ok",
+    "reason": "Valid; 'hold on' overlap with rank 22 recorded."
+   },
+   "prediction": {
+    "direction": "+",
+    "channelA": "held-out chunks where this atom fires show excess Δlogp(SFT−base) > 0 after headroom control (double residualisation), and the excess ranks with mass rank",
+    "channelB": "After SFT, responses will show more explicit stop-and-clarify moves in which the writer halts to restate or re-define the variables/quantities being used, marked by 'Wait, hold on' / 'hold on' / 'Let me clarify' / 'let me recast'."
+   }
+  },
+  {
+   "rank": 38,
+   "atom": 148,
+   "mass_share": 0.00264,
+   "fires_train": 232907,
+   "fires_holdout": 12044,
+   "doc_frac": 0.967,
+   "within_doc_sel": 0.07,
+   "top3_doc_share": 0.0002,
+   "src_hist": {
+    "math": 0.494,
+    "python": 0.175,
+    "nemotron": 0.054,
+    "synthetic": 0.054,
+    "science": 0.053,
+    "code": 0.043
+   },
+   "type": "move",
+   "label": "mathematical verification",
+   "content": [
+    "mathematical problem-solving (geometry, algebra, trigonometry, etc.)",
+    3
+   ],
+   "form": [
+    "N/A",
+    0
+   ],
+   "move": [
+    "verifying or correcting a step in the reasoning process",
+    2
+   ],
+   "lens_top": "' unsub' ' Vit' ' metab' ' Twe' ' Doub' 'dag' ' sealed' ' gr' 'prung' ' Tut' 'afort' ' nick' '/command' 'お' ' \"),\\n'",
+   "examples": [
+    " - arccos(-1/4) +2π. Since θ is in [0, 2π], two solutions in that interval:\\n\\nθ",
+    " \"A pyramid with a square base has a height of 2000 units. A plane parallel to the base cuts the pyramid into two pyramids, one of",
+    "), a(2), m(3), b(4), d(5), a(6), space (7), s (8), : (9"
+   ],
+   "match_grad": {
+    "atom": 4306,
+    "corr": 0.023,
+    "cos": 0.074,
+    "mass_rank": 656,
+    "present": false
+   },
+   "match_err": {
+    "atom": 2529,
+    "corr": 0.042,
+    "cos": null,
+    "mass_rank": 4447,
+    "present": false
+   },
+   "grad_presence": {
+    "grad_mass_lift": 0.764,
+    "best_grad_atom": 31848,
+    "recall": 0.0
+   },
+   "cell_2x2": "act-high/grad-low",
+   "prediction_2x2": "activation ledger: increase; gradient ledger: channel A excess Δlogp ≈ 0 (≤ controls), channel B effect size < gradient-unique cell",
+   "item": {
+    "atom": 148,
+    "rank": 38,
+    "statement": "After SFT, responses will show more verification of a reasoning step against the problem's givens, e.g. re-reading or quoting the problem statement ('the problem says/states ...', 'Let me reread the problem') or flagging a step with 'But wait'.",
+    "measure_kind": "both",
+    "regex": [
+     "\\bthe problem (?:says|states|again)\\b",
+     "\\b[Ll]et me re-?read\\b",
+     "\\bBut wait\\b"
+    ],
+    "rubric_question": "Does the response contain at least one point where the writer verifies an intermediate step by re-quoting or re-reading the problem's conditions, or by explicitly re-checking a computed value against them?",
+    "unit": "per_response",
+    "generic": false,
+    "confidence": 2,
+    "notes": "CONTENT conf 3 (math problem-solving) would be generic, so MOVE conf 2 ('verifying or correcting a step') used. Top chunks feature quoted problem statements and case listings; the 'verification' framing is a labeler inference. Low within_doc_sel (0.07) suggests a diffuse atom. Lens tokens are noise. Regexes shared with ranks 1 ('re-read'), 5 ('But wait'), 17/28/39 ('the problem says'). Rubric is primary; regex is sparse. Verifier: regexes valid.",
+    "verdict": "ok",
+    "reason": "Valid; diffuse-atom caveat retained."
+   },
+   "prediction": {
+    "direction": "+",
+    "channelA": "held-out chunks where this atom fires show excess Δlogp(SFT−base) > 0 after headroom control (double residualisation), and the excess ranks with mass rank",
+    "channelB": "After SFT, responses will show more verification of a reasoning step against the problem's givens, e.g. re-reading or quoting the problem statement ('the problem says/states ...', 'Let me reread the problem') or flagging a step with 'But wait'."
+   }
+  },
+  {
+   "rank": 39,
+   "atom": 4921,
+   "mass_share": 0.00264,
+   "fires_train": 639578,
+   "fires_holdout": 32478,
+   "doc_frac": 0.91,
+   "within_doc_sel": 0.183,
+   "top3_doc_share": 0.0005,
+   "src_hist": {
+    "math": 0.534,
+    "python": 0.137,
+    "science": 0.069,
+    "nemotron": 0.054,
+    "code": 0.052,
+    "synthetic": 0.052
+   },
+   "type": "move",
+   "label": "Correcting or revising assumptions in technical contexts",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Chunks often include mathematical or technical expressions, equations, or code snippets (e.g., \"Q = U * A * LMTD\", \"cos²2t = (1+cos4t)/2\", \"next_occ[i\").",
+    2
+   ],
+   "move": [
+    "The text is often correcting or revising a previous assumption or approach (e.g., \"Wait, but the problem states\", \"Alternatively, maybe\", \"So let's first write\").",
+    3
+   ],
+   "lens_top": "' prelim' 'Porn' ' propos' 'noise' ' histo' ' litt' ' menace' '.predicate' ' Joi' ' Smile' 'ensaje' ' bombing' ' congest' 'owa' ' scop'",
+   "examples": [
+    " chord lying along the x-axis for simplicity. Wait, but the problem states the common chord is a line with slope 2, but perhaps setting the chord in",
+    " (because the first character of s is '1' and it's not '?').\\n  For each i, c_i must be either s[i] or if",
+    " exact LMTD formula is Q = U * A * LMTD, where LMTD is the log mean temperature difference.\\n\\nSo, setting Q count"
+   ],
+   "match_grad": {
+    "atom": 4141,
+    "corr": 0.023,
+    "cos": 0.051,
+    "mass_rank": 1,
+    "present": false
+   },
+   "match_err": {
+    "atom": 1830,
+    "corr": 0.029,
+    "cos": null,
+    "mass_rank": 262,
+    "present": false
+   },
+   "grad_presence": {
+    "grad_mass_lift": 0.828,
+    "best_grad_atom": 25247,
+    "recall": 0.0
+   },
+   "cell_2x2": "act-high/grad-low",
+   "prediction_2x2": "activation ledger: increase; gradient ledger: channel A excess Δlogp ≈ 0 (≤ controls), channel B effect size < gradient-unique cell",
+   "item": {
+    "atom": 4921,
+    "rank": 39,
+    "statement": "After SFT, responses will show more revision of the solution setup or approach: proposing an alternative or simplification and weighing it against the problem's stated conditions (e.g. 'for simplicity', 'Alternatively, maybe', 'Wait, but the problem states', 'perhaps better to').",
+    "measure_kind": "both",
+    "regex": [
+     "\\bAlternatively,? (?:maybe|perhaps)\\b",
+     "\\bWait, but the problem\\b",
+     "\\bfor simplicity\\b",
+     "\\bperhaps (?:better|it['’]s better|setting)\\b"
+    ],
+    "rubric_question": "Does the response contain at least one point where the writer proposes an alternative approach, simplification, or setup for solving the problem and weighs it against the problem's stated conditions before choosing?",
+    "unit": "per_response",
+    "generic": false,
+    "confidence": 2,
+    "notes": "MOVE conf 3 used; label quotes the markers and examples confirm. Several top chunks are the same document (coordinate rotation of a chord), so the labeler's view may be over-fitted to one trace. Lens tokens weakly agree with 'preliminary/proposal' framing. Overlaps with ranks 1/13 ('Alternatively, maybe') and 28/38 ('the problem says'); distinguished by approach-level (not value-level) revision. Rubric primary. Verifier: regexes valid.",
+    "verdict": "ok",
+    "reason": "Valid; overlaps recorded."
+   },
+   "prediction": {
+    "direction": "+",
+    "channelA": "held-out chunks where this atom fires show excess Δlogp(SFT−base) > 0 after headroom control (double residualisation), and the excess ranks with mass rank",
+    "channelB": "After SFT, responses will show more revision of the solution setup or approach: proposing an alternative or simplification and weighing it against the problem's stated conditions (e.g. 'for simplicity', 'Alternatively, maybe', 'Wait, but the problem states', 'perhaps better to')."
+   }
+  },
+  {
+   "rank": 40,
+   "atom": 3132,
+   "mass_share": 0.00261,
+   "fires_train": 636125,
+   "fires_holdout": 32784,
+   "doc_frac": 0.919,
+   "within_doc_sel": 0.182,
+   "top3_doc_share": 0.0004,
+   "src_hist": {
+    "math": 0.51,
+    "python": 0.139,
+    "science": 0.076,
+    "synthetic": 0.055,
+    "code": 0.055,
+    "nemotron": 0.054
+   },
+   "type": "move",
+   "label": "evaluating logical/mathematical conditions",
+   "content": [
+    "logical/mathematical condition evaluation (e.g., \"if T ≥4\", \"S1 true\", \"F <=3\")",
+    3
+   ],
+   "form": [
+    "chunks often contain symbolic logic/math notation (e.g., \"≥\", \"≤\", \"T=\", \"F=\") and line breaks for step separation",
+    2
+   ],
+   "move": [
+    "verifying or evaluating conditional statements (e.g., \"if true, T≥4; if false, T<4\")",
+    3
+   ],
+   "lens_top": "' voting' 'fone' 'ổ' ' pylab' ' Vand' ' cri' ' congest' 'Vote' ' Sandy' ' improvement' ' lineback' ' arresting' '.gridy' ' bullet' 'dan'",
+   "examples": [
+    " S1 and S2: both depend on T ≥4.\\n\\nIf T ≥4, S1 and S2 true; if T<4, S1",
+    " BC.\\n\\nIntersection with AD: which is the line from A(0,0,0) to D(0,1,0), parameterizable as (",
+    "�6.\\n\\nIf S1 false, then T<5.\\n\\nSimilarly, S2: if true, T≥6; if false, T<6"
+   ],
+   "match_grad": {
+    "atom": 4152,
+    "corr": 0.036,
+    "cos": -0.069,
+    "mass_rank": 549,
+    "present": false
+   },
+   "match_err": {
+    "atom": 7107,
+    "corr": 0.039,
+    "cos": null,
+    "mass_rank": 1259,
+    "present": false
+   },
+   "grad_presence": {
+    "grad_mass_lift": 0.855,
+    "best_grad_atom": 30487,
+    "recall": 0.0
+   },
+   "cell_2x2": "act-high/grad-low",
+   "prediction_2x2": "activation ledger: increase; gradient ledger: channel A excess Δlogp ≈ 0 (≤ controls), channel B effect size < gradient-unique cell",
+   "item": {
+    "atom": 3132,
+    "rank": 40,
+    "statement": "After SFT, responses will show more explicit case-by-case evaluation of conditional/truth-value statements, stating what follows when a statement is true versus false (e.g. 'If S1 true, T ≥ 4; if false, T < 4', 'S2 true if F ≤ 3').",
+    "measure_kind": "both",
+    "regex": [
+     "\\b(?:[Ii]f (?:\\w+ )?(?:is |it['’]s )?(?:true|false)|(?:true|false) if)\\b",
+     "\\b(?:true|false)[,;.]? (?:then|so)\\b",
+     "\\bat (?:most|least) \\d+ (?:are |is )?(?:true|false)\\b"
+    ],
+    "rubric_question": "Does the response explicitly evaluate conditional statements case by case, spelling out the consequence when a condition or statement is true versus when it is false?",
+    "unit": "per_response",
+    "generic": false,
+    "confidence": 2,
+    "notes": "MOVE and CONTENT conf 3, FORM 2; all agree. Top chunks are dominated by self-referential-statement / knights-and-knaves puzzles; the item is somewhat narrower than the atom's full firing set. Lens tokens are mostly noise. Regexes conservative (<0.1% bg). Confound: on code prompts (19 palindrome, 20) lowercase 'returns true if ...' prose can fire regex 1 for both models; base rate otherwise depends on whether the prompt set includes logic puzzles (it does not, so expect sparse counts). Verifier: regexes valid.",
+    "verdict": "ok",
+    "reason": "Valid and specific; code-prose confound noted."
+   },
+   "prediction": {
+    "direction": "+",
+    "channelA": "held-out chunks where this atom fires show excess Δlogp(SFT−base) > 0 after headroom control (double residualisation), and the excess ranks with mass rank",
+    "channelB": "After SFT, responses will show more explicit case-by-case evaluation of conditional/truth-value statements, stating what follows when a statement is true versus false (e.g. 'If S1 true, T ≥ 4; if false, T < 4', 'S2 true if F ≤ 3')."
+   }
+  }
+ ],
+ "reserve_atoms": [
+  2108,
+  1764,
+  1917,
+  611,
+  8029,
+  2821,
+  6459,
+  4613,
+  5005,
+  5096,
+  649,
+  7578,
+  2185,
+  5725,
+  59,
+  5424,
+  883,
+  7716,
+  412,
+  523
+ ],
+ "n_alive": 32123,
+ "n_planted_dominated": 5167
+}

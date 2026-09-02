@@ -1,0 +1,2206 @@
+{
+ "grad": {
+  "4141": {
+   "atom": 4141,
+   "rank": 1,
+   "statement": "After SFT, responses will show more explicit mid-reasoning retractions of a statement the writer just made, marked by 'Wait, no' / 'no, wait' / 'that's wrong' followed by a replacement.",
+   "measure_kind": "both",
+   "regex": [
+    "\\b[Ww]ait,?\\s+no\\b",
+    "\\b[Nn]o,?\\s+wait\\b",
+    "(?i)\\b(?:that(?:'s| is) (?:wrong|not right|incorrect)|I made a mistake|my mistake)\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer explicitly retracts or negates a statement they just made (e.g., 'Wait, no', 'no wait', 'that's wrong', 'I made a mistake') and then replaces it?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 3,
+   "notes": "MOVE and FORM both conf 3 and consistent with all three examples ('Wait no,', 'Wait, no,', 'wait no. Wait'). Lens tokens are noise. Overlaps with the Wait-family items (ranks 4, 5, 7, 17, 23, 25, 27); the discriminating marker here is the explicit negation right after 'Wait'. Verifier: all regexes valid; regex 1 hits all three examples.",
+   "verdict": "ok",
+   "reason": "Statement, regexes, and rubric are specific and consistent with label and examples; no change needed."
+  },
+  "8127": {
+   "atom": 8127,
+   "rank": 2,
+   "statement": "After SFT, responses will show more enumeration of alternative options or approaches for the same sub-problem, phrased as 'Or maybe ...? Or perhaps ...? Alternatively, ...'.",
+   "measure_kind": "both",
+   "regex": [
+    "\\bAlternatively\\b",
+    "\\bOr (?:maybe|perhaps)\\b",
+    "\\?\\s+(?:Or|Alternatively)\\b",
+    "\\bAnother (?:thought|approach|option|possibility|idea)\\b"
+   ],
+   "rubric_question": "Does the response explicitly lay out two or more alternative approaches or options for the same decision or sub-problem (e.g., 'Or maybe ...', 'Or perhaps ...', 'Alternatively, ...') before settling on one?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 3,
+   "notes": "Lens tokens are all question-mark terminators, consistent with examples where each alternative is a rhetorical question; regex 3 ('?' then 'Or'/'Alternatively') is the most atom-specific marker and hits all three examples. Overlaps with ranks 14, 29 (Alternatively) and 8/34 (contrastive 'But'). Verifier: regexes valid.",
+   "verdict": "ok",
+   "reason": "Specific and well-grounded; regex 3 captures the lens-supported question-then-alternative pattern."
+  },
+  "3961": {
+   "atom": 3961,
+   "rank": 3,
+   "statement": "After SFT, responses will show more hedged inferences drawn from a stated constraint of the task, of the form 'The problem says X, so probably/perhaps Y' or 'assuming that X, so Y'.",
+   "measure_kind": "both",
+   "regex": [
+    "(?i)\\bso (?:probably|perhaps|maybe|presumably|likely)\\b",
+    "\\b[Tt]he (?:problem|question|prompt|user) (?:says|states|specifies|mentions|wants|enters)\\b[^.\\n]{0,80},?\\s+so\\b",
+    "(?i)\\bassuming that\\b"
+   ],
+   "rubric_question": "Does the response draw a hedged inference from a stated constraint of the task (e.g., 'The problem says X, so probably Y', 'assuming that ..., so ...') and adjust its plan or assumption accordingly?",
+   "unit": "per_response",
+   "generic": false,
+   "confidence": 2,
+   "notes": "MOVE axis is vague; FORM axis ('so'/'maybe' followed by a step) matches the examples. Regex is a weak proxy; rubric primary. Verifier: regex 2 was a strict subset of rank 33's problem-statement regex, so it was tightened to require a following 'so' clause (constraint -> inference), which still hits examples 1 and 3.",
+   "verdict": "revised",
+   "reason": "Regex 2 duplicated rank 33's marker; tightened to the 'the problem says ..., so ...' form that is specific to this item."
+  },
+  "5184": {
+   "atom": 5184,
+   "rank": 4,
+   "statement": "After SFT, responses will show more explicit verification steps that re-check a previously obtained result ('Let me check/verify ...', 'which matches the example', 'Wait wait, no').",
+   "measure_kind": "both",
+   "regex": [
+    "\\bLet(?: me|'s) (?:check|verify|double-?check|confirm|make sure|re-?check|test)\\b",
+    "\\bWait wait\\b",
+    "\\b(?:which|that|this) (?:matches|checks out)\\b"
+   ],
+   "rubric_question": "Does the response contain at least one explicit verification step in which the writer re-checks or tests a previously obtained result (e.g., 'Let me check/verify', 'which matches the example', re-computing a value to confirm it)?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Lens tokens are paragraph terminators, so the label is inferred from examples (two verification moves, one 'Wait wait, no' retraction). Overlaps with ranks 16, 18, 26, 37 (verification/Let me check) and rank 1 (retraction). Verifier: regexes valid; each hits exactly one example.",
+   "verdict": "ok",
+   "reason": "Measurable and consistent with examples; regexes are valid and specific."
+  },
+  "8139": {
+   "atom": 8139,
+   "rank": 5,
+   "statement": "After SFT, responses will show more explicit moments of realization in which the writer acknowledges an oversight ('Ah right', 'Oh wait', 'I forgot/missed ...').",
+   "measure_kind": "both",
+   "regex": [
+    "\\b(?:Ah|Oh),? (?:right|yes|I see|okay|wait|no)\\b",
+    "(?i)\\bI (?:forgot|missed|overlooked)\\b",
+    "\\bAh[,!]?\\s"
+   ],
+   "rubric_question": "Does the response contain a moment of realization in which the writer acknowledges having overlooked, forgotten, or misjudged something (e.g., 'Ah right', 'Oh wait', 'I forgot', 'I missed that')?",
+   "unit": "per_response",
+   "generic": false,
+   "confidence": 1,
+   "notes": "Weakest label-evidence match: none of the three examples contains the FORM marker; they are paragraph transitions after a completed point, and lens tokens are sentence terminators. Kept as labelled with low expected power; a null result says little. Overlaps with ranks 1, 7, 19. Verifier: regexes valid but hit zero examples; item retained because the label is non-empty and rubric-measurable.",
+   "verdict": "ok",
+   "reason": "Label is non-empty and rubric-measurable, so not dropped; low confidence already recorded."
+  },
+  "3944": {
+   "atom": 3944,
+   "rank": 6,
+   "statement": "After SFT, responses will show more explicit intermediate algebraic manipulation steps (collecting terms, denoting sub-expressions, chained implications) written with inline Unicode math symbols such as ⇒, ≠, ≡, ², √.",
+   "measure_kind": "both",
+   "regex": [
+    "[⇒≠≡≈≤≥√²³]",
+    "\\bLet me (?:denote|collect|rearrange|simplify|expand|substitute|factor|isolate)\\b",
+    "\\bBring (?:all )?(?:the )?terms\\b"
+   ],
+   "rubric_question": "Does the response carry out step-by-step algebraic manipulation (collecting terms, substituting, denoting sub-expressions, chained implications) as visible intermediate work using inline Unicode math symbols such as ⇒, ≠, ≡, ², √ (rather than LaTeX markup or words only)?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "All three axes agree at conf 3; lens tokens are noise. Bare 'intermediate derivation steps' would be generic within math, so the item is pinned to the FORM marker (Unicode inline math rather than LaTeX), which is a distinctive style of the SFT data. Regex ~0 on non-math prompts; interpret per-1k-tokens on the math subset. Confound: base model may emit LaTeX instead, which this regex deliberately does not count. Verifier: rubric aligned with the statement's Unicode-symbol condition and generic flag set to false since the combined property is not near-ubiquitous.",
+   "verdict": "revised",
+   "reason": "Rubric did not include the Unicode-symbol condition that makes the statement specific, and generic=true contradicted a statement that is not near-ubiquitous; both aligned."
+  },
+  "883": {
+   "atom": 883,
+   "rank": 7,
+   "statement": "After SFT, responses will show more explicit hesitation or pause markers ('Wait', 'Hmm', 'Hold on', 'I'm a bit confused') used to reconsider a previous step.",
+   "measure_kind": "both",
+   "regex": [
+    "\\bWait\\b",
+    "\\bHmm+\\b",
+    "\\bHold on\\b",
+    "(?i)\\bI'?m (?:a bit |a little |kind of |somewhat )?confused\\b"
+   ],
+   "rubric_question": "Does the response contain at least one explicit hesitation or pause marker (e.g., 'Wait', 'Hmm', 'Hold on', 'I'm confused') used to reconsider or double-check a previous step?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 3,
+   "notes": "FORM and MOVE both conf 3 and consistent with examples. Broadest of the Wait-family items (ranks 1, 4, 5, 17, 23, 25, 27) and shares 'Hmm' with ranks 11 and 38; counts any capitalised 'Wait' (case-sensitive to exclude 'wait for' in code). Expected to be the single most robust surface marker of long-CoT SFT. Verifier: regexes valid.",
+   "verdict": "ok",
+   "reason": "Clean surface marker with strong label agreement; overlap acknowledged."
+  },
+  "6240": {
+   "atom": 6240,
+   "rank": 8,
+   "statement": "After SFT, responses will show more sentence-initial contrastive self-qualification ('But perhaps ...', 'But the problem might ...', 'However, ...') that pushes back on the writer's own preceding statement or plan.",
+   "measure_kind": "both",
+   "regex": [
+    "(?m)(?:^|[.!?]\\s+)But\\b",
+    "\\bHowever,",
+    "(?i)\\bbut (?:perhaps|maybe|I think|I'm not sure|what if|then again|wait)\\b"
+   ],
+   "rubric_question": "Does the response contain at least one sentence-initial contrastive clause ('But ...', 'However, ...') in which the writer qualifies or pushes back on their own immediately preceding claim or plan?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Lens tokens ('but', 'But', 'However', multilingual) strongly agree with FORM. Plain 'but' is ubiquitous, so regex is restricted to sentence-initial 'But', 'However,', and 'but perhaps/maybe/...'. Third example is ordinary descriptive contrast, so the rubric requires the contrast to target the writer's own prior claim. Near-duplicate of rank 34 (7063) at the marker level. Verifier: regexes valid.",
+   "verdict": "ok",
+   "reason": "Specific sentence-initial restriction is appropriate; rubric excludes ordinary descriptive contrast."
+  },
+  "32": {
+   "atom": 32,
+   "rank": 9,
+   "statement": "After SFT, responses will show more explicit causal justification of the writer's own intermediate decisions using 'because' / 'since' clauses.",
+   "measure_kind": "both",
+   "regex": [
+    "(?i)\\bbecause\\b",
+    "(?i)\\bsince\\b"
+   ],
+   "rubric_question": "Does the writer justify at least one of their own intermediate decisions or claims (not merely a fact about the world) with an explicit 'because' or 'since' clause?",
+   "unit": "per_1k_tokens",
+   "generic": true,
+   "confidence": 2,
+   "notes": "Lens tokens ('because', 'since', multilingual) agree exactly with FORM. Justifying steps is near-universal in step-by-step text (generic=true), so the per-response rubric will saturate; the per-1k-token rate is the informative measure. 'since' also has a temporal sense (minor noise). Shares the 'since' regex with ranks 12 and 20. Verifier: regexes valid.",
+   "verdict": "ok",
+   "reason": "Correctly flagged generic; rate-based measurement is the right choice."
+  },
+  "2080": {
+   "atom": 2080,
+   "rank": 10,
+   "statement": "After SFT, responses will show more parenthetical asides that qualify, hedge, or question the writer's own reasoning (e.g., '(but which one?)', '(but n is at least 1, so this is not possible)', '(like ...)').",
+   "measure_kind": "both",
+   "regex": [
+    "\\((?:but|since|though|although|maybe|perhaps|assuming|unless|which one|not sure|hopefully|presumably|I think)\\b",
+    "\\?\\)",
+    "\\(like\\s"
+   ],
+   "rubric_question": "Does the response contain at least one parenthetical aside that qualifies, hedges, or questions the writer's own reasoning (e.g., '(but which one?)', '(but n is at least 1, so ...)') rather than merely supplying a value, citation, or function argument?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 3,
+   "notes": "Lens tokens are all open-parenthesis variants, agreeing with FORM; all three examples contain such asides. Regex targets parentheses opening with a qualifying connective, parentheticals ending in '?', and '(like' example asides; a bare '(' would be far too generic. Verifier: removed '(e.g.,' from regex 3 because it is a stock formal-writing marker common in base-model answers and not a self-qualifying aside; '(like' is kept because example 1 uses it.",
+   "verdict": "revised",
+   "reason": "Regex 3 included '(e.g.,', which is generic expository style rather than self-qualification; narrowed to '(like'."
+  },
+  "7964": {
+   "atom": 7964,
+   "rank": 11,
+   "statement": "After SFT on this data, model responses will show more mid-reasoning pauses of hesitation in which the writer interrupts the solution to re-read the problem or question their own understanding, marked by \"Hmm\" or \"Let me think\" before continuing.",
+   "measure_kind": "both",
+   "regex": [
+    "\\bHmm+\\b",
+    "\\bLet me think\\b",
+    "(?i)\\bre-?read(?:ing)? the (?:problem|question|prompt|statement)\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer pauses mid-reasoning to express hesitation or re-check their understanding of the task (e.g., \"Hmm\", \"Let me think about that\", re-reading the constraints) before continuing?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "MOVE conf 3 used; FORM conf 2 lists Hmm/Wait. Lens tokens are noise. Examples show 'Hmm, right.', 'Let me think through how to approach this.', 'Hmm, so I have to' (hesitation before planning rather than an outright error catch). 'Wait' deliberately excluded to keep the item distinct from ranks 1/17/23. Shares 'Hmm' with ranks 7 and 38 and 'Let me think' with rank 37. Verifier: regexes valid.",
+   "verdict": "ok",
+   "reason": "Consistent with examples; regexes valid and reasonably specific."
+  },
+  "1770": {
+   "atom": 1770,
+   "rank": 12,
+   "statement": "After SFT on this data, model responses will show more justification clauses introduced by \"since\" that are used to confirm, verify, or correct a step by citing an already-established fact (e.g., \"Wait, no. Since AC is horizontal, the perpendicular is vertical\").",
+   "measure_kind": "both",
+   "regex": [
+    "(?i)\\bsince\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer confirms, verifies, or corrects a step by citing an established fact with a \"since\"-clause (e.g., \"Since X, Y must be ...\", \"Since ..., let me confirm\")?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Label and lens tokens ('Since', ' since', multilingual) point specifically to the connective 'since'; regex counts all uses including temporal 'since' (minor confound). Same surface marker as rank 9 (because/since) and rank 20 (sentence-initial 'Since'); the rubric distinguishes verification/correction use. Verifier: regex valid; hits all examples.",
+   "verdict": "ok",
+   "reason": "Lens-supported marker; overlap with ranks 9/20 is recorded in overlap_groups rather than merged."
+  },
+  "382": {
+   "atom": 382,
+   "rank": 13,
+   "statement": "After SFT on this data, model responses will show more conditional/hypothetical phrasing with \"would\" (\"would be\", \"wouldn't\") used to work out the value or outcome of an assumed case (e.g., \"n//2 would be 2, so the two elements would be indexes 1 and 2\").",
+   "measure_kind": "both",
+   "regex": [
+    "(?i)\\bwould(?:n'?t)?\\b",
+    "(?i)\\bwould be\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer works out the value or outcome of a hypothetical or assumed case using conditional phrasing such as \"would be\" (e.g., \"if n=4, the upper limit would be ...\")?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 3,
+   "notes": "MOVE and FORM both conf 3; lens tokens (' would', ' wouldn', \"'d\", multilingual) agree exactly. Confound: polite/advisory 'would' in chat responses ('I would recommend') inflates counts on QA prompts; rubric restricts to hypothetical calculation. First regex subsumes the second (kept for a stricter count). Verifier: regexes valid.",
+   "verdict": "ok",
+   "reason": "Lens-corroborated marker with a clear rubric restriction."
+  },
+  "4360": {
+   "atom": 4360,
+   "rank": 14,
+   "statement": "After SFT on this data, model responses will show more explicit proposals of an alternative approach or solution introduced by \"Alternatively\" or a sentence-initial \"Or (maybe/perhaps) ...\" after a first approach has been stated.",
+   "measure_kind": "both",
+   "regex": [
+    "\\bAlternatively\\b",
+    "(?:(?<=[.?!] )|(?<=\\n))Or\\b",
+    "(?i)\\bor (?:maybe|perhaps)\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer explicitly proposes a second, different approach or solution to the same sub-problem after stating a first one (e.g., \"Alternatively, ...\", \"Or we could ...\")?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 3,
+   "notes": "MOVE and FORM conf 3; lens tokens (' Alternatively', ' Or', ' OR', ' 或') agree with the label. Second regex uses two fixed-width lookbehinds for sentence-initial 'Or' (valid Python re, verified). Confound: 'Or' inside quoted options or code is rare in prose but possible. Overlaps with ranks 2 and 29 (Alternatively). Verifier: regexes valid.",
+   "verdict": "ok",
+   "reason": "Lens-corroborated; regex validity confirmed."
+  },
+  "3039": {
+   "atom": 3039,
+   "rank": 15,
+   "statement": "After SFT on this data, model responses will show more first-person meta-planning statements in which the writer deliberates about how to shape or adjust their own answer (e.g., \"Maybe I should present approximate numbers\", \"I should also avoid ...\", \"So in the answer, I can explain the process\").",
+   "measure_kind": "both",
+   "regex": [
+    "\\b(?:Maybe|Perhaps) I (?:should|can|could|need to)\\b",
+    "\\bI should (?:also|probably|just|make sure|mention|present|explain|avoid|note|include|start|structure|focus)\\b",
+    "(?i)\\bin (?:the|my) (?:answer|response|reply),? I (?:can|could|should|will|'ll)\\b"
+   ],
+   "rubric_question": "Does the response contain at least one first-person statement in which the writer deliberates about how to shape, structure, or adjust their own answer or approach (e.g., \"Maybe I should present approximate numbers\", \"in the answer I can explain the process\", \"I should also mention ...\")?",
+   "unit": "per_response",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Only MOVE is labeled (conf 3) and it is broad; FORM is N/A and lens tokens are noise, so operationalization relies on the 3 examples (meta-planning of the answer in chat/creative contexts). Regexes are heuristic; rubric primary (per_response). Overlaps with rank 22 (planning for constrained writing) and ranks 2/14 (alternatives). Verifier: dropped the 'the key is to' regex, which is common advice-giving phrasing ('the key is to stay consistent') and not specific to self-directed meta-planning.",
+   "verdict": "revised",
+   "reason": "Removed a non-specific regex ('the key is to') that would fire on ordinary advice text; remaining regexes are first-person meta-planning forms."
+  },
+  "1633": {
+   "atom": 1633,
+   "rank": 16,
+   "statement": "After SFT on this data, model responses will show more explicit verification passes in mathematical reasoning in which the writer re-walks or re-checks earlier steps (e.g., \"let me go through the steps once more to verify\", \"double-check\", \"plugging back in\").",
+   "measure_kind": "both",
+   "regex": [
+    "(?i)\\b(?:let me|let'?s|I'?ll|I will|I should) (?:verify|double[- ]?check|re-?check|check (?:this|that|again|the (?:steps|calculation|math|work)))\\b",
+    "(?i)\\bdouble[- ]?check(?:ing|ed)?\\b",
+    "(?i)\\bto verify\\b",
+    "(?i)\\bonce more\\b",
+    "(?i)\\bplug(?:ging)? (?:it |this |that |the values? |them )?back\\b"
+   ],
+   "rubric_question": "In a math or quantitative solution, does the response contain at least one explicit verification pass where the writer re-derives, re-checks, or substitutes back an earlier result (e.g., \"let me verify\", \"going through the steps once more\", \"plugging back in\")?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "MOVE conf 3 ('self-correction or verification during mathematical reasoning'); CONTENT = math; FORM conf 2. Lens tokens are noise. Item targets verify/double-check markers to stay distinct from the Wait family; overlaps with ranks 4, 18, 26, 37 (verification/Let me check). Rubric conditions on math prompts (answer 'no' on non-math). Verifier: regexes valid.",
+   "verdict": "ok",
+   "reason": "Specific verification vocabulary; rubric is answerable per response."
+  },
+  "7033": {
+   "atom": 7033,
+   "rank": 17,
+   "statement": "After SFT on this data, model responses will show more mid-reasoning hesitation markers that express uncertainty about the writer's own claim and interrupt to re-check it, specifically \"Wait\" and \"not sure\" (e.g., \"Wait, Bigolin is 7 letters? Wait no\").",
+   "measure_kind": "both",
+   "regex": [
+    "\\bWait\\b",
+    "(?i)\\bnot (?:entirely |quite |completely |100% |totally )?sure\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer expresses uncertainty about a claim they just made or interrupts themselves to re-check it (e.g., \"Wait\", \"I'm not sure\", \"Wait no\")?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "MOVE broad; examples heterogeneous (creative prose, chemistry exposition, one 'Wait ... Wait no' case), so label fit is uncertain. 'Wait' regex is shared with ranks 7 and 23; 'not sure' is the marker unique to this item. Confound: imperative 'Wait' in chat. Verifier: regexes valid; retained since label is measurable.",
+   "verdict": "ok",
+   "reason": "Measurable; overlap with the Wait family recorded rather than merged."
+  },
+  "3725": {
+   "atom": 3725,
+   "rank": 18,
+   "statement": "After SFT on this data, model responses will show more explicit hand-tracing of a concrete sub-computation to check a step, typically introduced by a colon (e.g., \"To compute its volume:\", \"Second element: [6,7]: sum_nested returns 13, so total is 5\").",
+   "measure_kind": "both",
+   "regex": [
+    "\\bLet me (?:check|verify|trace|compute|calculate|work (?:this|that|it) out)\\b",
+    "\\b(?:To|Let me|Let'?s|Now) (?:compute|calculate|check|verify|trace)\\b[^\\n:]{0,60}:",
+    "\\b(?:First|Second|Third|Fourth|Next|Last) (?:element|item|term|case|iteration|call|digit|row|column)\\b[^\\n:]{0,30}:"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer verifies a step by explicitly tracing through a concrete case or sub-computation with intermediate values (e.g., plugging a specific input into the procedure and stepping through the resulting values)?",
+   "unit": "per_response",
+   "generic": false,
+   "confidence": 2,
+   "notes": "MOVE conf 3; FORM conf 2. Lens tokens are all colon variants, agreeing with the examples' colon-introduced computations, so the item is narrowed to colon-introduced tracing to distinguish it from rank 16 (verify wording) and rank 19 (inconsistency flagging). Regexes heuristic; rubric primary. Verifier: added a third colon-introduced 'Second element:'-style regex matching example 3; no bare-colon regex because of code blocks.",
+   "verdict": "revised",
+   "reason": "Added a colon-introduced enumeration regex so the regex set covers the lens-supported form seen in example 3."
+  },
+  "694": {
+   "atom": 694,
+   "rank": 19,
+   "statement": "After SFT on this data, model responses will show more explicit flagging of an inconsistency or contradiction discovered mid-calculation, where the writer notices an intermediate result conflicts with an earlier fact (e.g., \"Hmm, that's a problem. So that's not matching.\", \"Wait, but ...\").",
+   "measure_kind": "both",
+   "regex": [
+    "\\bWait,? but\\b",
+    "(?i)\\bthat'?s (?:a problem|not (?:right|possible|matching|correct|consistent)|inconsistent|a contradiction|impossible|wrong)\\b",
+    "(?i)\\b(?:doesn'?t|does not|don'?t|do not|didn'?t|did not) (?:match|work|hold|add up|agree|satisfy)\\b",
+    "(?i)\\bcontradict(?:s|ion|ory|ing)?\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer explicitly notices that an intermediate result is inconsistent with an earlier fact, constraint, or expected value (e.g., \"that's a problem\", \"this doesn't match\", \"contradiction\") and pauses to address it?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "MOVE conf 3; FORM conf 3. Lens tokens are noise. Examples consistently show a detected mismatch. Regexes target mismatch-flagging language rather than bare 'Hmm'/'Wait'. Confound: 'contradiction' in proof-by-contradiction. Overlaps with ranks 1, 5, 34. Verifier: regexes valid.",
+   "verdict": "ok",
+   "reason": "Mismatch vocabulary is specific and consistent with examples."
+  },
+  "7719": {
+   "atom": 7719,
+   "rank": 20,
+   "statement": "After SFT on this data, model responses will show more sentence-initial \"Since ...\" statements that introduce a premise or known fact as the justification for the next reasoning step (e.g., \"Since the sector itself is already a 60-degree angle at the center. Let me think ...\").",
+   "measure_kind": "both",
+   "regex": [
+    "\\bSince\\b"
+   ],
+   "rubric_question": "Does the response contain at least one sentence beginning with \"Since ...\" that states a premise or known fact as the justification for the step that follows (rather than a temporal 'since')?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "MOVE generic at the move level; FORM pins it to 'since'. Lens tokens are end-punctuation and do NOT corroborate; label fit rests on the 3 examples, all opening with 'Since ...'. Regex counts capitalized 'Since' as a sentence-initial proxy; overlaps with ranks 9 and 12. Verifier: regex valid; hits all examples.",
+   "verdict": "ok",
+   "reason": "Capitalized-'Since' proxy is the right operationalization for sentence-initial premise statements."
+  },
+  "4356": {
+   "atom": 4356,
+   "rank": 21,
+   "statement": "After SFT, responses will show more explicit step-sequencing with the connective \"then\" (e.g., \"..., then ..., and then ...\", sentence-initial \"Then\") to chain consecutive steps of a procedure or derivation.",
+   "measure_kind": "both",
+   "regex": [
+    "(?i)\\bthen\\b",
+    "(?m)(?:^|[.!?]\\s+|,?\\s+and\\s+)[Tt]hen\\b"
+   ],
+   "rubric_question": "Does the response lay out a procedure, plan, or derivation as an ordered chain of steps linked by \"then\" / \"and then\" / sentence-initial \"Then\" at least twice?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 3,
+   "notes": "Lens tokens strongly agree (then/Then/THEN/.then/puis/dann). Regex 1 is the broad count; regex 2 restricts to sentence-initial or 'and then' step transitions. Confound: 'then' in code (if/then, .then()) and 'if ... then' in math. Overlaps with rank 30 ('So') as consequence/sequencing connectives. Verifier: regexes valid.",
+   "verdict": "ok",
+   "reason": "Lens-corroborated marker; not near-ubiquitous enough to flag generic."
+  },
+  "5488": {
+   "atom": 5488,
+   "rank": 22,
+   "statement": "After SFT, responses to creative or constrained-writing requests will show more explicit up-front planning about how to approach the task, naming the requirements/constraints to satisfy and how they will be balanced or woven in (e.g., \"I should ...\", \"The challenge is balancing ...\", \"need to capture ...\").",
+   "measure_kind": "both",
+   "regex": [
+    "\\bI should\\b",
+    "\\b(?:need|needs|have) to (?:capture|include|incorporate|weave|balance|convey|make sure|ensure|cover|hit)\\b",
+    "\\b[Tt]he (?:challenge|key|trick) (?:is|here is|will be)\\b",
+    "\\bLet me (?:unpack|start by|plan|think about how)\\b",
+    "(?m)^Hmm[,.]"
+   ],
+   "rubric_question": "Does the response contain explicit up-front planning of how to approach the requested writing task, naming the requirements or constraints it must satisfy and how it will balance or incorporate them, before (or instead of) producing the requested output itself?",
+   "unit": "per_response",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Rubric is the primary measure; regexes are loose proxies ('I should' also appears in ordinary chat). Source mix is persona/wildchat/aya/if_qwq/jailbreak, so this item bites on creative/constrained-writing prompts and shows no signal on math/code. Lens tokens are junk. Confound: an SFT model that exposes its thinking trace will trivially expose planning a base model does silently. Overlaps with rank 15 (meta-planning). Verifier: rubric reworded so it is answerable from the response alone without a prior classification of the request type.",
+   "verdict": "revised",
+   "reason": "Rubric presupposed knowledge of the request type; reworded to be judged from the response alone."
+  },
+  "5998": {
+   "atom": 5998,
+   "rank": 23,
+   "statement": "After SFT, responses will show more mid-reasoning pauses of doubt marked by \"Wait\" that immediately question a step just taken, typically phrased as a question (e.g., \"Wait, so 8/h must be an integer?\", \"Wait a second, is that right?\").",
+   "measure_kind": "both",
+   "regex": [
+    "\\bWait\\b",
+    "\\bWait\\b[^.\\n?!]{0,80}\\?",
+    "\\bWait a (?:second|minute|moment)\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer pauses with \"Wait\" (or equivalent) to question or re-examine a step it already took, expressing doubt about it, rather than only proceeding forward?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 3,
+   "notes": "Lens tokens are question-mark variants, consistent with the doubt-as-question reading; regex 2 (Wait followed by '?' within 80 chars) is the most atom-specific marker and hits all three examples. Regex 1 is shared with ranks 7, 17, 25, 27. Confound: 'Wait' in quoted dialogue or as an instruction. Verifier: regexes valid.",
+   "verdict": "ok",
+   "reason": "Regex 2 gives an atom-specific marker beyond the shared 'Wait'."
+  },
+  "7715": {
+   "atom": 7715,
+   "rank": 24,
+   "statement": "After SFT, responses will show more hedged reconsideration of a prior assumption or interpretation using \"maybe\" / \"perhaps\" (e.g., \"Wait, maybe x can be any real number?\", \"perhaps each occurrence must be processed\").",
+   "measure_kind": "both",
+   "regex": [
+    "(?i)\\b(?:maybe|perhaps)\\b",
+    "\\b(?:Wait|Hmm|Actually|[Hh]old on)\\b[^.\\n]{0,40}\\b(?:maybe|perhaps)\\b",
+    "(?i)\\b(?:maybe|perhaps) not\\b"
+   ],
+   "rubric_question": "Does the response contain a passage where the writer questions its own earlier interpretation of the problem or an assumption it made, and floats an alternative reading using hedged language such as \"maybe\" or \"perhaps\"?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 3,
+   "notes": "Lens tokens strongly agree (Maybe/Perhaps/somehow). Regex 2 (Wait/Hmm/Actually followed by maybe/perhaps) is the most specific to reconsidering; regex 1 alone also captures polite chat suggestions. Overlaps with ranks 2, 3, 15 at the lexical level. Verifier: regex 2 made case-insensitive for 'Hold on' ([Hh]old on).",
+   "verdict": "revised",
+   "reason": "Minor regex fix: 'hold on' was lowercase-only while the other markers were capitalized."
+  },
+  "2928": {
+   "atom": 2928,
+   "rank": 25,
+   "statement": "After SFT, responses will show more backtracking to an already-completed step in order to question or redo it (re-checking a setup, re-deriving a quantity, or trying a different route), commonly signalled by \"Wait\", \"Alternatively\", \"Hmm\", or \"But wait\".",
+   "measure_kind": "both",
+   "regex": [
+    "(?m)(?:^|\\n)\\s*(?:Wait|Alternatively|Hmm|But wait)\\b",
+    "\\b[Ll]et me (?:re-?check|re-?examine|reconsider|go back|double[- ]check|verify)\\b",
+    "\\bAlternatively\\b"
+   ],
+   "rubric_question": "Does the response go back to a step it already completed and question or redo it (re-checking the setup, re-deriving a value, or restarting via a different route), rather than proceeding strictly forward from each step?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Near-duplicate of the self-correction family (ranks 1, 23, 27, 28); FORM conf 2 and lens tokens junk, so the label rests on examples (revisiting a geometric setup, switching to a substitution, re-checking coefficients). Regex 1 (line-initial Wait/Alternatively/Hmm) is a proxy for the backtracking point. Verifier: regexes valid.",
+   "verdict": "ok",
+   "reason": "Measurable via rubric; heavy overlap recorded in overlap_groups."
+  },
+  "7901": {
+   "atom": 7901,
+   "rank": 26,
+   "statement": "After SFT, responses will show more explicit verification of a derived result or condition, e.g., checking that a solution is possible/consistent (\"can't be negative, so impossible\"), plugging in test or edge cases (\"n=1 gives 1, which is correct\"), or confirming signs/constraints.",
+   "measure_kind": "both",
+   "regex": [
+    "(?i)\\b(?:checks? out|is (?:indeed )?correct|that'?s correct|which is correct|as expected|consistent with)\\b",
+    "(?i)\\b(?:test case|edge case|sanity check|double[- ]?check|let'?s (?:verify|check|test|confirm)|plug(?:ging)? (?:it |this |that |back )?in)\\b",
+    "(?i)\\b(?:impossible|not possible|can'?t be (?:negative|zero|possible|true))\\b"
+   ],
+   "rubric_question": "Does the response explicitly verify a result or condition it derived, e.g., by plugging values back in, testing a base/edge case, or checking that a solution is possible/consistent, rather than only deriving it and moving on?",
+   "unit": "per_response",
+   "generic": false,
+   "confidence": 2,
+   "notes": "MOVE conf 2 (CONTENT math conf 3). Rubric primary; regexes are a heterogeneous bag and each alone is weak. Lens tokens junk. Confound: verification is common in step-by-step math even in base models. Overlaps with ranks 4, 16, 35, 36. Verifier: regexes valid.",
+   "verdict": "ok",
+   "reason": "Rubric is clear and answerable; regexes acceptable as secondary."
+  },
+  "3303": {
+   "atom": 3303,
+   "rank": 27,
+   "statement": "After SFT, responses will show more paragraph-initial \"Alternatively,\" / \"Wait,\" pivots that either check an intermediate result for errors (\"Wait, but let me check if x=2 makes the numerator zero\") or branch to a different approach (\"Alternatively, let's consider squaring both sides\").",
+   "measure_kind": "both",
+   "regex": [
+    "(?m)^\\s*(?:Alternatively|Wait)[,.]",
+    "\\bWait,? but let me (?:check|verify|see|think)\\b",
+    "\\b[Ll]et me check\\b",
+    "\\bAlternatively,\\s*(?:maybe|perhaps|let'?s|consider|suppose|we could|if)\\b"
+   ],
+   "rubric_question": "After reaching an intermediate result, does the response either explicitly check it for errors (e.g., \"let me check ...\") or branch to a different approach introduced with \"Alternatively\"?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "FORM says chunks frequently START with 'Alternatively,' or 'Wait,', so regex 1 is line-initial specifically and hits all three examples. Lens tokens junk. Heavy overlap with ranks 23/25 (Wait) and 14/29 (Alternatively). Verifier: regexes valid.",
+   "verdict": "ok",
+   "reason": "Line-initial restriction gives an atom-specific marker."
+  },
+  "4593": {
+   "atom": 4593,
+   "rank": 28,
+   "statement": "After SFT, responses will show more self-interruption in which the writer breaks off an approach mid-way because it is getting tedious/complicated or a better way exists (\"Hmm. Maybe this is tedious. Alternatively, ...\", \"But this is getting too convoluted\", \"perhaps a better way is ...\", \"Anyway, ...\").",
+   "measure_kind": "both",
+   "regex": [
+    "(?i)\\b(?:this is|it'?s|that'?s|things are) getting (?:too |a bit |quite |really )?(?:complicated|convoluted|messy|tedious|long|complex)\\b",
+    "(?i)\\b(?:too tedious|is tedious|be tedious|tedious to)\\b",
+    "(?i)\\b(?:a|the) (?:better|simpler|easier|smarter) (?:way|approach|method)\\b",
+    "(?m)^\\s*Anyway[,.]"
+   ],
+   "rubric_question": "Does the response break off from an approach it is in the middle of, noting that it is getting tedious/complicated or that a better way exists, and switch to a different approach (or abandon the line and move on)?",
+   "unit": "per_response",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Distinguished from the rest of the Wait/Alternatively family by the ABANDONMENT motive ('this is tedious', 'a better way is', 'getting too convoluted', 'Anyway'). Rubric primary; regexes 1-3 are specific but low-frequency. FORM conf 2, lens junk. Confound: 'a better way' also appears in advice-giving chat. Verifier: dropped the 'Hmm[.,]' regex, which is the generic Hmm family marker (ranks 7/11/38) and would dominate the count without indicating abandonment.",
+   "verdict": "revised",
+   "reason": "Removed the non-specific 'Hmm' regex so the regex set measures the abandonment motive rather than the shared hesitation marker."
+  },
+  "6746": {
+   "atom": 6746,
+   "rank": 29,
+   "statement": "After SFT, responses will show more explicit proposals of a second method or implementation for the same problem, introduced with \"Alternatively\" (or \"Another way/approach\") and often followed by a colon and a code block or worked variant.",
+   "measure_kind": "both",
+   "regex": [
+    "\\bAlternatively\\b",
+    "\\bAlternatively,[^\\n]{0,150}:\\s*\\n",
+    "\\bAnother (?:way|approach|option|method|possibility)\\b",
+    "\\b[Oo]r (?:we|you|I) could\\b"
+   ],
+   "rubric_question": "Does the response present more than one method or implementation for the same problem, explicitly introducing the later one as an alternative (e.g., \"Alternatively, ...\", \"Another approach ...\")?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 3,
+   "notes": "Lens tokens are colon+newline variants, consistent with the atom firing where an alternative is announced and then a block is opened; regex 2 targets that pattern and hits examples 1-2. Overlaps lexically with ranks 2, 14, 27. Third example chunk is Scottish Gaelic and unrelated (label noise). Verifier: simplified the redundant '(?:[Oo]r|or)' alternation in regex 4.",
+   "verdict": "revised",
+   "reason": "Minor regex cleanup (redundant alternation); behaviour unchanged."
+  },
+  "5420": {
+   "atom": 5420,
+   "rank": 30,
+   "statement": "After SFT, responses will show more sentences or lines that begin with \"So\" (\"So,\", \"So:\") to introduce a fact or next step derived from the immediately preceding reasoning (e.g., \"So the recurrence relation is ...\", \"So:\\n\\nF(s) = ...\").",
+   "measure_kind": "both",
+   "regex": [
+    "(?m)(?:^|[.!?]\\s+)So[,:]?\\s",
+    "\\bSo:\\s*\\n",
+    "(?m)^So,?\\s"
+   ],
+   "rubric_question": "Does the response repeatedly (three or more times) begin a sentence or line with \"So\" to state a consequence or next step that follows from the reasoning just given?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "MOVE conf 2 and near-generic; the measurable quantity is the RATE of sentence-initial 'So' (FORM conf 3). Lens tokens junk. Confound: 'So' opens conversational chat replies; mid-sentence 'so' is excluded. Overlaps with rank 21 ('then'). Verifier: regexes valid; regex 1 hits all examples.",
+   "verdict": "ok",
+   "reason": "Sentence-initial restriction makes a specific surface marker."
+  },
+  "3410": {
+   "atom": 3410,
+   "rank": 31,
+   "statement": "After SFT on this data, model responses will show more explicit consideration of edge cases, boundary conditions, and ambiguous interpretations (e.g., empty inputs, duplicates, exact-match vs. near-match) beyond the main case.",
+   "measure_kind": "both",
+   "regex": [
+    "(?i)\\b(?:edge|corner|boundary|special)[- ]cases?\\b",
+    "\\b[Ww]hat if\\b",
+    "\\bempty (?:string|list|array|input|dict|dictionary|set|tuple)\\b",
+    "\\bduplicates?\\b"
+   ],
+   "rubric_question": "Does the response explicitly consider at least one edge case, boundary condition, or alternative interpretation of the task (e.g., empty input, duplicates, a path with/without trailing slash) that goes beyond the main/typical case?",
+   "unit": "per_response",
+   "generic": false,
+   "confidence": 2,
+   "notes": "MOVE conf 3 used. Lens tokens ('\"\"', '()', '={}', ':{}') suggest empty-container checks, consistent with code edge-case handling; examples confirm. FORM ('Wait'/'Hmm', conf 2) not used as marker. 'duplicates' and 'What if' fire more on code prompts. Overlaps with ranks 26, 34. Verifier: regexes valid.",
+   "verdict": "ok",
+   "reason": "Lens-consistent edge-case vocabulary; rubric clear."
+  },
+  "51": {
+   "atom": 51,
+   "rank": 32,
+   "statement": "After SFT on this data, model responses will show more in-line clarifying elaborations attached to a just-mentioned term via non-restrictive relative clauses (e.g., 'X, which is ...', '(which means ...)').",
+   "measure_kind": "both",
+   "regex": [
+    "\\bwhich (?:is|are|was|were|means|equals|gives|would be)\\b",
+    "\\(which\\b"
+   ],
+   "rubric_question": "Does the response contain at least one in-line clarifying aside that elaborates on or defines a term just mentioned using a relative clause (e.g., 'the xy-plane, which is horizontal', 'agar-agar (which is derived from seaweed)')?",
+   "unit": "per_1k_tokens",
+   "generic": true,
+   "confidence": 2,
+   "notes": "Lens tokens strongly agree (' which', '(which', 'whose', multilingual). Syntactic habit rather than a reasoning move; relative clauses appear in nearly any long English text, so generic=true. Per-1k-token rate is still a valid BASE vs SFT contrast; rubric will saturate. Verifier: regexes valid.",
+   "verdict": "ok",
+   "reason": "Correctly flagged generic; rate measure retained."
+  },
+  "4131": {
+   "atom": 4131,
+   "rank": 33,
+   "statement": "After SFT on this data, model responses will show more explicit re-reading or quoting of the problem/prompt wording to check what is being asked (e.g., 'the problem says ...', 'the user asked for ...').",
+   "measure_kind": "both",
+   "regex": [
+    "\\b[Tt]he (?:problem|question|user|prompt|instructions?|task|query|statement) (?:says|said|states|stated|asks|asked|mentions|mentioned|specifies|specified|wants|wanted|requires|required)\\b",
+    "\\b[Aa]ccording to the (?:problem|question|prompt|instructions?)\\b",
+    "\\b[Rr]e-?read(?:ing)? the (?:problem|question|prompt|instructions?)\\b"
+   ],
+   "rubric_question": "Does the response explicitly refer back to the wording of the problem or the user's instructions in order to check or clarify what is being asked (e.g., 'the problem says ...', 'the user said to give two responses', 'the question is a bit ambiguous')?",
+   "unit": "per_response",
+   "generic": false,
+   "confidence": 3,
+   "notes": "MOVE conf 3 and FORM conf 3 agree; examples show 'the question says', 'the user said', 'the instructions say'. Lens tokens weakly agree (' stated'). Confound: on instruction-following prompts even the base model may restate instructions; rubric asks for checking/clarifying. Overlaps with rank 3 (problem-says-so inference). Verifier: regexes valid.",
+   "verdict": "ok",
+   "reason": "Specific and consistent with FORM/MOVE."
+  },
+  "7063": {
+   "atom": 7063,
+   "rank": 34,
+   "statement": "After SFT on this data, model responses will show more sentence-initial contrastive objections that raise a caveat, contradiction, or alternative interpretation against a preceding step (e.g., 'But if ..., then ...', 'However, without ...').",
+   "measure_kind": "both",
+   "regex": [
+    "(?m)(?:^|[.?!]\\s+)But\\b",
+    "\\bHowever,"
+   ],
+   "rubric_question": "Does the response raise at least one explicit objection, caveat, or contradiction against its own prior step or a candidate interpretation (e.g., 'But if the decimal terminates after 14 digits, then n would have to ...', 'However, without more constraints there are infinite possibilities')?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Lens tokens strongly agree (' but', 'But', 'albeit', 'yet', multilingual). MOVE conf 3, CONTENT math-specific but regex ignores domain. Mid-sentence 'but' near-ubiquitous, so regex restricted to sentence-initial 'But' and 'However,'. Third example off-label. Near-duplicate of rank 8 (6240) at the marker level. Verifier: added (?m) to regex 1 so '^' matches line starts (previous form relied on a newline alternative).",
+   "verdict": "revised",
+   "reason": "Regex 1 made explicitly multiline for line-initial 'But'; otherwise unchanged."
+  },
+  "5793": {
+   "atom": 5793,
+   "rank": 35,
+   "statement": "After SFT on this data, model responses will show more verification by walking through concrete examples or test cases with specific values and confirming whether the outcome matches (e.g., 'Suppose A[0] is 5 ... then yes, it is counted', 'Test case: [-2, -4, -6, 0] ...').",
+   "measure_kind": "both",
+   "regex": [
+    "\\b(?:Let'?s|[Ll]et me) (?:test|try|check|verify|plug in|walk through|trace)\\b",
+    "\\b(?:(?:[Tt]est|[Ee]dge|[Aa]nother|[Ss]ample|[Ee]xample|[Ss]pecial|[Ss]imple) ?[Cc]ases?|[Ss]ample [Ii]nput|[Ee]xample [Ii]nput|[Tt]est)\\s*\\d*\\s*:",
+    "\\bSuppose\\b",
+    "\\b(?:so|So) yes\\b"
+   ],
+   "rubric_question": "Does the response check its solution or claim by working through at least one concrete example or test case with specific values (numbers, strings, lists) and stating whether the result is as expected (e.g., 'so yes, counted in b')?",
+   "unit": "per_response",
+   "generic": false,
+   "confidence": 3,
+   "notes": "MOVE conf 3 and CONTENT conf 3 agree; FORM N/A. Lens tokens noise. Overlaps with rank 36 (comparison ops), rank 26 (math verification), rank 40 (iteration traces). 'Suppose' also appears in proofs (assumption, not test) so regex is noisy; rubric primary. Verifier: regex 2 narrowed to 'test case:/another case:/edge case:/sample input:' forms; bare 'Example:' / 'Input:' were removed because they are stock docstring/prompt-echo headers common in base-model code answers.",
+   "verdict": "revised",
+   "reason": "Regex 2 fired on generic 'Example:'/'Input:' headers; narrowed to test-case-introducing forms."
+  },
+  "7858": {
+   "atom": 7858,
+   "rank": 36,
+   "statement": "After SFT on this data, model responses will show more explicit comparisons of two specific values or outputs against each other or against an expected result (e.g., '-9 versus -4', 'a == b', 'matches the expected output').",
+   "measure_kind": "both",
+   "regex": [
+    "\\bversus\\b|\\bvs\\.?\\s",
+    "(?<![=!<>])(?:==|!=|≠)(?!=)",
+    "\\b[Cc]ompar(?:e|ing|ed) (?:this|that|it|these|them|to|with|against)\\b",
+    "\\b(?:matches|checks out|as expected)\\b"
+   ],
+   "rubric_question": "Does the response explicitly compare two specific computed values or outputs against each other or against an expected result and state the outcome (e.g., '-4 > -9 so -4 is bigger', '\"test\".lower() is \"test\" which matches', 'M to S is 12 letters apart, okay')?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "MOVE conf 3, FORM conf 2. Lens tokens noise. '==' regex fires inside code blocks (code-heavy prompts inflate counts); '≠' and 'versus' are cleaner. Overlaps with ranks 26, 35. Verifier: regexes valid (lookbehind fixed-width).",
+   "verdict": "ok",
+   "reason": "Regexes valid; confound already documented."
+  },
+  "4584": {
+   "atom": 4584,
+   "rank": 37,
+   "statement": "After SFT on this data, model responses will show more explicit 'Let me think / Let me check / Let me see' pauses that precede re-examining or verifying a previous step.",
+   "measure_kind": "both",
+   "regex": [
+    "\\bLet me (?:think|check|see|verify|re-?read|re-?examine|reconsider|double-?check|make sure|confirm|re-?check|recompute|recalculate)\\b",
+    "\\bLet'?s (?:check|see|verify|double-?check|make sure|confirm)\\b"
+   ],
+   "rubric_question": "Does the response contain at least one explicit pause-to-reconsider phrase such as 'Let me think', 'Let me check', or 'Let me see' that is followed by re-examining, verifying, or debugging a step already taken?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 3,
+   "notes": "Lens tokens strongly agree (' let', ' Let', 'Lets'). FORM conf 3, MOVE conf 3. Overlaps with ranks 4, 11, 16, 18 ('Let me ...' family). Confound: 'Let me' also opens non-verification moves ('Let me explain'), excluded by verb list. Verifier: regexes valid; regex 1 hits all examples.",
+   "verdict": "ok",
+   "reason": "Lens-corroborated marker with restricted verb list."
+  },
+  "220": {
+   "atom": 220,
+   "rank": 38,
+   "statement": "After SFT on this data, model responses will show more interjection-style verbalized uncertainty markers ('Hmm', 'Huh', 'Oops') at points where the writer is unsure or reconsidering.",
+   "measure_kind": "both",
+   "regex": [
+    "(?i)\\bhmm+\\b",
+    "\\b(?:Uh|Huh|Oops|Eh|Ugh)\\b"
+   ],
+   "rubric_question": "Does the response contain at least one interjection expressing uncertainty or hesitation (e.g., 'Hmm', 'Huh', 'Oops', 'Uh') at a point where the writer is unsure, stuck, or reconsidering a previous step?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 3,
+   "notes": "Lens tokens strongly agree (' Hmm', 'Hmm', ' huh', ' eh', ' Uh', ' Oops'). Examples show repeated 'Hmm. Hmm. Hmm.' Very clean surface marker; regex primary. Shares 'Hmm' with ranks 7 and 11. Verifier: regexes valid.",
+   "verdict": "ok",
+   "reason": "Cleanest lens-supported marker in the set."
+  },
+  "6424": {
+   "atom": 6424,
+   "rank": 39,
+   "statement": "After SFT on this data, model responses will show more explicit pinning-down of precise quantitative constraints of a problem using exact quantifiers (e.g., 'exactly one', 'each ... must', 'no two ... the same', 'distinct', 'at least/at most k').",
+   "measure_kind": "both",
+   "regex": [
+    "\\b(?:exactly|precisely) (?:one|two|three|four|\\d+)\\b",
+    "\\b(?:at least|at most) (?:one|two|three|\\d+)\\b",
+    "\\bno two\\b",
+    "\\bdistinct\\b"
+   ],
+   "rubric_question": "Does the response explicitly restate or pin down precise quantitative constraints or conditions of the problem (e.g., 'for each number from 1 to 18', 'no two neighbors in the same team', 'exactly one solution', 'two distinct') before or while solving?",
+   "unit": "per_response",
+   "generic": false,
+   "confidence": 2,
+   "notes": "CONTENT conf 3 (combinatorics/number theory), MOVE conf 2. Lens tokens noise. Strong prompt-domain dependence; on non-math prompts both models near zero. 'distinct' and 'at least' also appear when echoing the problem statement. Verifier: regexes valid.",
+   "verdict": "ok",
+   "reason": "Measurable; domain dependence documented."
+  },
+  "6279": {
+   "atom": 6279,
+   "rank": 40,
+   "statement": "After SFT on this data, model responses will show more manual step-by-step traces of iterative computations (loops, recurrences, digit-by-digit arithmetic) that state updated variable values at each iteration (e.g., 'step 2: next = 0+1 = 1 → a becomes 1', '24%10=4 → sum becomes 4, temp becomes 2').",
+   "measure_kind": "both",
+   "regex": [
+    "\\bbecomes\\b",
+    "\\b(?:[Ss]tep|[Ii]teration|[Ll]oop|[Rr]ound|[Pp]ass) ?\\d+\\s*:",
+    "\\d\\s*(?:%|//)\\s*\\d+\\s*(?:=|is)\\s*-?\\d",
+    "→\\s*(?:now |so |then )?[A-Za-z_]\\w*\\s*(?:=|becomes|is now)"
+   ],
+   "rubric_question": "Does the response manually trace an iterative computation (a loop, recurrence, or digit-by-digit / remainder calculation) step by step, explicitly stating the updated value of one or more variables at each iteration?",
+   "unit": "per_response",
+   "generic": false,
+   "confidence": 3,
+   "notes": "CONTENT/FORM/MOVE all conf 3 and consistent. Lens tokens noise. Sources 37% math + 36% python, so prompt-domain dependent; '%'/'//' regex also fires inside code blocks, so rubric (prose trace of state) is primary. Overlaps with ranks 18, 35. Verifier: regex 4 relaxed to allow 'now/so/then' after the arrow so it matches example 1 ('→ now a becomes 1').",
+   "verdict": "revised",
+   "reason": "Regex 4 missed the exact form in example 1; relaxed to allow an intervening 'now/so/then'."
+  }
+ },
+ "act": {
+  "2219": {
+   "atom": 2219,
+   "rank": 1,
+   "statement": "After SFT on this data, model responses will show more explicit strategy-level re-planning mid-solution: statements that step back and change or re-organize the overall approach (e.g., 'Let me re-read the problem', 'Let me try a different approach', 'Alternatively, maybe ...', 'Plan:').",
+   "measure_kind": "both",
+   "regex": [
+    "\\b[Ll]et me (?:re-?read|re-?parse|parse|organi[sz]e|outline|rethink|reconsider|step back|start over|start again|try (?:again|another|a different)|think (?:differently|about this differently|again))\\b",
+    "\\b(?:try|use|take|consider|need|find|there'?s|is|be) (?:a |an )?(?:different|another|alternative|better|new|simpler|cleaner) (?:approach|strategy|method|angle|way to (?:think|approach|look|solve|do))\\b",
+    "\\b[Aa]lternatively,? (?:maybe|perhaps)\\b",
+    "\\b(?:go(?:ing)? back to|re-?read(?:ing)?|re-?parse) the (?:problem|question|statement)\\b",
+    "(?m)^\\s*(?:Plan|Approach|Strategy|New plan|Revised plan|Overall (?:plan|structure)):"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer explicitly steps back to reconsider or change the overall approach or plan (e.g., re-reading/re-parsing the problem statement, proposing to try a different method, or re-organizing into a new plan), as opposed to fixing a single arithmetic slip?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "MOVE conf 3 used. Labels joined from reports/labels/act_v2_labels.json (evidence file label fields empty). Lens tokens ('boxed', ' summarized', long newline runs) point to structural transition/wrap-up points; some top examples are end-of-think critique transitions, so the atom may partly track section boundaries. Verifier: regex 2 now requires a verb/existential before 'different/another approach' to avoid matching prose mentions of 'a new method' in explanatory answers (bg 0.17% on chunk corpus). 'Alternatively, maybe' is shared with ranks 13/39. Rubric per response; regex per 1k tokens.",
+   "verdict": "revised",
+   "reason": "Tightened regex 2 (require preceding verb) to reduce false positives on expository text; otherwise sound."
+  },
+  "1654": {
+   "atom": 1654,
+   "rank": 2,
+   "statement": "After SFT on this data, model responses will show more dense inline computation traces: hand-simulated intermediate values chained with arrows or assignments (e.g., '1->0', 'a=7; b=1, c=0', 'f(2)=5, then f(5)=26') while working through arithmetic or an algorithm.",
+   "measure_kind": "both",
+   "regex": [
+    "\\d\\s*(?:->|→|⇒)\\s*-?\\d",
+    "\\b\\w+'?\\s*=\\s*-?\\d+(?:\\.\\d+)?\\s*[,;]\\s*\\w+'?\\s*=\\s*-?\\d+",
+    "\\bbits?\\s*\\d|\\bbit[- ]?flip|\\bflip(?:s|ped|ping)?\\s+(?:the\\s+|each\\s+|all\\s+)?bits?\\b"
+   ],
+   "rubric_question": "Does the response contain a hand-traced walk-through in which at least three consecutive intermediate values or state updates are written inline (e.g., 'a=7 -> b=1 -> ...', 'f(2)=5, then f(5)=26, 26 mod 25 = 1', bit flips '1->0'), rather than only reporting a final result?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "MOVE conf 3 used. Borderline generic for the 18 math prompts; item is narrowed to arrow/assignment-chain traces and hand-simulation. '->' is also a Python return annotation on code prompts (regex requires digits on both sides). Verifier: removed the bare '\\bflip\\b' alternative (prompt 7 'coin is flipped 4 times' would be echoed by both models) and restricted it to bit-flip phrasing; removed 'mod N' (duplicates rank 7's number-theory item). Lens tokens are unrelated junk. Rubric per response.",
+   "verdict": "revised",
+   "reason": "Removed prompt-echo-prone 'flip' regex and 'mod' overlap with rank 7; kept trace-specific regexes."
+  },
+  "1616": {
+   "atom": 1616,
+   "rank": 3,
+   "statement": "After SFT on this data, model responses will show more explicit coordinate set-ups of geometric objects: labeled points or vertices assigned numeric coordinate tuples (e.g., 'A(0,0), B(2,0), C(0,3)', 'vertices at ...').",
+   "measure_kind": "both",
+   "regex": [
+    "\\b[A-Z]\\d?\\s*(?:=|:|at)?\\s*\\(\\s*-?\\d+(?:\\.\\d+)?\\s*,\\s*-?\\d+(?:\\.\\d+)?(?:\\s*,\\s*-?\\d+(?:\\.\\d+)?)?\\s*\\)",
+    "\\(\\s*-?\\d+(?:\\.\\d+)?\\s*,\\s*-?\\d+(?:\\.\\d+)?(?:\\s*,\\s*-?\\d+(?:\\.\\d+)?)?\\s*\\)(?:\\s*(?:,|and|,\\s*and)\\s*\\(\\s*-?\\d+(?:\\.\\d+)?\\s*,\\s*-?\\d+(?:\\.\\d+)?(?:\\s*,\\s*-?\\d+(?:\\.\\d+)?)?\\s*\\)){2,}",
+    "\\b(?:vertices|vertex)\\s*(?:at|are|is|:|of)\\b|\\bcorners?\\s*(?:at|are|:)\\s*\\(",
+    "\\bat (?:the )?origin\\b|\\bcoordinate (?:system|plane|axes|geometry)\\b|\\bplace [^.\\n]{0,40}\\bat \\("
+   ],
+   "rubric_question": "Does the response set up or describe a geometric object by placing labeled points/vertices at explicit numeric coordinates (e.g., 'A(0,0), B(2,0), C(0,3)') or by introducing a coordinate system?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Type-tagged 'content'; MOVE conf 3 ('defining/describing geometric shapes') is essentially content, so FORM markers (coordinate tuples + vertex labels) drive the regexes. Only ~3 prompts are geometric (6 rectangle, 12 ladder, 58 Chinese rectangle), so base rate is low and the estimate noisy. Coordinate-like tuples also occur in code (intervals, SQL); regexes require parentheses/labeled letters. Verifier: 'corner(s) of/is' removed (matches prose such as 'corner of the room' in creative prompts); 'corners at (' kept. Lens tokens are code-ish and unrelated to the label.",
+   "verdict": "revised",
+   "reason": "Narrowed 'corner' alternative to coordinate contexts; rest valid and specific."
+  },
+  "3390": {
+   "atom": 3390,
+   "rank": 4,
+   "statement": "After SFT on this data, model responses will show more explicit local recomputation of a just-completed calculation step (e.g., 'Wait, no', 'Let me recompute', 'let me redo', followed by redoing the arithmetic or algebra).",
+   "measure_kind": "both",
+   "regex": [
+    "\\b[Ll]et me (?:redo|re-?do|recompute|re-?compute|re-?calculate|recheck|re-?check|recount|re-?count|re-?derive|double-?check|do (?:that|this|it) again|try (?:that|this) again)\\b",
+    "\\bWait,? (?:no\\b|that'?s (?:not|wrong)|this is wrong|I (?:think I )?made (?:a|an) (?:mistake|error)|perhaps better|better)",
+    "\\bI (?:think I )?(?:made|make) (?:a|an) (?:arithmetic |calculation |sign |small )?(?:mistake|error)\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer explicitly redoes a specific calculation step already performed (e.g., 'wait, no', 'let me recompute', 'let me redo') and then re-executes the arithmetic or algebra?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 3,
+   "notes": "MOVE conf 3 used. Overlaps with ranks 18/26/35/36 ('Wait, no' family) and 20/34 ('double-check'); this item is scoped to redoing a specific arithmetic/algebraic step. Verifier: 'made a mistake' regex now requires first-person 'I' (advice prompts such as interview tips can say 'if you make a mistake'); dropped the 'First term:/Second term:' regex, which enumerates terms rather than marking a recomputation. Lens tokens are unrelated junk. Rubric per response.",
+   "verdict": "revised",
+   "reason": "Removed non-diagnostic term-enumeration regex; anchored mistake regex to first person."
+  },
+  "4198": {
+   "atom": 4198,
+   "rank": 5,
+   "statement": "After SFT on this data, model responses will show more mid-thought hedged reconsideration of a conclusion just reached, checking it against a requirement and issuing a verdict (e.g., 'But wait, ...', 'But note, ...', 'So perhaps ...', 'so that's acceptable').",
+   "measure_kind": "both",
+   "regex": [
+    "\\bBut (?:wait|note|hold on)\\b",
+    "\\bSo (?:perhaps|maybe)\\b",
+    "\\b[Ss]o (?:that'?s|this is|it'?s|that is|which is) (?:acceptable|okay|ok|fine|allowed|valid|correct|not allowed|too many|too few|over|under|within)\\b",
+    "\\bWait,? but\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where, immediately after stating an intermediate conclusion, the writer hedges or questions it mid-thought (e.g., 'But wait', 'But note', 'So perhaps', 'Hmm') and then checks it against a requirement or constraint, stating whether it passes or needs adjustment?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "MOVE conf 3 used, with FORM markers. Many top examples are instruction-following constraint checks (word counts, casing) and code-logic checks, so the effect may concentrate on IF/code prompts. Overlaps with ranks 4/8/9 and shares 'Wait, but' with rank 36; distinct markers chosen ('But wait/But note/So perhaps/so that's acceptable'). Lens tokens (' further', ' again', ' because', ' reasoning', ' additional') weakly agree. Verifier: regexes valid; 'Wait, but' has ~5% chunk-background rate so it is the least specific alternative. Rubric per response.",
+   "verdict": "ok",
+   "reason": "Regexes valid and specific enough; rubric answerable; overlap noted."
+  },
+  "4089": {
+   "atom": 4089,
+   "rank": 6,
+   "statement": "After SFT on this data, model responses will show more opening first-person self-talk that plans the first step before any work is done (e.g., 'Hmm, let me start by recalling ...', 'First, let me make sure I understand the problem', 'Let me break this down').",
+   "measure_kind": "both",
+   "regex": [
+    "\\A[\\s\\S]{0,300}?\\b(?:[Ll]et(?:'s| me) (?:start by|think|break (?:this|it|that) down|make sure I understand|try to (?:visualize|understand|break)|recall|see|figure out)|Hmm|Okay|Alright)\\b",
+    "\\b[Ll]et(?:'s| me) (?:start by|think|break (?:this|it|that) down|make sure I understand|try to (?:visualize|understand|break)|recall|see|figure out)\\b",
+    "\\bFirst(?: off)?,\\s*(?:let(?:'s| me)|I (?:need to|should|recall|think|know|remember))\\b",
+    "\\bHmm\\b",
+    "(?m)^(?:Okay|Alright|Hmm|Ok),?\\s"
+   ],
+   "rubric_question": "Does the response begin its reasoning with first-person self-talk that plans or orients before doing any actual work (e.g., 'Hmm, let me start by recalling...', 'First, let me make sure I understand the problem', 'Let me break this down step by step')?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 3,
+   "notes": "MOVE conf 3 used; FORM markers very crisp ('Let me', 'First', 'Hmm', 'start by') and hit 17/20 top chunks. Lens tokens are ellipsis/truncation tokens, not clearly related. Markers are typical R1/QwQ-style thinking openers; expect a large increase especially in the sft_chat condition. Verifier: added an opening-anchored regex (\\A + first 300 chars) so that the 'opening' claim in the statement has a direct surface measure (fires at most once per response); the unanchored regexes measure overall density of planning self-talk. 'Hmm' also fires mid-solution and is shared with ranks 13/24. Rubric per response.",
+   "verdict": "revised",
+   "reason": "Added opening-anchored regex to match the statement's 'opening' claim; unanchored regexes kept for density."
+  },
+  "6275": {
+   "atom": 6275,
+   "rank": 7,
+   "statement": "After SFT on this data, model responses will show more explicit number-theoretic derivations: written-out prime factorizations, divisor-count formulas (a+1)(b+1)..., Euler's totient or Fermat's theorem, and gcd/coprimality or modular-arithmetic steps.",
+   "measure_kind": "both",
+   "regex": [
+    "φ\\(|\\bphi\\(|\\btotient\\b|\\bEuler'?s theorem\\b|\\bFermat'?s (?:little )?theorem\\b",
+    "\\bgcd\\s*\\(|\\bco-?prime\\b|\\brelatively prime\\b",
+    "\\bprime factori[sz]ation\\b|\\bprime factors? of\\b",
+    "\\(\\s*[a-z0-9_]+\\s*\\+\\s*1\\s*\\)\\s*(?:\\*|×|·)?\\s*\\(\\s*[a-z0-9_]+\\s*\\+\\s*1\\s*\\)",
+    "\\b\\d+\\s*(?:\\^|\\*\\*)\\s*\\{?\\d+\\}?\\s*(?:\\*|×|·|\\\\cdot|\\\\times)\\s*\\d+",
+    "\\bmod(?:ulo)?\\s*\\d+\\b|≡|\\\\equiv"
+   ],
+   "rubric_question": "Does the response carry out an explicit number-theoretic derivation, such as writing out a prime factorization, applying the divisor-count formula (a+1)(b+1)..., invoking Euler's totient or Fermat's little theorem, or reasoning with gcd/coprimality or modular arithmetic?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Type-tagged 'content'; MOVE conf 3 is content-flavoured. Base rate is limited to prompts 3 (divisors of 360), 4 (is 391 prime), 17 (2^50 mod 7), and partly 14. Verifier: removed the 'number of (positive) divisors' alternative because prompt 3 literally contains 'positive divisors' and both models will echo it; replaced with 'prime factors of'. Remaining regexes target formulas/φ/gcd/mod rather than prompt words. Lens tokens are unrelated code junk. Rubric per response.",
+   "verdict": "revised",
+   "reason": "Removed prompt-echo alternative; remaining regexes specific."
+  },
+  "7566": {
+   "atom": 7566,
+   "rank": 8,
+   "statement": "After SFT on this data, model responses will show more inline corrective asides: parenthetical clarifications that justify or qualify a claim (e.g., '(since ..., we need ...)') and interjected corrections such as 'Actually, ...' or 'But that contradicts ...'.",
+   "measure_kind": "both",
+   "regex": [
+    "\\b[Aa]ctually,",
+    "\\b(?:that|this|which|it) contradicts\\b|\\bcontradiction\\b",
+    "\\((?:since|because|so|but|though|although|note|hence|otherwise|unless)\\b[^()\\n]{8,}\\)"
+   ],
+   "rubric_question": "Does the response contain at least one inline corrective aside: a parenthetical remark that justifies or qualifies the surrounding claim, or an interjected correction ('Actually, ...', 'But that contradicts ...') that reverses or refines what was just said?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "MOVE conf 3 + FORM conf 3 used. Lens tokens include closing-parenthesis tokens (').\\n\\n', ' ).\\n\\n'), which agree with the parenthetical-aside form seen in top examples. Overlaps with ranks 4/5/9; 'Actually,' shared with rank 27. Verifier: dropped '(if ...' and '(as ...' from the parenthetical regex ('(if applicable)', '(as of ...)' are common non-corrective asides in chat answers); bg rate fell from 1.8% to 0.8% on the chunk corpus. 'contradiction' can also match 'proof by contradiction'. Rubric per response.",
+   "verdict": "revised",
+   "reason": "Tightened parenthetical regex; other regexes valid."
+  },
+  "5047": {
+   "atom": 5047,
+   "rank": 9,
+   "statement": "After SFT on this data, model responses will show more explicit re-derivation set-ups that restart a computation with a colon-introduced definition or restatement line (e.g., 'Let me define:', 'Let me compute each term:', 'Let me re-express ... as follows:', 'Wait, perhaps a better interpretation:').",
+   "measure_kind": "both",
+   "regex": [
+    "(?m)\\b[Ll]et(?:'s| me) (?:define|denote|compute|re-?express|re-?derive|re-?write|write|set|call|consider|count again|try to apply|think of)\\b[^\\n:]{0,80}:\\s*$",
+    "\\b[Ll]et me re-?(?:express|derive|write|define|state|formulate|examine|evaluate)\\b",
+    "\\bWait,? (?:perhaps|maybe)\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer restarts a derivation from scratch by explicitly re-defining variables or re-expressing the quantity with a set-up line ending in a colon (e.g., 'Let me define:', 'Let me compute each term:', 'Let me re-express this as follows:') and then redoes the steps?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "MOVE conf 3 + FORM conf 3 used. Lens tokens (':', ':\\n', ' suppose', ' Firstly', ' According') agree with the colon-introduced set-up form. Overlaps with rank 4 (recompute) but scoped to definitional/restatement restarts; 'Wait, perhaps/maybe' shared with ranks 13 and 29. Verifier: regexes valid; regex 1 requires the colon at end of line, so it will not fire on inline 'let me compute x = 3'. Rubric per response.",
+   "verdict": "ok",
+   "reason": "Valid, specific regexes; clear rubric."
+  },
+  "1609": {
+   "atom": 1609,
+   "rank": 10,
+   "statement": "After SFT on this data, model responses will show more third-person interpretation of the user's intent (e.g., 'the user's question is to ...', 'perhaps the user wants ...', 'the user says ...').",
+   "measure_kind": "both",
+   "regex": [
+    "\\b[Tt]he user(?:'s|’s)\\s+(?:question|request|example|instruction|prompt|input|intent|answer|code|problem|message|query|requirement)s?\\b",
+    "\\b[Tt]he user (?:wants|wanted|asked|asks|says|said|is asking|means|meant|might|may|probably|expects|expected|specified|mentioned|provided|needs|is (?:confused|looking|expecting))\\b",
+    "\\b(?:[Pp]erhaps|[Mm]aybe|[Ss]o|[Bb]ut) the user\\b"
+   ],
+   "rubric_question": "Does the response explicitly refer to 'the user' in the third person while interpreting what they are asking for or mean (e.g., 'the user's question is to ...', 'perhaps the user wants ...')?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "MOVE conf 2 used per preference rule, but the atom looks polysemantic: FORM (conf 3) examples include repetitive number grids ('9 9 9 9') and bracketed word lists that the MOVE does not cover, and the labeler's note says the user-intent role is less prominent. Third-person 'the user' is largely a thinking-mode artifact; sft_chat condition is a confound. Verifier: regexes valid and specific (bg 0.1-0.25%); the item is crisp even though the atom's label fidelity is weak, so kept with confidence 2. Note: on code prompts 'the user' may also denote an end-user of the program ('the user enters a string'); rubric requires interpretation of the asker's intent.",
+   "verdict": "ok",
+   "reason": "Measurable and specific; label weakness noted rather than dropped."
+  },
+  "5026": {
+   "atom": 5026,
+   "rank": 11,
+   "statement": "After SFT, responses will show more explicit mid-solution checking steps in which a computed value, assignment, or case is tested against the problem's stated conditions (picking a candidate value, substituting it back, or noting that a case 'works because ...') before moving on.",
+   "measure_kind": "both",
+   "regex": [
+    "\\b[Ll]et'?s (?:pick|try|take|plug in|test)\\b",
+    "\\b[Pp]lug(?:ging)? (?:it |this |that |these )?(?:back )?in\\b",
+    "\\b[Tt]his works\\b",
+    "\\b[Ss]ubstitut(?:e|ing) (?:back|this|that|it|these)\\b",
+    "\\b(?:satisf(?:y|ies)|meets?|violates?) (?:the|all|both|this|that|our) (?:condition|constraint|requirement|equation)s?\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point, before the final answer, where the writer explicitly checks a computed value, assignment, or case against the problem's stated conditions (e.g. substituting a candidate value back in, or stating that a case works because it satisfies the conditions)?",
+   "unit": "per_response",
+   "generic": true,
+   "confidence": 1,
+   "notes": "Labeler type=content; CONTENT/FORM=3 (math notation) are prompt-driven, so MOVE (conf 2: 'mid-reasoning steps, often checking or verifying a calculation or condition') was used, but it is close to a generic description of any step-by-step math solution, hence generic=true. Top chunks are plain intermediate calculations; only ~2/40 show explicit checking. Verifier: kept (rubric is measurable) and added two low-background regexes ('substitute back/this', 'satisfies the condition(s)') so the regex side is not empty in practice; all regexes <0.3% bg on the chunk corpus. Lens tokens are sequencing adverbs and do not support the label.",
+   "verdict": "revised",
+   "reason": "Added substitution/satisfies-condition regexes; generic flag and low confidence retained."
+  },
+  "98": {
+   "atom": 98,
+   "rank": 12,
+   "statement": "After SFT, responses will show more explicit restatement or explanation of the problem's constraints and conditions in the writer's own words (what must, may, or cannot hold) before or while solving.",
+   "measure_kind": "both",
+   "regex": [
+    "\\bmust (?:be|have|not|contain|satisfy|hold)\\b",
+    "\\bcan(?:not|'t) be\\b",
+    "\\b(?:constraint|condition|requirement)s? (?:is|are|says?|states?|requires?)\\b"
+   ],
+   "rubric_question": "Does the response contain at least one passage that restates or explains the problem's constraints or conditions in the writer's own words (what must, may, or cannot hold), rather than only performing calculations?",
+   "unit": "per_response",
+   "generic": false,
+   "confidence": 2,
+   "notes": "MOVE conf 3, CONTENT/FORM N/A. Top chunks are constraint paraphrases across math, physics, chemistry and coding. 'must be/have' hits 6/40 top chunks vs ~4% background, so the regex is only mildly enriched; the rubric is the primary measure. Confound: instruction-following prompts (41 'must be under ten words') and safety prompt 55 ('should never be mixed') can be echoed by both models. Verifier: regexes valid; kept as drafted since the rubric carries the item.",
+   "verdict": "ok",
+   "reason": "Rubric clear; regexes are weak but valid proxies, flagged in notes."
+  },
+  "8084": {
+   "atom": 8084,
+   "rank": 13,
+   "statement": "After SFT, responses will show more re-evaluation of the writer's own earlier interpretation of the problem setup, questioning an assumption and proposing an alternative reading (markers such as 'Wait, maybe', 'Alternatively, maybe', 'that may not make sense').",
+   "measure_kind": "both",
+   "regex": [
+    "\\bWait,? (?:maybe|actually,? maybe)\\b",
+    "\\bAlternatively,? (?:maybe|perhaps)\\b",
+    "\\b(?:doesn't|does not|may not|might not|wouldn't) make sense\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer questions their own earlier interpretation of the problem's setup (e.g. which object a name refers to, which structure or configuration is meant) and proposes an alternative interpretation?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "MOVE conf 3, FORM conf 2 ('Wait'/'Hmm'). CONTENT axis (geometry / organic-chemistry structures) is prompt-dependent and dropped from X. Regex enrichment on top chunks: 'Wait, maybe' 3/40 vs 0.5% bg, 'Alternatively, maybe' 2/40 vs 1.9% bg. Verifier: dropped the bare '\\bHmm\\b' regex (4% bg, no enrichment on this atom's chunks, and shared with ranks 6/24). Overlaps with rank 18 (retraction 'Wait, no'), rank 19 (hedged 'but perhaps'), rank 39 ('Alternatively, maybe') and rank 20 ('But let me'); the rubric distinguishes by requiring an alternative interpretation of the setup. Lens tokens do not support the label.",
+   "verdict": "revised",
+   "reason": "Removed generic 'Hmm' regex; statement/rubric otherwise fine."
+  },
+  "834": {
+   "atom": 834,
+   "rank": 14,
+   "statement": "After SFT, responses will show more code snippets or code blocks used to demonstrate or explain a programming technique (loops, recursion, comprehensions, lambdas) rather than describing the approach only in prose.",
+   "measure_kind": "both",
+   "regex": [
+    "```",
+    "\\bdef \\w+\\(",
+    "\\bfor \\w+ in \\w",
+    "\\blambda \\w",
+    "=>\\s*[{(\\w]"
+   ],
+   "rubric_question": "Does the response include at least one code snippet (inline or fenced) that demonstrates or explains a programming technique such as iteration or recursion, rather than only describing the approach in prose?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Labeler type=form; MOVE conf 2 is vague, so X combines FORM (code snippets, conf 3) with the MOVE. Strongly prompt-dependent: only coding prompts (19-28, 61) elicit code, so compare within coding prompts. Top chunks are code-golf / obfuscated Python and JS with almost no explanation; fenced ``` never appears in 32-token chunks but should in full responses. Lens tokens point to enumeration-of-alternatives/hedging, not code, so lens disagrees with the label. Verifier: regexes valid; '```' counts fence markers (two per block).",
+   "verdict": "ok",
+   "reason": "Valid; prompt dependence already flagged."
+  },
+  "2080": {
+   "atom": 2080,
+   "rank": 15,
+   "statement": "After SFT, responses will show more explicit recall or restatement of a named formula, physical law, or definition before it is applied (e.g. 'By Vieta's formulas: ...', 'The first law: ΔU = Q − W', 'The general mass-balance equation is: ...').",
+   "measure_kind": "both",
+   "regex": [
+    "\\b(?:formula|law|theorem|identity|equation|definition|rule|principle)\\b[^.\\n]{0,60}:\\s*\\n",
+    "\\b[Rr]ecall(?:ing)? that\\b",
+    "\\b(?:By|Using|From|Applying) (?:the )?[A-Z][a-z]+(?:'s)? (?:formula|theorem|law|identity|rule|inequality|equation)s?\\b",
+    "\\bis (?:defined|given) (?:as|by)\\b"
+   ],
+   "rubric_question": "Does the response explicitly recall or restate a named formula, physical law, definition, or standard identity (writing it out) before applying it to the problem?",
+   "unit": "per_response",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Labeler type=content; MOVE conf 2 ('restating or clarifying mathematical/physics concepts') used per the rule. Supported by 3-5/40 top chunks (Vieta's formula, first law, mass balance equation); the rest are mid-derivation formulas, so the MOVE is only weakly supported and the CONTENT axis is prompt-driven. First regex hits 3/40 top vs 0.35% bg; others are near-zero on chunks but plausible in full responses (e.g., 'By the Pythagorean theorem' on prompt 12). Lens tokens do not support the label. Verifier: regexes valid.",
+   "verdict": "ok",
+   "reason": "Valid regexes and clear rubric."
+  },
+  "4824": {
+   "atom": 4824,
+   "rank": 16,
+   "statement": "After SFT, responses will show more dense symbolic mathematical notation (exponents, subscripts, sums/products, fractions, derivatives written in LaTeX or ASCII math) rather than prose or plain integer arithmetic.",
+   "measure_kind": "both",
+   "regex": [
+    "\\^\\{?[0-9a-zA-Z(]",
+    "_\\{[^}\\n]{1,20}\\}",
+    "[∑∏∫∂]",
+    "\\\\(?:sum|prod|int|frac|partial|sqrt|binom|cdot)\\b"
+   ],
+   "rubric_question": "Does the response contain multi-term symbolic mathematical expressions (with exponents, subscripts, sums/products, fractions or derivatives), inline or displayed, rather than only prose and plain integer arithmetic?",
+   "unit": "per_1k_tokens",
+   "generic": true,
+   "confidence": 2,
+   "notes": "MOVE N/A (conf 0), so FORM (conf 3) is used. This is a content/format property that mostly tracks the prompt mix (math prompts), hence generic=true; only a within-math-prompt comparison of notation density is meaningful. Prompts 14 ('2^100 or 10^30') and 16 ('x^2 - 5x + 6') seed '^' in both models' responses. Regex '^' hits 11/40 top chunks vs 6% bg, '_{' 6/40 vs 0.4% bg. Lens tokens weakly consistent with inline-$ math delimiters. Verifier: regexes valid.",
+   "verdict": "ok",
+   "reason": "Valid; generic flag appropriate."
+  },
+  "4637": {
+   "atom": 4637,
+   "rank": 17,
+   "statement": "After SFT, responses will show more re-reading or quoting of the problem statement to verify or clarify a technical detail ('the problem says ...', 'according to the problem statement'), or grounding of a formula/definition with a concrete instantiated example ('So for example, if ...').",
+   "measure_kind": "both",
+   "regex": [
+    "\\b[Tt]he problem (?:says|states|statement)\\b",
+    "\\b[Aa]ccording to the (?:problem|statement|question|spec)\\b",
+    "\\b[Ff]or example,? if\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer quotes or paraphrases the problem statement to check a technical detail (e.g. 'the problem says ...', 'according to the problem statement'), or grounds a formula or definition by instantiating it with a concrete example?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "MOVE conf 3 but bundles two moves (verify against the statement; clarify with an example); both are kept in one item as the label does. 'the problem says' hits 3/40 top vs 3.5% bg (weak enrichment; shared with ranks 28/38/39); 'according to the problem' 1/40 vs 0.08% bg. FORM (formulas/code) is prompt-driven. Lens tokens do not support the label. Verifier: regexes valid; rubric is disjunctive but answerable.",
+   "verdict": "ok",
+   "reason": "Valid; overlap with the 'problem says' items noted."
+  },
+  "7791": {
+   "atom": 7791,
+   "rank": 18,
+   "statement": "After SFT, responses will show more explicit retraction of a claim the writer just made, signalled by 'Wait, no' / 'Wait, not necessarily' / 'Actually, that's not ...' and followed by the corrected step.",
+   "measure_kind": "both",
+   "regex": [
+    "\\bWait,? (?:no|not)\\b",
+    "\\b(?:Actually|Hmm),? (?:no|not necessarily|that's not)\\b",
+    "\\bWait,? that(?:'s| is) (?:not|wrong|incorrect)\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer explicitly negates or retracts a statement they made immediately before (e.g. 'Wait, no ...', 'Wait, not necessarily', 'Actually, that's wrong') and then continues with a corrected step?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 3,
+   "notes": "MOVE conf 3 ('self-correction or verification of a mathematical step, signaled by Wait'). Top chunks: 'Wait, not necessarily.', 'Wait, no, primes include 3.', plus terse confirmations ('Correct.', 'Yes.') not covered here. 'Wait, no/not' hits 4/40 top vs 2% bg and is shared with ranks 4/22/26/35/36. Distinguish from rank 13 (alternative interpretation of setup), rank 19 (hedged questioning) and rank 20 (post-answer double-check). Lens tokens '.neg', 'nev' weakly consistent with negation. Verifier: regexes valid.",
+   "verdict": "ok",
+   "reason": "Valid and crisp; heavy overlap with the Wait-no family noted."
+  },
+  "3956": {
+   "atom": 3956,
+   "rank": 19,
+   "statement": "After SFT, responses will show more hedged questioning of an assumption or intermediate step ('but perhaps ...?', 'Hmm, but', 'Wait, actually', 'the formula assumes ..., but'), raising a tentative alternative rather than asserting a correction.",
+   "measure_kind": "both",
+   "regex": [
+    "\\b[Bb]ut perhaps\\b",
+    "\\bHmm,? but\\b",
+    "\\bWait,? actually\\b",
+    "\\b(?:formula|equation|approach|method) assumes\\b",
+    "\\b[Oo]r (?:maybe|perhaps)\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer tentatively questions an assumption or intermediate step (using hedges such as 'perhaps', 'maybe', or a question) without outright retracting it?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "MOVE conf 3 with the labeler's own markers. 'but perhaps' 3/40 top vs 0.5% bg; 'Hmm, but' 2/40 vs 0.2% bg; 'Wait, actually' 2/40 vs 0.7% bg (shared with ranks 27/31). FORM axis (units mL/cm, sqrt) is content-driven and dropped. Overlaps with ranks 13, 18 and 24; rubric distinguishes hedged questioning from retraction. Lens tokens do not support the label. Verifier: regexes valid.",
+   "verdict": "ok",
+   "reason": "Valid; distinct enough from retraction items via rubric."
+  },
+  "2950": {
+   "atom": 2950,
+   "rank": 20,
+   "statement": "After SFT, responses will show more post-answer double-checking, where after reaching a candidate answer the writer explicitly goes back to verify it ('But let me see/check/confirm ...', 'let me double-check', 'Is that it?').",
+   "measure_kind": "both",
+   "regex": [
+    "\\b[Bb]ut let me\\b",
+    "\\b[Dd]ouble-?check\\b",
+    "\\b[Ll]et me (?:confirm|verify|see if|make sure)\\b",
+    "\\bIs that (?:it|possible|correct|right)\\?"
+   ],
+   "rubric_question": "After arriving at a candidate answer, does the writer explicitly go back to double-check it (e.g. 'But let me check/see/confirm', 'let me double-check', 'Is that it? Let me verify') before finalizing?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 3,
+   "notes": "MOVE and FORM both conf 3; the strongest surface marker among ranks 11-20: 'But let me' appears in 18/40 top chunks vs 1.4% bg, 'Let me confirm/verify/see if' 7/40 vs 0.3% bg. src_hist is 87% nemotron/synthetic, so this is a source-specific (R1-style) verbal tic; expect a large increase if those sources are in the SFT mix, but it is a style marker more than a change in reasoning depth. 'double-check' shared with rank 4, 'Is that possible?' with rank 36. Lens tokens do not support the label. Verifier: regexes valid.",
+   "verdict": "ok",
+   "reason": "Crisp, well-supported item."
+  },
+  "8087": {
+   "atom": 8087,
+   "rank": 21,
+   "statement": "After SFT, responses will show more explicit bookkeeping of derived equations mid-solution: writing out a newly derived relation between named variables ('so d = (9/4)c') and referring back to numbered or labelled equations ('Equation 1: ...', 'from equation 3').",
+   "measure_kind": "both",
+   "regex": [
+    "\\b(?:[Ss]o|[Tt]hus|[Tt]herefore|[Hh]ence)\\b,?\\s+(?:we (?:get|have|find|obtain)\\s+)?[a-zA-Z][\\w'′^{}]*(?:\\s*[-+*/·]\\s*[\\w'′^{}()]+){0,3}\\s*=\\s*\\S",
+    "\\b(?:[Ee]quation|[Ee]q\\.?)\\s*\\(?\\d+\\)?\\s*[:,]|\\b(?:[Ff]rom|[Uu]sing|[Ii]n|[Bb]y|[Ii]nto|[Aa]nd|[Ww]ith) [Ee]quation\\s*\\(?\\d+\\)?",
+    "\\b[Ll]et me (?:test|try|check)(?: (?:this|it|that))? (?:with|for|when|using) "
+   ],
+   "rubric_question": "Does the response, mid-solution, write out at least one newly derived equation relating named variables (e.g., 'so d = (9/4)c') and/or refer back to an earlier equation by number or label ('Equation 1', 'from equation 3', 'as before')?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Derived from MOVE axis (conf 3). Logit-lens tokens are junk and give no support; evidence comes from example chunks ('That is equation 1: c²+d²=...', 'From Equation 3:', 'Let me test with p=5'). Strong confound with prompt domain: only measurable on math/derivation prompts (src_hist math=0.58); a base model also writes equations on math prompts, so the signal is density, not presence. Regex 1 ('so <identifier> = ...', 1.7% bg) is the least specific and also catches code-like assignments; regex 2 (numbered equations, 0.3% bg) is the distinctive marker. Overlaps with rank 25 (chained consequences) and rank 30 (returning to earlier equations). Verifier: regexes valid.",
+   "verdict": "ok",
+   "reason": "Valid; specificity caveat on regex 1 recorded."
+  },
+  "4565": {
+   "atom": 4565,
+   "rank": 22,
+   "statement": "After SFT, responses will show more stacked self-interruptions in which two or more interjections are chained to flag a suspected mistake ('Wait, hold on', 'wait wait', 'Wait a second', 'Wait, no').",
+   "measure_kind": "both",
+   "regex": [
+    "(?i)\\bwait\\b[,.!?:]?\\s*(?:a (?:second|minute|moment)|hold on|hang on|wait|no)\\b",
+    "(?i)\\b(?:hold on|hang on)\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer abruptly interrupts their own reasoning with two or more chained interjections (e.g., 'Wait, hold on', 'wait wait', 'Wait a second, no') to flag a possible mistake?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 3,
+   "notes": "Derived from MOVE (conf 3) + FORM (conf 3). Lens tokens agree strongly (' wait', ' actually', 'Actually', ' suppose', ' misunder'). Example chunks extremely consistent: 23/40 chunks match regex 1, 18/40 contain 'hold on'/'hang on'. Distinct from the other 'Wait' atoms by the STACKING rather than a single 'Wait'. Confound: the 'wait no' branch of regex 1 overlaps ranks 18/26/35/36; regex 2 ('hold on'/'hang on', shared with rank 37) is the more specific marker. Verifier: regexes valid.",
+   "verdict": "ok",
+   "reason": "Strong, crisp item."
+  },
+  "6922": {
+   "atom": 6922,
+   "rank": 23,
+   "statement": "After SFT, responses will show more explicit step verification of geometric or algebraic relations, pausing to confirm a just-stated relation before continuing ('Let me check that', 'as before', 'So that's a key relation').",
+   "measure_kind": "both",
+   "regex": [
+    "\\b[Ll]et me (?:check|verify|confirm|double-check)(?: that| this| it| if| whether)?\\b",
+    "\\bas before\\b",
+    "\\b[Ss]o that'?s (?:a |the )?key\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where, while reasoning about a geometric configuration or algebraic expression, the writer explicitly pauses to verify a specific just-stated relation (e.g., 'Let me check that', 'as before', 'yes, that was done correctly') before continuing?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "MOVE axis has conf 2 ('verifying or correcting a step') so it was preferred over CONTENT (conf 3: coordinate geometry, parabolas, lines). Weak evidence: most example chunks are spatial/coordinate reasoning and only a minority show an explicit verification marker (2/40 'Let me check', 2/40 'as before'). Lens tokens do not support the label. Expect the item to be sparse on non-geometry prompts; the true driver may be content (geometry). Regex 1 is shared with generic checking behaviour (ranks 20/34). Verifier: regexes valid; kept as drafted.",
+   "verdict": "ok",
+   "reason": "Valid; weak-evidence caveat retained."
+  },
+  "629": {
+   "atom": 629,
+   "rank": 24,
+   "statement": "After SFT, responses will show more hedged consideration of alternative interpretations or approaches mid-reasoning ('Alternatively, ...', 'Hmm, ...', 'maybe ...', 'perhaps ...') instead of committing to a single line.",
+   "measure_kind": "both",
+   "regex": [
+    "\\bAlternatively\\b",
+    "\\bHmm\\b",
+    "(?i)\\b(?:maybe|perhaps) (?:the|it|I|we|they|after|if|there|he|she|one)\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer explicitly entertains an alternative interpretation or approach with hedged language (e.g., 'Alternatively, ...', 'Hmm, ...', 'maybe ...') instead of committing to a single line?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Derived from MOVE (conf 3) and FORM (conf 3, markers 'Wait/Alternatively/Hmm/Ah/Correct'). Chosen sub-flavour ('Alternatively'/'Hmm'/'maybe') keeps it distinct from the pure 'Wait' items (22, 26, 29). Lens tokens are paragraph-break tokens, suggesting the atom fires where a new consideration starts. Regexes are broad hedging markers (3-6.5% bg on chunk corpus) shared with ranks 1/6/13/19; the same regex set hits rank-29 chunks more often than rank-24 chunks, so overlap is substantial. Verifier: regexes valid; kept because the rubric carries the item.",
+   "verdict": "ok",
+   "reason": "Valid; broad regexes flagged, rubric primary."
+  },
+  "6238": {
+   "atom": 6238,
+   "rank": 25,
+   "statement": "After SFT, responses will show more chained consequence connectives that turn one derived fact into the next within intermediate derivation steps ('so ..., so ...', 'Therefore:', 'meaning ...', 'hence ...').",
+   "measure_kind": "both",
+   "regex": [
+    "(?:^|[.!?:]\\s+|\\n\\s*)(?:So|Therefore|Thus|Hence)\\b,?",
+    ",\\s+(?:so|meaning|therefore|hence)\\s+(?=\\S)"
+   ],
+   "rubric_question": "Does the response derive intermediate relations by chaining consequence connectives (e.g., 'so ..., so ...', 'Therefore:', 'meaning ...') rather than only stating results?",
+   "unit": "per_1k_tokens",
+   "generic": true,
+   "confidence": 2,
+   "notes": "MOVE (conf 3) is 'performing intermediate reasoning steps, deriving/verifying relationships between variables'. Near-generic property of any step-by-step derivation, hence generic=true; both regexes fire in 14-16% of background chunks, confirming low specificity. Lens tokens are junk. Item is measurable only as a density change; interpret cautiously. Heavy overlap with rank 21. Verifier: regexes valid.",
+   "verdict": "ok",
+   "reason": "Valid; generic flag correct."
+  },
+  "1343": {
+   "atom": 1343,
+   "rank": 26,
+   "statement": "After SFT, responses will show more immediate re-counting of a just-computed number: a tentative arithmetic result followed by '?' and a 'Wait no' / 'Wait wait' recount, or a bare 'Correct.' tick after a computation.",
+   "measure_kind": "both",
+   "regex": [
+    "\\d\\s*\\)?\\s*\\?\\s*(?:Wait|wait|Hmm|hmm|No|no)\\b",
+    "\\bWait,?\\s+(?:no|wait)\\b",
+    "(?:^|[.!?\\n]\\s*)Correct[.!](?=\\s|$)"
+   ],
+   "rubric_question": "Does the response contain at least one point where a just-computed intermediate number is immediately questioned and recomputed (e.g., '... = 16? Wait no, ...') or explicitly ticked off with a bare 'Correct.'?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Derived from MOVE (conf 3) with FORM (conf 2: 'Wait no', 'Wait wait', 'Correct', 'Hmm'). Chosen sub-flavour = numeric recount. CONTENT axis says chemistry/stoichiometry but src_hist is math 0.48 / python 0.18, so content should not be relied on. Lens tokens are junk. Regex 2 ('Wait, no' / 'Wait wait') overlaps heavily with ranks 18/22/35/36; regex 1 (digit + '?' + Wait/no, 0.7% bg) is the distinctive marker. Verifier: regexes valid.",
+   "verdict": "ok",
+   "reason": "Valid; distinctive numeric-recount regex present."
+  },
+  "5877": {
+   "atom": 5877,
+   "rank": 27,
+   "statement": "After SFT, responses will show more quick self-posed question-and-revision of a just-made statement ('... exactly 5? Probably.', '... between 20 and 40? Actually: ...', 'Wait, actually it's ...').",
+   "measure_kind": "both",
+   "regex": [
+    "\\b(?:Wait|wait|But|but|Oh|oh|Hmm|hmm),?\\s+actually\\b",
+    "(?:^|\\n\\s*|[.!?]\\s+)Actually\\b[,:]?",
+    "\\?\\s*(?:Actually|Probably|Yes|No)\\b[,.:!]"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer poses a quick question about their own previous statement and immediately answers or revises it (e.g., '... exactly 5? Probably.', '...? Actually: ...', 'Wait, actually it's ...')?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Derived from MOVE (conf 3) with FORM (conf 2: 'Wait,' 'Actually,' 'But,'). Label-evidence mismatch: many top chunks are hand-traces of code/logic on specific inputs with '->' arrows, so the atom may partly track case-tracing (cf. rank 2) rather than correction; the self-posed-question-then-answer pattern (regex 3) is the most faithful bridge. Lens tokens are junk. 'Actually,' shared with rank 8; 'Wait, actually' with ranks 19/31. Verifier: regexes valid.",
+   "verdict": "ok",
+   "reason": "Valid; overlap and label caveat noted."
+  },
+  "3351": {
+   "atom": 3351,
+   "rank": 28,
+   "statement": "After SFT, responses will show more re-checking of an assumption against the problem statement by quoting or paraphrasing what it says ('Wait, the problem says ...', 'which is given as OC = 4').",
+   "measure_kind": "both",
+   "regex": [
+    "(?i)\\b(?:wait|but|hmm|hold on|oh),?\\s+(?:but\\s+)?the (?:problem|question|prompt|statement) (?:says|states|said|asks|gives|mentions|specifies)\\b",
+    "(?i)\\b(?:which|as|that|what) is given as\\b",
+    "(?i)\\bthe (?:problem|question) (?:says|states):?\\s*[\\\"“']"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer goes back to the problem statement, quoting or paraphrasing what it says or gives, to check or correct an assumption they made?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 3,
+   "notes": "Derived from MOVE (conf 3) with FORM (conf 2) explicitly naming 'Wait, the problem says'. Example chunks support it well. Lens tokens are junk. Confound: only applies to prompts that have a problem statement to re-read (math/code/word problems); on open chat prompts it will be ~0 for both models. Overlaps ranks 17/38/39 ('the problem says'). Verifier: regexes valid.",
+   "verdict": "ok",
+   "reason": "Valid, well-evidenced."
+  },
+  "4644": {
+   "atom": 4644,
+   "rank": 29,
+   "statement": "After SFT, responses will show more 'Wait'-triggered redo of a computation or step ('Wait, let me compute again', 'Wait, perhaps I need to calculate more precisely', 'let me actually list them in order').",
+   "measure_kind": "both",
+   "regex": [
+    "\\bWait,?\\s+(?:let me|let's|maybe|perhaps|solving|more precisely)\\b",
+    "(?i)\\blet me (?:re-?compute|recalculate|redo|re-?do|compute (?:this |that |it )?again|do (?:this|that|it) again|calculate more precisely|actually|check again|try again)\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where, after flagging doubt (e.g., 'Wait'), the writer explicitly redoes or refines a computation or step (e.g., 'let me compute again', 'more precisely', 'let me actually list...')?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 3,
+   "notes": "Derived from MOVE (conf 3) and FORM (conf 3: 'Wait' / 'Wait, no'). Sub-flavour = 'Wait' followed by a redo. Lens tokens mostly whitespace/code fragments plus ' hesitation' (mild agreement). Distinguishes from rank 22 (stacked interjections) and rank 26 (numeric recount) by the explicit redo clause; regex 2 overlaps rank 4's 'let me recompute'. 'Wait, maybe/perhaps' branch shared with ranks 9/13. Regex 2 branch 'let me actually' is slightly broad. Verifier: regexes valid.",
+   "verdict": "ok",
+   "reason": "Valid; overlaps recorded."
+  },
+  "6840": {
+   "atom": 6840,
+   "rank": 30,
+   "statement": "After SFT, responses will show more explicit backtracking to earlier written work to re-check or reuse it ('let me go back', 'in my earlier work', 'Wait, in equation 5', '... right? Yes').",
+   "measure_kind": "both",
+   "regex": [
+    "(?i)\\blet me go back\\b",
+    "(?i)\\b(?:in|from) (?:my|the) (?:earlier|previous|original) (?:work|step|equation|calculation|derivation|expression)\\b",
+    "(?i)\\b(?:wait|hmm|so|but|and),?\\s+(?:in|from|back to|using) equation\\s*\\(?\\d+\\)?",
+    "\\bright\\?\\s*\\n*\\s*(?:Yes|yes)\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer explicitly returns to an earlier equation or step they wrote (e.g., 'let me go back', 'in my earlier work', 'from equation 5') to re-check or reuse it?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Derived from MOVE (conf 3) with FORM (conf 2) naming 'Wait', 'no', 'let me go back'. Sub-flavour = backtracking to earlier equations. CONTENT (algebra/constants, conf 3) is a domain confound: measurable mainly on multi-step algebra prompts. Lens tokens are junk. Each regex hits only 1-2 of 40 chunks and <0.05% bg, so expect low but specific counts. Overlaps with rank 21 (numbered equations) and rank 29 (redo). Verifier: regexes valid.",
+   "verdict": "ok",
+   "reason": "Valid and specific."
+  },
+  "6130": {
+   "atom": 6130,
+   "rank": 31,
+   "statement": "After SFT, responses will show more mid-derivation adjustment of a symbolic/mathematical statement, where a previously written expression or relation is revised or its corrected consequence restated (e.g. 'Wait, actually ...', 'Let me adjust', 'so actually ...', 'should actually be ...').",
+   "measure_kind": "both",
+   "regex": [
+    "\\bWait, actually\\b",
+    "\\b[Ll]et me (?:adjust|correct|fix)\\b",
+    "\\b(?:[Ss]o|[Tt]hen) (?:actually|instead),?\\b",
+    "\\bshould (?:actually|instead|really) be\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer revises, adjusts, or restates in corrected form a mathematical or logical expression/relation they had already written (not just continuing a linear derivation)?",
+   "unit": "per_response",
+   "generic": false,
+   "confidence": 2,
+   "notes": "MOVE conf 3 used. Top-firing chunks are dominated by plain inline symbolic derivation ('So, b - a = 2x'); only a minority contain explicit correction markers, so the label's 'verification/adjustment' framing is partly inferred. Lens tokens are uninformative. Overlaps heavily with the 'Wait' self-correction family (ranks 19/27 share 'Wait, actually'; ranks 34-37, 39). Verifier: dropped '\\bSo then\\b' (a linear-continuation connective that contradicts the rubric's exclusion of plain continuation) and added 'let me correct/fix', 'so/then actually|instead', 'should actually/instead be' as adjustment markers (each <0.2% bg on chunk corpus). Regex is sparse; rubric is primary.",
+   "verdict": "revised",
+   "reason": "Replaced non-diagnostic 'So then' with adjustment-specific markers."
+  },
+  "3822": {
+   "atom": 3822,
+   "rank": 32,
+   "statement": "After SFT, responses will show more explicit item-by-item counting or tallying of elements in a list, word, or sequence with a stated running/final count (e.g. \"8 m's\", \"That's 9 'e's\", 'control (o), over (o) ... Six.').",
+   "measure_kind": "both",
+   "regex": [
+    "\\b(?:\\d+|one|two|three|four|five|six|seven|eight|nine|ten) ['‘’]?[A-Za-z]['‘’]s\\b",
+    "(?:[A-Za-z]+[\"”’]?\\s?\\((?:\\d+|[a-z])\\)[,;.]?\\s+){2,}[A-Za-z]+[\"”’]?\\s?\\((?:\\d+|[a-z])\\)",
+    "\\b[Tt]hat['’]s (?:\\d+|one|two|three|four|five|six|seven|eight|nine|ten)\\s*(?:[.,!;]|$|['‘’]?[A-Za-z]['‘’]s\\b|(?:in )?total\\b|so far\\b|letters?\\b|words?\\b|characters?\\b|vowels?\\b|consonants?\\b|items?\\b|occurrences?\\b|times\\b)"
+   ],
+   "rubric_question": "Does the response explicitly enumerate items one by one (e.g. letters in a word, occurrences of a word/character, elements of a list) and state a running or final tally?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "FORM and MOVE both conf 3 and agree. Examples are letter/word-count constraint checking (instruction-following style) plus term bookkeeping in algebra. Lens tokens ('.Len', ' ✔', 'AssertionError') weakly consistent with counting/verification. Verifier: regex 2 now requires a run of at least three per-item parenthetical tallies ('a(2), m(3), b(4)' / 'control (o), over (o), operations (o)') because the single-item form matched variable glosses like 'difference (d)' and equation labels (bg 0.8% -> 0.06%); regex 3 now requires the number to be sentence-final or followed by a count noun or letter-tally (\"That's two.\" / \"that's 9 'e's\") so 'that's one of the...' no longer fires. Prompts 9 (LEVEL letters) and 40-42 (letter/sentence constraints) are the likely loci.",
+   "verdict": "revised",
+   "reason": "Tightened two regexes to eliminate variable-gloss and 'that's one of' false positives."
+  },
+  "4282": {
+   "atom": 4282,
+   "rank": 33,
+   "statement": "After SFT, responses will show more marketing/SEO-style keyword formatting: comma-separated Title-Case keyword or tag strings, hashtags, and bold '**Keywords:**'-type headers.",
+   "measure_kind": "both",
+   "regex": [
+    "(?<![\\w&])#[A-Za-z][A-Za-z0-9_]{2,}",
+    "(?:[A-Z][\\w'’&-]*(?: [A-Z][\\w'’&-]*){0,4}, ){4,}",
+    "\\*\\*Keywords?:\\*\\*"
+   ],
+   "rubric_question": "Does the response contain marketing/SEO-style content such as a comma-separated keyword or tag list, hashtags, or product-listing style descriptor strings?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "MOVE and CONTENT are N/A; FORM conf 3 used. Sources are persona/aya/wildchat (creative/marketing prompts), so on this reasoning-heavy prompt set the base rate may be near zero for both models except prompt 65 (product description); direction may be undetectable rather than negative. Lens tokens (' &', ' –', ' vs', '-inspired', ' aka') are list-connector-like and loosely agree. Hashtag regex could also match '#include'-style text or shell comments in code responses (partial confound); Title-Case run regex requires 4+ consecutive Title-Case comma items and is fairly specific. Verifier: regexes valid (fixed-width lookbehind OK in Python).",
+   "verdict": "ok",
+   "reason": "Valid; low base-rate caveat noted."
+  },
+  "4108": {
+   "atom": 4108,
+   "rank": 34,
+   "statement": "After SFT, responses will show more mid-reasoning pauses marked by 'Wait' in which a computed value or intermediate result is re-checked or verified before continuing (e.g. 'Wait, solving equation C for h', 'check if the center lies on y = x + 1').",
+   "measure_kind": "both",
+   "regex": [
+    "\\bWait\\b",
+    "\\b[Cc]heck (?:if|whether|that)\\b",
+    "\\b[Ll]et me (?:check|verify|double-check)\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer pauses to re-check or verify a calculation or intermediate result (re-deriving a value, checking a condition holds) before continuing?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 3,
+   "notes": "FORM and MOVE conf 3, consistent. About half of top chunks contain 'Wait'; the rest are plain ratio/coordinate checks. Bare \\bWait\\b is the primary count and is the umbrella marker shared with ranks 4/18/22/26/29/35/36/37 (those use narrower 'Wait ...' bigrams); expect strong correlation among these items. 'let me check/verify' shared with ranks 20/23. Lens tokens are noise. Confound: SFT chat template may generally lengthen reasoning; per_1k_tokens normalizes. Verifier: regexes valid.",
+   "verdict": "ok",
+   "reason": "Valid; umbrella overlap noted."
+  },
+  "1940": {
+   "atom": 1940,
+   "rank": 35,
+   "statement": "After SFT, responses will show more explicit self-negation of a just-stated thought, marked by 'Wait no' / 'No, wait' / 'Wait, how ...' / 'that contradicts', where the writer reverses or questions their immediately preceding claim.",
+   "measure_kind": "both",
+   "regex": [
+    "\\bWait,? no\\b",
+    "\\bNo, wait\\b",
+    "\\bWait,? (?:how|what|why|which)\\b",
+    "\\b(?:that|this|which) contradicts\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer explicitly negates or reverses a statement they just made (e.g. 'Wait no', 'No, wait', 'that contradicts earlier')?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 3,
+   "notes": "FORM and MOVE conf 3, consistent with examples. Distinct from rank 34 by requiring negation/reversal rather than mere re-checking; nearly identical in behaviour to rank 18 (7791) and shares 'Wait, no' with ranks 4/22/26/36 and 'contradicts' with rank 8. Lens tokens are noise. Some top chunks are JSON/list content with no correction, so the atom is not pure; regex is conservative and specific. Verifier: regexes valid.",
+   "verdict": "ok",
+   "reason": "Valid; near-duplicate of rank 18 flagged in overlap groups."
+  },
+  "2154": {
+   "atom": 2154,
+   "rank": 36,
+   "statement": "After SFT, responses will show more objections raised against the writer's own preceding step, marked by 'Wait, but' / 'Wait, no' / 'Wait, since' or a self-directed doubt question ('Is that possible?'), rather than proceeding linearly.",
+   "measure_kind": "both",
+   "regex": [
+    "\\bWait, but\\b",
+    "\\bWait, no\\b",
+    "\\bWait, since\\b",
+    "\\bIs that (?:possible|right|correct)\\?"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer raises an objection or doubt about their own preceding reasoning step (e.g. 'Wait, but ...', 'Is that possible?') before resolving it?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 3,
+   "notes": "FORM and MOVE conf 3 and agree; 'Wait, but' is the most frequent marker in top chunks (shared with rank 5's 'Wait,? but'). Overlaps with ranks 34/35/37/39 ('Wait' family); 'Wait, no' shared with ranks 4/18/26/35; 'Is that possible?' with rank 20. Lens tokens are noise. Regexes are exact-bigram and conservative. Verifier: regexes valid.",
+   "verdict": "ok",
+   "reason": "Valid; overlaps recorded."
+  },
+  "4191": {
+   "atom": 4191,
+   "rank": 37,
+   "statement": "After SFT, responses will show more explicit stop-and-clarify moves in which the writer halts to restate or re-define the variables/quantities being used, marked by 'Wait, hold on' / 'hold on' / 'Let me clarify' / 'let me recast'.",
+   "measure_kind": "both",
+   "regex": [
+    "\\bWait,? hold on\\b",
+    "\\b[Hh]old on\\b",
+    "\\b[Ll]et me (?:clarify|recast|re-?define|restate)\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer explicitly stops to clarify or re-define the variables, quantities, or terms they had been using (e.g. 'Let me clarify variables:', 'hold on, that's conflicting with my previous ...')?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 3,
+   "notes": "MOVE conf 3 with explicit markers quoted in the label; examples confirm. Many top chunks are plain formula/list text without markers, so the atom is broader than the marker set; regex counts the marker subset only. Lens tokens do not agree with the label. 'hold on' regex subsumes the first and is shared with rank 22 (4565); kept both for reporting granularity. Verifier: regexes valid.",
+   "verdict": "ok",
+   "reason": "Valid; 'hold on' overlap with rank 22 recorded."
+  },
+  "148": {
+   "atom": 148,
+   "rank": 38,
+   "statement": "After SFT, responses will show more verification of a reasoning step against the problem's givens, e.g. re-reading or quoting the problem statement ('the problem says/states ...', 'Let me reread the problem') or flagging a step with 'But wait'.",
+   "measure_kind": "both",
+   "regex": [
+    "\\bthe problem (?:says|states|again)\\b",
+    "\\b[Ll]et me re-?read\\b",
+    "\\bBut wait\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer verifies an intermediate step by re-quoting or re-reading the problem's conditions, or by explicitly re-checking a computed value against them?",
+   "unit": "per_response",
+   "generic": false,
+   "confidence": 2,
+   "notes": "CONTENT conf 3 (math problem-solving) would be generic, so MOVE conf 2 ('verifying or correcting a step') used. Top chunks feature quoted problem statements and case listings; the 'verification' framing is a labeler inference. Low within_doc_sel (0.07) suggests a diffuse atom. Lens tokens are noise. Regexes shared with ranks 1 ('re-read'), 5 ('But wait'), 17/28/39 ('the problem says'). Rubric is primary; regex is sparse. Verifier: regexes valid.",
+   "verdict": "ok",
+   "reason": "Valid; diffuse-atom caveat retained."
+  },
+  "4921": {
+   "atom": 4921,
+   "rank": 39,
+   "statement": "After SFT, responses will show more revision of the solution setup or approach: proposing an alternative or simplification and weighing it against the problem's stated conditions (e.g. 'for simplicity', 'Alternatively, maybe', 'Wait, but the problem states', 'perhaps better to').",
+   "measure_kind": "both",
+   "regex": [
+    "\\bAlternatively,? (?:maybe|perhaps)\\b",
+    "\\bWait, but the problem\\b",
+    "\\bfor simplicity\\b",
+    "\\bperhaps (?:better|it['’]s better|setting)\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer proposes an alternative approach, simplification, or setup for solving the problem and weighs it against the problem's stated conditions before choosing?",
+   "unit": "per_response",
+   "generic": false,
+   "confidence": 2,
+   "notes": "MOVE conf 3 used; label quotes the markers and examples confirm. Several top chunks are the same document (coordinate rotation of a chord), so the labeler's view may be over-fitted to one trace. Lens tokens weakly agree with 'preliminary/proposal' framing. Overlaps with ranks 1/13 ('Alternatively, maybe') and 28/38 ('the problem says'); distinguished by approach-level (not value-level) revision. Rubric primary. Verifier: regexes valid.",
+   "verdict": "ok",
+   "reason": "Valid; overlaps recorded."
+  },
+  "3132": {
+   "atom": 3132,
+   "rank": 40,
+   "statement": "After SFT, responses will show more explicit case-by-case evaluation of conditional/truth-value statements, stating what follows when a statement is true versus false (e.g. 'If S1 true, T ≥ 4; if false, T < 4', 'S2 true if F ≤ 3').",
+   "measure_kind": "both",
+   "regex": [
+    "\\b(?:[Ii]f (?:\\w+ )?(?:is |it['’]s )?(?:true|false)|(?:true|false) if)\\b",
+    "\\b(?:true|false)[,;.]? (?:then|so)\\b",
+    "\\bat (?:most|least) \\d+ (?:are |is )?(?:true|false)\\b"
+   ],
+   "rubric_question": "Does the response explicitly evaluate conditional statements case by case, spelling out the consequence when a condition or statement is true versus when it is false?",
+   "unit": "per_response",
+   "generic": false,
+   "confidence": 2,
+   "notes": "MOVE and CONTENT conf 3, FORM 2; all agree. Top chunks are dominated by self-referential-statement / knights-and-knaves puzzles; the item is somewhat narrower than the atom's full firing set. Lens tokens are mostly noise. Regexes conservative (<0.1% bg). Confound: on code prompts (19 palindrome, 20) lowercase 'returns true if ...' prose can fire regex 1 for both models; base rate otherwise depends on whether the prompt set includes logic puzzles (it does not, so expect sparse counts). Verifier: regexes valid.",
+   "verdict": "ok",
+   "reason": "Valid and specific; code-prose confound noted."
+  }
+ },
+ "err": {
+  "1633": {
+   "atom": 1633,
+   "rank": 1,
+   "statement": "After SFT on this data, model responses will show more explicit mid-reasoning self-interruptions that catch or reconsider a potential error or flawed approach (e.g., 'Wait no', 'Wait, but', 'Hmm, maybe this approach won't work').",
+   "measure_kind": "both",
+   "regex": [
+    "\\bWait,?\\s+(?:no|wait|but)\\b",
+    "\\bHmm,?\\s+maybe\\b",
+    "\\b(?:won'?t|doesn'?t|does not|will not) work\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer interrupts their own reasoning to flag that a step, assumption, or approach they just took may be wrong or inconsistent, before continuing?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Label (data/label/err_v2_labels.json; evidence JSON label fields are empty for all 60 atoms): FORM(2) 'Wait no/Wait wait/Wait, but/Wait, the'; MOVE(3) catching or reconsidering potential errors/alternative approaches. Highest-mass atom (7.4% mass share, fires in 100% of docs) so it is very broad; lens tokens are punctuation/function words and do not corroborate 'Wait'. 'Wait' appears in only 10/40 labeler chunks; many chunks are plain '? But ...' checks or indented traces. Ranks 1-9 carry near-identical self-correction labels; treat as one correlated family. Confound: SFT data is R1-style, so 'Wait' frequency plausibly rises regardless of this specific atom. Rubric is primary; regexes are a partial surface proxy (7/40 own chunks; 'Wait no/wait/but' pattern is 2.8x enriched vs pooled chunks).",
+   "verdict": "ok",
+   "reason": "Regexes valid and specific; rubric is a clear yes/no; statement matches label. No change."
+  },
+  "6814": {
+   "atom": 6814,
+   "rank": 2,
+   "statement": "After SFT on this data, model responses will show more explicit reconsideration of a prior assumption about what the problem is asking or what the input looks like (e.g., 'Wait, maybe the question is hypothetical', 'Hmm, so the user must have transcribed the problem correctly', 'Wait, the problem says ...').",
+   "measure_kind": "both",
+   "regex": [
+    "\\bWait,?\\s+maybe\\b",
+    "\\bWait\\s+no\\b",
+    "\\bHmm,?\\s+so\\b",
+    "\\b(?:maybe|perhaps) the (?:question|problem|user|input)\\b",
+    "\\bWait,?\\s+the (?:problem|question)(?:'s)?\\b",
+    "\\b(?:the )?user (?:must have|probably|likely|might have|meant)\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer explicitly questions or revises their earlier interpretation of the problem statement, the input format, or the user's intent?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Label: FORM(3) 'Wait'/'Wait no' with mid-sentence corrections; MOVE(3) correcting/reconsidering a previous statement or assumption. Labeler note claims 'Wait' is consistent, but it appears in only 5/40 example chunks, so the FORM claim is overstated. The problem-interpretation angle is supported by ~7/20 top chunks ('Wait, the problem', 'Wait the problem's wording is ambiguous', 'the user must have transcribed', 'maybe the problem has a missing piece'); many other top chunks are long comma-spliced run-on reasoning sentences with no marker. Two of 40 chunks are non-reasoning prose. Lens tokens are generic. Regex coverage 6/40 own chunks after adding 'Wait, the problem/question' (5x enriched) and 'the user must have/probably ...' (rare, 30x enriched); rubric is primary. Near-duplicate of ranks 1,3-9.",
+   "verdict": "revised",
+   "reason": "Added two grounded regexes ('Wait, the problem/question', 'the user must have/probably ...') that match the problem-reinterpretation examples; replaced the 'Wait no' example in the statement with a problem-reading one so statement, regex and rubric agree."
+  },
+  "233": {
+   "atom": 233,
+   "rank": 3,
+   "statement": "After SFT on this data, model responses will show more mid-reasoning verification and refinement of a just-taken step via contrastive 'but'/'wait, but' pivots and concrete test cases introduced with 'suppose'/'say' (e.g., 'Wait, but that would truncate correctly?', 'So the formula works, but', 'suppose current_time is, say, 1 day').",
+   "measure_kind": "both",
+   "regex": [
+    "\\bWait,?\\s+but\\b",
+    "\\b[Ss]uppose\\b",
+    ",\\s+say,\\s+",
+    "\\bNo,\\s+no\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer tests or refines a step they just took by raising a 'but' objection or by walking through a specific concrete case?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Label: FORM(2) 'but', 'Wait,', 'so', 'suppose'; MOVE(3) correcting/questioning/refining, pausing to verify a step. 'but' is the most frequent marker (17/40 chunks); 'Wait' 9/40. Lens includes 'Case', 'So', ' Which', ' if', consistent with case-checking. Bare '\\bbut\\b' deliberately excluded as too generic; regexes hit 10/40 own chunks (', say, ' is 34x enriched, 'suppose' 6x). Near-duplicate of ranks 1-2,4-9; overlaps rank 27 (case walkthrough).",
+   "verdict": "ok",
+   "reason": "Regexes valid and specific; rubric clear; statement faithful. No change."
+  },
+  "3832": {
+   "atom": 3832,
+   "rank": 4,
+   "statement": "After SFT on this data, model responses will show more 'Wait'-triggered re-evaluations that resolve into an explicit realization or correction (e.g., 'Wait, is that right?', 'Wait actually', 'Wait in that code, ...', 'Ah! Right. Because ...').",
+   "measure_kind": "both",
+   "regex": [
+    "\\bWait,?\\s+actually\\b",
+    "\\bWait,?\\s+is that (?:right|correct)\\b",
+    "\\bAh[!,]?\\s+(?:[Rr]ight|[Yy]es|I see|[Oo]kay)\\b",
+    "\\bWait,?\\s+in\\s+(?:that|the|this)\\s+code\\b"
+   ],
+   "rubric_question": "Does the response contain at least one 'wait'-style interruption that is followed by an explicit correction or realization about the preceding step (e.g., 'Ah, right, because...', 'actually X, not Y')?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Label: FORM(3) 'Wait' followed by re-evaluation/correction; MOVE(3) self-correction or realization. 'Wait' appears in 14/40 chunks (10/20 top), second-highest among ranks 1-10. Lens (' But', ' So', 'Case', ' Which') generic. Regexes narrow (6/40 own chunks, each 6-60x enriched); rubric primary. Near-duplicate of ranks 1-3,5-9.",
+   "verdict": "ok",
+   "reason": "Regexes valid and specific; rubric clear. No change."
+  },
+  "1863": {
+   "atom": 1863,
+   "rank": 5,
+   "statement": "After SFT on this data, model responses will show more explicit re-checking of a conclusion that was already reached (e.g., 'So I think the code is correct. Wait, in Python...', 'Let me think again', 'Wait, let me check edge cases again').",
+   "measure_kind": "both",
+   "regex": [
+    "\\b[Ll]et me (?:think|check|re-?check|verify|reconsider|look) again\\b",
+    "\\b[Ll]et me (?:double-?check|verify|re-?check|check)\\b",
+    "\\bWait,?\\s+(?:no|maybe)\\b"
+   ],
+   "rubric_question": "Does the response, after stating a tentative conclusion or that a solution should work, contain at least one explicit re-check of that conclusion (e.g., re-verifying with edge cases or 'let me think again')?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Label: FORM(3) 'Wait', 'Let me think again', 'Wait no', 'Wait maybe'; MOVE(3) reconsidering or double-checking a previous step. 'Wait' in 18/40 chunks (14/20 top), highest among ranks 1-10; 'perhaps/maybe' 13/40. Lens includes ' maybe', ' then', ' So', ' but'. Regexes hit 10/40 own chunks. The drafted '(should|would) work' pattern was removed: it marks the tentative-conclusion setup, not the re-check, and is common in ordinary code answers. Near-duplicate of ranks 1-4,6-9; overlaps rank 12/23 (re-check announcements).",
+   "verdict": "revised",
+   "reason": "Dropped the '(should|would) work' regex, which measures the setup rather than the re-check behaviour and is not specific to X."
+  },
+  "1325": {
+   "atom": 1325,
+   "rank": 6,
+   "statement": "After SFT on this data, model responses will show more tentative, hedged reopening of a prior step using speculative language after a pivot word ('Wait, perhaps in the question's case ...', 'Hmm, but perhaps ...', 'or maybe ...').",
+   "measure_kind": "both",
+   "regex": [
+    "\\b(?:Wait|Hmm|But|but|so|Or|or),?\\s+(?:perhaps|maybe)\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer reopens or questions a step already taken by proposing a speculative alternative reading marked by 'perhaps' or 'maybe'?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Label: FORM N/A(0); MOVE(3) reflecting on or questioning a previous step with 'Wait', 'perhaps', 'maybe'. 'perhaps/maybe' is the best surface marker (15/40 chunks, 11/20 top), better than 'Wait' (10/40). Lens contains ' maybe' and ' but'. The bare '\\bperhaps\\b' regex was removed: it is a general hedge marker (280/2400 pooled chunks) already carried by rank 37, so keeping it here would double-count general hedging; the pivot-word+hedge pattern (10/40 own, 2.5x enriched) is retained as the item-specific marker. Near-duplicate of ranks 1-5,7-9; overlaps ranks 30/35/37 (hedged alternatives).",
+   "verdict": "revised",
+   "reason": "Removed the bare 'perhaps' regex (not specific; duplicates rank 37's hedge count); statement wording tightened to the pivot+hedge form the remaining regex measures."
+  },
+  "744": {
+   "atom": 744,
+   "rank": 7,
+   "statement": "After SFT on this data, model responses will show more re-examination of a concrete example, sample, or expected answer flagged with 'Wait' when a computed result is checked against it (e.g., 'Wait the answer is 11 N. Hmm. Where...', 'Wait in the first example: 123 * 3', 'Wait, in the circle with 3 elements', 'Wait no, actually ...').",
+   "measure_kind": "both",
+   "regex": [
+    "\\bWait,?\\s+(?:in|for|with|looking at)\\s+(?:the\\s+)?(?:first\\s+|second\\s+|sample\\s+|example\\s+)?(?:example|sample|case|test|input|line|problem)\\b",
+    "\\bWait,?\\s+the\\s+(?:answer|expected|sample|example|output)\\b",
+    "\\bWait\\s+no[,.]?\\s+(?:actually|because)\\b",
+    "\\bWait,?\\s+(?:no|contradiction)[.,:]"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer notices that their computed result disagrees with a given example, sample output, or expected answer and goes back to revisit the computation?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Label: FORM(3) 'Wait' prominent; MOVE(3) correcting/reconsidering a previous statement or approach. 'Wait' in 16/40 chunks (12/20 top); the example-mismatch angle comes from the quoted chunks ('Wait the answer is 11 N', 'Wait in the example line', 'Wait in the first example', 'Wait the email in the example', 'Wait, in the circle with 3 elements'). One of the three evidence examples is narrative prose (basketball scene) with no reasoning. Lens generic. The drafted '\\bHmm...[.,]' regex was replaced: it is broad (145/2400 pooled, 1.7x) and not tied to example checking; 'Wait no./Wait, contradiction.' (4/40 own, 7.5x) is used instead, and the first pattern was widened to 'case/test/input/line'. Regexes now hit 7/40 own chunks; rubric primary. Near-duplicate of ranks 1-6,8-9; overlaps rank 21 (result-vs-sample check).",
+   "verdict": "revised",
+   "reason": "Replaced the non-specific 'Hmm.' regex with an enriched 'Wait no./Wait, contradiction.' pattern and widened the 'Wait in the example' pattern to the concrete-case variants seen in the chunks; statement adjusted accordingly."
+  },
+  "6035": {
+   "atom": 6035,
+   "rank": 8,
+   "statement": "After SFT on this data, model responses will show more inline self-questioning that is immediately answered or corrected while verifying a step (e.g., 'so 3, 5 is included? because ...', '1-based? Or 0-based?', 'a+b+c=24? No, in the formula ...', 'Wait, wait no').",
+   "measure_kind": "both",
+   "regex": [
+    "\\?\\s+(?:Or|No|Yes|Because|because|Hmm|Wait)\\b",
+    "\\bWait,\\s+wait\\b",
+    "\\b[Bb]ut note that\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer poses a question about their own step and immediately answers, rejects, or corrects it in the next clause?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Label: FORM(2) 'Wait', 'but', 'so' mid-sentence; MOVE(3) correcting/questioning own reasoning, backtracking or verifying. Question marks (17/40) and 'but' (17/40) are the most frequent markers; 'Wait' 11/40. Lens (' But', ' So', ' perhaps', '?\\n\\n') partially agrees. The '?'-then-answer regex is broad (253/2400 pooled, 2.4x enriched) but is the most direct surface form of the self-question-and-answer move; the other two are narrow. Regexes hit 12/40 own chunks. Near-duplicate of ranks 1-7,9; overlaps ranks 28/32/36 (question-then-pivot).",
+   "verdict": "ok",
+   "reason": "Regexes valid; rubric clear; statement faithful. No change."
+  },
+  "7458": {
+   "atom": 7458,
+   "rank": 9,
+   "statement": "After SFT on this data, model responses will show more stacked hesitation markers that halt reasoning to reconsider whether an assumption or interpretation was mistaken (e.g., 'Wait a second, no, wait. Hold on:', 'Wait maybe there's a confusion here', 'Alternatively, maybe ...').",
+   "measure_kind": "both",
+   "regex": [
+    "\\bWait a (?:second|minute|moment)\\b",
+    "\\bHold on\\b",
+    "\\bWait,?\\s+(?:maybe|perhaps)\\b",
+    "\\bAlternatively,?\\s+maybe\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer explicitly halts to reconsider whether a prior assumption or interpretation of the problem was mistaken, and offers an alternative reading?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Label: FORM(3) 'Wait', 'Wait no', 'Wait maybe'; MOVE(3) pausing to reconsider or question a previous step or assumption. 'Wait' 11/40, 'perhaps/maybe' 11/40, 'Alternatively' 6/40 chunks. Lens (' problem', ' Let', ' if', ' But', 'So') loosely consistent with problem re-reading. 'Wait a second'/'Hold on' very specific but rare (1/40 each); 'Alternatively, maybe' best-covered (5/40, 4.3x). Regexes hit 8/40 own chunks; rubric primary. Near-duplicate of ranks 1-8; overlaps most with rank 6 and ranks 11/19/36 (Alternatively, maybe).",
+   "verdict": "ok",
+   "reason": "Regexes valid and specific; rubric clear. No change."
+  },
+  "2948": {
+   "atom": 2948,
+   "rank": 10,
+   "statement": "After SFT on this data, model responses will show more explicit judgments of whether a proposed solution is acceptable or fast enough for the problem's constraints, including operation-count estimates and language/runtime caveats (e.g., 'is acceptable', 'might be borderline', '125e6 operations in Pyton', 'PyPy').",
+   "measure_kind": "both",
+   "regex": [
+    "\\b(?:is|are|be|seems?)\\s+acceptable\\b",
+    "\\bborderline\\b",
+    "\\bPyton\\b",
+    "\\b\\d+(?:\\.\\d+)?e\\d+\\s+operations\\b",
+    "\\bPyPy\\b",
+    "\\b(?:fast|efficient(?:ly)?)\\s+enough\\b",
+    "\\btime limit\\b"
+   ],
+   "rubric_question": "Does the response explicitly evaluate whether a proposed solution is acceptable or efficient enough under the problem's constraints (e.g., estimating operation counts, calling it 'borderline' or 'acceptable', comparing runtimes across languages or interpreters)?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 3,
+   "notes": "Label: FORM(3) 'Pyton' misspelling, 'might be borderline', 'is acceptable'; MOVE(3) evaluating/justifying acceptability of a solution w.r.t. efficiency/correctness. Type-tagged 'other'. The only item among ranks 1-10 that is not a self-correction variant. 'Pyton' (4/40) and 'PyPy' (3/40) are idiosyncratic to one competitive-programming source, so '\\bPyton\\b' is effectively a memorization tracer, not a behaviour; the acceptable/borderline/operation-count patterns carry the behavioural claim (each 20-36x enriched). 'time limit' is ungrounded in the chunks (0/2400) but semantically tied and harmless. Only meaningful on coding prompts; math/chat prompts give ~0 for both models. Lens generic. Regexes hit 6/40 own chunks; rubric primary.",
+   "verdict": "ok",
+   "reason": "Regexes valid and highly specific; rubric clear. No change."
+  },
+  "2807": {
+   "atom": 2807,
+   "rank": 11,
+   "statement": "After SFT on this data, model responses will show more mid-reasoning pauses that reconsider the current step or propose an alternative approach, signalled by 'Wait ...' or 'Alternatively, maybe/perhaps ...'.",
+   "measure_kind": "both",
+   "regex": [
+    "\\bAlternatively,? (?:maybe|perhaps)\\b",
+    "\\bWait,? (?:maybe|perhaps|a second|hold on)\\b",
+    "\\bAlternatively\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer pauses to reconsider a step just taken or explicitly proposes an alternative approach (e.g., 'Alternatively, maybe ...', 'Wait, maybe ...')?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Label: MOVE(3) 'pausing to reconsider or propose an alternative approach'; FORM(2) 'Wait'/'Alternatively, maybe'; type = move. Over 40 chunks: 'Wait' 13/40, 'Alternatively' 5/40, 'maybe' 7/40; regexes hit 6/40 own chunks and are only ~1.4x enriched vs pooled chunks (this atom's markers are shared family-wide). Lens tokens mostly function words; ' perhaps' and ' Let' weakly agree. Near-duplicate of ranks 12,13,15,16,17,19,20; bare 'Alternatively' also appears in rank 19. Confound: base model prompted raw may not produce reasoning traces at all; per_1k_tokens partly controls for length.",
+   "verdict": "revised",
+   "reason": "Statement template normalized only; regexes and rubric unchanged."
+  },
+  "7639": {
+   "atom": 7639,
+   "rank": 12,
+   "statement": "After SFT on this data, model responses will show more mid-reasoning pauses to double-check or re-verify a previous step, marked by 'Wait', 'Hmm', or 'Let me see/check'.",
+   "measure_kind": "both",
+   "regex": [
+    "\\bWait\\b",
+    "\\bHmm\\b",
+    "\\bLet me (?:see|check|verify|double-check|re-?examine)\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer pauses to double-check or re-verify a step already taken (e.g., recomputing a value, re-reading the question, testing a case) rather than proceeding linearly?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 3,
+   "notes": "Label: FORM(3) 'Wait'/'Hmm' mid-sentence pauses/corrections; MOVE(3) pausing to reconsider or double-check a previous step; type = move. Over 40 chunks: 'Wait' 12/40, 'Let me' 6/40, 'Hmm' 3/40. Lens weak. Bare '\\bWait\\b' and '\\bHmm\\b' are the labelled FORM markers (conf 3) and are kept here as the family's general marker; they are shared with ranks 13,16,21 etc. 'Let me see/check' is the most item-specific (4.9x enriched). Confound: verification moves are common in math solutions generally; the rubric requires a re-check of an already-taken step.",
+   "verdict": "revised",
+   "reason": "Statement template normalized only; regexes and rubric unchanged."
+  },
+  "1799": {
+   "atom": 1799,
+   "rank": 13,
+   "statement": "After SFT on this data, model responses will show more explicit self-interruptions in which the writer doubts or corrects a statement they just made (e.g., 'Wait no', 'Wait, that would be ...?', 'Wait, let me think again', 'Ah right').",
+   "measure_kind": "both",
+   "regex": [
+    "\\bWait,? no\\b",
+    "\\bWait,? (?:but|that|let me think again)\\b",
+    "\\bAh,? (?:right|wait|no|I see)\\b",
+    "\\bWait\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer explicitly catches, doubts, or corrects their own immediately preceding statement or calculation (a self-interruption), rather than only checking the final answer?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 3,
+   "notes": "Label: FORM(3) 'Wait' or similar self-interruption markers; MOVE(3) self-correction or mid-reasoning doubt/checking; type = move. Strongest 'Wait' atom in this block: 17/40 chunks contain 'Wait' (1.9x enriched vs pooled), 19/40 contain '?' (self-directed questions like 'Wait that would be total 7?'). Lens weakly agrees via 'So'/'?'. Bare 'Wait' kept because it is enriched here (unlike ranks 17/22 where it was dropped). Overlaps heavily with ranks 12 and 16; 'Wait no'/'Ah right' are the most discriminating.",
+   "verdict": "revised",
+   "reason": "Statement template normalized only; regexes and rubric unchanged."
+  },
+  "6477": {
+   "atom": 6477,
+   "rank": 14,
+   "statement": "After SFT on this data, model responses will show more proposals of an alternative approach or adjustment phrased in the first-person plural ('Alternatively, ... we could ...', 'But note: we have ...', 'so perhaps we can instead ...').",
+   "measure_kind": "both",
+   "regex": [
+    "\\b(?:Alternatively|But note)\\b[^\\n]{0,80}\\bwe\\b",
+    "\\bBut note\\b",
+    "\\b(?:[Pp]erhaps|[Mm]aybe|[Ss]o|[Tt]hen),? we (?:can|could|need|should|use|do|have|are)\\b",
+    "\\b[Ww]e (?:can|could|need to|should)\\b"
+   ],
+   "rubric_question": "Does the response contain at least one proposal of an alternative approach or adjustment to the current method (not merely continuing the current line of work) that is phrased in the first-person plural (e.g., 'Alternatively, we could ...', 'so perhaps we can ...')?",
+   "unit": "per_response",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Label: FORM(3) 'we' + verb ('we subtract', 'we can', 'we have'); MOVE(3) proposing alternative approaches or adjustments ('Alternatively', 'But note', 'Wait, perhaps'); type = move. Over 40 chunks: 'we' 19/40 (strong), 'perhaps' 8/40, 'Wait' 8/40, 'Alternatively' 3/40, 'But note' 2/40. Top chunks are deliberative 'so we can / perhaps we / then we' planning. Lens tokens do not clearly agree; ' we' is NOT in the lens top-15. Bare '\\bAlternatively\\b' was removed (0.86x enrichment here, i.e. less common than in pooled chunks); a 'perhaps/maybe/so/then, we can/could ...' pattern (8/40 own, 8.9x enriched) was added. The bare 'we can/could/should' regex is a general deliberative-voice marker (kept because it is the conf-3 FORM label, 4x enriched) but will move with 'we'-voice adoption regardless of alternatives; conjunction regexes and the rubric are primary, so unit = per_response. Example 1 (SKI combinator string) is off-label noise.",
+   "verdict": "revised",
+   "reason": "Removed the bare 'Alternatively' regex (not enriched for this atom) and added an enriched 'perhaps/so/then, we can ...' pattern grounded in the chunks; rewrote the two-part rubric as a single yes/no question."
+  },
+  "3231": {
+   "atom": 3231,
+   "rank": 15,
+   "statement": "After SFT on this data, model responses will show more caveats that reconsider an earlier claim by pointing to a specific case or setting where it may fail ('Wait, but in the worst case ...', 'Hmm, but in Python ...', 'Alternatively, perhaps ...').",
+   "measure_kind": "both",
+   "regex": [
+    "\\b(?:Wait|Hmm),? but in\\b",
+    "\\bAlternatively,? perhaps\\b",
+    "\\bWait,? but\\b",
+    "\\bHmm,? but\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer qualifies or reconsiders an earlier claim by raising a caveat about a specific case, constraint, or setting (e.g., worst-case input, a particular language/runtime, an edge case) rather than simply continuing?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Label: FORM(2) 'Wait, but in', 'Alternatively, perhaps', 'but'/'so' introducing corrections; MOVE(3) correcting or reconsidering a previous statement, proposing alternatives, or verifying assumptions; type = move. Examples skew to feasibility/complexity caveats in code; src_hist python 0.206 (slightly above block average). Over 40 chunks: 'Wait' 10/40, '?' 13/40, 'but' 10/40, 'Alternatively' 5/40, 'perhaps' 5/40. Lens weak. 'Wait/Hmm, but in' is the discriminating marker (4/40 own, 12x enriched); 'Alternatively, perhaps' is labelled but not enriched (1.05x). Bare 'but' intentionally excluded. Overlaps ranks 11-13.",
+   "verdict": "revised",
+   "reason": "Statement template normalized only; regexes and rubric unchanged."
+  },
+  "2004": {
+   "atom": 2004,
+   "rank": 16,
+   "statement": "After SFT on this data, model responses will show more expressions of hesitation or doubt about the writer's own calculation or reading of the problem ('Hmm', 'Something is conflicting here', 'Maybe my calculations are wrong', 'Wait maybe the question is different').",
+   "measure_kind": "both",
+   "regex": [
+    "\\bHmm\\b",
+    "\\bWait,? maybe\\b",
+    "\\b[Ss]omething(?:'s| is) (?:wrong|off|conflicting)\\b",
+    "\\b[Mm]aybe (?:my|I) [^\\n.?!]{0,30}\\b(?:wrong|mistaken|misread|miscalculated)\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer expresses doubt about their own calculation or their interpretation of the problem (e.g., 'maybe my calculation is wrong', 'something is conflicting', 'maybe the question means ...') before resolving it?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Label: FORM(3) 'Wait' or hesitation markers 'Hmm', 'maybe'; MOVE(3) self-correction or reconsideration (doubting calculations, proposing alternatives, pausing to verify); type = move. Over 40 chunks: 'Wait' 10/40, 'So' 10/40, '?' 10/40, 'Hmm' 4/40, 'maybe' 5/40. Lens weak. Several examples are comparative judgments ('Either way is okay', 'both approaches work') so the MOVE also covers weighing options; rubric targets the doubt component. Overlaps ranks 12/13/17; the 'Something is wrong/conflicting' and 'maybe my ... wrong' regexes are item-specific but rare (1/40 each), so expect low counts; bare 'Hmm' is the labelled marker (1.6x enriched).",
+   "verdict": "revised",
+   "reason": "Statement template normalized only; regexes and rubric unchanged."
+  },
+  "3317": {
+   "atom": 3317,
+   "rank": 17,
+   "statement": "After SFT on this data, model responses will show more explicit hedged self-diagnosis of a previous reasoning step as possibly mistaken or improvable ('I made an incorrect assumption ...', 'maybe there was an error here', 'perhaps I misunderstood', 'maybe it's better/simpler to ...').",
+   "measure_kind": "both",
+   "regex": [
+    "\\bI (?:have )?made an? (?:incorrect|wrong|mistaken|bad) (?:assumption|calculation|step|turn|choice)\\b",
+    "\\bI (?:think I |may have |might have |probably )?(?:misread|miscounted|miscalculated|misunderstood|mixed up|messed up)\\b",
+    "\\bWait,? maybe I\\b",
+    "\\b(?:[Mm]aybe|[Pp]erhaps) (?:it'?s|it is|that'?s) (?:better|simpler|easier|actually)\\b",
+    "\\b(?:[Mm]aybe|[Pp]erhaps) (?:there (?:was|is) an error|I misunderstood|I misread|I made a mistake|I'?m (?:missing|wrong))\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer explicitly reflects on a specific previous step of their own reasoning and identifies it as mistaken, based on a wrong assumption, or in need of revision?",
+   "unit": "per_response",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Label: CONTENT N/A, FORM N/A (conf 0), MOVE(3) reflecting on or correcting a previous step, often signalled by 'Wait'; type = move. Top chunks are hedged self-diagnoses: 'I made an incorrect assumption ... Wait maybe I considered', 'maybe there was an error here', 'Wait, but perhaps I misunderstood', 'Alternatively, maybe it's actually simpler', 'maybe it's better to see it as', 'Maybe that's better. Hmm.' Bare '\\bWait\\b' was removed (8/40 own, 0.89x enrichment, i.e. NOT a marker of this atom); two grounded patterns were added ('maybe/perhaps it's better/simpler/easier' 4/40 own 27x enriched; 'maybe there was an error / perhaps I misunderstood' 2/40, 24x). Regexes now hit 7/40 own chunks; rubric primary, unit per_response. Lens (' perhaps', ' maybe', ' not') agrees with a hedging/reflection reading. One chunk is a safety-refusal think-block, so top chunks include non-math reflective openings; reasoning-trace confound applies.",
+   "verdict": "revised",
+   "reason": "Dropped the bare 'Wait' regex (not enriched for this atom) and added two grounded, enriched hedged-self-diagnosis patterns; statement reworded to the hedged 'maybe I .../maybe it's better' form the chunks actually show."
+  },
+  "5435": {
+   "atom": 5435,
+   "rank": 18,
+   "statement": "After SFT on this data, model responses will show more hesitation or self-correction interjected in the middle of symbolic calculations ('Wait', 'Hmm', 'Alternatively' adjacent to expressions with nested parentheses or operators such as ^, *, =).",
+   "measure_kind": "both",
+   "regex": [
+    "\\([^()\\n]*\\([^()\\n]*\\)[^()\\n]*\\)",
+    "\\b(?:Wait|Hmm|Alternatively)\\b[^\\n]{0,80}[()^*=]",
+    "[()^*=][^\\n]{0,80}\\b(?:Wait|Hmm|Alternatively)\\b"
+   ],
+   "rubric_question": "Does the response contain at least one hesitation or self-correction ('Wait', 'Hmm', 'Alternatively', 'not sure') that occurs in the middle of a symbolic calculation, i.e., immediately adjacent to a mathematical expression with parentheses or operators, rather than in surrounding prose?",
+   "unit": "per_response",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Label: CONTENT(3) mathematical expressions and symbolic reasoning, often nested parentheses; FORM(3) nested parentheses and operators; MOVE(2) mid-calculation hesitation or self-correction ('Wait','Hmm','Alternatively'); type = content (the only non-move atom in ranks 11-20). Item targets hesitation-inside-calculation with the nested-parentheses regex as the FORM proxy. Over 40 chunks: nested parens 11/40 (7.7x enriched, strongest marker), 'So' 9/40, 'Wait' 6/40, 'Hmm' 4/40. Lens partly agrees. Confounds: nested-paren density tracks fraction of math prompts and answer length rather than hesitation; the first regex alone measures notation, not the move, so unit = per_response with rubric primary. Example 1 (SKI combinator string, shared with rank 14) is an outlier.",
+   "verdict": "revised",
+   "reason": "Statement template normalized only; regexes and rubric unchanged (nested-paren regex retained as the labelled conf-3 FORM marker; rubric carries the hesitation component)."
+  },
+  "4102": {
+   "atom": 4102,
+   "rank": 19,
+   "statement": "After SFT on this data, model responses will show more proposals of alternative hypotheses or approaches introduced with 'Alternatively', 'But perhaps/maybe', or 'another possibility'.",
+   "measure_kind": "both",
+   "regex": [
+    "\\bAlternatively\\b",
+    "\\b(?:But|Or),? (?:perhaps|maybe)\\b",
+    "\\b[Aa]nother (?:possibility|approach|way|option|idea)\\b"
+   ],
+   "rubric_question": "Does the response propose at least one alternative hypothesis or approach to the one currently being pursued (e.g., 'Alternatively, maybe ...', 'But perhaps ...', 'another possibility is ...') before settling on an answer?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 3,
+   "notes": "Label: FORM(2) 'Wait' or 'Alternatively'; MOVE(3) proposing alternative approaches or reconsidering a previous step; type = move. Over 40 chunks: 'Wait' 10/40, 'perhaps' 8/40, 'But' 6/40, 'maybe' 5/40, 'Alternatively' 4/40; 'another possibility/approach' 0/40 (kept as a conservative synonym marker; 12/2400 pooled). Lens agrees moderately. Overlaps ranks 11 and 14 (both 'Alternatively' items) and 35; 'Wait' deliberately excluded to make this the alternatives-specific item. 'perhaps'/'maybe' only counted after 'But'/'Or' (7.3x enriched).",
+   "verdict": "revised",
+   "reason": "Statement template normalized only; regexes and rubric unchanged."
+  },
+  "2849": {
+   "atom": 2849,
+   "rank": 20,
+   "statement": "After SFT on this data, model responses will show more explicit naming of a problem, confusion, or infeasibility in the current approach followed by a turn to a different approach ('That is not feasible. Hmm, this is a problem. We need a better approach.', 'Wait, perhaps there is a misunderstanding here', 'Oh, here is a confusion').",
+   "measure_kind": "both",
+   "regex": [
+    "\\b(?:[Tt]his|[Tt]hat) is (?:a problem|not feasible|impossible|ambiguous|confusing)\\b",
+    "\\b(?:here is|there is|there's) (?:a )?(?:confusion|misunderstanding|problem)\\b",
+    "\\b[Ww]e need a (?:better|different|smarter|new) (?:approach|way|method|idea)\\b",
+    "\\b(?:Wait|Hmm),? perhaps\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer explicitly names a problem, confusion, ambiguity, or infeasibility in the current approach or interpretation, and then calls for or turns to a different approach?",
+   "unit": "per_response",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Label: FORM(2) 'Wait,' 'Hmm,' 'Perhaps' hesitation markers; MOVE(3) identifying a problem, confusion, or mistake and suggesting a reconsideration or alternative approach; type = move. Over 40 chunks: 'Wait' 13/40, 'perhaps' 11/40 (highest in block), 'But' 9/40, 'confus' 3/40, 'Hmm' 3/40. Lens weak. Problem-naming regexes are item-specific but sparse (1-3/40, 15-60x enriched), so rubric is primary and unit = per_response; 'Wait/Hmm, perhaps' overlaps ranks 11/16/30. Confound: 'This is a problem' can appear as literal problem-statement text; the rubric requires the subsequent turn to a new approach.",
+   "verdict": "revised",
+   "reason": "Statement template normalized only; regexes and rubric unchanged."
+  },
+  "1975": {
+   "atom": 1975,
+   "rank": 21,
+   "statement": "After SFT on this data, model responses will show more explicit checking of a just-computed result against an expected or sample value, flagging agreement ('which is correct') or a conflict ('Wait, that's conflicting with the sample', 'Wait, but that's different') and walking the case with 'Let's see/check'.",
+   "measure_kind": "both",
+   "regex": [
+    "(?:^|[.?!]\\s+|\\n)Wait\\b",
+    "\\bconflict(?:s|ing)? with\\b",
+    "\\bwhich is (?:correct|wrong)\\b",
+    "\\bWait,? (?:but )?that'?s (?:different|conflicting|not)\\b",
+    "\\b[Ll]et'?s (?:see|check)\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer compares a result they just derived against an expected/sample value and explicitly states whether it matches or conflicts, then revisits the step if it conflicts?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Label: MOVE(3) catching/questioning own reasoning, FORM(2) Wait/So markers. Examples are narrower than the label: concrete-case checks against a sample (n=9, n=25, comparison count), plus 'Wait, but that's different/a different structure', 'Let's see:', 'Let's check: Testing 97'. Lens (' So', 'Case', ':\\n\\n', ' then') agrees with a case-checking flavour but does not contain 'Wait'. Added two grounded regexes: 'Wait, (but) that's different/conflicting/not' (2/40, 24x enriched) and 'Let's see/check' (6/40, 8x). Sentence-initial 'Wait' is only 1.5x enriched. Heavy overlap with ranks 22-24, 27-30 (self-correction variants) and rank 27 ('let's see' case walkthrough); differentiated by the result-vs-expected check. Rubric per_response; regex per_1k_tokens.",
+   "verdict": "revised",
+   "reason": "Added two grounded, enriched regexes ('Wait, that's different/conflicting', 'Let's see/check') and mentioned them in the statement; template normalized."
+  },
+  "5614": {
+   "atom": 5614,
+   "rank": 22,
+   "statement": "After SFT on this data, model responses will show more sentence-initial causal justification of a step ('Because ...') given right after a claim or a 'Wait' self-check, i.e. explicit mid-reasoning justification of why a step holds.",
+   "measure_kind": "both",
+   "regex": [
+    "(?:^|[.?!]\\s+|\\n)Because\\b"
+   ],
+   "rubric_question": "Does the response contain at least one sentence-initial 'Because' clause that justifies a step or claim the writer just made (rather than answering the user's question directly)?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Label: FORM(2) 'Wait' or 'Because'; MOVE(3) self-correction or justification. All three evidence examples contain sentence-initial 'Because' (5/40 own chunks, 5.4x enriched); only one contains 'Wait'. Lens (' so', ' So', ' if', ' maybe', 'Case') consistent with justification but does not include 'Because'. Bare '\\bWait\\b' was removed: 10/40 own vs 542/2400 pooled (1.1x, no enrichment) and it is measured by ranks 12/13/21; keeping it would make this item a Wait-count rather than the Because-justification marker that distinguishes it. Rubric per_response.",
+   "verdict": "revised",
+   "reason": "Dropped the bare 'Wait' regex (not enriched, not specific to this item's Because-justification behaviour); template normalized."
+  },
+  "1385": {
+   "atom": 1385,
+   "rank": 23,
+   "statement": "After SFT on this data, model responses will show more explicit verdicts on, or re-checks of, a step just taken, phrased with demonstrative 'that' ('So that's correct', 'that's handled correctly', 'Yes, that should work', 'Wait, that's different') or as an announced re-check ('let me check the calculation again', 'let me retrace').",
+   "measure_kind": "both",
+   "regex": [
+    "\\b[Ll]et(?:'s| me) (?:re-?check|check|retrace|verify|double-check|recompute|redo|confirm)\\b",
+    "\\bcheck (?:the )?calculation again\\b",
+    "\\bthat(?:'s|’s| is| seems) (?:correct|right|wrong|different|odd|interesting|crucial|important|handled|the code|the plan|the correct|good|fine)\\b",
+    "\\bWait,? that(?:'s|’s| is| seems| would)\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer explicitly passes a verdict on a step they just took (e.g., 'so that's correct', 'that's handled', 'wait, that's different') or explicitly pauses to re-check or re-derive it (e.g., 'let me check that again', 'let me retrace'), rather than only moving forward?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Label: FORM(2) 'Wait', 'Hmm', 'Let me', 'So that's'; MOVE(3) verifying/correcting/reconsidering a previous step. The draft focused on re-check announcements (4/40 coverage), but 12+/20 top chunks are demonstrative-'that' verdicts on a step: 'So that's handled correctly', 'So that's correct', 'So that's good', 'that's the plan', 'Yes, that should work', 'Wait that's different', 'Wait that seems odd', 'that's crucial'. Statement and regexes revised to cover both facets: 'that's correct/different/handled/...' (11/40 own, 19x enriched), 'Wait, that's ...' (4/40, 13x), plus the re-check announcements (2/40, 4x; 'check calculation again' 1/40, 30x). Sentence-initial 'Hmm' dropped (1.2x, not specific). Lens neutral. 'Let me check/verify' also appears in final answer-verification passes (confound). Overlaps rank 33 (5939 'So that's fine/works' confirmation) heavily and rank 21; rubric per_response.",
+   "verdict": "revised",
+   "reason": "Chunks show the dominant pattern is demonstrative-'that' verdicts on a step ('So that's correct/handled/different'), not just 'let me check' announcements; statement, regexes and rubric widened accordingly and the non-specific sentence-initial 'Hmm' regex dropped."
+  },
+  "8104": {
+   "atom": 8104,
+   "rank": 24,
+   "statement": "After SFT on this data, model responses will show more explicit retractions of a just-stated claim, marked by 'Wait, no' / 'Actually, ...' / '-> no:' and immediately followed by the corrected statement.",
+   "measure_kind": "both",
+   "regex": [
+    "\\bWait,? no\\b",
+    "(?:^|[.?!:]\\s*|\\n\\s*)Actually\\b",
+    "\\b[Nn]o,? wait\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer explicitly negates something they themselves just wrote (e.g., 'Wait, no', 'Actually, ...', '-> no') and replaces it with a corrected version?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 3,
+   "notes": "Label: FORM(2) Wait/Actually/So; MOVE(3) correcting or revising a previous statement. Examples 1-2 are crisp retractions ('-> no: Actually, the grid has points', 'Wait, no: Wait, the LHS is 8k^2'); example 3 is a merge trace without correction. Lens weakly agrees (negation, questioning). Regex coverage is low on the 40 chunks (3/40; 'No, wait' 0/40 own, kept as a plausible variant) but markers are highly specific. 'Actually' also occurs in non-corrective emphasis; the sentence-initial restriction keeps it conservative. Overlaps ranks 1/5/7/13 ('Wait no'). Rubric per_response.",
+   "verdict": "revised",
+   "reason": "Statement template normalized only; regexes and rubric unchanged."
+  },
+  "3731": {
+   "atom": 3731,
+   "rank": 25,
+   "statement": "After SFT on this data, model responses will show more explicit approach-planning pauses, where the writer says 'Let me think' and then lays out an outline of steps ('The steps:', 'So, first, ... Then ...') before executing them.",
+   "measure_kind": "both",
+   "regex": [
+    "\\bLet me think\\b",
+    "\\b[Tt]he steps:\\s*\\n",
+    "\\bSo,? first,?\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer pauses to plan (e.g., 'Let me think') and then lists a sequence of steps or a plan for the approach before carrying it out?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Label: MOVE(3) 'actively reasoning, proposing steps, reflecting on approach' is near-generic; X was narrowed to the 'Let me think' + step-outline pattern visible in all three evidence examples (regex 3/40 own, 'Let me think' 7.8x enriched). FORM(2) lists Let me think/So/Therefore/Thus/Wait. Lens (' But', ' Which', ' messed', ' Wait') suggests some doubt content not captured by the examples. If a scorer treats X as 'plans steps at all', it becomes generic; the regex anchors it to explicit markers. Overlaps rank 40 (implementation outlining) and rank 31. Rubric per_response.",
+   "verdict": "revised",
+   "reason": "Statement template normalized only; regexes and rubric unchanged."
+  },
+  "1524": {
+   "atom": 1524,
+   "rank": 26,
+   "statement": "After SFT on this data, model responses will show more explicit step-by-step tracing of an iterative process (loop iterations, recursion, or successive algebraic manipulations) with labeled steps such as 'First iteration:', 'So for 3:', 'At j=1:' followed by the intermediate state.",
+   "measure_kind": "both",
+   "regex": [
+    "\\b(?:First|Second|Third|Next|Last|Final) iteration\\b",
+    "(?i)\\biteration \\d+:",
+    "(?:^|\\n)(?:So |Now |Then |Wait,? )?(?:[Aa]t|[Aa]fter|[Ff]or|[Ww]hen|[Ww]ith) (?:[A-Za-z_]\\w*\\s*=\\s*)?[\\w.\\-]+:[ \\t]*\\n"
+   ],
+   "rubric_question": "Does the response contain an explicit trace of an iterative or recursive process, listing successive iterations/steps together with their intermediate values (e.g., 'First iteration: n=5 -> remainder 1 -> ...', 'At j=1: ...')?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Only atom in this batch with a CONTENT label (step-by-step math/computational reasoning, conf 3); MOVE(3) tracking/explaining a process mid-calculation. Top chunks are colon-headed iteration/case traces: 'First iteration:', 'First iteration i=2:', 'So for 3:', 'After j=0: / At j=1:', 'Wait, col 0:', 'Processing 1000:', 'First pair (1, 288)'. Lens (' each', ' if', ' for', 'Case') agrees with enumeration/tracing. The drafted '(Step|Iteration) N:' regex was removed because 'Step 1:' is generic instruction-tuned answer formatting, not iteration tracing; replaced with a 'So for 3:/At j=1:/After j=0:' line pattern (requires a value or var=value before the colon, so Python 'for x in y:' lines do not match; 1/40 own, 12x enriched). Regexes remain conservative (3/40 own; 'iteration N:' 0/2400 but harmless) and may under-count traces written as 'n=5 -> 2 -> 1'; rubric primary. Overlaps ranks 27 and 39 (structured traces). Rubric per_response.",
+   "verdict": "revised",
+   "reason": "Replaced the generic 'Step N:' regex with a grounded 'So for 3:/At j=1:' iteration-header pattern that excludes Python for-lines; statement/rubric examples updated; template normalized."
+  },
+  "6956": {
+   "atom": 6956,
+   "rank": 27,
+   "statement": "After SFT on this data, model responses will show more explicit walk-throughs of a concrete example or test case to check a rule or procedure, introduced by 'let's see' / 'so we have ...:' and followed by an itemized enumeration of the pieces (bits, coefficients, test cases).",
+   "measure_kind": "both",
+   "regex": [
+    "\\b[Ll]et'?s see\\b",
+    "\\bwe have\\b[^\\n]{0,40}:\\s*\\n",
+    "\\b[Tt]est cases?\\b[^\\n]{0,60}:\\s*\\n"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer works through a specific concrete example or test case piece by piece (e.g., listing each bit, coefficient, or test input with its result) in order to check that a rule or procedure gives the expected outcome?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Label: MOVE(3) 'pausing to verify/reconsider/clarify', FORM(2) names 'Wait', but none of the three evidence examples contains 'Wait'; all are concrete enumerations (bit-by-bit OR, synthetic division coefficients, quadruple-factorial test cases). Lens (':\\n\\n', ' =', ' all', ' But', '?\\n\\n') agrees with enumeration/checking. X follows the examples (concrete walk-through) more than the label wording. Regexes hit 4/40 own chunks ('we have ...:' and 'test case ...:' 20x enriched; 'let's see' 3.3x). Overlaps rank 21 (case checking, also 'let's see') and rank 26 (tracing). Rubric per_response.",
+   "verdict": "revised",
+   "reason": "Statement template normalized only; regexes and rubric unchanged."
+  },
+  "5759": {
+   "atom": 5759,
+   "rank": 28,
+   "statement": "After SFT on this data, model responses will show more chains of short self-directed questions that probe an assumption ('But what if ...? Then ...? Why?') followed by a revision cue such as 'Actually' or 'Alternatively'.",
+   "measure_kind": "both",
+   "regex": [
+    "\\bBut what if\\b",
+    "\\?\\s+(?:But|Then|Actually|Alternatively|Why)\\b",
+    "\\?\\s*\\n+\\s*Alternatively\\b"
+   ],
+   "rubric_question": "Does the response contain a run of two or more consecutive self-directed questions probing an assumption or edge case (e.g., 'But what if X? Then Y?'), followed by a revision such as 'Actually ...' or 'Alternatively ...'?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 3,
+   "notes": "Label: FORM(3) But/Actually/Then/?/Alternatively; MOVE(3) questioning or revising a previous assumption. All three evidence examples are dense question chains with 'Actually'/'Alternatively' revisions; lens (' maybe', '?\\n\\n', ' but', ' Wait', ' But', ' not') agrees strongly. Most distinctive surface pattern in this batch ('?' + But/Then/Actually 13/40 own, 4.6x enriched). Overlaps ranks 8/32/36 (question-then-pivot). Rubric per_response.",
+   "verdict": "revised",
+   "reason": "Statement template normalized only; regexes and rubric unchanged."
+  },
+  "7211": {
+   "atom": 7211,
+   "rank": 29,
+   "statement": "After SFT on this data, model responses will show more sentence-initial contrastive turns ('But ...', 'However, ...', '... but no, ...') that raise a complication or counter-check against a conclusion the writer just reached.",
+   "measure_kind": "both",
+   "regex": [
+    "(?:^|[.?!]\\s+|\\n)But\\b",
+    "(?:^|[.?!]\\s+|\\n)However\\b",
+    "\\bbut no\\b"
+   ],
+   "rubric_question": "Does the response contain at least one sentence-initial 'But' or 'However' that introduces a complication, exception, or counter-check to something the writer themselves just concluded (not a contrast in the problem statement)?",
+   "unit": "per_1k_tokens",
+   "generic": true,
+   "confidence": 2,
+   "notes": "Label: FORM(3) But/Wait at start of line or after punctuation; MOVE(3) self-correction/reconsideration. Examples: 'However, we also have the cost ...', 'All consistent. But S5 is false ... But S6', 'Maybe it's \"lab\" but no, it's \"laboratory\"'; none contains 'Wait'. Lens neutral. Sentence-initial 'But' is present in ~12% of all pooled 40-token chunks (283/2400, only 2.1x enriched) and essentially every multi-paragraph reasoning response contains one, so the item is flagged generic: the per_1k_tokens delta is still measurable but this is a weak discriminator relative to rank 28. Overlaps ranks 30/32.",
+   "verdict": "revised",
+   "reason": "Set generic=true: sentence-initial 'But'/'However' counter-checks are a near-ubiquitous property of reasoning text; template normalized. Regexes and rubric unchanged."
+  },
+  "3125": {
+   "atom": 3125,
+   "rank": 30,
+   "statement": "After SFT on this data, model responses will show more hedged reconsiderations that introduce an alternative reading or approach after a doubt/contrast marker ('But perhaps ...', 'So perhaps ...', 'Wait, the problem says ...').",
+   "measure_kind": "both",
+   "regex": [
+    "\\b(?:But|So|Or|Hmm,?|Wait,?) (?:perhaps|maybe)\\b",
+    "(?:^|[.?!]\\s+|\\n)Perhaps\\b",
+    "\\bWait,? the problem (?:says|states)\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer, after a doubt or contrast marker, proposes an alternative interpretation of the problem or an alternative approach hedged with 'perhaps'/'maybe' (e.g., 'But perhaps ...', 'So perhaps the problem has to be ...')?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Label: FORM(2) starts with But/Wait/Perhaps; MOVE(3) reconsidering, introducing alternatives, catching errors. Two of three evidence examples contain 'But perhaps'/'So perhaps'; the first is a 'Wait the problem says ...' re-reading of constraints. Lens neutral. Sentence-initial 'Perhaps' 0/40 own (labelled, kept). Differentiated from ranks 24/29 by the hedge word attached to the contrast marker; overlaps ranks 6/35/37 (hedged alternatives) and rank 2 ('Wait, the problem'). Rubric per_response.",
+   "verdict": "revised",
+   "reason": "Statement template normalized only; regexes and rubric unchanged."
+  },
+  "1340": {
+   "atom": 1340,
+   "rank": 31,
+   "statement": "After SFT on this data, model responses will show more step-by-step procedural narration of an algorithm in first-person plural ('for each ..., then we ..., we set/assign ...') describing loops, conditions and state updates in prose before or alongside code.",
+   "measure_kind": "both",
+   "regex": [
+    "\\bfor each\\b",
+    "\\b[Tt]hen (?:for|we)\\b",
+    "\\bwe (?:iterate|loop|set|assign|update|keep track)\\b"
+   ],
+   "rubric_question": "Does the response narrate a computational or algorithmic procedure step by step in prose (iterating over items, checking conditions, updating state), rather than only presenting final code or a purely mathematical derivation?",
+   "unit": "per_response",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Label: MOVE(3) 'planning computational steps', FORM(2) word 'for'. Lens tokens are generic function words and do NOT specifically support the label. Examples are consistent (procedural 'we ... for each ... then' narration). Regexes hit 7/40 own chunks ('for each' 6.6x enriched). Confound: near-ubiquitous on code prompts; the mixed prompt set (math/QA/chat) keeps it non-generic overall. Overlaps rank 14 ('we' voice) and ranks 25/40 (planning). Rubric primary.",
+   "verdict": "revised",
+   "reason": "Statement template normalized only; regexes and rubric unchanged."
+  },
+  "1692": {
+   "atom": 1692,
+   "rank": 32,
+   "statement": "After SFT on this data, model responses will show more self-posed checking questions about the current approach that end in '?' and are immediately followed by an adjustment or correction ('...? But we ...', 'However, we can ...', 'Actually, we must ...').",
+   "measure_kind": "both",
+   "regex": [
+    "\\?\\s+(?:But|So|Actually|However)\\b",
+    "\\b(?:But|However|Actually),? we (?:can|could|must|are|have|need)\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer poses a question about its own approach or an edge case (ending in '?') and immediately answers or adjusts the plan with a sentence starting 'But', 'So', 'Actually', or 'However'?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Label: FORM(3) 'But we can'/'However, we can', ends with '?'; MOVE(3) proposing alternatives/corrections. Lens (' would', ' maybe', ' perhaps', '?') weakly consistent with tentative questioning. All 3 evidence examples show the 'question? But/So/Actually' pattern; regexes hit 18/40 own chunks (the 'But/However/Actually, we can' pattern is 17.7x enriched, the strongest in this block). Confound: rhetorical questions in chat-style answers. Overlaps ranks 8/28/36 (question-then-pivot) and rank 14 ('we' voice).",
+   "verdict": "revised",
+   "reason": "Statement template normalized only; regexes and rubric unchanged."
+  },
+  "5939": {
+   "atom": 5939,
+   "rank": 33,
+   "statement": "After SFT on this data, model responses will show more explicit confirmation that a preceding step or intermediate result holds, phrased as a sentence-initial 'So that works / So that's how ... / So that's fine' consequence.",
+   "measure_kind": "both",
+   "regex": [
+    "\\bSo that(?:'s|’s| would| works| is| means| doesn't| gives)\\b",
+    "\\bthat (?:works|checks out|would work)\\b",
+    "\\bthat'?s (?:fine|okay|good|consistent|correct|handled|the plan|useful)\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer explicitly confirms that a previous step or intermediate result works or is consistent (e.g., 'So that works', 'so that's fine', 'that checks out') before moving on?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Label: FORM(3) 'so that'; MOVE(3) confirming/validating. Examples use 'So that' as demonstrative ('So that would work', 'So that doesn't add any', 'So that's fine', 'So that's consistent', 'So that is handled correctly. So that's good.'), not the purpose connective 'so that'; regexes restricted accordingly (10/40 own, 15x enriched). Added a grounded 'that's fine/okay/good/consistent/handled/the plan' pattern (8/40 own, 20x enriched). Lens partially agrees. Example 1 ('Since that's impossible, so ...') is a consequence-drawing variant, not confirmation. Overlaps rank 23 (1385, demonstrative-'that' verdicts).",
+   "verdict": "revised",
+   "reason": "Added a grounded, strongly enriched 'that's fine/okay/consistent/...' confirmation regex; template normalized."
+  },
+  "4123": {
+   "atom": 4123,
+   "rank": 34,
+   "statement": "After SFT on this data, model responses will show more mid-thought self-interruptions that catch or question the writer's own prior reasoning ('Wait, the ...', 'However, what if ...', 'that's tricky').",
+   "measure_kind": "both",
+   "regex": [
+    "\\bWait, (?:the|but|actually)\\b",
+    "\\b(?:But|However|Hmm),? what if\\b",
+    "\\bthat'?s tricky\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where the writer explicitly catches, questions, or flags a difficulty in their own previous statement mid-reasoning (e.g., 'Wait, the ...', 'but what if ...', 'that's tricky')?",
+   "unit": "per_response",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Label: MOVE(3) catching/questioning own reasoning, FORM(2) 'Wait, the'. Lens (' perhaps', '?\\n\\n', ' messed') moderately supports doubt/questioning. Examples are less consistent than the label claims: ex1 is 'Alternatively/However, what if', ex2 is a problem restatement with 'that's tricky', only ex3 has 'Wait, the'. Regexes hit 7/40 own chunks. Near-duplicate of ranks 36/38 (Wait/Alternatively atoms) and ranks 1-9; rubric primary, regexes partial.",
+   "verdict": "revised",
+   "reason": "Statement template normalized only; regexes and rubric unchanged."
+  },
+  "2003": {
+   "atom": 2003,
+   "rank": 35,
+   "statement": "After SFT on this data, model responses will show more tentative proposals of an alternative approach or reinterpretation, signaled by 'So perhaps ...' or a sentence-initial 'Alternatively, ...'.",
+   "measure_kind": "both",
+   "regex": [
+    "\\b[Ss]o perhaps\\b",
+    "\\bAlternatively,\\s",
+    "\\bperhaps (?:it|we|the|each|I)\\b"
+   ],
+   "rubric_question": "Does the response propose at least one alternative approach or reinterpretation of the problem (e.g., 'Alternatively, ...', 'so perhaps ...') that differs from the approach it was pursuing?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Label: MOVE(3) proposing alternatives/reconsidering, FORM(2) 'perhaps'/'alternatively'. Lens generic and only weakly supportive. Ex3 is identical to rank 34 ex1 (shared chunk), indicating atom overlap. Regexes hit 13/40 own chunks ('So perhaps' 10.8x enriched). Overlaps rank 37 (perhaps/maybe hedging), ranks 6/19/30; this item is anchored on 'So perhaps' + 'Alternatively,'.",
+   "verdict": "revised",
+   "reason": "Statement template normalized only; regexes and rubric unchanged."
+  },
+  "4760": {
+   "atom": 4760,
+   "rank": 36,
+   "statement": "After SFT on this data, model responses will show more chains of self-questioning in which a question mark is followed by a new paragraph beginning 'Alternatively, maybe ...' or 'Wait, maybe/no ...' that proposes a different hypothesis or retracts the previous one.",
+   "measure_kind": "both",
+   "regex": [
+    "\\?\\s*\\n\\s*\\n\\s*(?:Wait|Alternatively)\\b",
+    "\\bAlternatively, maybe\\b",
+    "\\bWait, (?:maybe|no|perhaps)\\b"
+   ],
+   "rubric_question": "Does the response contain at least one sequence where the writer poses a question about the problem and then, in a new paragraph starting with 'Alternatively' or 'Wait', proposes a different hypothesis or retracts the previous idea?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 3,
+   "notes": "Label: FORM(3) and MOVE(3), and all 3 evidence examples match the '?\\n\\nWait/Alternatively, maybe' pattern exactly (regexes hit 18/40 own chunks, 6-7x enriched). Lens ('?', ':\\n\\n', ' problem', ' if') consistent with question-then-break structure. Cleanest surface marker in this rank range. Overlaps rank 38 (paragraph-initial Wait/Alternatively), rank 34, and ranks 9/11 ('Alternatively, maybe'); this item is the hypothesis-chain variant.",
+   "verdict": "revised",
+   "reason": "Statement template normalized only; regexes and rubric unchanged."
+  },
+  "2311": {
+   "atom": 2311,
+   "rank": 37,
+   "statement": "After SFT on this data, model responses will show more hedged, tentative reasoning steps marked by 'perhaps', 'maybe', or 'I'm not sure' rather than assertive statements.",
+   "measure_kind": "both",
+   "regex": [
+    "(?i)\\b(?:perhaps|maybe)\\b",
+    "\\bI'?m not sure\\b"
+   ],
+   "rubric_question": "Does the response contain at least one reasoning step stated tentatively (with 'perhaps', 'maybe', 'I'm not sure', or 'might be') rather than asserted as fact?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Label: FORM(3) 'perhaps'/'maybe'; MOVE(3) tentative solutions. Lens generic. Ex2 contains no hedge word (weak example). Regex is the broad hedge-word count (21/40 own, 570/2400 pooled, 2.2x enriched), so this item is the general-hedging measure of the family; ranks 6/30/35 target hedges attached to pivot words and are kept distinct. Confound: 'maybe' also appears in chat/QA answers as a politeness hedge. Not flagged generic: hedged reasoning is broad but many reasoning texts are fully assertive.",
+   "verdict": "revised",
+   "reason": "Statement template normalized only; regexes and rubric unchanged."
+  },
+  "5971": {
+   "atom": 5971,
+   "rank": 38,
+   "statement": "After SFT on this data, model responses will show more reconsideration of a just-completed step, introduced by a paragraph break followed by 'Wait' or 'Alternatively' (e.g., '... = 1?\\n\\nWait, to get ...').",
+   "measure_kind": "both",
+   "regex": [
+    "\\n\\s*\\n\\s*(?:Wait|Alternatively)\\b",
+    "\\?\\s*\\n\\s*\\n\\s*Wait\\b",
+    "\\bperhaps it'?s (?:implied|meant|intended|assumed)\\b"
+   ],
+   "rubric_question": "Does the response contain at least one point where, after completing a step or computation, the writer starts a new paragraph with 'Wait' or 'Alternatively' to reconsider, redo, or reinterpret that step?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Label: FORM(3), MOVE(3), but examples are inconsistent: ex1 is 'problem doesn't specify ... perhaps it's implied' (assumption-filling), ex2 is a cooking recipe with no reconsideration (off-label), only ex3 shows '?\\n\\nWait'. Lens weakly agrees. Paragraph-initial Wait/Alternatively is broad (469/2400 pooled, 1.3x enriched); '?\\n\\nWait' 3.5x. Near-duplicate of rank 36 (cleaner examples); third regex captures the assumption-filling variant from ex1 (1/40).",
+   "verdict": "revised",
+   "reason": "Statement template normalized only; regexes and rubric unchanged."
+  },
+  "5908": {
+   "atom": 5908,
+   "rank": 39,
+   "statement": "After SFT on this data, model responses will show more indented outline-style worked examples made of short colon-terminated label lines (e.g., 'Actually:', 'Step:', 'Original:', 'The first element:') used to lay out or re-verify a computation.",
+   "measure_kind": "both",
+   "regex": [
+    "(?m)^[ \\t]{4,}[A-Z][^\\n:]{0,40}:[ \\t]*$",
+    "\\bActually:\\s",
+    "\\b(?:Step|Check|Original|Example|Verify):\\s"
+   ],
+   "rubric_question": "Does the response lay out a worked example, trace, or verification as an indented outline of short colon-terminated label lines (e.g., 'Step:', 'Original:', 'Actually:') rather than as prose or as code?",
+   "unit": "per_1k_tokens",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Label: FORM(3) indented colon-labelled structure; MOVE(3) correcting/verifying via 'Actually:'. Top chunks strongly match the deep-indent colon-label style (regex 1: 8/40 own vs 22/2400 pooled, 22x enriched; label regex 4/40, 40x). Many label lines are lowercase ('condition:', 'originally:') and are not matched by the capital-letter regex; a lowercase variant was tested and gains nothing on the chunks while risking Python-code false positives, so the conservative regex is kept. Lens ('?\\n\\n', ' maybe') does not specifically support the label. Confound: Python block headers ('    for x in y:') end in ':' with indentation; the capitalized-first-char requirement excludes lowercase keywords, but capitalized class/constant lines could leak. Style is characteristic of one data source (deep-indented reasoning traces), so the effect hinges on that source's weight. Overlaps ranks 26/27 (structured traces).",
+   "verdict": "revised",
+   "reason": "Statement template normalized only; regexes and rubric unchanged (checked: the indented-label regex is 22x enriched for this atom)."
+  },
+  "4684": {
+   "atom": 4684,
+   "rank": 40,
+   "statement": "After SFT on this data, model responses will show more explicit outlining of an implementation plan before writing code ('Putting it all together, steps in code:', 'Let me outline the steps ...', 'code skeleton in Python:').",
+   "measure_kind": "both",
+   "regex": [
+    "\\bPutting (?:it|this|that) (?:all )?together\\b",
+    "\\bLet me (?:outline|structure|lay out|list)\\b",
+    "\\b(?:[Ss]teps|[Oo]utline|[Ss]keleton|[Pp]lan|approach)(?: (?:in|for) (?:the )?code)?:[ \\t]*\\n"
+   ],
+   "rubric_question": "Does the response present an explicit ordered outline or plan of implementation steps (e.g., 'Steps:', 'First ..., Then ...', 'code skeleton') before or instead of giving the full solution?",
+   "unit": "per_response",
+   "generic": false,
+   "confidence": 2,
+   "notes": "Label: MOVE(3) structuring/outlining steps; FORM(2) code snippets + 'Wait/So/Let me'. Lens (':\\n\\n', 'Case', 'So', ' first', '1') agrees moderately (colon-newline plan headers, enumeration). All 3 evidence examples show 'Putting it all together / Let me outline / code skeleton:' planning; regexes hit 3/40 own chunks (20x enriched). Third regex made to accept capitalized 'Steps:/Outline:/Plan:' headers (rubric example uses 'Steps:'). Confound: outlining before code is common in instruction-tuned models generally; mostly relevant on code prompts, so per-response rate on the mixed prompt set is diluted. Overlaps ranks 25/31. Rubric primary.",
+   "verdict": "revised",
+   "reason": "Third regex extended to match capitalized 'Steps:/Outline:/Plan:' headers so it agrees with the rubric example; template normalized."
+  }
+ }
+}

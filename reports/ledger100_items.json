@@ -1,0 +1,2074 @@
+[
+ {
+  "arm": "grad",
+  "atom": 4141,
+  "rank": 1,
+  "q": "Does the response contain at least one point where the writer explicitly retracts or negates a statement they just made (e.g., 'Wait, no', 'no wait', 'that's wrong', 'I made a mistake') and then replaces it?",
+  "label": "self-correction or hesitation",
+  "src": "frozen"
+ },
+ {
+  "arm": "grad",
+  "atom": 8127,
+  "rank": 2,
+  "q": "Does the response explicitly lay out two or more alternative approaches or options for the same decision or sub-problem (e.g., 'Or maybe ...', 'Or perhaps ...', 'Alternatively, ...') before settling on one?",
+  "label": "proposing alternatives or reconsidering approaches",
+  "src": "frozen"
+ },
+ {
+  "arm": "grad",
+  "atom": 3961,
+  "rank": 3,
+  "q": "Does the response draw a hedged inference from a stated constraint of the task (e.g., 'The problem says X, so probably Y', 'assuming that ..., so ...') and adjust its plan or assumption accordingly?",
+  "label": "mid-reasoning correction or adjustment",
+  "src": "frozen"
+ },
+ {
+  "arm": "grad",
+  "atom": 5184,
+  "rank": 4,
+  "q": "Does the response contain at least one explicit verification step in which the writer re-checks or tests a previously obtained result (e.g., 'Let me check/verify', 'which matches the example', re-computing a value to confirm it)?",
+  "label": "error checking or reconsideration",
+  "src": "frozen"
+ },
+ {
+  "arm": "grad",
+  "atom": 8139,
+  "rank": 5,
+  "q": "Does the response contain a moment of realization in which the writer acknowledges having overlooked, forgotten, or misjudged something (e.g., 'Ah right', 'Oh wait', 'I forgot', 'I missed that')?",
+  "label": "error correction or realization",
+  "src": "frozen"
+ },
+ {
+  "arm": "grad",
+  "atom": 3944,
+  "rank": 6,
+  "q": "Does the response carry out step-by-step algebraic manipulation (collecting terms, substituting, denoting sub-expressions, chained implications) as visible intermediate work using inline Unicode math symbols such as \u21d2, \u2260, \u2261, \u00b2, \u221a (rather than LaTeX markup or words only)?",
+  "label": "algebraic equation solving steps",
+  "src": "frozen"
+ },
+ {
+  "arm": "grad",
+  "atom": 883,
+  "rank": 7,
+  "q": "Does the response contain at least one explicit hesitation or pause marker (e.g., 'Wait', 'Hmm', 'Hold on', 'I'm confused') used to reconsider or double-check a previous step?",
+  "label": "hesitation and reconsideration in reasoning",
+  "src": "frozen"
+ },
+ {
+  "arm": "grad",
+  "atom": 6240,
+  "rank": 8,
+  "q": "Does the response contain at least one sentence-initial contrastive clause ('But ...', 'However, ...') in which the writer qualifies or pushes back on their own immediately preceding claim or plan?",
+  "label": "contrast/reconsideration markers",
+  "src": "frozen"
+ },
+ {
+  "arm": "grad",
+  "atom": 32,
+  "rank": 9,
+  "q": "Does the writer justify at least one of their own intermediate decisions or claims (not merely a fact about the world) with an explicit 'because' or 'since' clause?",
+  "label": "reasoning justification with \"because\"/\"since\"",
+  "src": "frozen"
+ },
+ {
+  "arm": "grad",
+  "atom": 2080,
+  "rank": 10,
+  "q": "Does the response contain at least one parenthetical aside that qualifies, hedges, or questions the writer's own reasoning (e.g., '(but which one?)', '(but n is at least 1, so ...)') rather than merely supplying a value, citation, or function argument?",
+  "label": "self-qualifying parenthetical reasoning",
+  "src": "frozen"
+ },
+ {
+  "arm": "grad",
+  "atom": 7964,
+  "rank": 11,
+  "q": "Does the response contain at least one point where the writer pauses mid-reasoning to express hesitation or re-check their understanding of the task (e.g., \"Hmm\", \"Let me think about that\", re-reading the constraints) before continuing?",
+  "label": "self-interruption during reasoning",
+  "src": "frozen"
+ },
+ {
+  "arm": "grad",
+  "atom": 1770,
+  "rank": 12,
+  "q": "Does the response contain at least one point where the writer confirms, verifies, or corrects a step by citing an established fact with a \"since\"-clause (e.g., \"Since X, Y must be ...\", \"Since ..., let me confirm\")?",
+  "label": "mid-reasoning self-correction with \"since\"",
+  "src": "frozen"
+ },
+ {
+  "arm": "grad",
+  "atom": 382,
+  "rank": 13,
+  "q": "Does the response contain at least one point where the writer works out the value or outcome of a hypothetical or assumed case using conditional phrasing such as \"would be\" (e.g., \"if n=4, the upper limit would be ...\")?",
+  "label": "hypothetical reasoning with \"would be\"",
+  "src": "frozen"
+ },
+ {
+  "arm": "grad",
+  "atom": 4360,
+  "rank": 14,
+  "q": "Does the response contain at least one point where the writer explicitly proposes a second, different approach or solution to the same sub-problem after stating a first one (e.g., \"Alternatively, ...\", \"Or we could ...\")?",
+  "label": "proposing alternatives",
+  "src": "frozen"
+ },
+ {
+  "arm": "grad",
+  "atom": 3039,
+  "rank": 15,
+  "q": "Does the response contain at least one first-person statement in which the writer deliberates about how to shape, structure, or adjust their own answer or approach (e.g., \"Maybe I should present approximate numbers\", \"in the answer I can explain the process\", \"I should also mention ...\")?",
+  "label": "self-reflective reasoning adjustments",
+  "src": "frozen"
+ },
+ {
+  "arm": "grad",
+  "atom": 1633,
+  "rank": 16,
+  "q": "In a math or quantitative solution, does the response contain at least one explicit verification pass where the writer re-derives, re-checks, or substitutes back an earlier result (e.g., \"let me verify\", \"going through the steps once more\", \"plugging back in\")?",
+  "label": "math self-correction with hesitation markers",
+  "src": "frozen"
+ },
+ {
+  "arm": "grad",
+  "atom": 7033,
+  "rank": 17,
+  "q": "Does the response contain at least one point where the writer expresses uncertainty about a claim they just made or interrupts themselves to re-check it (e.g., \"Wait\", \"I'm not sure\", \"Wait no\")?",
+  "label": "hesitation and self-correction",
+  "src": "frozen"
+ },
+ {
+  "arm": "grad",
+  "atom": 3725,
+  "rank": 18,
+  "q": "Does the response contain at least one point where the writer verifies a step by explicitly tracing through a concrete case or sub-computation with intermediate values (e.g., plugging a specific input into the procedure and stepping through the resulting values)?",
+  "label": "mid-reasoning verification or correction",
+  "src": "frozen"
+ },
+ {
+  "arm": "grad",
+  "atom": 694,
+  "rank": 19,
+  "q": "Does the response contain at least one point where the writer explicitly notices that an intermediate result is inconsistent with an earlier fact, constraint, or expected value (e.g., \"that's a problem\", \"this doesn't match\", \"contradiction\") and pauses to address it?",
+  "label": "mid-reasoning error detection",
+  "src": "frozen"
+ },
+ {
+  "arm": "grad",
+  "atom": 7719,
+  "rank": 20,
+  "q": "Does the response contain at least one sentence beginning with \"Since ...\" that states a premise or known fact as the justification for the step that follows (rather than a temporal 'since')?",
+  "label": "\"since\"-based reasoning transitions",
+  "src": "frozen"
+ },
+ {
+  "arm": "grad",
+  "atom": 4356,
+  "rank": 21,
+  "q": "Does the response lay out a procedure, plan, or derivation as an ordered chain of steps linked by \"then\" / \"and then\" / sentence-initial \"Then\" at least twice?",
+  "label": "\"then\"-heavy step sequencing",
+  "src": "frozen"
+ },
+ {
+  "arm": "grad",
+  "atom": 5488,
+  "rank": 22,
+  "q": "Does the response contain explicit up-front planning of how to approach the requested writing task, naming the requirements or constraints it must satisfy and how it will balance or incorporate them, before (or instead of) producing the requested output itself?",
+  "label": "metacognitive planning for constrained writing",
+  "src": "frozen"
+ },
+ {
+  "arm": "grad",
+  "atom": 5998,
+  "rank": 23,
+  "q": "Does the response contain at least one point where the writer pauses with \"Wait\" (or equivalent) to question or re-examine a step it already took, expressing doubt about it, rather than only proceeding forward?",
+  "label": "\"Wait\" signaling mid-reasoning doubt",
+  "src": "frozen"
+ },
+ {
+  "arm": "grad",
+  "atom": 7715,
+  "rank": 24,
+  "q": "Does the response contain a passage where the writer questions its own earlier interpretation of the problem or an assumption it made, and floats an alternative reading using hedged language such as \"maybe\" or \"perhaps\"?",
+  "label": "reconsidering assumptions with \"maybe\"",
+  "src": "frozen"
+ },
+ {
+  "arm": "grad",
+  "atom": 2928,
+  "rank": 25,
+  "q": "Does the response go back to a step it already completed and question or redo it (re-checking the setup, re-deriving a value, or restarting via a different route), rather than proceeding strictly forward from each step?",
+  "label": "reconsidering reasoning steps",
+  "src": "frozen"
+ },
+ {
+  "arm": "grad",
+  "atom": 7901,
+  "rank": 26,
+  "q": "Does the response explicitly verify a result or condition it derived, e.g., by plugging values back in, testing a base/edge case, or checking that a solution is possible/consistent, rather than only deriving it and moving on?",
+  "label": "math verification",
+  "src": "frozen"
+ },
+ {
+  "arm": "grad",
+  "atom": 3303,
+  "rank": 27,
+  "q": "After reaching an intermediate result, does the response either explicitly check it for errors (e.g., \"let me check ...\") or branch to a different approach introduced with \"Alternatively\"?",
+  "label": "self-correction or alternative reasoning",
+  "src": "frozen"
+ },
+ {
+  "arm": "grad",
+  "atom": 4593,
+  "rank": 28,
+  "q": "Does the response break off from an approach it is in the middle of, noting that it is getting tedious/complicated or that a better way exists, and switch to a different approach (or abandon the line and move on)?",
+  "label": "self-interruption in reasoning",
+  "src": "frozen"
+ },
+ {
+  "arm": "grad",
+  "atom": 6746,
+  "rank": 29,
+  "q": "Does the response present more than one method or implementation for the same problem, explicitly introducing the later one as an alternative (e.g., \"Alternatively, ...\", \"Another approach ...\")?",
+  "label": "proposing alternative approaches",
+  "src": "frozen"
+ },
+ {
+  "arm": "grad",
+  "atom": 5420,
+  "rank": 30,
+  "q": "Does the response repeatedly (three or more times) begin a sentence or line with \"So\" to state a consequence or next step that follows from the reasoning just given?",
+  "label": "\"So\"-prefixed reasoning continuation",
+  "src": "frozen"
+ },
+ {
+  "arm": "grad",
+  "atom": 3410,
+  "rank": 31,
+  "q": "Does the response explicitly consider at least one edge case, boundary condition, or alternative interpretation of the task (e.g., empty input, duplicates, a path with/without trailing slash) that goes beyond the main/typical case?",
+  "label": "error correction or edge case checking",
+  "src": "frozen"
+ },
+ {
+  "arm": "grad",
+  "atom": 51,
+  "rank": 32,
+  "q": "Does the response contain at least one in-line clarifying aside that elaborates on or defines a term just mentioned using a relative clause (e.g., 'the xy-plane, which is horizontal', 'agar-agar (which is derived from seaweed)')?",
+  "label": "\"which is\" elaboration",
+  "src": "frozen"
+ },
+ {
+  "arm": "grad",
+  "atom": 4131,
+  "rank": 33,
+  "q": "Does the response explicitly refer back to the wording of the problem or the user's instructions in order to check or clarify what is being asked (e.g., 'the problem says ...', 'the user said to give two responses', 'the question is a bit ambiguous')?",
+  "label": "verifying or clarifying problem/user instructions",
+  "src": "frozen"
+ },
+ {
+  "arm": "grad",
+  "atom": 7063,
+  "rank": 34,
+  "q": "Does the response raise at least one explicit objection, caveat, or contradiction against its own prior step or a candidate interpretation (e.g., 'But if the decimal terminates after 14 digits, then n would have to ...', 'However, without more constraints there are infinite possibilities')?",
+  "label": "mathematical contradiction/edge-case checking",
+  "src": "frozen"
+ },
+ {
+  "arm": "grad",
+  "atom": 5793,
+  "rank": 35,
+  "q": "Does the response check its solution or claim by working through at least one concrete example or test case with specific values (numbers, strings, lists) and stating whether the result is as expected (e.g., 'so yes, counted in b')?",
+  "label": "verifying test cases",
+  "src": "frozen"
+ },
+ {
+  "arm": "grad",
+  "atom": 7858,
+  "rank": 36,
+  "q": "Does the response explicitly compare two specific computed values or outputs against each other or against an expected result and state the outcome (e.g., '-4 > -9 so -4 is bigger', '\"test\".lower() is \"test\" which matches', 'M to S is 12 letters apart, okay')?",
+  "label": "verification/comparison operations",
+  "src": "frozen"
+ },
+ {
+  "arm": "grad",
+  "atom": 4584,
+  "rank": 37,
+  "q": "Does the response contain at least one explicit pause-to-reconsider phrase such as 'Let me think', 'Let me check', or 'Let me see' that is followed by re-examining, verifying, or debugging a step already taken?",
+  "label": "self-correction or verification in reasoning",
+  "src": "frozen"
+ },
+ {
+  "arm": "grad",
+  "atom": 220,
+  "rank": 38,
+  "q": "Does the response contain at least one interjection expressing uncertainty or hesitation (e.g., 'Hmm', 'Huh', 'Oops', 'Uh') at a point where the writer is unsure, stuck, or reconsidering a previous step?",
+  "label": "uncertainty markers, reconsideration",
+  "src": "frozen"
+ },
+ {
+  "arm": "grad",
+  "atom": 6424,
+  "rank": 39,
+  "q": "Does the response explicitly restate or pin down precise quantitative constraints or conditions of the problem (e.g., 'for each number from 1 to 18', 'no two neighbors in the same team', 'exactly one solution', 'two distinct') before or while solving?",
+  "label": "mathematical constraints with precise counting",
+  "src": "frozen"
+ },
+ {
+  "arm": "grad",
+  "atom": 6279,
+  "rank": 40,
+  "q": "Does the response manually trace an iterative computation (a loop, recurrence, or digit-by-digit / remainder calculation) step by step, explicitly stating the updated value of one or more variables at each iteration?",
+  "label": "mid-iteration numerical state updates",
+  "src": "frozen"
+ },
+ {
+  "arm": "grad",
+  "atom": 7188,
+  "rank": 41,
+  "q": "Does the response describe a sequence of procedural steps to achieve a goal?",
+  "label": "Describing procedural steps",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 5991,
+  "rank": 42,
+  "q": "Does the response explicitly reject an invalid mathematical solution?",
+  "label": "rejecting invalid math solutions",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 6193,
+  "rank": 43,
+  "q": "Does the response describe steps to manipulate or interact with specific objects?",
+  "label": "Describing steps to manipulate specific objects",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 7808,
+  "rank": 44,
+  "q": "Does the response include a mid-reasoning self-correction starting with 'Wait, so'?",
+  "label": "mid-reasoning self-correction with \"Wait, so\"",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 5493,
+  "rank": 45,
+  "q": "Does the response verify the correctness of a mathematical problem solution?",
+  "label": "math problem verification",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 7953,
+  "rank": 46,
+  "q": "Does the response track computational states step-by-step?",
+  "label": "step-by-step computational state tracking",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 853,
+  "rank": 47,
+  "q": "Does the response include mathematical calculation steps followed by verification?",
+  "label": "math calculation steps with verification",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 512,
+  "rank": 48,
+  "q": "Does the response use the word 'must' to check constraints?",
+  "label": "constraint checking with \"must\"",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 1053,
+  "rank": 49,
+  "q": "Does the response use 'then' to draw logical conclusions?",
+  "label": "\"then\"-based logical conclusions",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 1582,
+  "rank": 50,
+  "q": "Does the response track updates to the state of a loop or algorithm?",
+  "label": "tracking loop/algorithm state updates",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 3556,
+  "rank": 51,
+  "q": "Does the response show mid-reasoning verification or express doubt?",
+  "label": "mid-reasoning verification or doubt",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 2523,
+  "rank": 52,
+  "q": "Does the response use the phrase 'For example'?",
+  "label": "\"For example\" phrase usage",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 8035,
+  "rank": 53,
+  "q": "Does the response include mid-reasoning verification or correction?",
+  "label": "mid-reasoning verification or correction",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 2676,
+  "rank": 54,
+  "q": "Does the response include computational verification or a conclusion?",
+  "label": "computational verification or conclusion",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 8111,
+  "rank": 55,
+  "q": "Does the response involve mathematical reasoning with self-correction?",
+  "label": "math reasoning with self-correction",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 3363,
+  "rank": 56,
+  "q": "Does the response include error checking or hesitation?",
+  "label": "error checking or hesitation",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 364,
+  "rank": 57,
+  "q": "Does the response detect and question reasoning errors?",
+  "label": "detecting and questioning reasoning errors",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 4780,
+  "rank": 58,
+  "q": "Does the response include numerical verification during calculations?",
+  "label": "mid-calculation numerical verification",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 397,
+  "rank": 59,
+  "q": "Does the response show step-by-step calculations with mathematical symbols?",
+  "label": "step-by-step calculations with symbols",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 529,
+  "rank": 60,
+  "q": "Does the response include markers of mid-reasoning self-correction?",
+  "label": "mid-reasoning self-correction markers",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 5769,
+  "rank": 61,
+  "q": "Does the response show self-correction during reasoning?",
+  "label": "self-correction in reasoning",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 7920,
+  "rank": 62,
+  "q": "Does the response include mid-computation steps for math or code?",
+  "label": "mid-computation math/code steps",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 7166,
+  "rank": 63,
+  "q": "Does the response track the execution steps of an algorithm?",
+  "label": "algorithm step execution tracking",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 1159,
+  "rank": 64,
+  "q": "Does the response correct an error during reasoning?",
+  "label": "mid-reasoning error correction",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 2677,
+  "rank": 65,
+  "q": "Does the response include self-checking or error-catching during reasoning?",
+  "label": "self-checking or error-catching in reasoning",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 8025,
+  "rank": 66,
+  "q": "Does the response include a bolded step-by-step explanation?",
+  "label": "Bold procedural explanations",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 4057,
+  "rank": 67,
+  "q": "Does the response detect and question an error in the input?",
+  "label": "error detection and questioning",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 936,
+  "rank": 68,
+  "q": "Does the response use 'if' to introduce conditional reasoning?",
+  "label": "conditional reasoning with \"if\"",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 2743,
+  "rank": 69,
+  "q": "Does the response show self-correction or reevaluation of its reasoning?",
+  "label": "self-correction or reevaluation in reasoning",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 3433,
+  "rank": 70,
+  "q": "Does the response show hesitation or self-correction mid-reasoning?",
+  "label": "self-correction or hesitation in reasoning",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 7358,
+  "rank": 71,
+  "q": "Does the response explicitly verify or compute a specific step?",
+  "label": "Verifying or computing a specific step",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 6174,
+  "rank": 72,
+  "q": "Does the response show intermediate computations in a math problem?",
+  "label": "math intermediate computations",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 4201,
+  "rank": 73,
+  "q": "Does the response start the task with a structured prefix (e.g., 'Step 1')?",
+  "label": "task initiation with structured prefix",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 4594,
+  "rank": 74,
+  "q": "Does the response correct or verify something mid-reasoning?",
+  "label": "mid-reasoning corrections/verifications",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 2445,
+  "rank": 75,
+  "q": "Does the response conclude with 'Therefore' or 'Thus'?",
+  "label": "concluding with \"Therefore\" or \"Thus\"",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 5614,
+  "rank": 76,
+  "q": "Does the response verify a step mid-calculation in a math problem?",
+  "label": "mid-calculation verification in math",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 3874,
+  "rank": 77,
+  "q": "Does the response introduce examples with 'like'?",
+  "label": "\"like\"-introduced examples",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 8041,
+  "rank": 78,
+  "q": "Does the response reconsider or propose alternatives in its reasoning?",
+  "label": "reconsidering or proposing alternatives in reasoning",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 5631,
+  "rank": 79,
+  "q": "Does the response manipulate a mathematical expression?",
+  "label": "mathematical expression manipulation",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 3350,
+  "rank": 80,
+  "q": "Does the response adjust or correct itself mid-reasoning?",
+  "label": "mid-reasoning adjustment or correction",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 4023,
+  "rank": 81,
+  "q": "Does the response brainstorm algorithmic solutions?",
+  "label": "algorithmic solution brainstorming",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 7495,
+  "rank": 82,
+  "q": "Does the response show intermediate mathematical derivations?",
+  "label": "intermediate mathematical derivations",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 1980,
+  "rank": 83,
+  "q": "Does the response use 'each' to mark component-wise reasoning?",
+  "label": "\"each\" as a marker of component-wise reasoning",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 2866,
+  "rank": 84,
+  "q": "Does the response solve a math problem with mid-reasoning steps?",
+  "label": "math problem-solving mid-reasoning",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 3172,
+  "rank": 85,
+  "q": "Does the response verify its own reasoning?",
+  "label": "self-verification in reasoning",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 349,
+  "rank": 86,
+  "q": "Does the response self-correct with 'Wait, but'?",
+  "label": "self-correction with \"Wait, but\"",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 3478,
+  "rank": 87,
+  "q": "Does the response include steps to verify a mathematical solution?",
+  "label": "mathematical verification steps",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 34,
+  "rank": 88,
+  "q": "Does the response self-correct algorithmically with 'Actually'?",
+  "label": "algorithmic self-correction with \"Actually\"",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 219,
+  "rank": 89,
+  "q": "Does the response show self-correction in its reasoning?",
+  "label": "self-correction in reasoning",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 4007,
+  "rank": 90,
+  "q": "Does the response verify the correctness of its answer?",
+  "label": "correctness verification",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 8110,
+  "rank": 91,
+  "q": "Does the AI correct itself using the phrase 'that's' in the response?",
+  "label": "self-correction with \"that's\"",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 6923,
+  "rank": 92,
+  "q": "Does the AI perform algebraic manipulation within an equation in the response?",
+  "label": "mid-equation algebraic manipulation",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 1095,
+  "rank": 93,
+  "q": "Does the AI propose alternatives or reconsider its approach in the response?",
+  "label": "proposing alternatives or reconsidering",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 841,
+  "rank": 94,
+  "q": "Does the AI use possessive reasoning about object properties in the response?",
+  "label": "possessive reasoning about object properties",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 6473,
+  "rank": 95,
+  "q": "Does the AI use 'can' verb phrases to describe possible actions in the response?",
+  "label": "\"can\" verb phrases for possible actions",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 6101,
+  "rank": 96,
+  "q": "Does the AI correct itself mid-reasoning in a mathematical context in the response?",
+  "label": "mid-reasoning self-correction in math",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 4455,
+  "rank": 97,
+  "q": "Does the AI show intermediate mathematical computations in the response?",
+  "label": "intermediate mathematical computations",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 7004,
+  "rank": 98,
+  "q": "Does the AI explore math problem-solving steps in the response?",
+  "label": "math problem-solving exploration",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 5544,
+  "rank": 99,
+  "q": "Does the AI show error-checking or hesitation in the response?",
+  "label": "error-checking or hesitation",
+  "src": "new"
+ },
+ {
+  "arm": "grad",
+  "atom": 4991,
+  "rank": 100,
+  "q": "Does the AI break down mid-calculation with a focus on numerical/symbolic details in the response?",
+  "label": "mid-calculation breakdowns with numerical/symbolic focus",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 2219,
+  "rank": 1,
+  "q": "Does the response contain at least one point where the writer explicitly steps back to reconsider or change the overall approach or plan (e.g., re-reading/re-parsing the problem statement, proposing to try a different method, or re-organizing into a new plan), as opposed to fixing a single arithmetic slip?",
+  "label": "Reflecting on or revising reasoning",
+  "src": "frozen"
+ },
+ {
+  "arm": "act",
+  "atom": 1654,
+  "rank": 2,
+  "q": "Does the response contain a hand-traced walk-through in which at least three consecutive intermediate values or state updates are written inline (e.g., 'a=7 -> b=1 -> ...', 'f(2)=5, then f(5)=26, 26 mod 25 = 1', bit flips '1->0'), rather than only reporting a final result?",
+  "label": "mid-calculation math/algorithm steps",
+  "src": "frozen"
+ },
+ {
+  "arm": "act",
+  "atom": 1616,
+  "rank": 3,
+  "q": "Does the response set up or describe a geometric object by placing labeled points/vertices at explicit numeric coordinates (e.g., 'A(0,0), B(2,0), C(0,3)') or by introducing a coordinate system?",
+  "label": "Geometry with coordinates and vertex labels",
+  "src": "frozen"
+ },
+ {
+  "arm": "act",
+  "atom": 3390,
+  "rank": 4,
+  "q": "Does the response contain at least one point where the writer explicitly redoes a specific calculation step already performed (e.g., 'wait, no', 'let me recompute', 'let me redo') and then re-executes the arithmetic or algebra?",
+  "label": "Correcting or revising a previous step",
+  "src": "frozen"
+ },
+ {
+  "arm": "act",
+  "atom": 4198,
+  "rank": 5,
+  "q": "Does the response contain at least one point where, immediately after stating an intermediate conclusion, the writer hedges or questions it mid-thought (e.g., 'But wait', 'But note', 'So perhaps', 'Hmm') and then checks it against a requirement or constraint, stating whether it passes or needs adjustment?",
+  "label": "self-correction in reasoning",
+  "src": "frozen"
+ },
+ {
+  "arm": "act",
+  "atom": 4089,
+  "rank": 6,
+  "q": "Does the response begin its reasoning with first-person self-talk that plans or orients before doing any actual work (e.g., 'Hmm, let me start by recalling...', 'First, let me make sure I understand the problem', 'Let me break this down step by step')?",
+  "label": "initiating problem-solving with self-talk",
+  "src": "frozen"
+ },
+ {
+  "arm": "act",
+  "atom": 6275,
+  "rank": 7,
+  "q": "Does the response carry out an explicit number-theoretic derivation, such as writing out a prime factorization, applying the divisor-count formula (a+1)(b+1)..., invoking Euler's totient or Fermat's little theorem, or reasoning with gcd/coprimality or modular arithmetic?",
+  "label": "number theory calculations with Euler's totient function",
+  "src": "frozen"
+ },
+ {
+  "arm": "act",
+  "atom": 7566,
+  "rank": 8,
+  "q": "Does the response contain at least one inline corrective aside: a parenthetical remark that justifies or qualifies the surrounding claim, or an interjected correction ('Actually, ...', 'But that contradicts ...') that reverses or refines what was just said?",
+  "label": "mid-reasoning self-correction",
+  "src": "frozen"
+ },
+ {
+  "arm": "act",
+  "atom": 5047,
+  "rank": 9,
+  "q": "Does the response contain at least one point where the writer restarts a derivation from scratch by explicitly re-defining variables or re-expressing the quantity with a set-up line ending in a colon (e.g., 'Let me define:', 'Let me compute each term:', 'Let me re-express this as follows:') and then redoes the steps?",
+  "label": "Revising or correcting reasoning steps",
+  "src": "frozen"
+ },
+ {
+  "arm": "act",
+  "atom": 1609,
+  "rank": 10,
+  "q": "Does the response explicitly refer to 'the user' in the third person while interpreting what they are asking for or mean (e.g., 'the user's question is to ...', 'perhaps the user wants ...')?",
+  "label": "Mathematical notation and clarification of user intent",
+  "src": "frozen"
+ },
+ {
+  "arm": "act",
+  "atom": 5026,
+  "rank": 11,
+  "q": "Does the response contain at least one point, before the final answer, where the writer explicitly checks a computed value, assignment, or case against the problem's stated conditions (e.g. substituting a candidate value back in, or stating that a case works because it satisfies the conditions)?",
+  "label": "math problem-solving steps",
+  "src": "frozen"
+ },
+ {
+  "arm": "act",
+  "atom": 98,
+  "rank": 12,
+  "q": "Does the response contain at least one passage that restates or explains the problem's constraints or conditions in the writer's own words (what must, may, or cannot hold), rather than only performing calculations?",
+  "label": "Explaining constraints or conditions",
+  "src": "frozen"
+ },
+ {
+  "arm": "act",
+  "atom": 8084,
+  "rank": 13,
+  "q": "Does the response contain at least one point where the writer questions their own earlier interpretation of the problem's setup (e.g. which object a name refers to, which structure or configuration is meant) and proposes an alternative interpretation?",
+  "label": "Re-evaluating geometric or chemical structures",
+  "src": "frozen"
+ },
+ {
+  "arm": "act",
+  "atom": 834,
+  "rank": 14,
+  "q": "Does the response include at least one code snippet (inline or fenced) that demonstrates or explains a programming technique such as iteration or recursion, rather than only describing the approach in prose?",
+  "label": "programming code demonstration",
+  "src": "frozen"
+ },
+ {
+  "arm": "act",
+  "atom": 2080,
+  "rank": 15,
+  "q": "Does the response explicitly recall or restate a named formula, physical law, definition, or standard identity (writing it out) before applying it to the problem?",
+  "label": "mathematical/physics equations and notation",
+  "src": "frozen"
+ },
+ {
+  "arm": "act",
+  "atom": 4824,
+  "rank": 16,
+  "q": "Does the response contain multi-term symbolic mathematical expressions (with exponents, subscripts, sums/products, fractions or derivatives), inline or displayed, rather than only prose and plain integer arithmetic?",
+  "label": "mathematical notation and equations",
+  "src": "frozen"
+ },
+ {
+  "arm": "act",
+  "atom": 4637,
+  "rank": 17,
+  "q": "Does the response contain at least one point where the writer quotes or paraphrases the problem statement to check a technical detail (e.g. 'the problem says ...', 'according to the problem statement'), or grounds a formula or definition by instantiating it with a concrete example?",
+  "label": "Technical verification and clarification",
+  "src": "frozen"
+ },
+ {
+  "arm": "act",
+  "atom": 7791,
+  "rank": 18,
+  "q": "Does the response contain at least one point where the writer explicitly negates or retracts a statement they made immediately before (e.g. 'Wait, no ...', 'Wait, not necessarily', 'Actually, that's wrong') and then continues with a corrected step?",
+  "label": "mathematical self-correction",
+  "src": "frozen"
+ },
+ {
+  "arm": "act",
+  "atom": 3956,
+  "rank": 19,
+  "q": "Does the response contain at least one point where the writer tentatively questions an assumption or intermediate step (using hedges such as 'perhaps', 'maybe', or a question) without outright retracting it?",
+  "label": "Verifying calculations with scientific notation",
+  "src": "frozen"
+ },
+ {
+  "arm": "act",
+  "atom": 2950,
+  "rank": 20,
+  "q": "After arriving at a candidate answer, does the writer explicitly go back to double-check it (e.g. 'But let me check/see/confirm', 'let me double-check', 'Is that it? Let me verify') before finalizing?",
+  "label": "Verifying or double-checking reasoning",
+  "src": "frozen"
+ },
+ {
+  "arm": "act",
+  "atom": 8087,
+  "rank": 21,
+  "q": "Does the response, mid-solution, write out at least one newly derived equation relating named variables (e.g., 'so d = (9/4)c') and/or refer back to an earlier equation by number or label ('Equation 1', 'from equation 3', 'as before')?",
+  "label": "mathematical equation solving and manipulation",
+  "src": "frozen"
+ },
+ {
+  "arm": "act",
+  "atom": 4565,
+  "rank": 22,
+  "q": "Does the response contain at least one point where the writer abruptly interrupts their own reasoning with two or more chained interjections (e.g., 'Wait, hold on', 'wait wait', 'Wait a second, no') to flag a possible mistake?",
+  "label": "self-interruption for error checking",
+  "src": "frozen"
+ },
+ {
+  "arm": "act",
+  "atom": 6922,
+  "rank": 23,
+  "q": "Does the response contain at least one point where, while reasoning about a geometric configuration or algebraic expression, the writer explicitly pauses to verify a specific just-stated relation (e.g., 'Let me check that', 'as before', 'yes, that was done correctly') before continuing?",
+  "label": "geometry/algebra verification",
+  "src": "frozen"
+ },
+ {
+  "arm": "act",
+  "atom": 629,
+  "rank": 24,
+  "q": "Does the response contain at least one point where the writer explicitly entertains an alternative interpretation or approach with hedged language (e.g., 'Alternatively, ...', 'Hmm, ...', 'maybe ...') instead of committing to a single line?",
+  "label": "mid-reasoning self-correction",
+  "src": "frozen"
+ },
+ {
+  "arm": "act",
+  "atom": 6238,
+  "rank": 25,
+  "q": "Does the response derive intermediate relations by chaining consequence connectives (e.g., 'so ..., so ...', 'Therefore:', 'meaning ...') rather than only stating results?",
+  "label": "Intermediate mathematical/logical reasoning",
+  "src": "frozen"
+ },
+ {
+  "arm": "act",
+  "atom": 1343,
+  "rank": 26,
+  "q": "Does the response contain at least one point where a just-computed intermediate number is immediately questioned and recomputed (e.g., '... = 16? Wait no, ...') or explicitly ticked off with a bare 'Correct.'?",
+  "label": "mid-calculation self-correction in STEM",
+  "src": "frozen"
+ },
+ {
+  "arm": "act",
+  "atom": 5877,
+  "rank": 27,
+  "q": "Does the response contain at least one point where the writer poses a quick question about their own previous statement and immediately answers or revises it (e.g., '... exactly 5? Probably.', '...? Actually: ...', 'Wait, actually it's ...')?",
+  "label": "Correcting or reconsidering prior statements",
+  "src": "frozen"
+ },
+ {
+  "arm": "act",
+  "atom": 3351,
+  "rank": 28,
+  "q": "Does the response contain at least one point where the writer goes back to the problem statement, quoting or paraphrasing what it says or gives, to check or correct an assumption they made?",
+  "label": "Correcting or verifying reasoning steps",
+  "src": "frozen"
+ },
+ {
+  "arm": "act",
+  "atom": 4644,
+  "rank": 29,
+  "q": "Does the response contain at least one point where, after flagging doubt (e.g., 'Wait'), the writer explicitly redoes or refines a computation or step (e.g., 'let me compute again', 'more precisely', 'let me actually list...')?",
+  "label": "Self-correction with \"Wait\"",
+  "src": "frozen"
+ },
+ {
+  "arm": "act",
+  "atom": 6840,
+  "rank": 30,
+  "q": "Does the response contain at least one point where the writer explicitly returns to an earlier equation or step they wrote (e.g., 'let me go back', 'in my earlier work', 'from equation 5') to re-check or reuse it?",
+  "label": "mid-calculation self-correction in math",
+  "src": "frozen"
+ },
+ {
+  "arm": "act",
+  "atom": 6130,
+  "rank": 31,
+  "q": "Does the response contain at least one point where the writer revises, adjusts, or restates in corrected form a mathematical or logical expression/relation they had already written (not just continuing a linear derivation)?",
+  "label": "Mathematical/logical verification or adjustment",
+  "src": "frozen"
+ },
+ {
+  "arm": "act",
+  "atom": 3822,
+  "rank": 32,
+  "q": "Does the response explicitly enumerate items one by one (e.g. letters in a word, occurrences of a word/character, elements of a list) and state a running or final tally?",
+  "label": "counting or verifying list elements",
+  "src": "frozen"
+ },
+ {
+  "arm": "act",
+  "atom": 4282,
+  "rank": 33,
+  "q": "Does the response contain marketing/SEO-style content such as a comma-separated keyword or tag list, hashtags, or product-listing style descriptor strings?",
+  "label": "Marketing-style lists or keyword-rich descriptions",
+  "src": "frozen"
+ },
+ {
+  "arm": "act",
+  "atom": 4108,
+  "rank": 34,
+  "q": "Does the response contain at least one point where the writer pauses to re-check or verify a calculation or intermediate result (re-deriving a value, checking a condition holds) before continuing?",
+  "label": "Mid-reasoning error-checking or verification",
+  "src": "frozen"
+ },
+ {
+  "arm": "act",
+  "atom": 1940,
+  "rank": 35,
+  "q": "Does the response contain at least one point where the writer explicitly negates or reverses a statement they just made (e.g. 'Wait no', 'No, wait', 'that contradicts earlier')?",
+  "label": "Pausing to reconsider or correct",
+  "src": "frozen"
+ },
+ {
+  "arm": "act",
+  "atom": 2154,
+  "rank": 36,
+  "q": "Does the response contain at least one point where the writer raises an objection or doubt about their own preceding reasoning step (e.g. 'Wait, but ...', 'Is that possible?') before resolving it?",
+  "label": "Correcting or questioning reasoning mid-explanation",
+  "src": "frozen"
+ },
+ {
+  "arm": "act",
+  "atom": 4191,
+  "rank": 37,
+  "q": "Does the response contain at least one point where the writer explicitly stops to clarify or re-define the variables, quantities, or terms they had been using (e.g. 'Let me clarify variables:', 'hold on, that's conflicting with my previous ...')?",
+  "label": "Correcting mathematical/logical reasoning",
+  "src": "frozen"
+ },
+ {
+  "arm": "act",
+  "atom": 148,
+  "rank": 38,
+  "q": "Does the response contain at least one point where the writer verifies an intermediate step by re-quoting or re-reading the problem's conditions, or by explicitly re-checking a computed value against them?",
+  "label": "mathematical verification",
+  "src": "frozen"
+ },
+ {
+  "arm": "act",
+  "atom": 4921,
+  "rank": 39,
+  "q": "Does the response contain at least one point where the writer proposes an alternative approach, simplification, or setup for solving the problem and weighs it against the problem's stated conditions before choosing?",
+  "label": "Correcting or revising assumptions in technical contexts",
+  "src": "frozen"
+ },
+ {
+  "arm": "act",
+  "atom": 3132,
+  "rank": 40,
+  "q": "Does the response explicitly evaluate conditional statements case by case, spelling out the consequence when a condition or statement is true versus when it is false?",
+  "label": "evaluating logical/mathematical conditions",
+  "src": "frozen"
+ },
+ {
+  "arm": "act",
+  "atom": 2108,
+  "rank": 41,
+  "q": "Does the AI verify or correct geometric information in the response?",
+  "label": "geometric verification/correction",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 1764,
+  "rank": 42,
+  "q": "Does the AI interrupt itself for re-evaluation in the response?",
+  "label": "self-interruption for re-evaluation",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 1917,
+  "rank": 43,
+  "q": "Does the AI verify or correct mathematical reasoning in the response?",
+  "label": "verifying/correcting math reasoning",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 611,
+  "rank": 44,
+  "q": "Does the AI perform geometric distance or coordinate calculations in the response?",
+  "label": "geometric distance/coordinate calculations",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 8029,
+  "rank": 45,
+  "q": "Does the AI verify angle calculations in the response?",
+  "label": "verifying angle calculations in reasoning",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 2821,
+  "rank": 46,
+  "q": "Does the AI show self-correction or hesitation in reasoning in the response?",
+  "label": "self-correction or hesitation in reasoning",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 6459,
+  "rank": 47,
+  "q": "Does the AI verify mathematical or code steps in the response?",
+  "label": "verifying mathematical or code steps",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 4613,
+  "rank": 48,
+  "q": "Does the AI use 'Therefore' to draw logical conclusions in the response?",
+  "label": "Logical conclusions with \"Therefore\"",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 5005,
+  "rank": 49,
+  "q": "Does the AI correct itself in reasoning in the response?",
+  "label": "self-correction in reasoning",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 5096,
+  "rank": 50,
+  "q": "Does the AI verify or question a calculation/step in the response?",
+  "label": "Verifying or questioning a calculation/step",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 649,
+  "rank": 51,
+  "q": "Does the AI interpret math problem constraints in the response?",
+  "label": "interpreting math problem constraints",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 7578,
+  "rank": 52,
+  "q": "Does the AI use structured enumeration or listing in the response?",
+  "label": "Structured enumeration or listing",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 2185,
+  "rank": 53,
+  "q": "Does the AI perform structured data verification or counting in the response?",
+  "label": "structured data verification/counting",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 5725,
+  "rank": 54,
+  "q": "Does the AI use repeated numerical/alphanumerical sequences in the response?",
+  "label": "Repeated numerical/alphanumerical sequences",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 59,
+  "rank": 55,
+  "q": "Does the AI speculate or reinterpret the problem in the response?",
+  "label": "speculative problem reinterpretation",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 5424,
+  "rank": 56,
+  "q": "Does the AI response verify or correct any algebraic steps in its reasoning?",
+  "label": "verifying or correcting algebraic steps",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 883,
+  "rank": 57,
+  "q": "Does the AI response include hesitation markers (e.g., 'hmm,' 'let me check') while correcting math?",
+  "label": "math self-correction with hesitation markers",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 7716,
+  "rank": 58,
+  "q": "Does the AI response propose alternative solutions or question assumptions?",
+  "label": "Proposing alternative solutions or questioning assumptions",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 412,
+  "rank": 59,
+  "q": "Does the AI response correct itself mid-reasoning?",
+  "label": "mid-reasoning self-correction",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 523,
+  "rank": 60,
+  "q": "Does the AI response correct itself mid-calculation in a math problem?",
+  "label": "mid-calculation self-correction in math",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 4959,
+  "rank": 61,
+  "q": "Does the AI response verify or correct its reasoning mid-way?",
+  "label": "mid-reasoning verification/correction",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 8050,
+  "rank": 62,
+  "q": "Does the AI response introduce a structured list with Markdown headers?",
+  "label": "Structured list introductions with Markdown headers",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 4483,
+  "rank": 63,
+  "q": "Does the AI response correct itself mid-derivation in math or logic?",
+  "label": "mid-derivation corrections in math/logic",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 7339,
+  "rank": 64,
+  "q": "Does the AI response reference the problem statement for verification?",
+  "label": "referencing problem statement for verification",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 6128,
+  "rank": 65,
+  "q": "Does the AI response propose hypotheticals or conditions in its reasoning?",
+  "label": "proposing hypotheticals or conditions in reasoning",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 7825,
+  "rank": 66,
+  "q": "Does the AI response verify mathematical reasoning steps explicitly?",
+  "label": "verifying mathematical reasoning steps",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 4196,
+  "rank": 67,
+  "q": "Does the AI response correct or verify its reasoning at any point?",
+  "label": "self-correction or verification in reasoning",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 5477,
+  "rank": 68,
+  "q": "Does the AI response express doubt or error-checking mid-calculation?",
+  "label": "mid-calculation doubt or error-checking",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 4281,
+  "rank": 69,
+  "q": "Does the AI response correct itself mid-reasoning in a math context?",
+  "label": "mid-reasoning self-correction in math",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 6472,
+  "rank": 70,
+  "q": "Does the AI response show mid-calculation steps in math or code?",
+  "label": "mid-calculation steps in math/code",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 573,
+  "rank": 71,
+  "q": "Does the AI response include mid-discussion elements in brackets or punctuation?",
+  "label": "Mid-discussion with bracketed or punctuated elements",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 5032,
+  "rank": 72,
+  "q": "Does the AI response adjust calculations mid-way in math or code?",
+  "label": "mid-calculation adjustments in math/code",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 3829,
+  "rank": 73,
+  "q": "Does the AI response include vivid atmospheric descriptions?",
+  "label": "vivid atmospheric descriptions",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 545,
+  "rank": 74,
+  "q": "Does the AI response show mathematical computation steps with equality checks?",
+  "label": "mathematical computation steps with equality checks",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 8040,
+  "rank": 75,
+  "q": "Does the AI response verify numerical or code correctness?",
+  "label": "numerical/code verification",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 1910,
+  "rank": 76,
+  "q": "Does the AI response verify polynomial roots by substitution?",
+  "label": "verifying polynomial roots via substitution",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 6145,
+  "rank": 77,
+  "q": "Does the AI response count or tally elements with verification?",
+  "label": "counting/tallying elements with verification",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 1020,
+  "rank": 78,
+  "q": "Does the AI response correct an error mid-reasoning?",
+  "label": "mid-reasoning error correction",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 6371,
+  "rank": 79,
+  "q": "Does the AI response introduce logical premises with 'since' or 'because'?",
+  "label": "logical premise introduction with \"since\"/\"because\"",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 96,
+  "rank": 80,
+  "q": "Does the AI response contain non-Latin script text?",
+  "label": "Non-Latin script text",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 4388,
+  "rank": 81,
+  "q": "Does the assistant explicitly state it is beginning to reason about the problem?",
+  "label": "assistant's internal reasoning initiation",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 5241,
+  "rank": 82,
+  "q": "Does the assistant express doubt or reconsideration during its reasoning?",
+  "label": "mid-reasoning doubt or reconsideration",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 7423,
+  "rank": 83,
+  "q": "Does the assistant explicitly verify or recheck mathematical steps?",
+  "label": "math verification steps",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 5028,
+  "rank": 84,
+  "q": "Does the assistant use 'each' repetitively for iterative clarification?",
+  "label": "repetitive \"each\" usage; iterative clarification",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 3661,
+  "rank": 85,
+  "q": "Does the assistant use 'Hmm' to indicate hesitation or reconsideration?",
+  "label": "hesitation or reconsideration with \"Hmm\"",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 4334,
+  "rank": 86,
+  "q": "Does the assistant show hesitation or reconsideration during reasoning?",
+  "label": "hesitation or reconsideration in reasoning",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 2877,
+  "rank": 87,
+  "q": "Does the assistant use LaTeX notation for mathematical expressions?",
+  "label": "LaTeX math notation in problem-solving",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 4599,
+  "rank": 88,
+  "q": "Does the assistant correct itself mid-reasoning?",
+  "label": "mid-reasoning self-correction",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 898,
+  "rank": 89,
+  "q": "Does the assistant use conditional logic in mathematical reasoning?",
+  "label": "Conditional logic in mathematical reasoning",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 5609,
+  "rank": 90,
+  "q": "Does the assistant say 'Wait' or 'Hmm' to reconsider mid-reasoning?",
+  "label": "mid-reasoning reconsideration (\"Wait/Hmm\")",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 4073,
+  "rank": 91,
+  "q": "Does the assistant verify or recheck its reasoning steps?",
+  "label": "verifying/rechecking reasoning steps",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 502,
+  "rank": 92,
+  "q": "Does the assistant correct itself using rhetorical questions?",
+  "label": "self-correction with rhetorical questioning",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 1655,
+  "rank": 93,
+  "q": "Does the assistant initiate problem-solving with structured markup?",
+  "label": "problem-solving initiation with structured markup",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 4019,
+  "rank": 94,
+  "q": "Does the assistant perform algebraic simplification involving a coefficient of 2?",
+  "label": "algebraic simplification with coefficient 2",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 7138,
+  "rank": 95,
+  "q": "Does the assistant begin reasoning with reflective planning?",
+  "label": "Initiating reasoning with reflective planning",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 7396,
+  "rank": 96,
+  "q": "Does the assistant check for discrepancies in the problem?",
+  "label": "problem discrepancy checking",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 492,
+  "rank": 97,
+  "q": "Does the assistant clarify terms parenthetically?",
+  "label": "parenthetical term clarifications",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 4264,
+  "rank": 98,
+  "q": "Does the assistant manipulate algebraic expressions?",
+  "label": "algebraic expression manipulation",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 8139,
+  "rank": 99,
+  "q": "Does the assistant bold key terms in multilingual text?",
+  "label": "Bolded key terms in multilingual text",
+  "src": "new"
+ },
+ {
+  "arm": "act",
+  "atom": 7569,
+  "rank": 100,
+  "q": "Does the assistant check geometric assumptions mid-reasoning?",
+  "label": "mid-reasoning geometric assumption checks",
+  "src": "new"
+ },
+ {
+  "arm": "err",
+  "atom": 1633,
+  "rank": 1,
+  "q": "Does the response contain at least one point where the writer interrupts their own reasoning to flag that a step, assumption, or approach they just took may be wrong or inconsistent, before continuing?",
+  "label": "Reconsidering or correcting reasoning",
+  "src": "frozen"
+ },
+ {
+  "arm": "err",
+  "atom": 6814,
+  "rank": 2,
+  "q": "Does the response contain at least one point where the writer explicitly questions or revises their earlier interpretation of the problem statement, the input format, or the user's intent?",
+  "label": "Correcting or reconsidering previous statements",
+  "src": "frozen"
+ },
+ {
+  "arm": "err",
+  "atom": 233,
+  "rank": 3,
+  "q": "Does the response contain at least one point where the writer tests or refines a step they just took by raising a 'but' objection or by walking through a specific concrete case?",
+  "label": "Reasoning refinement and correction",
+  "src": "frozen"
+ },
+ {
+  "arm": "err",
+  "atom": 3832,
+  "rank": 4,
+  "q": "Does the response contain at least one 'wait'-style interruption that is followed by an explicit correction or realization about the preceding step (e.g., 'Ah, right, because...', 'actually X, not Y')?",
+  "label": "mid-reasoning self-correction",
+  "src": "frozen"
+ },
+ {
+  "arm": "err",
+  "atom": 1863,
+  "rank": 5,
+  "q": "Does the response, after stating a tentative conclusion or that a solution should work, contain at least one explicit re-check of that conclusion (e.g., re-verifying with edge cases or 'let me think again')?",
+  "label": "Reconsideration and verification in reasoning",
+  "src": "frozen"
+ },
+ {
+  "arm": "err",
+  "atom": 1325,
+  "rank": 6,
+  "q": "Does the response contain at least one point where the writer reopens or questions a step already taken by proposing a speculative alternative reading marked by 'perhaps' or 'maybe'?",
+  "label": "Reflecting on or questioning reasoning steps",
+  "src": "frozen"
+ },
+ {
+  "arm": "err",
+  "atom": 744,
+  "rank": 7,
+  "q": "Does the response contain at least one point where the writer notices that their computed result disagrees with a given example, sample output, or expected answer and goes back to revisit the computation?",
+  "label": "Correcting or reconsidering with \"Wait\"",
+  "src": "frozen"
+ },
+ {
+  "arm": "err",
+  "atom": 6035,
+  "rank": 8,
+  "q": "Does the response contain at least one point where the writer poses a question about their own step and immediately answers, rejects, or corrects it in the next clause?",
+  "label": "Correcting or questioning reasoning",
+  "src": "frozen"
+ },
+ {
+  "arm": "err",
+  "atom": 7458,
+  "rank": 9,
+  "q": "Does the response contain at least one point where the writer explicitly halts to reconsider whether a prior assumption or interpretation of the problem was mistaken, and offers an alternative reading?",
+  "label": "Pausing to reconsider reasoning",
+  "src": "frozen"
+ },
+ {
+  "arm": "err",
+  "atom": 2948,
+  "rank": 10,
+  "q": "Does the response explicitly evaluate whether a proposed solution is acceptable or efficient enough under the problem's constraints (e.g., estimating operation counts, calling it 'borderline' or 'acceptable', comparing runtimes across languages or interpreters)?",
+  "label": "Evaluating acceptability in Python",
+  "src": "frozen"
+ },
+ {
+  "arm": "err",
+  "atom": 2807,
+  "rank": 11,
+  "q": "Does the response contain at least one point where the writer pauses to reconsider a step just taken or explicitly proposes an alternative approach (e.g., 'Alternatively, maybe ...', 'Wait, maybe ...')?",
+  "label": "Pausing to reconsider or propose alternatives",
+  "src": "frozen"
+ },
+ {
+  "arm": "err",
+  "atom": 7639,
+  "rank": 12,
+  "q": "Does the response contain at least one point where the writer pauses to double-check or re-verify a step already taken (e.g., recomputing a value, re-reading the question, testing a case) rather than proceeding linearly?",
+  "label": "Mid-reasoning pause or reconsideration",
+  "src": "frozen"
+ },
+ {
+  "arm": "err",
+  "atom": 1799,
+  "rank": 13,
+  "q": "Does the response contain at least one point where the writer explicitly catches, doubts, or corrects their own immediately preceding statement or calculation (a self-interruption), rather than only checking the final answer?",
+  "label": "self-interruption and correction",
+  "src": "frozen"
+ },
+ {
+  "arm": "err",
+  "atom": 6477,
+  "rank": 14,
+  "q": "Does the response contain at least one proposal of an alternative approach or adjustment to the current method (not merely continuing the current line of work) that is phrased in the first-person plural (e.g., 'Alternatively, we could ...', 'so perhaps we can ...')?",
+  "label": "proposing alternatives with \"we\" phrasing",
+  "src": "frozen"
+ },
+ {
+  "arm": "err",
+  "atom": 3231,
+  "rank": 15,
+  "q": "Does the response contain at least one point where the writer qualifies or reconsiders an earlier claim by raising a caveat about a specific case, constraint, or setting (e.g., worst-case input, a particular language/runtime, an edge case) rather than simply continuing?",
+  "label": "Correcting or reconsidering reasoning steps",
+  "src": "frozen"
+ },
+ {
+  "arm": "err",
+  "atom": 2004,
+  "rank": 16,
+  "q": "Does the response contain at least one point where the writer expresses doubt about their own calculation or their interpretation of the problem (e.g., 'maybe my calculation is wrong', 'something is conflicting', 'maybe the question means ...') before resolving it?",
+  "label": "mid-reasoning hesitation and self-correction",
+  "src": "frozen"
+ },
+ {
+  "arm": "err",
+  "atom": 3317,
+  "rank": 17,
+  "q": "Does the response contain at least one point where the writer explicitly reflects on a specific previous step of their own reasoning and identifies it as mistaken, based on a wrong assumption, or in need of revision?",
+  "label": "Reflecting on or correcting reasoning",
+  "src": "frozen"
+ },
+ {
+  "arm": "err",
+  "atom": 5435,
+  "rank": 18,
+  "q": "Does the response contain at least one hesitation or self-correction ('Wait', 'Hmm', 'Alternatively', 'not sure') that occurs in the middle of a symbolic calculation, i.e., immediately adjacent to a mathematical expression with parentheses or operators, rather than in surrounding prose?",
+  "label": "mid-calculation math expressions with corrections",
+  "src": "frozen"
+ },
+ {
+  "arm": "err",
+  "atom": 4102,
+  "rank": 19,
+  "q": "Does the response propose at least one alternative hypothesis or approach to the one currently being pursued (e.g., 'Alternatively, maybe ...', 'But perhaps ...', 'another possibility is ...') before settling on an answer?",
+  "label": "reconsidering or proposing alternatives",
+  "src": "frozen"
+ },
+ {
+  "arm": "err",
+  "atom": 2849,
+  "rank": 20,
+  "q": "Does the response contain at least one point where the writer explicitly names a problem, confusion, ambiguity, or infeasibility in the current approach or interpretation, and then calls for or turns to a different approach?",
+  "label": "Identifying and reconsidering problems or mistakes",
+  "src": "frozen"
+ },
+ {
+  "arm": "err",
+  "atom": 1975,
+  "rank": 21,
+  "q": "Does the response contain at least one point where the writer compares a result they just derived against an expected/sample value and explicitly states whether it matches or conflicts, then revisits the step if it conflicts?",
+  "label": "Correcting or questioning reasoning steps",
+  "src": "frozen"
+ },
+ {
+  "arm": "err",
+  "atom": 5614,
+  "rank": 22,
+  "q": "Does the response contain at least one sentence-initial 'Because' clause that justifies a step or claim the writer just made (rather than answering the user's question directly)?",
+  "label": "self-correction in reasoning",
+  "src": "frozen"
+ },
+ {
+  "arm": "err",
+  "atom": 1385,
+  "rank": 23,
+  "q": "Does the response contain at least one point where the writer explicitly passes a verdict on a step they just took (e.g., 'so that's correct', 'that's handled', 'wait, that's different') or explicitly pauses to re-check or re-derive it (e.g., 'let me check that again', 'let me retrace'), rather than only moving forward?",
+  "label": "Verifying or reconsidering reasoning steps",
+  "src": "frozen"
+ },
+ {
+  "arm": "err",
+  "atom": 8104,
+  "rank": 24,
+  "q": "Does the response contain at least one point where the writer explicitly negates something they themselves just wrote (e.g., 'Wait, no', 'Actually, ...', '-> no') and replaces it with a corrected version?",
+  "label": "Correcting or revising reasoning",
+  "src": "frozen"
+ },
+ {
+  "arm": "err",
+  "atom": 3731,
+  "rank": 25,
+  "q": "Does the response contain at least one point where the writer pauses to plan (e.g., 'Let me think') and then lists a sequence of steps or a plan for the approach before carrying it out?",
+  "label": "Reasoning and proposing steps",
+  "src": "frozen"
+ },
+ {
+  "arm": "err",
+  "atom": 1524,
+  "rank": 26,
+  "q": "Does the response contain an explicit trace of an iterative or recursive process, listing successive iterations/steps together with their intermediate values (e.g., 'First iteration: n=5 -> remainder 1 -> ...', 'At j=1: ...')?",
+  "label": "mid-calculation process tracking",
+  "src": "frozen"
+ },
+ {
+  "arm": "err",
+  "atom": 6956,
+  "rank": 27,
+  "q": "Does the response contain at least one point where the writer works through a specific concrete example or test case piece by piece (e.g., listing each bit, coefficient, or test input with its result) in order to check that a rule or procedure gives the expected outcome?",
+  "label": "Pausing to verify or clarify reasoning",
+  "src": "frozen"
+ },
+ {
+  "arm": "err",
+  "atom": 5759,
+  "rank": 28,
+  "q": "Does the response contain a run of two or more consecutive self-directed questions probing an assumption or edge case (e.g., 'But what if X? Then Y?'), followed by a revision such as 'Actually ...' or 'Alternatively ...'?",
+  "label": "self-correction or questioning in reasoning",
+  "src": "frozen"
+ },
+ {
+  "arm": "err",
+  "atom": 7211,
+  "rank": 29,
+  "q": "Does the response contain at least one sentence-initial 'But' or 'However' that introduces a complication, exception, or counter-check to something the writer themselves just concluded (not a contrast in the problem statement)?",
+  "label": "mid-reasoning self-correction markers",
+  "src": "frozen"
+ },
+ {
+  "arm": "err",
+  "atom": 3125,
+  "rank": 30,
+  "q": "Does the response contain at least one point where the writer, after a doubt or contrast marker, proposes an alternative interpretation of the problem or an alternative approach hedged with 'perhaps'/'maybe' (e.g., 'But perhaps ...', 'So perhaps the problem has to be ...')?",
+  "label": "mid-reasoning correction or reconsideration",
+  "src": "frozen"
+ },
+ {
+  "arm": "err",
+  "atom": 1340,
+  "rank": 31,
+  "q": "Does the response narrate a computational or algorithmic procedure step by step in prose (iterating over items, checking conditions, updating state), rather than only presenting final code or a purely mathematical derivation?",
+  "label": "Planning computational steps",
+  "src": "frozen"
+ },
+ {
+  "arm": "err",
+  "atom": 1692,
+  "rank": 32,
+  "q": "Does the response contain at least one point where the writer poses a question about its own approach or an edge case (ending in '?') and immediately answers or adjusts the plan with a sentence starting 'But', 'So', 'Actually', or 'However'?",
+  "label": "Proposing alternatives or corrections",
+  "src": "frozen"
+ },
+ {
+  "arm": "err",
+  "atom": 5939,
+  "rank": 33,
+  "q": "Does the response contain at least one point where the writer explicitly confirms that a previous step or intermediate result works or is consistent (e.g., 'So that works', 'so that's fine', 'that checks out') before moving on?",
+  "label": "Confirming reasoning with \"so that\"",
+  "src": "frozen"
+ },
+ {
+  "arm": "err",
+  "atom": 4123,
+  "rank": 34,
+  "q": "Does the response contain at least one point where the writer explicitly catches, questions, or flags a difficulty in their own previous statement mid-reasoning (e.g., 'Wait, the ...', 'but what if ...', 'that's tricky')?",
+  "label": "Catching or questioning reasoning mid-thought",
+  "src": "frozen"
+ },
+ {
+  "arm": "err",
+  "atom": 2003,
+  "rank": 35,
+  "q": "Does the response propose at least one alternative approach or reinterpretation of the problem (e.g., 'Alternatively, ...', 'so perhaps ...') that differs from the approach it was pursuing?",
+  "label": "proposing alternatives or reconsidering",
+  "src": "frozen"
+ },
+ {
+  "arm": "err",
+  "atom": 4760,
+  "rank": 36,
+  "q": "Does the response contain at least one sequence where the writer poses a question about the problem and then, in a new paragraph starting with 'Alternatively' or 'Wait', proposes a different hypothesis or retracts the previous idea?",
+  "label": "mid-reasoning self-correction or alternatives",
+  "src": "frozen"
+ },
+ {
+  "arm": "err",
+  "atom": 2311,
+  "rank": 37,
+  "q": "Does the response contain at least one reasoning step stated tentatively (with 'perhaps', 'maybe', 'I'm not sure', or 'might be') rather than asserted as fact?",
+  "label": "tentative reasoning with \"perhaps\" and \"maybe\"",
+  "src": "frozen"
+ },
+ {
+  "arm": "err",
+  "atom": 5971,
+  "rank": 38,
+  "q": "Does the response contain at least one point where, after completing a step or computation, the writer starts a new paragraph with 'Wait' or 'Alternatively' to reconsider, redo, or reinterpret that step?",
+  "label": "Proposing alternatives or reconsidering steps",
+  "src": "frozen"
+ },
+ {
+  "arm": "err",
+  "atom": 5908,
+  "rank": 39,
+  "q": "Does the response lay out a worked example, trace, or verification as an indented outline of short colon-terminated label lines (e.g., 'Step:', 'Original:', 'Actually:') rather than as prose or as code?",
+  "label": "Structured reasoning corrections and verifications",
+  "src": "frozen"
+ },
+ {
+  "arm": "err",
+  "atom": 4684,
+  "rank": 40,
+  "q": "Does the response present an explicit ordered outline or plan of implementation steps (e.g., 'Steps:', 'First ..., Then ...', 'code skeleton') before or instead of giving the full solution?",
+  "label": "Structuring reasoning steps, often with code",
+  "src": "frozen"
+ },
+ {
+  "arm": "err",
+  "atom": 758,
+  "rank": 41,
+  "q": "Does the assistant question or reconsider its reasoning steps?",
+  "label": "reconsidering or questioning reasoning steps",
+  "src": "new"
+ },
+ {
+  "arm": "err",
+  "atom": 2838,
+  "rank": 42,
+  "q": "Does the assistant verify reasoning using 'so' with pauses?",
+  "label": "Verifying reasoning with \"so\" and pauses",
+  "src": "new"
+ },
+ {
+  "arm": "err",
+  "atom": 2288,
+  "rank": 43,
+  "q": "Does the assistant reflect on or verify its reasoning steps?",
+  "label": "Reflecting on or verifying reasoning steps",
+  "src": "new"
+ },
+ {
+  "arm": "err",
+  "atom": 3716,
+  "rank": 44,
+  "q": "Does the assistant propose alternatives or question its reasoning?",
+  "label": "proposing alternatives or questioning reasoning",
+  "src": "new"
+ },
+ {
+  "arm": "err",
+  "atom": 3729,
+  "rank": 45,
+  "q": "Does the assistant reflect or correct reasoning using 'with'?",
+  "label": "Reflecting or correcting reasoning with \"with\"",
+  "src": "new"
+ },
+ {
+  "arm": "err",
+  "atom": 8179,
+  "rank": 46,
+  "q": "Does the AI reconsider any assumptions during its reasoning in this response?",
+  "label": "Reconsidering assumptions mid-reasoning",
+  "src": "new"
+ },
+ {
+  "arm": "err",
+  "atom": 5241,
+  "rank": 47,
+  "q": "Does the AI confirm any reasoning steps by using the word 'So' in this response?",
+  "label": "Confirming reasoning steps with \"So\"",
+  "src": "new"
+ },
+ {
+  "arm": "err",
+  "atom": 2135,
+  "rank": 48,
+  "q": "Does the AI use the word 'would' to indicate hypothetical reasoning in this response?",
+  "label": "hypothetical reasoning with \"would\"",
+  "src": "new"
+ },
+ {
+  "arm": "err",
+  "atom": 7069,
+  "rank": 49,
+  "q": "Does the AI verify or start a step in its reasoning in this response?",
+  "label": "Verifying or starting a step in reasoning",
+  "src": "new"
+ },
+ {
+  "arm": "err",
+  "atom": 7861,
+  "rank": 50,
+  "q": "Does the AI pause to verify or reconsider its reasoning in this response?",
+  "label": "Pausing to verify or reconsider reasoning",
+  "src": "new"
+ },
+ {
+  "arm": "err",
+  "atom": 4044,
+  "rank": 51,
+  "q": "Does the AI check or correct any logical or computational steps in this response?",
+  "label": "Checking or correcting logical/computational steps",
+  "src": "new"
+ },
+ {
+  "arm": "err",
+  "atom": 1945,
+  "rank": 52,
+  "q": "Does the AI use the word 'but' to indicate self-correction in this response?",
+  "label": "self-correction with \"but\"",
+  "src": "new"
+ },
+ {
+  "arm": "err",
+  "atom": 6856,
+  "rank": 53,
+  "q": "Does the AI use the word 'Wait' to pause and reconsider in this response?",
+  "label": "Pausing to reconsider with \"Wait\"",
+  "src": "new"
+ },
+ {
+  "arm": "err",
+  "atom": 7197,
+  "rank": 54,
+  "q": "Does the AI reconsider assumptions or propose alternatives in this response?",
+  "label": "Reconsidering assumptions or proposing alternatives",
+  "src": "new"
+ },
+ {
+  "arm": "err",
+  "atom": 7022,
+  "rank": 55,
+  "q": "Does the AI reconsider or revise its reasoning in this response?",
+  "label": "reconsidering or revising reasoning",
+  "src": "new"
+ },
+ {
+  "arm": "err",
+  "atom": 3052,
+  "rank": 56,
+  "q": "Does the AI use the word 'can' to explore possibilities in this response?",
+  "label": "exploring possibilities with \"can\"",
+  "src": "new"
+ },
+ {
+  "arm": "err",
+  "atom": 5211,
+  "rank": 57,
+  "q": "Does the AI use the word 'if' to indicate conditional reasoning in this response?",
+  "label": "Conditional reasoning with \"if\"",
+  "src": "new"
+ },
+ {
+  "arm": "err",
+  "atom": 4597,
+  "rank": 58,
+  "q": "Does the AI propose alternatives or question assumptions in this response?",
+  "label": "proposing alternatives or questioning assumptions",
+  "src": "new"
+ },
+ {
+  "arm": "err",
+  "atom": 1357,
+  "rank": 59,
+  "q": "Does the AI use the words 'perhaps' or 'maybe' to propose tentative solutions in this response?",
+  "label": "proposing tentative solutions with \"perhaps/maybe\"",
+  "src": "new"
+ }
+]

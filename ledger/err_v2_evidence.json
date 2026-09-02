@@ -1,0 +1,2531 @@
+{
+ "tag": "err_v2",
+ "arm": "err",
+ "n": 60,
+ "planted_max": 0.3,
+ "n_alive_ct": 22597,
+ "n_planted_dominated": 700,
+ "excluded_planted_top": [],
+ "atoms": [
+  {
+   "rank": 1,
+   "atom": 1633,
+   "mass": 1636593.625,
+   "mass_share": 0.07364562898874283,
+   "fires_ct": 3346305,
+   "fires_holdout": 173616,
+   "planted_mass_share": 0.029387056827545166,
+   "n_docs": 38002,
+   "doc_frac": 1.0,
+   "top_doc_share": 0.0,
+   "top3_doc_share": 0.0001,
+   "within_doc_sel": 1.0,
+   "src_hist": {
+    "math": 0.464,
+    "python": 0.19,
+    "nemotron": 0.057,
+    "science": 0.053,
+    "synthetic": 0.051,
+    "code": 0.047
+   },
+   "lens": "'.\\n\\n' '.' ',' ' is' ' ' ' (' ' would' ' in' \"'s\" ' then' ' I' ' \"' ' for' ' when' ' with'",
+   "type": "move",
+   "label": "Reconsidering or correcting reasoning",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Chunks often include phrases like \"Wait no\", \"Wait wait\", \"Wait, but\", or \"Wait, the\" indicating hesitation or reconsideration.",
+    2
+   ],
+   "move": [
+    "The text is actively catching or reconsidering potential errors, inconsistencies, or alternative approaches in reasoning.",
+    3
+   ],
+   "examples": [
+    " * two horizontal dominoes in one row? But that would require covering all three columns: two dominoes in one row: \\n          one from col",
+    ", but not starting at zero? Hmm, maybe this approach won't work directly because of the non-linearity? Wait, but the increments are linear steps:",
+    " is correct.\\n\\nWait no: Let me see. Let me think of sample input again. The sample input given:\\n\\nInput:3 1 4 4"
+   ]
+  },
+  {
+   "rank": 2,
+   "atom": 6814,
+   "mass": 218088.84375,
+   "mass_share": 0.009813853539526463,
+   "fires_ct": 1537892,
+   "fires_holdout": 79341,
+   "planted_mass_share": 0.026039572432637215,
+   "n_docs": 37984,
+   "doc_frac": 0.9995263407189096,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.455,
+   "src_hist": {
+    "math": 0.465,
+    "python": 0.197,
+    "nemotron": 0.059,
+    "science": 0.055,
+    "code": 0.05,
+    "synthetic": 0.049
+   },
+   "lens": "'.' ' is' ' a' ' in' ' I' ' ' ' not' '?\\n\\n' ' for' ' have' ' from' '?' ' would' ' this' ' we'",
+   "type": "move",
+   "label": "Correcting or reconsidering previous statements",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Chunks frequently contain the word \"Wait\" or \"Wait no\" and often include mid-sentence pauses or corrections (e.g., \"Wait, maybe the question is hypothetical\").",
+    3
+   ],
+   "move": [
+    "The text is often correcting or reconsidering a previous statement or assumption, indicating a moment of reflection or revision in the reasoning process.",
+    3
+   ],
+   "examples": [
+    " max function each time would be better, perhaps, since the code could be written with the same lines, just the second line inside the loop would be:\\n\\nmax",
+    " which (the given) sum <2.\"\\n\\nHmm, so the user must have transcribed the problem correctly here, and the problem is as written, so the",
+    ":\\n\\nFirst, the first check (after the start) happens immediately, but suppose the condition is not met, then it checks the time, and if the timeout"
+   ]
+  },
+  {
+   "rank": 3,
+   "atom": 233,
+   "mass": 214735.21875,
+   "mass_share": 0.009662942960858345,
+   "fires_ct": 1580867,
+   "fires_holdout": 81956,
+   "planted_mass_share": 0.02410373091697693,
+   "n_docs": 37982,
+   "doc_frac": 0.9994737119098995,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.472,
+   "src_hist": {
+    "math": 0.473,
+    "python": 0.194,
+    "science": 0.055,
+    "synthetic": 0.05,
+    "nemotron": 0.05,
+    "code": 0.048
+   },
+   "lens": "'.' ' ' ' and' ' the' ' (' ' is' 'Case' ' for' ' if' ' it' ' of' ' Which' ' to' 'So' ' with'",
+   "type": "move",
+   "label": "Reasoning refinement and correction",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Chunks frequently contain the word \"but\" and often include phrases like \"Wait,\" \"so,\" or \"suppose,\" indicating a conversational or reasoning tone.",
+    2
+   ],
+   "move": [
+    "The text is actively correcting, questioning, or refining its reasoning, often pausing to reconsider or verify a step.",
+    3
+   ],
+   "examples": [
+    " no, division comes after multiplication here, so multiplication has higher precedence. So, the expression would be parsed as: division has lower precedence than multiplication, so division",
+    " B, which caused the confusion. So with that, I can work with variables A, B, k, where base=k, digits A,B,A, so",
+    " the first, so mode would be 1, then when 2 comes, count is equal, but mode stays as 1. Then 3 also,"
+   ]
+  },
+  {
+   "rank": 4,
+   "atom": 3832,
+   "mass": 198429.671875,
+   "mass_share": 0.008929204195737839,
+   "fires_ct": 1457784,
+   "fires_holdout": 76121,
+   "planted_mass_share": 0.02707022987306118,
+   "n_docs": 37977,
+   "doc_frac": 0.9993421398873743,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.439,
+   "src_hist": {
+    "math": 0.47,
+    "python": 0.188,
+    "science": 0.056,
+    "nemotron": 0.056,
+    "code": 0.049,
+    "synthetic": 0.045
+   },
+   "lens": "',' ' the' ' and' ' (' '.\\n\\n' ' to' ' But' ' So' ' it' ' of' 'Case' ' \"' ' with' ' Which' ').'",
+   "type": "move",
+   "label": "mid-reasoning self-correction",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "chunks contain \"Wait\" followed by a reevaluation or correction",
+    3
+   ],
+   "move": [
+    "self-correction or realization during reasoning process",
+    3
+   ],
+   "examples": [
+    " function definition they have List[bool], so that's a type hint. But in code submission platform, perhaps it's handled. But for coding here, in",
+    "', 'B'], which reversed is 'BCAB', which is correct. \\n\\nAh! Right. Because when we collect them in reverse order. The first B",
+    " place. Wait in that code, component is a list which is modified with component.append(current) during traversal. Then after building component, we do component.sort()"
+   ]
+  },
+  {
+   "rank": 5,
+   "atom": 1863,
+   "mass": 181076.484375,
+   "mass_share": 0.008148321881890297,
+   "fires_ct": 1549873,
+   "fires_holdout": 80268,
+   "planted_mass_share": 0.025677593424916267,
+   "n_docs": 37968,
+   "doc_frac": 0.9991053102468291,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.466,
+   "src_hist": {
+    "math": 0.452,
+    "python": 0.192,
+    "nemotron": 0.071,
+    "science": 0.055,
+    "code": 0.051,
+    "synthetic": 0.047
+   },
+   "lens": "',' '.' ' and' ' is' ':\\n\\n' ' \"' ' would' ' this' ' then' ' with' ' maybe' ' it' ' So' ' when' ' but'",
+   "type": "move",
+   "label": "Reconsideration and verification in reasoning",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Chunks frequently contain the word \"Wait\" and phrases indicating reconsideration or doubt (e.g., \"Let me think again\", \"Wait no\", \"Wait maybe\").",
+    3
+   ],
+   "move": [
+    "The text is actively reconsidering or double-checking its reasoning, often pausing to verify or correct a previous step.",
+    3
+   ],
+   "examples": [
+    " right is 5. Then the left partitions again.\\n\\nSo the recursion would split correctly, I think.\\n\\nSo this code should work for the example.\\n\\nTherefore,",
+    " do it manually without using built-in functions? Like for learning purposes, maybe they want a loop-based approach. Let me think again.\\n\\nSup to the problem statement",
+    "3.\\n\\nWait, so at 3.3: 2.984.\\n\\nAt 3.4: ~3.022.\\n\\nSo crossing 3 at"
+   ]
+  },
+  {
+   "rank": 6,
+   "atom": 1325,
+   "mass": 178158.671875,
+   "mass_share": 0.008017022162675858,
+   "fires_ct": 1456176,
+   "fires_holdout": 75531,
+   "planted_mass_share": 0.025319386273622513,
+   "n_docs": 37923,
+   "doc_frac": 0.997921162044103,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.44,
+   "src_hist": {
+    "math": 0.467,
+    "python": 0.195,
+    "science": 0.057,
+    "nemotron": 0.056,
+    "synthetic": 0.049,
+    "code": 0.047
+   },
+   "lens": "' the' '.' ' a' ' \"' ':\\n\\n' ' maybe' ' of' ' but' ' this' ' would' ' from' ' it' ' ' ' all' ' can'",
+   "type": "move",
+   "label": "Reflecting on or questioning reasoning steps",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "N/A",
+    0
+   ],
+   "move": [
+    "The text is reflecting on or questioning a previous step in the reasoning process, often with phrases like \"Wait,\" \"perhaps,\" or \"maybe.\"",
+    3
+   ],
+   "examples": [
+    " all b are considered including those before and after.\\n\\nHowever in this approach, for each pair (a,b), where a and b are elements in s and different",
+    ", perhaps they are for the final answer's explanation, but in that case, I need to structure it accordingly.\\n\\nLet me re-express my thinking in mind",
+    " care, but in this problem, since we need to compute moments involving products without conjugation? Wait, perhaps in the question's case, \\(U_{i"
+   ]
+  },
+  {
+   "rank": 7,
+   "atom": 744,
+   "mass": 176689.625,
+   "mass_share": 0.007950915955007076,
+   "fires_ct": 1416899,
+   "fires_holdout": 73640,
+   "planted_mass_share": 0.028463931754231453,
+   "n_docs": 37974,
+   "doc_frac": 0.9992631966738593,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.42,
+   "src_hist": {
+    "math": 0.464,
+    "python": 0.191,
+    "nemotron": 0.064,
+    "science": 0.055,
+    "code": 0.052,
+    "synthetic": 0.045
+   },
+   "lens": "',' '.\\n\\n' ' this' ' would' ':\\n\\n' '?\\n\\n' ' from' ' a' ' not' ' have' ' can' ' =' '?' ' all' ' when'",
+   "type": "move",
+   "label": "Correcting or reconsidering with \"Wait\"",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "The word \"Wait\" appears prominently in most chunks, often signaling a pause or reconsideration.",
+    3
+   ],
+   "move": [
+    "The text is frequently correcting or reconsidering a previous statement or approach, often in a step-by-step reasoning process.",
+    3
+   ],
+   "examples": [
+    "≈15.68N. So that is 16 N. Hmm again 16 N. \\n\\nWait the answer is 11 N. Hmm. Where",
+    "s eyed me with casual curiosity. Very quickly though, the ball tipped off and the game surged forward. Everyone moved with surprising speed and intensity. Nervous",
+    " any spaces and punctuation like the hash and colons.\\n\\nWait in the example line: the line is '# Author: John Doe'. So the actual content is after"
+   ]
+  },
+  {
+   "rank": 8,
+   "atom": 6035,
+   "mass": 176561.390625,
+   "mass_share": 0.007945145480334759,
+   "fires_ct": 1511258,
+   "fires_holdout": 78233,
+   "planted_mass_share": 0.024922944605350494,
+   "n_docs": 37977,
+   "doc_frac": 0.9993421398873743,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.454,
+   "src_hist": {
+    "math": 0.46,
+    "python": 0.193,
+    "nemotron": 0.064,
+    "science": 0.055,
+    "synthetic": 0.051,
+    "code": 0.048
+   },
+   "lens": "'.' ' (' ' in' '.\\n\\n' ' a' ' to' ' But' ' and' ' it' ').' ' So' ' that' ':\\n\\n' '?\\n\\n' ' perhaps'",
+   "type": "move",
+   "label": "Correcting or questioning reasoning",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Chunks frequently contain phrases like \"Wait,\" \"but,\" or \"so,\" often mid-sentence, indicating hesitation or correction.",
+    2
+   ],
+   "move": [
+    "The text is frequently correcting or questioning its own reasoning, often backtracking or verifying a previous step.",
+    3
+   ],
+   "examples": [
+    " term is 1, the second term is 2 plus the product of all previous terms, which is just 1, so 1 + 2 =",
+    " be considered as 360 and then match 359? But note that 0 is 0, and 359 is 359, and 0 is within",
+    " the smaller angle, but 120 is already given, so it could be 60 degrees from positive x-axis or 300 degrees, but 300 is below"
+   ]
+  },
+  {
+   "rank": 9,
+   "atom": 7458,
+   "mass": 169201.078125,
+   "mass_share": 0.00761393690481782,
+   "fires_ct": 1509570,
+   "fires_holdout": 78690,
+   "planted_mass_share": 0.025223273783922195,
+   "n_docs": 37943,
+   "doc_frac": 0.9984474501342034,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.451,
+   "src_hist": {
+    "math": 0.456,
+    "python": 0.196,
+    "nemotron": 0.065,
+    "science": 0.055,
+    "code": 0.05,
+    "synthetic": 0.05
+   },
+   "lens": "',' ' the' '.' ' (' ' is' ' in' ' that' ' if' 'So' ' which' ' problem' ':\\n\\n' ' But' '?' ' Let'",
+   "type": "move",
+   "label": "Pausing to reconsider reasoning",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Chunks frequently include the word \"Wait\" or phrases like \"Wait no\" or \"Wait maybe\"",
+    3
+   ],
+   "move": [
+    "The text is pausing to reconsider or question a previous step or assumption in the reasoning process",
+    3
+   ],
+   "examples": [
+    " b-a < a+b? because a+b = a+b and b-a = b-a. But a+b = a+b and since a and b are non",
+    " beautiful day.\" and ends with a period and then nothing else. So in the input's actual line of input, it would end with a period with no space",
+    " right way? Wait a second, no, wait.\\n\\nHold on: 1 - c²/a²: Since a and b are the legs and c is"
+   ]
+  },
+  {
+   "rank": 10,
+   "atom": 2948,
+   "mass": 166599.609375,
+   "mass_share": 0.007496872451156378,
+   "fires_ct": 1518622,
+   "fires_holdout": 78858,
+   "planted_mass_share": 0.02250816859304905,
+   "n_docs": 37913,
+   "doc_frac": 0.9976580179990526,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.451,
+   "src_hist": {
+    "math": 0.446,
+    "python": 0.212,
+    "nemotron": 0.068,
+    "code": 0.057,
+    "science": 0.055,
+    "synthetic": 0.043
+   },
+   "lens": "' is' '.\\n\\n' ' a' ',' ' for' ' and' ' it' ' Which' 'So' ' if' ':\\n\\n' ' which' ' of' ' first' ' But'",
+   "type": "other",
+   "label": "Evaluating acceptability in Python",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Chunks frequently contain the word \"Pyton\" (a misspelling of \"Python\") and phrases like \"might be borderline\" or \"is acceptable.\"",
+    3
+   ],
+   "move": [
+    "The text is evaluating or justifying the acceptability or correctness of a solution, often with a focus on computational efficiency or correctness.",
+    3
+   ],
+   "examples": [
+    " is acceptable, so the code above works correctly and efficiently enough.\\n\\nTherefore, this solution would work for the problem's constraints.\\n\\nWait but the problem's first question",
+    " which is acceptable in Pyton if we code in Pyton with pypy or in C++ but in Python it might be borderline in Pyton (if we",
+    " acceptable in Pyton? Maybe in Pyton we need to be careful, but 125e6 operations in Pyton might be borderline in Pyton in worst"
+   ]
+  },
+  {
+   "rank": 11,
+   "atom": 2807,
+   "mass": 163326.78125,
+   "mass_share": 0.007349597290158272,
+   "fires_ct": 1378135,
+   "fires_holdout": 71343,
+   "planted_mass_share": 0.028864698484539986,
+   "n_docs": 37927,
+   "doc_frac": 0.998026419662123,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.41,
+   "src_hist": {
+    "math": 0.464,
+    "python": 0.202,
+    "nemotron": 0.059,
+    "code": 0.056,
+    "science": 0.056,
+    "persona": 0.041
+   },
+   "lens": "' in' ' and' ' is' ',' ' (' ' that' ' to' ' perhaps' \"'s\" ' problem' ' at' '?' ' I' ' Let' ' which'",
+   "type": "move",
+   "label": "Pausing to reconsider or propose alternatives",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Chunks often include the word \"Wait\" or phrases like \"Alternatively, maybe\"",
+    2
+   ],
+   "move": [
+    "The text is often pausing to reconsider or propose an alternative approach",
+    3
+   ],
+   "examples": [
+    " letter must differ from the first two. Since the first letter of the winning password is a vowel, the second a consonant, the third can be a vowel",
+    " just the integral over the segment of the loop through the inductor where the B is changing. But the E_n is present everywhere except the steady parts, but",
+    "?\\n\\nAlternatively, maybe consider writing the equation as:\\n\\nLet me denote x as a number with digits 0 or 1. So the left-hand side is a"
+   ]
+  },
+  {
+   "rank": 12,
+   "atom": 7639,
+   "mass": 160772.21875,
+   "mass_share": 0.007234643679112196,
+   "fires_ct": 1447414,
+   "fires_holdout": 75258,
+   "planted_mass_share": 0.025215517729520798,
+   "n_docs": 37972,
+   "doc_frac": 0.9992105678648492,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.425,
+   "src_hist": {
+    "math": 0.479,
+    "python": 0.191,
+    "science": 0.055,
+    "code": 0.052,
+    "nemotron": 0.051,
+    "synthetic": 0.045
+   },
+   "lens": "' ' ',' ' is' ' the' ' for' ' I' '?' ' would' '),' \"'s\" ' if' ' we' ' of' ' from' ' have'",
+   "type": "move",
+   "label": "Mid-reasoning pause or reconsideration",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Chunks frequently contain the word \"Wait\" or \"Hmm\" and often include mid-sentence pauses or corrections.",
+    3
+   ],
+   "move": [
+    "The text is pausing to reconsider or double-check a previous step in the reasoning process.",
+    3
+   ],
+   "examples": [
+    " product is 8, which is a cube. Wait, but in that case, the product of divisors of 4 is (1×2×4",
+    "5²=25. 25 + something? 25 + 16 +0. Not allowed. Hmm. So maybe only that combination.\\n\\nAlternatively, could",
+    "0b01011 | ... -> we have bits: \\n            bit0: set (because of 1)\\n            bit1: set (because of "
+   ]
+  },
+  {
+   "rank": 13,
+   "atom": 1799,
+   "mass": 160549.3125,
+   "mass_share": 0.0072246128693223,
+   "fires_ct": 1543618,
+   "fires_holdout": 80415,
+   "planted_mass_share": 0.024621877819299698,
+   "n_docs": 37981,
+   "doc_frac": 0.9994473975053945,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.463,
+   "src_hist": {
+    "math": 0.46,
+    "python": 0.199,
+    "nemotron": 0.059,
+    "science": 0.055,
+    "code": 0.052,
+    "synthetic": 0.046
+   },
+   "lens": "'.' ',' \"'s\" ' ' ' and' ' a' ':' ' not' ' have' '?\\n\\n' ' from' 'So' ' if' ' which' ' each'",
+   "type": "move",
+   "label": "self-interruption and correction",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "chunks contain the word \"Wait\" or similar self-interruption markers",
+    3
+   ],
+   "move": [
+    "self-correction or mid-reasoning doubt/checking",
+    3
+   ],
+   "examples": [
+    " U-shape open at the top? Or maybe like an upward-facing bracket with the opening upwards? Wait no. U-shaped would be opening downwards, perhaps the",
+    " →2 →4: 0→2 is4, and then +3 =7? Wait that would be total 7? Wait but that path uses",
+    "0=1200. Yes that seems right.\\n\\nHmm. So for equilateral triangle, determinant is zero; for right-angled triangle it is 1200"
+   ]
+  },
+  {
+   "rank": 14,
+   "atom": 6477,
+   "mass": 160288.359375,
+   "mass_share": 0.007212870288640261,
+   "fires_ct": 1523936,
+   "fires_holdout": 79055,
+   "planted_mass_share": 0.025195162743330002,
+   "n_docs": 37972,
+   "doc_frac": 0.9992105678648492,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.452,
+   "src_hist": {
+    "math": 0.47,
+    "python": 0.193,
+    "nemotron": 0.058,
+    "science": 0.056,
+    "code": 0.05,
+    "synthetic": 0.047
+   },
+   "lens": "' the' '.\\n\\n' ' that' ' and' \"'s\" '.' ' would' ' from' ' I' ' for' '?\\n\\n' ' =' ' problem' ' all' ' is'",
+   "type": "move",
+   "label": "proposing alternatives with \"we\" phrasing",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "chunks contain the word \"we\" followed by a verb (e.g., \"we subtract\", \"we can\", \"we have\")",
+    3
+   ],
+   "move": [
+    "proposing alternative approaches or adjustments to a problem (e.g., \"Alternatively\", \"But note\", \"Wait, perhaps\")",
+    3
+   ],
+   "examples": [
+    " C can be expressed as S (K (S (K (S (K S) (S (S (K K)) (S (K (K",
+    "]. However, we subtract until we are below K, but we never go negative? So if we start at n, we subtract K until we get a number",
+    "? But then which side?\\n\\nAlternatively, for a corner square, if we start on a corner, perhaps we exit the side before we get to a circle?"
+   ]
+  },
+  {
+   "rank": 15,
+   "atom": 3231,
+   "mass": 158649.609375,
+   "mass_share": 0.00713912770152092,
+   "fires_ct": 1421766,
+   "fires_holdout": 73530,
+   "planted_mass_share": 0.02430327981710434,
+   "n_docs": 37886,
+   "doc_frac": 0.996947529077417,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.414,
+   "src_hist": {
+    "math": 0.474,
+    "python": 0.206,
+    "nemotron": 0.057,
+    "science": 0.057,
+    "code": 0.053,
+    "if_qwq": 0.039
+   },
+   "lens": "'.' ' ' ' for' '.\\n\\n' ' would' ' of' ' that' ' to' ' it' ' \"' ' if' ' So' '?' '),' ' ('",
+   "type": "move",
+   "label": "Correcting or reconsidering reasoning steps",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Chunks often include phrases like \"Wait, but in\" or \"Alternatively, perhaps\" and frequently use \"but\" or \"so\" to introduce reasoning or corrections.",
+    2
+   ],
+   "move": [
+    "The text is often correcting or reconsidering a previous statement, proposing alternative approaches, or verifying assumptions.",
+    3
+   ],
+   "examples": [
+    " But maybe in the problem, a solution is possible, but the user must construct it?\\n\\nWait but in the problem's output, the sample code has cycles listed",
+    ". So, perhaps, this is manageable?\\n\\nWait, but in the worst case, each step's elements contribute a new prime, so in that case, a",
+    " each element in a Python list is a bit more, but in Python a list of a million elements is okay).\\n\\nHmm, but in Python, a list of"
+   ]
+  },
+  {
+   "rank": 16,
+   "atom": 2004,
+   "mass": 154150.78125,
+   "mass_share": 0.006936683319509029,
+   "fires_ct": 1399930,
+   "fires_holdout": 72973,
+   "planted_mass_share": 0.026452310383319855,
+   "n_docs": 37971,
+   "doc_frac": 0.9991842534603442,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.412,
+   "src_hist": {
+    "math": 0.485,
+    "python": 0.193,
+    "science": 0.055,
+    "synthetic": 0.049,
+    "code": 0.049,
+    "nemotron": 0.042
+   },
+   "lens": "'.\\n\\n' ' (' ' ' \"'s\" ' the' ' if' '?' ' we' ' to' ':' ' have' 'So' ' not' ' that' ' which'",
+   "type": "move",
+   "label": "mid-reasoning hesitation and self-correction",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "chunks contain \"Wait\" or similar hesitation markers (e.g., \"Hmm\", \"maybe\")",
+    3
+   ],
+   "move": [
+    "self-correction or reconsideration during reasoning (e.g., doubting calculations, proposing alternatives, pausing to verify)",
+    3
+   ],
+   "examples": [
+    " says day8. Hmm. Something is conflicting here. Maybe my calculations are wrong. Wait maybe the question is different, maybe the well is actually shorter?\\n\\nWait",
+    " 1. Correct. So this should work. That's even shorter and maybe more efficient. But both approaches work. Either way is okay.\\n\\nSo, the",
+    " str() conversion, and the 'join' with newlines is unnecessary and actually complicates things. So the correct code would be this concise version with the for"
+   ]
+  },
+  {
+   "rank": 17,
+   "atom": 3317,
+   "mass": 152014.40625,
+   "mass_share": 0.006840548012405634,
+   "fires_ct": 1415628,
+   "fires_holdout": 73757,
+   "planted_mass_share": 0.029245972633361816,
+   "n_docs": 37896,
+   "doc_frac": 0.9972106731224673,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.435,
+   "src_hist": {
+    "math": 0.46,
+    "python": 0.189,
+    "nemotron": 0.057,
+    "science": 0.055,
+    "synthetic": 0.051,
+    "code": 0.049
+   },
+   "lens": "' a' ' the' ' is' ' in' ',' '?\\n\\n' \"'s\" ' each' ' not' ' perhaps' ' and' ' have' ' maybe' ' can' ').'",
+   "type": "move",
+   "label": "Reflecting on or correcting reasoning",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "N/A",
+    0
+   ],
+   "move": [
+    "The text is reflecting on or correcting a previous step in the reasoning process, often signaled by \"Wait\" or similar phrases.",
+    3
+   ],
+   "examples": [
+    " allowing for modularity.\\n\\nWait, for binary gates, functional completeness for a single two-input gate requires that it cannot be expressed as affine (i.e., not",
+    "\\n<|im_start|>assistant\\n<think>\\nHmm, this user is asking for decryption methods for classified government documents. That's clearly crossing into dangerous territory. \\n\\nThe request",
+    " I made an incorrect assumption in which sides are considered. Wait maybe I considered side c as the base for area, but maybe that's different? Wait, the"
+   ]
+  },
+  {
+   "rank": 18,
+   "atom": 5435,
+   "mass": 148280.484375,
+   "mass_share": 0.00667252391576767,
+   "fires_ct": 1484440,
+   "fires_holdout": 76960,
+   "planted_mass_share": 0.025840269401669502,
+   "n_docs": 37977,
+   "doc_frac": 0.9993421398873743,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.443,
+   "src_hist": {
+    "math": 0.458,
+    "python": 0.201,
+    "science": 0.056,
+    "nemotron": 0.055,
+    "code": 0.053,
+    "synthetic": 0.049
+   },
+   "lens": "' ' ' in' '.\\n\\n' ' the' ' to' ',' ' But' ' So' ' it' ' we' 'Case' ' if' ' so' ' then' ' perhaps'",
+   "type": "content",
+   "label": "mid-calculation math expressions with corrections",
+   "content": [
+    "mathematical expressions and symbolic reasoning (often with nested parentheses)",
+    3
+   ],
+   "form": [
+    "text contains nested parentheses and mathematical operators (e.g., \"(\", \")\", \"^\", \"*\", \"-\")",
+    3
+   ],
+   "move": [
+    "mid-calculation hesitation or self-correction (e.g., \"Wait\", \"Hmm\", \"Alternatively\")",
+    2
+   ],
+   "examples": [
+    " C can be expressed as S (K (S (K (S (K S) (S (S (K K)) (S (K (K",
+    " third and second and first), but that seems unclear. Alternatively, perhaps subtract each from next? Maybe ( ( ( ( (n+3)^2 - (",
+    " as initial seeds being digits 0-9 (all are strange).\\n\\nThen for each digit 'd' (except maybe 0?), but wait, let's"
+   ]
+  },
+  {
+   "rank": 19,
+   "atom": 4102,
+   "mass": 147054.46875,
+   "mass_share": 0.006617353763431311,
+   "fires_ct": 1397634,
+   "fires_holdout": 72416,
+   "planted_mass_share": 0.03235672786831856,
+   "n_docs": 37942,
+   "doc_frac": 0.9984211357296985,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.418,
+   "src_hist": {
+    "math": 0.477,
+    "python": 0.191,
+    "science": 0.056,
+    "code": 0.051,
+    "nemotron": 0.049,
+    "persona": 0.044
+   },
+   "lens": "' and' ' a' '.\\n\\n' \"'s\" ' ' ' \"' ' So' ' maybe' ' with' ' but' ' we' ' would' ' when' ' can' ' then'",
+   "type": "move",
+   "label": "reconsidering or proposing alternatives",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "chunks often contain the word \"Wait\" or \"Alternatively\"",
+    2
+   ],
+   "move": [
+    "the text is proposing alternative approaches or reconsidering a previous step in reasoning",
+    3
+   ],
+   "examples": [
+    " by side horizontally, the height is the max of the individual heights, but that is already covered in case1. \\n\\nAlternatively, maybe the third possibility is that",
+    ". So, essentially, after expanding the product, the coefficients of \\( z^0 \\) (constant term) is 1, the coefficient of \\( z",
+    "0), B, C, perhaps it's the sphere passing through the intercepts, which for intercepts, sometimes the center can be related to the intercepts"
+   ]
+  },
+  {
+   "rank": 20,
+   "atom": 2849,
+   "mass": 137174.359375,
+   "mass_share": 0.006172755733132362,
+   "fires_ct": 1324248,
+   "fires_holdout": 68822,
+   "planted_mass_share": 0.025723814964294434,
+   "n_docs": 37894,
+   "doc_frac": 0.9971580443134572,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.395,
+   "src_hist": {
+    "math": 0.492,
+    "python": 0.182,
+    "science": 0.056,
+    "synthetic": 0.05,
+    "nemotron": 0.046,
+    "code": 0.045
+   },
+   "lens": "' the' ' in' \"'s\" '.' ' we' ' So' ' to' ' would' '?' ' (' ' can' '?\\n\\n' ' when' ' =' ' from'",
+   "type": "move",
+   "label": "Identifying and reconsidering problems or mistakes",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Chunks often include phrases like \"Wait,\" \"Hmm,\" or \"Perhaps,\" indicating hesitation or reconsideration.",
+    2
+   ],
+   "move": [
+    "The text is identifying a problem, confusion, or mistake and suggesting a reconsideration or alternative approach.",
+    3
+   ],
+   "examples": [
+    "30 is way too large (around a billion). That is not feasible.\\n\\nHmm, this is a problem. We need a better approach.\\n\\nWait, maybe there",
+    " swap occurred.\\n\\n   Once a pass is done without any swaps, exit.\\n\\nBut that is a do-while equivalent. In Python, since there is no do",
+    "' is assigned, but when using it for emp.set_id(id), it should be fine.\\n\\nAlternatively, perhaps using a different variable name to avoid confusion. Like"
+   ]
+  },
+  {
+   "rank": 21,
+   "atom": 1975,
+   "mass": 136176.953125,
+   "mass_share": 0.006127872969955206,
+   "fires_ct": 1378215,
+   "fires_holdout": 71377,
+   "planted_mass_share": 0.029531214386224747,
+   "n_docs": 37957,
+   "doc_frac": 0.9988158517972738,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.408,
+   "src_hist": {
+    "math": 0.476,
+    "python": 0.188,
+    "science": 0.055,
+    "nemotron": 0.054,
+    "synthetic": 0.049,
+    "code": 0.048
+   },
+   "lens": "' the' ' is' ':\\n\\n' ' in' ' would' ' for' ' \"' ' then' ' it' ' with' ' So' '),' ' when' 'Case' ' ('",
+   "type": "move",
+   "label": "Correcting or questioning reasoning steps",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Chunks often include \"Wait\" or \"So\" as transitional markers, and many contain mid-sentence pauses or corrections.",
+    2
+   ],
+   "move": [
+    "The text is frequently catching or questioning its own reasoning, often revisiting or correcting previous steps.",
+    3
+   ],
+   "examples": [
+    " check up to 3, 3 divides 9. So returns false, which is correct. n=25, same, 5 divides, so false",
+    "+3)/2 =3. So compare 7 to 7. That's the fourth comparison. Wait, that's conflicting with the sample's 2",
+    " rest 6 elements? Let's see: 1 (the first command's 1 and 3, so two), then the next two 2's"
+   ]
+  },
+  {
+   "rank": 22,
+   "atom": 5614,
+   "mass": 134087.25,
+   "mass_share": 0.006033837795257568,
+   "fires_ct": 1391566,
+   "fires_holdout": 72220,
+   "planted_mass_share": 0.02402377687394619,
+   "n_docs": 37967,
+   "doc_frac": 0.9990789958423241,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.413,
+   "src_hist": {
+    "math": 0.467,
+    "python": 0.193,
+    "nemotron": 0.058,
+    "science": 0.055,
+    "code": 0.05,
+    "synthetic": 0.049
+   },
+   "lens": "' (' ',' ' we' ' ' ' a' ' so' ' each' ' So' ' if' ' to' 'Case' ':\\n\\n' ' \"' ' in' ' maybe'",
+   "type": "move",
+   "label": "self-correction in reasoning",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "chunks contain the word \"Wait\" or \"Because\"",
+    2
+   ],
+   "move": [
+    "self-correction or justification in reasoning (e.g., catching errors, clarifying logic)",
+    3
+   ],
+   "examples": [
+    " for checking the other condition. Because for (N+1)/2, since that number is as big as 50,000, the sieve for that part",
+    ": check the current values.\\n\\nAt the moment, the dp array up to this point for j=2 is still the original values. Because the loop hasn't",
+    " code can be as simple as returning the list comprehension. Wait that's right!? Because the problem says that the .dir paths are directories and not valid, but"
+   ]
+  },
+  {
+   "rank": 23,
+   "atom": 1385,
+   "mass": 131275.546875,
+   "mass_share": 0.0059073129668831825,
+   "fires_ct": 1405878,
+   "fires_holdout": 72657,
+   "planted_mass_share": 0.022483931854367256,
+   "n_docs": 37964,
+   "doc_frac": 0.999000052628809,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.416,
+   "src_hist": {
+    "math": 0.479,
+    "python": 0.205,
+    "science": 0.056,
+    "code": 0.052,
+    "synthetic": 0.046,
+    "if_qwq": 0.041
+   },
+   "lens": "'.\\n\\n' ' the' ':\\n\\n' '.' ' is' ' this' ' each' ' we' ' and' ':' ' so' ' have' ' not' '?' ' perhaps'",
+   "type": "move",
+   "label": "Verifying or reconsidering reasoning steps",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Chunks often include phrases like \"Wait,\" \"Hmm,\" \"Let me,\" or \"So that's\" and frequently end mid-sentence or mid-thought.",
+    2
+   ],
+   "move": [
+    "The text is actively verifying, correcting, or reconsidering a previous step in the reasoning process.",
+    3
+   ],
+   "examples": [
+    " 0\\n\\]\\n\\nHmm, that gives me a different equation? Wait, let's check calculation again. Let me retrace that.\\n\\nStarting with equating",
+    ", that's more explicit.\\n\\nAlternatively, as a list comprehensions like I had before, that's fine too. Let me see which is better. Probably the",
+    " same in two languages. Such a palindromic program that works in both Python and JS for example. Let's think of a palindrome that does something in"
+   ]
+  },
+  {
+   "rank": 24,
+   "atom": 8104,
+   "mass": 125364.359375,
+   "mass_share": 0.005641313269734383,
+   "fires_ct": 1387533,
+   "fires_holdout": 71952,
+   "planted_mass_share": 0.02527170069515705,
+   "n_docs": 37973,
+   "doc_frac": 0.9992368822693543,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.407,
+   "src_hist": {
+    "math": 0.479,
+    "python": 0.185,
+    "nemotron": 0.061,
+    "science": 0.056,
+    "code": 0.048,
+    "synthetic": 0.047
+   },
+   "lens": "' (' ' is' \"'s\" ' I' ' from' ' would' ' for' '?\\n\\n' ' have' ' not' ' that' ' and' ' this' '?' '),'",
+   "type": "move",
+   "label": "Correcting or revising reasoning",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Chunks often contain phrases like \"Wait,\" \"Actually,\" or \"So,\" indicating corrections or clarifications",
+    2
+   ],
+   "move": [
+    "The text is correcting or revising a previous statement or approach",
+    3
+   ],
+   "examples": [
+    ": has left and down? -> no: \\n                 Actually, the grid has points: \\n                    rows: 0 to n -> total n+1 rows",
+    "Set equal to RHS: 9k² +6k +1 = left side?\\n\\nWait, no:\\n\\nWait, the LHS is 8k²",
+    " a again, then b, which is already in the merged list, then d is new → add. So the final list is a, b, c,"
+   ]
+  },
+  {
+   "rank": 25,
+   "atom": 3731,
+   "mass": 124265.265625,
+   "mass_share": 0.00559185491874814,
+   "fires_ct": 1396374,
+   "fires_holdout": 72931,
+   "planted_mass_share": 0.02824338898062706,
+   "n_docs": 37919,
+   "doc_frac": 0.9978159044260828,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.417,
+   "src_hist": {
+    "math": 0.458,
+    "python": 0.187,
+    "nemotron": 0.075,
+    "science": 0.055,
+    "code": 0.05,
+    "synthetic": 0.047
+   },
+   "lens": "' a' ' that' ' to' ',' ' in' ' it' \"'s\" ' for' ' But' ' Which' ' with' ' ' ' messed' ' Wait' ' \"'",
+   "type": "move",
+   "label": "Reasoning and proposing steps",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Chunks often contain phrases like \"Let me think\", \"So\", \"Therefore\", \"Thus\", or \"Wait\"",
+    2
+   ],
+   "move": [
+    "The text is actively reasoning, proposing steps, or reflecting on a solution approach",
+    3
+   ],
+   "examples": [
+    " expect very long strings.\\n\\nSo, first, create the cleaned string. Then process each character and between characters as centers. Let me think.\\n\\nThe steps:\\n\\nFor",
+    " be convenient-palindromic. Let me think of the classic quine structure: some code and data.\\n\\nSo, in some languages like Python, the",
+    "1?).\\n\\nHmm. \\n\\nSo the destination can be found by:\\n\\nFor conveyor i with '<:\\n\\nThe ball moves left until:\\n\\n- either reaches i=1"
+   ]
+  },
+  {
+   "rank": 26,
+   "atom": 1524,
+   "mass": 116411.6015625,
+   "mass_share": 0.00523844501003623,
+   "fires_ct": 1387819,
+   "fires_holdout": 71668,
+   "planted_mass_share": 0.021396024152636528,
+   "n_docs": 37960,
+   "doc_frac": 0.9988947950107889,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.409,
+   "src_hist": {
+    "math": 0.48,
+    "python": 0.204,
+    "science": 0.056,
+    "code": 0.052,
+    "synthetic": 0.045,
+    "nemotron": 0.044
+   },
+   "lens": "\"'s\" ' the' ' we' ' is' '.' ' if' ' for' ' so' ' I' 'Case' '?' ' each' ',' ' to' ' of'",
+   "type": "move",
+   "label": "mid-calculation process tracking",
+   "content": [
+    "step-by-step mathematical or computational reasoning",
+    3
+   ],
+   "form": [
+    "chunks often include iterative or sequential descriptions (e.g., \"First iteration\", \"So:\", \"Wait\")",
+    2
+   ],
+   "move": [
+    "tracking or explaining a process, often mid-calculation or mid-reasoning",
+    3
+   ],
+   "examples": [
+    " list after 5:\\n\\nn starts as 5, then 2, 1, 0. So:\\n\\nFirst iteration:\\n\\n5 → remainder 1 →",
+    " So for 3:\\n\\nLeft is 2 and its subtrees (the 2 null null), then 3's right would be next. So 7",
+    " *18  = 0\\n\\nAlternatively:\\n\\nLet me see, perhaps factor terms:\\n\\nHmm 14 sinθ cosθ + 18 sinθ = 32"
+   ]
+  },
+  {
+   "rank": 27,
+   "atom": 6956,
+   "mass": 115483.5390625,
+   "mass_share": 0.00519668310880661,
+   "fires_ct": 1404718,
+   "fires_holdout": 73117,
+   "planted_mass_share": 0.020769856870174408,
+   "n_docs": 37954,
+   "doc_frac": 0.9987369085837587,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.408,
+   "src_hist": {
+    "math": 0.468,
+    "python": 0.183,
+    "nemotron": 0.073,
+    "science": 0.054,
+    "synthetic": 0.053,
+    "code": 0.049
+   },
+   "lens": "' ' ':\\n\\n' ' this' ' (' ' But' ' that' ' in' ' would' '?\\n\\n' ' from' ' a' ' =' ' all' ' it' ' and'",
+   "type": "move",
+   "label": "Pausing to verify or clarify reasoning",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Chunks frequently contain the word \"Wait\" or phrases like \"let's see\" and \"so we have\"",
+    2
+   ],
+   "move": [
+    "The text is often pausing to verify, reconsider, or clarify a step in the reasoning process",
+    3
+   ],
+   "examples": [
+    "0b01011 | ... -> we have bits: \\n            bit0: set (because of 1)\\n            bit1: set (because of ",
+    " Indices: a10 to a0.\\n\\na10: first, bring down 2021.\\n\\nThen for a9: add to previous product? Standard synthetic division",
+    " the first example: let's see the first test case for quadruple.\\n\\nTest cases for quadruple factorial (quadruple: n!!!!):\\n\\n0!!!! →"
+   ]
+  },
+  {
+   "rank": 28,
+   "atom": 5759,
+   "mass": 114158.0703125,
+   "mass_share": 0.005137037951499224,
+   "fires_ct": 1268305,
+   "fires_holdout": 66144,
+   "planted_mass_share": 0.02578134275972843,
+   "n_docs": 37654,
+   "doc_frac": 0.9908425872322509,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.374,
+   "src_hist": {
+    "math": 0.446,
+    "python": 0.194,
+    "nemotron": 0.092,
+    "science": 0.053,
+    "synthetic": 0.051,
+    "code": 0.05
+   },
+   "lens": "' is' ' maybe' ' each' \"'s\" ' \"' '?\\n\\n' ' with' ' So' ' but' ' it' ' not' ' Wait' ' But' ' ' '.\\n\\n'",
+   "type": "move",
+   "label": "self-correction or questioning in reasoning",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "chunks contain questioning/self-correction phrases like \"But\", \"Actually\", \"Then\", \"?\", \"Alternatively\"",
+    3
+   ],
+   "move": [
+    "questioning or revising a previous assumption/statement in reasoning",
+    3
+   ],
+   "examples": [
+    " to an integer? If we can, then it's a day? But what if the token has non-digit? Then we skip? \\n\\n      Alternatively, we",
+    " possible? But we might set it to a later time? Why? Because we want to leave room for a larger X? Actually, we are testing a fixed",
+    "? then it's a path? and two vertices? then it's a path? Actually, a cycle must have at least 3 vertices? But the problem"
+   ]
+  },
+  {
+   "rank": 29,
+   "atom": 7211,
+   "mass": 105497.796875,
+   "mass_share": 0.004747331142425537,
+   "fires_ct": 1311261,
+   "fires_holdout": 68308,
+   "planted_mass_share": 0.016864920035004616,
+   "n_docs": 37685,
+   "doc_frac": 0.9916583337719067,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.38,
+   "src_hist": {
+    "math": 0.458,
+    "python": 0.195,
+    "nemotron": 0.084,
+    "science": 0.056,
+    "code": 0.055,
+    "synthetic": 0.044
+   },
+   "lens": "' So' ' for' ' a' ' I' ':' ' in' ' is' ' would' ' the' ' this' '),' ' that' ' not' ':\\n\\n' ' which'",
+   "type": "move",
+   "label": "mid-reasoning self-correction markers",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "chunks contain the word \"But\" or \"Wait\" (often at start of line or after punctuation)",
+    3
+   ],
+   "move": [
+    "self-correction or reconsideration during reasoning (noticing potential errors, re-evaluating assumptions)",
+    3
+   ],
+   "examples": [
+    "2). \\n\\n     However, we also have the cost of getting from A to P and from Q to B. \\n\\n     The problem becomes: we want to",
+    ">5, true. S3 false, etc. All consistent. But S5 is false, which is good. But S6: T=0 not",
+    " No, it's standard. Maybe it's \"lab\" but no, it's \"laboratory\". I think it's one 'h'. But let"
+   ]
+  },
+  {
+   "rank": 30,
+   "atom": 3125,
+   "mass": 105008.3828125,
+   "mass_share": 0.004725307691842318,
+   "fires_ct": 1310118,
+   "fires_holdout": 67833,
+   "planted_mass_share": 0.02603134699165821,
+   "n_docs": 37664,
+   "doc_frac": 0.9911057312773012,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.391,
+   "src_hist": {
+    "math": 0.468,
+    "python": 0.203,
+    "science": 0.059,
+    "nemotron": 0.058,
+    "code": 0.054,
+    "synthetic": 0.04
+   },
+   "lens": "' for' ' in' ' I' ' we' ' if' ' the' ' and' ' a' ',' ' this' ' Which' ' from' '),' ':\\n\\n' ':'",
+   "type": "move",
+   "label": "mid-reasoning correction or reconsideration",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "chunks often start with \"But\", \"Wait\", or \"Perhaps\" and contain mid-reasoning corrections or reconsiderations",
+    2
+   ],
+   "move": [
+    "reconsidering or correcting a previous step in reasoning, often introducing alternative approaches or catching potential errors",
+    3
+   ],
+   "examples": [
+    ", so commas are okay? No, the loop is separated with ; not commas.\\n\\nWait the problem says commas are banned. So any comma anywhere? Even in",
+    ", after solving 89x +144y =484, with x and y positive integers, then check the constraints. But perhaps with such a high Fibonacci coefficient",
+    " fail. So perhaps the problem has to be considered with the possibility of negative increments, meaning that the maximum is not necessarily all the overlapping areas with minimal a and"
+   ]
+  },
+  {
+   "rank": 31,
+   "atom": 1340,
+   "mass": 103273.2578125,
+   "mass_share": 0.00464722840115428,
+   "fires_ct": 1284314,
+   "fires_holdout": 66622,
+   "planted_mass_share": 0.02603483572602272,
+   "n_docs": 37678,
+   "doc_frac": 0.9914741329403716,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.385,
+   "src_hist": {
+    "math": 0.452,
+    "python": 0.207,
+    "nemotron": 0.063,
+    "science": 0.055,
+    "code": 0.054,
+    "synthetic": 0.048
+   },
+   "lens": "' is' ' to' ' with' '?' ' So' ' But' ').' ' that' ' then' ' perhaps' ' problem' 'Case' ' at' ' Law' ' have'",
+   "type": "move",
+   "label": "Planning computational steps",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Chunks frequently include the word \"for\" and often discuss computational or algorithmic steps.",
+    2
+   ],
+   "move": [
+    "The text is describing or planning computational steps, often involving loops, conditions, or optimizations.",
+    3
+   ],
+   "examples": [
+    " example uses scipy's root function. To do this in a golfed code, we might need a method for root finding without much overhead, but in practice for",
+    " `res` for the result for each circle. Initially, for fixed circles, we have the given letter, for others we will assign.\\n\\n   Then for i",
+    " But then we haven't moved. Then we try to move from the start cell: we go in direction d and then we set the state for the new cell"
+   ]
+  },
+  {
+   "rank": 32,
+   "atom": 1692,
+   "mass": 103189.421875,
+   "mass_share": 0.004643455613404512,
+   "fires_ct": 1238375,
+   "fires_holdout": 64421,
+   "planted_mass_share": 0.021946199238300323,
+   "n_docs": 37625,
+   "doc_frac": 0.9900794695016052,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.369,
+   "src_hist": {
+    "math": 0.46,
+    "python": 0.201,
+    "nemotron": 0.075,
+    "science": 0.056,
+    "code": 0.052,
+    "persona": 0.041
+   },
+   "lens": "' each' ' in' ' would' ':' ' to' '?' ' I' '.' ' have' ' maybe' ',' ' perhaps' ' of' ' for' ' '",
+   "type": "move",
+   "label": "Proposing alternatives or corrections",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Chunks frequently include the phrase \"But we can\" or \"However, we can\" and often end with a question mark or mid-sentence.",
+    3
+   ],
+   "move": [
+    "The text is proposing alternative approaches or corrections to a previous line of reasoning, often introducing a new idea or adjustment.",
+    3
+   ],
+   "examples": [
+    " if we have a gap, we have to iterate. \\n\\n        However, we can do: we keep a variable 'next_d' that we update? But",
+    " character we are forced to assign ')' if we need to? Actually, we are at the last character, we must assign whatever we have left? But we are",
+    "]. However, we subtract until we are below K, but we never go negative? So if we start at n, we subtract K until we get a number"
+   ]
+  },
+  {
+   "rank": 33,
+   "atom": 5939,
+   "mass": 99798.6171875,
+   "mass_share": 0.004490871913731098,
+   "fires_ct": 914281,
+   "fires_holdout": 47433,
+   "planted_mass_share": 0.015823708847165108,
+   "n_docs": 37109,
+   "doc_frac": 0.9765012367770117,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.262,
+   "src_hist": {
+    "math": 0.496,
+    "python": 0.216,
+    "code": 0.059,
+    "science": 0.054,
+    "nemotron": 0.049,
+    "if_qwq": 0.039
+   },
+   "lens": "' But' ' from' ' in' '?\\n\\n' ' must' ' all' ' problem' ' it' \"'s\" ' messed' ' requires' ' Let' ').' ' So' ' To'",
+   "type": "move",
+   "label": "Confirming reasoning with \"so that\"",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "The phrase \"so that\" appears frequently, often used to connect reasoning steps or conclusions.",
+    3
+   ],
+   "move": [
+    "The text is confirming or validating a previous step, conclusion, or assumption in the reasoning process.",
+    3
+   ],
+   "examples": [
+    " the minimal a and b that satisfy 2a² >=5 would actually require that c becomes negative. Since that’s impossible, so the variables can’t be",
+    ".\\n\\nSo that would work. So that's how to handle that.\\n\\nPutting that together.\\n\\nNow, putting it all together into code.\\n\\nThe overall steps for each",
+    "\" – so that is redundant, meaning that digits that are there have to be actually present (so they can't be missing). So that doesn't add any"
+   ]
+  },
+  {
+   "rank": 34,
+   "atom": 4123,
+   "mass": 96292.1171875,
+   "mass_share": 0.004333081655204296,
+   "fires_ct": 1295625,
+   "fires_holdout": 67142,
+   "planted_mass_share": 0.028809024021029472,
+   "n_docs": 37810,
+   "doc_frac": 0.994947634335035,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.389,
+   "src_hist": {
+    "math": 0.456,
+    "python": 0.206,
+    "nemotron": 0.061,
+    "code": 0.057,
+    "science": 0.056,
+    "synthetic": 0.042
+   },
+   "lens": "' to' ' for' ' the' ' this' ':\\n\\n' ' perhaps' ' is' '?\\n\\n' ' a' ' we' ' each' '),' ' then' ' I' ' messed'",
+   "type": "move",
+   "label": "Catching or questioning reasoning mid-thought",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Chunks often contain the word \"Wait\" or phrases like \"Wait, the\"",
+    2
+   ],
+   "move": [
+    "The text is catching or questioning its own reasoning, often mid-thought",
+    3
+   ],
+   "examples": [
+    " assign that base class method? It doesn't matter.\\n\\n   Alternatively, we can define a function and assign it.\\n\\n   However, what if we want the same",
+    " to have \"no Sales can be sitting in any chair that is earlier in the numbering than a Marketing chair\", but since it's circular, that's tricky.",
+    " L's node, so perhaps:\\n\\nWait, the L path to y includes L, so in the LCA approach, from LCA down to y, the"
+   ]
+  },
+  {
+   "rank": 35,
+   "atom": 2003,
+   "mass": 93226.109375,
+   "mass_share": 0.004195113200694323,
+   "fires_ct": 1328123,
+   "fires_holdout": 68451,
+   "planted_mass_share": 0.023768389597535133,
+   "n_docs": 37870,
+   "doc_frac": 0.9965264986053366,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.4,
+   "src_hist": {
+    "math": 0.457,
+    "python": 0.213,
+    "science": 0.058,
+    "code": 0.054,
+    "nemotron": 0.052,
+    "synthetic": 0.044
+   },
+   "lens": "' is' ' to' ':' \"'s\" ' would' ' this' ' if' ' in' ' \"' ' it' ' from' ' of' ':\\n\\n' ' But' ' Which'",
+   "type": "move",
+   "label": "proposing alternatives or reconsidering",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "chunks contain the word \"perhaps\" or \"alternatively\"",
+    2
+   ],
+   "move": [
+    "proposing alternative approaches or reconsidering current reasoning",
+    3
+   ],
+   "examples": [
+    " if the group is moving from an entrance, they walk around the circle, and each exit corresponds to a different point, so perhaps each fan exits at each exit",
+    ". So perhaps each assignment step reduces the problem?\\n\\nThe key requirement is that each possible outcome (number in [0, m)) occurs exactly floor(2^",
+    " assign that base class method? It doesn't matter.\\n\\n   Alternatively, we can define a function and assign it.\\n\\n   However, what if we want the same"
+   ]
+  },
+  {
+   "rank": 36,
+   "atom": 4760,
+   "mass": 92091.921875,
+   "mass_share": 0.00414407579228282,
+   "fires_ct": 1209149,
+   "fires_holdout": 62228,
+   "planted_mass_share": 0.02297871746122837,
+   "n_docs": 37742,
+   "doc_frac": 0.9931582548286932,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.368,
+   "src_hist": {
+    "math": 0.479,
+    "python": 0.212,
+    "science": 0.062,
+    "code": 0.059,
+    "persona": 0.042,
+    "if_qwq": 0.041
+   },
+   "lens": "'?' ' a' ' would' ' and' ' the' '.' ',' ' we' ':\\n\\n' ' if' ' problem' ' that' ' in' ' at' ' for'",
+   "type": "move",
+   "label": "mid-reasoning self-correction or alternatives",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "chunks contain \"Wait\" or \"Alternatively\" followed by reconsideration or alternative approaches",
+    3
+   ],
+   "move": [
+    "self-correction or proposing alternative reasoning paths in problem-solving",
+    3
+   ],
+   "examples": [
+    " not on the y-axis, leading to two coinciding points on one side but which are symmetric, effectively counting as one point each but duplicates?\\n\\nWait, no",
+    " of triangle ADC is equal to area of ABC?\\n\\nAlternatively, maybe flipping points around?\\n\\nAlternatively, maybe I need to consider absolute value incorrectly?\\n\\nWait, maybe there",
+    " geometry?\\n\\nAlternatively, maybe the angles are not the internal angles but something else. Maybe exterior angles?\\n\\nWait, Exterior angle at A is 180 - angle A"
+   ]
+  },
+  {
+   "rank": 37,
+   "atom": 2311,
+   "mass": 91703.0390625,
+   "mass_share": 0.004126576241105795,
+   "fires_ct": 1278901,
+   "fires_holdout": 65795,
+   "planted_mass_share": 0.019397512078285217,
+   "n_docs": 37626,
+   "doc_frac": 0.9901057839061103,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.376,
+   "src_hist": {
+    "math": 0.474,
+    "python": 0.205,
+    "science": 0.057,
+    "code": 0.056,
+    "nemotron": 0.049,
+    "synthetic": 0.048
+   },
+   "lens": "' we' ' is' ' that' ' So' ' But' ' can' '.\\n\\n' ' so' ' the' ' if' ' and' ' from' ' it' ' =' '?\\n\\n'",
+   "type": "move",
+   "label": "tentative reasoning with \"perhaps\" and \"maybe\"",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "frequent use of \"perhaps\" and \"maybe\"",
+    3
+   ],
+   "move": [
+    "proposing alternative approaches or tentative solutions",
+    3
+   ],
+   "examples": [
+    " it. But to find this, perhaps each step in the reversal must target the \"earliest possible\" to go back in time, but I'm not sure",
+    "'s an even earlier occurrence. The first occurrence will be the leftmost one, so every time there's an occurrence found, it's a candidate but the earliest",
+    " where t starts at 0 (point A) to 1 (midpoint M_A). But to extend it beyond M_A to A', maybe t would"
+   ]
+  },
+  {
+   "rank": 38,
+   "atom": 5971,
+   "mass": 91278.7109375,
+   "mass_share": 0.004107481800019741,
+   "fires_ct": 1204839,
+   "fires_holdout": 62381,
+   "planted_mass_share": 0.027710597962141037,
+   "n_docs": 37790,
+   "doc_frac": 0.9944213462449345,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.355,
+   "src_hist": {
+    "math": 0.466,
+    "python": 0.204,
+    "science": 0.058,
+    "nemotron": 0.058,
+    "code": 0.054,
+    "synthetic": 0.045
+   },
+   "lens": "' in' ' of' ' So' ',' '?' '.\\n\\n' ' (' ' \"' ' if' ').' ' would' ' that' ' ' \"'s\" 'So'",
+   "type": "move",
+   "label": "Proposing alternatives or reconsidering steps",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Chunks frequently include the word \"Alternatively\" or \"Wait\" and often contain mid-sentence reasoning pauses (e.g., \"?\\n\\nWait\").",
+    3
+   ],
+   "move": [
+    "The text is actively proposing alternative approaches or reconsidering previous steps in reasoning.",
+    3
+   ],
+   "examples": [
+    ", but to do so we need to assume some form for f and g.\\n\\nSince the problem doesn't specify the type of functions, perhaps it's implied to",
+    " 3/4 to 1 cup water, adjust as needed. Salt to taste. Oil for cooking. \\n\\nMake sure to mention medium heat to prevent burning",
+    " 1, leaving [0,1]. Then we have to do a - to combine into 1-0 = 1? \\n\\nWait, to get"
+   ]
+  },
+  {
+   "rank": 39,
+   "atom": 5908,
+   "mass": 90849.4609375,
+   "mass_share": 0.004088165704160929,
+   "fires_ct": 1270761,
+   "fires_holdout": 65944,
+   "planted_mass_share": 0.028063317760825157,
+   "n_docs": 37898,
+   "doc_frac": 0.9972633019314773,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.387,
+   "src_hist": {
+    "math": 0.447,
+    "python": 0.197,
+    "nemotron": 0.074,
+    "science": 0.053,
+    "code": 0.052,
+    "synthetic": 0.05
+   },
+   "lens": "' from' ' have' ' to' ' not' ' and' '?\\n\\n' ' for' ' can' '?' ' maybe' ' the' ' we' ' is' ' but' ' each'",
+   "type": "move",
+   "label": "Structured reasoning corrections and verifications",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Chunks often include structured reasoning steps with indentation, colons, and numbered/marked elements (e.g., \"Step:\", \"index0:\", \"Example:\").",
+    3
+   ],
+   "move": [
+    "The text is actively correcting, refining, or verifying a step in the reasoning process (e.g., \"Actually:\", \"Check:\", \"However:\").",
+    3
+   ],
+   "examples": [
+    " the third element: 3.\\n\\n                But we want a formula: \\n                  The new circle: \\n                    The first element: 5 = 1 +",
+    " \\n            Actually: \\n                Step: \\n                  Original: 101 -> right circular shift: \\n                  The bits: [b0, b1, b",
+    " - Building cycles for the row permutation: the row requirement: for each i, we have a mapping: row i must be connected to row r_i? Actually"
+   ]
+  },
+  {
+   "rank": 40,
+   "atom": 4684,
+   "mass": 89053.59375,
+   "mass_share": 0.004007352981716394,
+   "fires_ct": 956079,
+   "fires_holdout": 49523,
+   "planted_mass_share": 0.02293911762535572,
+   "n_docs": 37723,
+   "doc_frac": 0.9926582811430977,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.272,
+   "src_hist": {
+    "math": 0.453,
+    "python": 0.197,
+    "nemotron": 0.079,
+    "code": 0.055,
+    "synthetic": 0.055,
+    "science": 0.054
+   },
+   "lens": "':\\n\\n' \"'s\" ' the' 'Case' ' I' ' if' ' for' 'So' ' with' ' Which' ' a' '.\\n\\n' '1' ' which' ' first'",
+   "type": "move",
+   "label": "Structuring reasoning steps, often with code",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Chunks often include code snippets or pseudocode, frequently in Python, and contain phrases like \"Wait,\" \"So,\" or \"Let me.\"",
+    2
+   ],
+   "move": [
+    "The text is actively structuring or outlining steps in a reasoning process, often involving code or problem-solving.",
+    3
+   ],
+   "examples": [
+    " should be fine.\\n\\nPutting it all together, steps in code:\\n\\nRead all products from stdin until empty line.\\n\\nThen process the products.\\n\\nFirst, filter step:",
+    " here.\\n\\nOkay, moving on.\\n\\nLet me structure the steps again, in order of priority.\\n\\nAssuming the function is written as follows: \\n\\ndef validate_choice",
+    ":\\n\\nloop forever, read line, splitting into parts.\\n\\nLet me outline the code outline step by step.\\n\\nSo, code skeleton in Python:\\n\\ntasks = {}\\nid"
+   ]
+  },
+  {
+   "rank": 41,
+   "atom": 758,
+   "mass": 85202.5859375,
+   "mass_share": 0.0038340601604431868,
+   "fires_ct": 1118033,
+   "fires_holdout": 57817,
+   "planted_mass_share": 0.029083242639899254,
+   "n_docs": 37732,
+   "doc_frac": 0.992895110783643,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.335,
+   "src_hist": {
+    "math": 0.462,
+    "python": 0.194,
+    "nemotron": 0.063,
+    "science": 0.057,
+    "code": 0.055,
+    "synthetic": 0.047
+   },
+   "lens": "' I' ' to' ':\\n\\n' ').' ' that' ' the' ' this' ' \"' ' with' ' can' ' we' ' of' ',' ' Which' ' and'",
+   "type": "move",
+   "label": "reconsidering or questioning reasoning steps",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "N/A",
+    0
+   ],
+   "move": [
+    "the text is questioning or reconsidering a previous step in the reasoning process, often introducing \"maybe\" or \"wait\"",
+    3
+   ],
+   "examples": [
+    " find cos x. Hmm, okay. So, first, let me write down what's given and what's needed. The equation is sec x - csc",
+    " top 3. But different SQL dialects have different syntax. Since the user didn't specify, maybe use the standard LIMIT clause? But for example, in",
+    ". \\n\\nHmm, they might be frustrated with content removals or just testing boundaries. Either way, assisting would violate my safety protocols. \\n\\nLooking at the response"
+   ]
+  },
+  {
+   "rank": 42,
+   "atom": 2838,
+   "mass": 84724.5625,
+   "mass_share": 0.003812549402937293,
+   "fires_ct": 749673,
+   "fires_holdout": 38798,
+   "planted_mass_share": 0.008105463348329067,
+   "n_docs": 35487,
+   "doc_frac": 0.9338192726698595,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0003,
+   "within_doc_sel": 0.209,
+   "src_hist": {
+    "math": 0.523,
+    "python": 0.207,
+    "code": 0.064,
+    "nemotron": 0.051,
+    "science": 0.051,
+    "synthetic": 0.039
+   },
+   "lens": "' we' ' each' ' that' ' if' ' perhaps' ' So' ' maybe' ' can' ':' ' a' ' not' ' to' ' have' ' this' '?'",
+   "type": "move",
+   "label": "Verifying reasoning with \"so\" and pauses",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Chunks frequently contain the word \"so\" and often end with \"Wait\" or a similar pause.",
+    3
+   ],
+   "move": [
+    "The text is often verifying or correcting a previous step in the reasoning process, frequently pausing to reassess or confirm.",
+    3
+   ],
+   "examples": [
+    "=1 is not even so can't, so the only possibility is E=2, A=1, so D = 2²=4.\\n\\nWait",
+    "0, so no division by zero). Since each factor can be positive or negative, so the factors can be ±1, so in order to maximize the number",
+    " all steps so far have chosen +1, so that at the final step, if you choose to do so, then you would form the forbidden path. Hence"
+   ]
+  },
+  {
+   "rank": 43,
+   "atom": 2288,
+   "mass": 83969.453125,
+   "mass_share": 0.0037785698659718037,
+   "fires_ct": 1188308,
+   "fires_holdout": 61458,
+   "planted_mass_share": 0.023650947958230972,
+   "n_docs": 37644,
+   "doc_frac": 0.9905794431872007,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.355,
+   "src_hist": {
+    "math": 0.452,
+    "python": 0.222,
+    "code": 0.06,
+    "science": 0.058,
+    "nemotron": 0.057,
+    "if_qwq": 0.04
+   },
+   "lens": "' But' ' for' \"'s\" ' each' ' would' ' it' ' in' ' perhaps' '?' '),' ' not' ' have' ' is' ':' ' So'",
+   "type": "move",
+   "label": "Reflecting on or verifying reasoning steps",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "N/A",
+    0
+   ],
+   "move": [
+    "The text is reflecting on or verifying a step in the reasoning process, often questioning or confirming correctness.",
+    3
+   ],
+   "examples": [
+    "25 letters. So I need to phrase them concisely to hit that count.\\n\\nFirst, count letters: I need to write tips that, when I remove",
+    " That would be length 4. Then the output would have two runs of 4 elements. That makes sense. So maybe I need to check again if I",
+    ", but I'm so smart.\\n\\n I rise at dawn, I tend with care,\\n My plants, I swear, know that I'm there.\\n I sing to"
+   ]
+  },
+  {
+   "rank": 44,
+   "atom": 3716,
+   "mass": 83292.765625,
+   "mass_share": 0.003748119343072176,
+   "fires_ct": 1227605,
+   "fires_holdout": 63619,
+   "planted_mass_share": 0.02679278887808323,
+   "n_docs": 37928,
+   "doc_frac": 0.9980527340666281,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.359,
+   "src_hist": {
+    "math": 0.471,
+    "python": 0.193,
+    "nemotron": 0.065,
+    "science": 0.056,
+    "code": 0.054,
+    "synthetic": 0.044
+   },
+   "lens": "' perhaps' ' with' ' each' ' I' ' then' ' for' ' problem' ' a' ' ' ',' ' at' '?\\n\\n' '.' ' the' 'Case'",
+   "type": "move",
+   "label": "proposing alternatives or questioning reasoning",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "chunks often start with \"Alternatively\" or contain \"Wait\"",
+    2
+   ],
+   "move": [
+    "proposing alternative approaches or questioning current reasoning",
+    3
+   ],
+   "examples": [
+    "'s role as irrelevant to the simulation's internal logic. \\n\\nAlternatively, we can just create a dummy URL to data map. But in the function, which is",
+    "        Alternatively, maybe the redemption is applied to the next drink that he would have to pay for? But the sequence is fixed: we know the size of the",
+    " maybe the terms can be arranged to interfere destructively, but since we want to maximize the left-hand side, we need to arrange them to have high magnitude in"
+   ]
+  },
+  {
+   "rank": 45,
+   "atom": 3729,
+   "mass": 82206.625,
+   "mass_share": 0.0036992437671869993,
+   "fires_ct": 1261863,
+   "fires_holdout": 65562,
+   "planted_mass_share": 0.02649487555027008,
+   "n_docs": 37905,
+   "doc_frac": 0.9974475027630125,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.369,
+   "src_hist": {
+    "math": 0.462,
+    "python": 0.192,
+    "nemotron": 0.072,
+    "science": 0.056,
+    "code": 0.05,
+    "synthetic": 0.05
+   },
+   "lens": "' would' ' each' ' perhaps' ' if' ' it' ' Which' ' to' ').' ' maybe' ' is' ' I' ' then' ' messed' ' the' ' not'",
+   "type": "move",
+   "label": "Reflecting or correcting reasoning with \"with\"",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "The word \"with\" appears frequently, often in technical or reasoning contexts",
+    2
+   ],
+   "move": [
+    "The text is often questioning or reconsidering a previous statement or approach, indicating a moment of reflection or correction",
+    3
+   ],
+   "examples": [
+    " tiles: total tiles possible using three colors with 2 of each color: 6 tiles. So this is impossible. There must be a misunderstanding here.\\n\\nWait",
+    ", but in code maybe just check with a string 'aeiou' and check with in 'aeiou'.\\n\\nAlternatively, for vowels, the check can be:",
+    " be ethene? If so, then the next step with H2SO4 and heat... H2SO4 with heating for alkenes usually involves some"
+   ]
+  },
+  {
+   "rank": 46,
+   "atom": 8179,
+   "mass": 81738.3984375,
+   "mass_share": 0.003678173990920186,
+   "fires_ct": 1125164,
+   "fires_holdout": 58177,
+   "planted_mass_share": 0.018664861097931862,
+   "n_docs": 37376,
+   "doc_frac": 0.9835271827798537,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.326,
+   "src_hist": {
+    "math": 0.483,
+    "python": 0.184,
+    "code": 0.062,
+    "nemotron": 0.061,
+    "science": 0.057,
+    "synthetic": 0.047
+   },
+   "lens": "' that' ' each' ' so' ' maybe' ':' ' this' ' perhaps' ':\\n\\n' ' we' ' and' ' I' ' of' ' \"' ' have' ' is'",
+   "type": "move",
+   "label": "Reconsidering assumptions mid-reasoning",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Chunks often include phrases like \"Hmm,\" \"Wait,\" or \"But,\" indicating hesitation or reconsideration.",
+    2
+   ],
+   "move": [
+    "The text is questioning or reconsidering a previous assumption or approach, often mid-reasoning.",
+    3
+   ],
+   "examples": [
+    " expression pattern for each of the four keys. For example, for the name key, search for the line (or part) where name is assigned a string.",
+    ", but with five variables, this seems unwieldy. Maybe consider generating functions? Hmm, but again with five variables, perhaps difficult.\\n\\nAlternatively, perhaps consider",
+    ", maybe the question is saying that all three cans can hold up to 10 liters, but they have different shapes. Wait, but the can B is a"
+   ]
+  },
+  {
+   "rank": 47,
+   "atom": 5241,
+   "mass": 80174.421875,
+   "mass_share": 0.003607796039432287,
+   "fires_ct": 1000979,
+   "fires_holdout": 51780,
+   "planted_mass_share": 0.017767155542969704,
+   "n_docs": 37659,
+   "doc_frac": 0.990974159254776,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.297,
+   "src_hist": {
+    "math": 0.481,
+    "python": 0.219,
+    "code": 0.055,
+    "science": 0.055,
+    "synthetic": 0.039,
+    "persona": 0.039
+   },
+   "lens": "' we' ' and' ' But' ' (' ' ' ' \"' ' it' ' with' ' can' ' so' '.\\n\\n' ').' '.' '?' ','",
+   "type": "move",
+   "label": "Confirming reasoning steps with \"So\"",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Chunks frequently start with \"So\" and often use it multiple times within the chunk",
+    3
+   ],
+   "move": [
+    "The text is confirming or concluding a reasoning step, often verifying correctness or resolving a problem",
+    3
+   ],
+   "examples": [
+    "? So yes, 0. So correct.\\n\\nAnother test case: din=256, offset=8. So 256 >>8 is 1. So",
+    " O contributes -14. So overall charge would be +12 -14 = -2. So that works. So if the S are in higher oxidation states.",
+    " integers. So consecutive integers difference of 1. So indeed they are. So that triangle is a right triangle with consecutive integer sides. So that is a valid"
+   ]
+  },
+  {
+   "rank": 48,
+   "atom": 2135,
+   "mass": 78809.671875,
+   "mass_share": 0.0035463832318782806,
+   "fires_ct": 1221071,
+   "fires_holdout": 63095,
+   "planted_mass_share": 0.023245545104146004,
+   "n_docs": 37885,
+   "doc_frac": 0.996921214672912,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.365,
+   "src_hist": {
+    "math": 0.46,
+    "python": 0.215,
+    "science": 0.058,
+    "code": 0.058,
+    "nemotron": 0.048,
+    "if_qwq": 0.042
+   },
+   "lens": "' with' ' for' ':' ' in' ':\\n\\n' ' this' ' from' '.\\n\\n' ',' '?' '),' ' a' '.' ' can' ' of'",
+   "type": "move",
+   "label": "hypothetical reasoning with \"would\"",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "chunks contain \"would\" followed by a verb (e.g., \"would be\", \"would have\", \"would get\")",
+    3
+   ],
+   "move": [
+    "the text is considering hypothetical scenarios, alternative approaches, or conditional reasoning",
+    3
+   ],
+   "examples": [
+    ". So if the string is empty, the regex would have no match (which would return None → False). \\n\\nSo the function would return True only if the",
+    " even, 3 if odd.\\n\\nWait, if it's a cycle graph, then if you can color it with two colors, alternating, but if it has",
+    " the number of colorings of a cycle of 5 nodes, each colored R, G, B, such that no two adjacent nodes are R and G ("
+   ]
+  },
+  {
+   "rank": 49,
+   "atom": 7069,
+   "mass": 76093.2578125,
+   "mass_share": 0.003424146445468068,
+   "fires_ct": 774856,
+   "fires_holdout": 40106,
+   "planted_mass_share": 0.020761976018548012,
+   "n_docs": 37663,
+   "doc_frac": 0.9910794168727962,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.225,
+   "src_hist": {
+    "math": 0.442,
+    "python": 0.239,
+    "code": 0.064,
+    "science": 0.055,
+    "nemotron": 0.047,
+    "if_qwq": 0.043
+   },
+   "lens": "':' ' would' '?\\n\\n' ' in' ' not' ' maybe' ' from' ' each' ' have' ' But' ' and' ' So' ' but' ' \"' ' ='",
+   "type": "move",
+   "label": "Verifying or starting a step in reasoning",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Chunks often include phrases like \"First step\", \"Let's see\", \"Wait\", \"Looking at\", or \"Original\" followed by a colon or line break.",
+    2
+   ],
+   "move": [
+    "The text is often pausing to re-examine or verify a previous step, or explicitly starting a new step in a process.",
+    3
+   ],
+   "examples": [
+    ", when doing division to find digits:\\n\\nWe process the number by:\\n\\ndigits are written from most to least significant. So:\\n\\nThe process:\\n\\nFirst step:\\n\\n346",
+    "\\n\\nLet's count characters:\\n\\nCount the letters:\\n\\nFirst row (assuming they are from the input lines):\\n\\nRow1:\\n\\nStart with D's:\\n\\n\"DDDD",
+    ":\\n\\nIn the loop's initialization:\\n\\nvar i =0; no commas.\\n\\nLoop's next parameters are separated by semicolons.\\n\\nInside the condition:\\n\\nlist[i"
+   ]
+  },
+  {
+   "rank": 50,
+   "atom": 7861,
+   "mass": 75888.984375,
+   "mass_share": 0.0034149540588259697,
+   "fires_ct": 1210985,
+   "fires_holdout": 62685,
+   "planted_mass_share": 0.02268483117222786,
+   "n_docs": 37852,
+   "doc_frac": 0.996052839324246,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.347,
+   "src_hist": {
+    "math": 0.48,
+    "python": 0.203,
+    "science": 0.058,
+    "code": 0.055,
+    "nemotron": 0.048,
+    "synthetic": 0.044
+   },
+   "lens": "':' ' this' \"'s\" ' then' ':\\n\\n' ' it' ' messed' ' Which' ' perhaps' ' I' 'Case' ').' ' Wait' ' a' ' with'",
+   "type": "move",
+   "label": "Pausing to verify or reconsider reasoning",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Chunks frequently include phrases like \"Let's see\", \"Wait\", or \"Let me\" followed by a colon or newline, indicating a pause or reconsideration in reasoning.",
+    3
+   ],
+   "move": [
+    "The text is often pausing to verify, reconsider, or clarify a step in the reasoning process, often marked by phrases like \"Wait\" or \"Let's see\".",
+    3
+   ],
+   "examples": [
+    " . m p 3 → the last five are from index 3 to end? Let's see:\\n\\nIndices 0-7:\\n\\n0:f,1:l",
+    " Taste difference is crucial - akoho gasy has more intense flavor from varied diet\\n- Price point matters too since local chicken costs 2-3x more",
+    "1), adjacent.\\n\\nSo total inversions are 3 inversions here.\\n\\nThe local inversions are the three adjacent pairs which have inversions here? Wait,"
+   ]
+  },
+  {
+   "rank": 51,
+   "atom": 4044,
+   "mass": 75842.3984375,
+   "mass_share": 0.003412857884541154,
+   "fires_ct": 942657,
+   "fires_holdout": 49287,
+   "planted_mass_share": 0.018188025802373886,
+   "n_docs": 36871,
+   "doc_frac": 0.9702384085048156,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0003,
+   "within_doc_sel": 0.269,
+   "src_hist": {
+    "math": 0.452,
+    "python": 0.21,
+    "nemotron": 0.1,
+    "code": 0.057,
+    "science": 0.057,
+    "synthetic": 0.044
+   },
+   "lens": "' if' ' can' ' from' \"'s\" '?' '.\\n\\n' ' when' ' that' ',' ' the' ' (' ' they' ' or' ' So' ' ='",
+   "type": "move",
+   "label": "Checking or correcting logical/computational steps",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Chunks frequently contain question marks (\"?\") and phrases like \"we check\", \"we break\", \"we update\", or \"we skip\", often in the context of code or logical reasoning.",
+    2
+   ],
+   "move": [
+    "The text is actively checking, verifying, or correcting a logical or computational step, often involving breaking, updating, or skipping actions in a loop or condition.",
+    3
+   ],
+   "examples": [
+    " However, note that the number 0 is a valid number.\\n\\n            # Therefore, we must update max_val even when we break at non-digit? and then",
+    " function should check each element, and maybe return an error (like an exception?) or perhaps return 0? Or perhaps the function returns the product, but skips",
+    " # either way, but we can break once found\\n\\n            break\\n\\n    # else, no need to do anything. So, the pod is only added to"
+   ]
+  },
+  {
+   "rank": 52,
+   "atom": 1945,
+   "mass": 72126.1640625,
+   "mass_share": 0.0032456298358738422,
+   "fires_ct": 513693,
+   "fires_holdout": 26683,
+   "planted_mass_share": 0.018147867172956467,
+   "n_docs": 35789,
+   "doc_frac": 0.9417662228303774,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0003,
+   "within_doc_sel": 0.149,
+   "src_hist": {
+    "math": 0.54,
+    "python": 0.19,
+    "science": 0.057,
+    "code": 0.049,
+    "if_qwq": 0.043,
+    "synthetic": 0.04
+   },
+   "lens": "' maybe' ' each' ' from' ' would' '?' ' not' ' have' ' \"' ' I' '?\\n\\n' ' for' ' can' ':\\n\\n' ' of' ' all'",
+   "type": "move",
+   "label": "self-correction with \"but\"",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "chunks contain the word \"but\" followed by a correction or reconsideration",
+    3
+   ],
+   "move": [
+    "self-correction or reconsideration during reasoning (e.g., catching errors, proposing alternatives)",
+    3
+   ],
+   "examples": [
+    " waves might be coherent but overlapped, but in QM, even superpositions are coherent but different. The droplets can produce interfering patterns but it's through",
+    " formed, but I think this is fine, but I haven't used the fact that CD is 24, but I did, but let me calculate the length",
+    " else but since h=1, but the other must be different? Wait, but d2 can't be d1, but since h=1, then"
+   ]
+  },
+  {
+   "rank": 53,
+   "atom": 6856,
+   "mass": 69778.6875,
+   "mass_share": 0.0031399948056787252,
+   "fires_ct": 782265,
+   "fires_holdout": 40228,
+   "planted_mass_share": 0.014660988934338093,
+   "n_docs": 36632,
+   "doc_frac": 0.9639492658281144,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0003,
+   "within_doc_sel": 0.222,
+   "src_hist": {
+    "math": 0.501,
+    "python": 0.217,
+    "science": 0.065,
+    "code": 0.064,
+    "if_qwq": 0.04,
+    "nemotron": 0.032
+   },
+   "lens": "' but' ' But' ' that' ' it' ' then' ' and' ' Which' ' in' ' problem' ' to' 'Case' ' the' ' messed' ' (' ' at'",
+   "type": "move",
+   "label": "Pausing to reconsider with \"Wait\"",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Chunks often contain the word \"Wait\" or start with \"Wait\"",
+    3
+   ],
+   "move": [
+    "The text is pausing to reconsider or correct a previous thought",
+    3
+   ],
+   "examples": [
+    "description\": \"These classic Southern biscuits are light, flaky, and perfect for soaking up gravy or serving with honey. Using cold butter and minimal handling ensures tender",
+    "?\\n\\nWait, maybe cutting not along the straight direction, so if the cuts are parallel to one side, but maybe rotated? Wait, if the cuts are along",
+    " the first team, so 3^10 ~59k, maybe manageable?), Wait, wait: actually each of the 10 pairs has three possible outcomes,"
+   ]
+  },
+  {
+   "rank": 54,
+   "atom": 7197,
+   "mass": 69327.046875,
+   "mass_share": 0.0031196712516248226,
+   "fires_ct": 1005821,
+   "fires_holdout": 52217,
+   "planted_mass_share": 0.019478220492601395,
+   "n_docs": 37397,
+   "doc_frac": 0.9840797852744593,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.292,
+   "src_hist": {
+    "math": 0.456,
+    "python": 0.217,
+    "nemotron": 0.072,
+    "science": 0.057,
+    "synthetic": 0.051,
+    "code": 0.05
+   },
+   "lens": "' would' ' if' ':' '?\\n\\n' ' and' ' in' 'Case' \"'s\" ' ' ' of' ' Law' ' which' ' first' 'Once' '1'",
+   "type": "move",
+   "label": "Reconsidering assumptions or proposing alternatives",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "Chunks often contain phrases like \"maybe,\" \"perhaps,\" \"alternatively,\" or \"wait,\" indicating uncertainty or reconsideration.",
+    2
+   ],
+   "move": [
+    "The text is questioning or reconsidering a previous assumption or approach, often proposing alternative interpretations or solutions.",
+    3
+   ],
+   "examples": [
+    " 12, -18, etc., but is there a pattern here? Maybe it relates to the permutation symbol or Levi-Civita symbol? Since permutations have",
+    " maximum overlap factor must be at least 0? Actually, it can be zero? \\n   But note: it's possible that the overlapping ones don't align",
+    " given angles? Even though it violates parallelogram properties? Maybe it's a trick question where they just assume those angles? Let me try.\\n\\nSuppose we"
+   ]
+  },
+  {
+   "rank": 55,
+   "atom": 7022,
+   "mass": 67917.015625,
+   "mass_share": 0.003056220943108201,
+   "fires_ct": 874272,
+   "fires_holdout": 45341,
+   "planted_mass_share": 0.025223691016435623,
+   "n_docs": 37465,
+   "doc_frac": 0.985869164780801,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0003,
+   "within_doc_sel": 0.245,
+   "src_hist": {
+    "math": 0.452,
+    "python": 0.191,
+    "nemotron": 0.102,
+    "code": 0.054,
+    "synthetic": 0.053,
+    "science": 0.052
+   },
+   "lens": "' this' ' and' ' But' ' with' '?' 'Case' ' ' '.\\n\\n' ' of' \"'s\" ' (' 'So' ' we' '1' ' if'",
+   "type": "move",
+   "label": "reconsidering or revising reasoning",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "chunks contain phrases like \"Hmm\", \"Wait\", \"But\", \"So\", \"Perhaps\", \"Maybe\", \"Alternatively\" indicating hesitation or reconsideration",
+    2
+   ],
+   "move": [
+    "the text is pausing to reconsider, question, or revise its current approach or understanding",
+    3
+   ],
+   "examples": [
+    "9, etc. Maybe 10 of spades.\\n\\nContinuing: not spades, not 9 or 11. Hmm, can I keep doing that",
+    "(y) - 1\\n\\]\\nHmm, not sure what to do with that yet, but maybe I can use similar substitutions.\\n\\n**Step 2:",
+    " Lebanon, Macedonia, Guatemala. These are all names of countries. So, intuitively, the first column should be labeled \"Country\". That's one of the"
+   ]
+  },
+  {
+   "rank": 56,
+   "atom": 5583,
+   "mass": 66466.0703125,
+   "mass_share": 0.002990929177030921,
+   "fires_ct": 768780,
+   "fires_holdout": 39899,
+   "planted_mass_share": 0.014921538531780243,
+   "n_docs": 36382,
+   "doc_frac": 0.9573706647018578,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0003,
+   "within_doc_sel": 0.211,
+   "src_hist": {
+    "math": 0.497,
+    "python": 0.162,
+    "nemotron": 0.105,
+    "synthetic": 0.064,
+    "code": 0.051,
+    "science": 0.047
+   },
+   "lens": "' so' ' would' ' the' ' for' ' it' ' But' ' Which' ' all' ' must' ',' ' messed' ' requires' '),' 'So' ' which'",
+   "type": "other",
+   "label": "",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "N/A",
+    0
+   ],
+   "move": [
+    "N/A",
+    0
+   ],
+   "examples": [
+    "435 is greater than 300, and we need less than 300, but 300 is not included? Between 200 and 300, probably exclusive,",
+    ", since 501 ÷ 2 = 250.5, not integer, or last digit 1, odd.\\n\\nSo, \\( \\cos(501",
+    "000016 = 0.002704, total 0.019604, close, remainder 0.00014987, /169 ≈ 0"
+   ]
+  },
+  {
+   "rank": 57,
+   "atom": 3052,
+   "mass": 66282.0703125,
+   "mass_share": 0.0029826494865119457,
+   "fires_ct": 638006,
+   "fires_holdout": 33576,
+   "planted_mass_share": 0.023245247080922127,
+   "n_docs": 37137,
+   "doc_frac": 0.9772380401031525,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0003,
+   "within_doc_sel": 0.19,
+   "src_hist": {
+    "math": 0.459,
+    "python": 0.228,
+    "code": 0.066,
+    "science": 0.063,
+    "nemotron": 0.05,
+    "if_qwq": 0.039
+   },
+   "lens": "' \"' ' then' ' if' ' So' ' but' ' But' '.\\n\\n' ' of' ' a' ' when' ' is' \"'s\" '.' ' in' ','",
+   "type": "move",
+   "label": "exploring possibilities with \"can\"",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "chunks contain the word \"can\" or \"can't\" (or equivalents like \"could\") in a reasoning context",
+    3
+   ],
+   "move": [
+    "chunks are exploring possibilities, alternatives, or constraints in reasoning",
+    3
+   ],
+   "examples": [
+    " pyanfis or scipy for optimization with fuzzy inference. Since the user wants to ensure the model can be made with code, perhaps the script can have a",
+    " remaining to make up is 20 -10=10 with elements from 1-9 (excluding 10). We can have:\\n\\n10 can be with subsets",
+    " a set, which can't be sorted directly with sorted. Wait no, sorted can take any iterable, so yes, sorted can be applied to the set."
+   ]
+  },
+  {
+   "rank": 58,
+   "atom": 5211,
+   "mass": 65423.46484375,
+   "mass_share": 0.002944012638181448,
+   "fires_ct": 741514,
+   "fires_holdout": 38477,
+   "planted_mass_share": 0.02415306679904461,
+   "n_docs": 37041,
+   "doc_frac": 0.97471185727067,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0003,
+   "within_doc_sel": 0.221,
+   "src_hist": {
+    "math": 0.461,
+    "python": 0.209,
+    "nemotron": 0.077,
+    "code": 0.062,
+    "science": 0.052,
+    "synthetic": 0.04
+   },
+   "lens": "' can' 'Case' ' from' ' of' ' \"' ' critical' '1' ' But' 'Once' ' in' ' Law' ' is' ' each' ' safe' ' be'",
+   "type": "move",
+   "label": "Conditional reasoning with \"if\"",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "The chunks frequently contain the word \"if\" and often involve conditional reasoning or hypothetical scenarios.",
+    3
+   ],
+   "move": [
+    "The chunks are exploring conditional possibilities or hypothetical scenarios in the reasoning process.",
+    3
+   ],
+   "examples": [
+    " item with the $10 bill, which would cost her the bill.\\n\\nAlternatively, if she uses the $10 bill, she pays with it, and receives change",
+    " numbers? \\n\\n        However, note: every perfect power x = a^p with composite p (say p=ab) then x = (a^b",
+    ".\\n\\nThen checking that there are two parts (if not split into two with split(2), so if split with , then if ':' not present, parts will"
+   ]
+  },
+  {
+   "rank": 59,
+   "atom": 4597,
+   "mass": 61317.60546875,
+   "mass_share": 0.002759251743555069,
+   "fires_ct": 892410,
+   "fires_holdout": 46886,
+   "planted_mass_share": 0.025079285725951195,
+   "n_docs": 37204,
+   "doc_frac": 0.9790011052049892,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0002,
+   "within_doc_sel": 0.265,
+   "src_hist": {
+    "math": 0.457,
+    "python": 0.214,
+    "nemotron": 0.064,
+    "science": 0.062,
+    "code": 0.057,
+    "persona": 0.039
+   },
+   "lens": "' with' ' if' ' we' \"'s\" ' this' '?\\n\\n' ' I' ' would' ' not' ' that' ' have' ' all' ' =' '.\\n\\n' ' so'",
+   "type": "move",
+   "label": "proposing alternatives or questioning assumptions",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "chunks contain words like \"perhaps\", \"maybe\", \"can\", \"but\", \"so\", \"or\" indicating uncertainty or alternatives",
+    2
+   ],
+   "move": [
+    "proposing alternative approaches, considering edge cases, or questioning assumptions in reasoning",
+    3
+   ],
+   "examples": [
+    " # either way, but we can break once found\\n\\n            break\\n\\n    # else, no need to do anything. So, the pod is only added to",
+    " function should check each element, and maybe return an error (like an exception?) or perhaps return 0? Or perhaps the function returns the product, but skips",
+    " that reciprocals can be tricky because they can lead to division by zero, but assuming x and y are non-zero, which they must be since we can"
+   ]
+  },
+  {
+   "rank": 60,
+   "atom": 1357,
+   "mass": 60543.0,
+   "mass_share": 0.002724394900724292,
+   "fires_ct": 674419,
+   "fires_holdout": 34664,
+   "planted_mass_share": 0.012087666429579258,
+   "n_docs": 35739,
+   "doc_frac": 0.9404505026051261,
+   "top_doc_share": 0.0001,
+   "top3_doc_share": 0.0003,
+   "within_doc_sel": 0.195,
+   "src_hist": {
+    "math": 0.493,
+    "python": 0.198,
+    "code": 0.072,
+    "science": 0.061,
+    "nemotron": 0.054,
+    "if_qwq": 0.042
+   },
+   "lens": "' each' ' from' ' all' ' I' ' so' ' must' ':\\n\\n' ' can' ' requires' ' problem' ' no' ' happen' ' satisfies' ' careful' ' at'",
+   "type": "move",
+   "label": "proposing tentative solutions with \"perhaps/maybe\"",
+   "content": [
+    "N/A",
+    0
+   ],
+   "form": [
+    "chunks contain the word \"perhaps\" or \"maybe\" (or equivalents like \"so perhaps\", \"but maybe\")",
+    3
+   ],
+   "move": [
+    "proposing alternative hypotheses or tentative solutions during reasoning (\"perhaps X\", \"maybe Y\")",
+    3
+   ],
+   "examples": [
+    " different genres represented. But since each genre has three books, which have to be spread over five shelves, so perhaps every shelf has exactly three different genres, and",
+    "\" maybe implying that all six sides are from those three arcs? That doesn't seem right. Alternatively, perhaps \"side\" refers to an edge, so maybe",
+    " divided into n steps, so that the circumference is n meters? Hmm, but they mention length of the step as 1 meter, perhaps the arc length?"
+   ]
+  }
+ ]
+}
